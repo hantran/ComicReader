@@ -28,7 +28,7 @@
                                 </connections>
                             </tableView>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="skT-8N-CfN">
-                                <frame key="frameInset" minX="-1.5" height="44" maxX="1"/>
+                                <frame key="frameInset" minX="-1.5" height="44" maxX="1.5"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="Comic Reader" id="xaI-ZQ-0pa"/>
@@ -91,32 +91,5 @@
             </objects>
             <point key="canvasLocation" x="-450" y="785"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="GfE-jH-pxY">
-            <objects>
-                <viewController id="YWk-6F-gJt" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="8Mc-5K-Rg5"/>
-                        <viewControllerLayoutGuide type="bottom" id="fDN-9n-824"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="0fD-Eo-Ruv">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="comic.png" translatesAutoresizingMaskIntoConstraints="NO" id="Btp-94-wLD">
-                                <frame key="frameInset" minX="40" minY="75" width="240" height="249"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="p3I-YZ-5kM" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="253.125" y="732.04225352112678"/>
-        </scene>
     </scenes>
-    <resources>
-        <image name="comic.png" width="85" height="89"/>
-    </resources>
 </document>
