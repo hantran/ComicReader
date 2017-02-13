@@ -8,6 +8,7 @@
 
 #import "MainCategoryController.h"
 #import "MainCategoryCell.h"
+#import "SubCategoryController.h"
 
 
 @interface MainCategoryController ()
@@ -49,11 +50,18 @@
     return cell;
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    UIAlertView *messageAlert = [[UIAlertView alloc]
-                                 initWithTitle:@"Row Selected" message:[array objectAtIndex:indexPath.row] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-    
+//    UIAlertView *messageAlert = [[UIAlertView alloc]
+//                                 initWithTitle:@"Row Selected" message:[array objectAtIndex:indexPath.row] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    [self performSegueWithIdentifier:@"onClickTableCell" sender:self];
     // Display the Hello World Message
-    [messageAlert show];
+//    [messageAlert show];
 
 }
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if ([segue.identifier isEqualToString:@"onClickTableCell"]) {
+        SubCategoryController *destinationViewController = segue.destinationViewController;
+    }
+}
+
 @end
