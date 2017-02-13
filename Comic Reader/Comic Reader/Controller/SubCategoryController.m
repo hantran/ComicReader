@@ -17,11 +17,17 @@
 @implementation SubCategoryController
 
 @synthesize array;
+@synthesize mCollectionView;
+
+-(void)viewWillAppear:(BOOL)animated{
+    [self.mCollectionView registerNib:[UINib nibWithNibName:@"SubCategoryCell" bundle:[NSBundle mainBundle]]
+        forCellWithReuseIdentifier:@"SubCategoryCell"];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    array = @[@"Truyện chưởng", @"Truyện cười", @"Truyện ngắn", @"Truyện tình yêu", @"Truyện của tôi"];
-    
-    [self.mCollectionView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"Cell"];
+    array = @[@"Truyện  chưởng", @"Truyện cười", @"Truyện ngắn", @"Truyện tình yêu", @"Truyện của tôi"];
+//    
     // Do any additional setup after loading the view.
 }
 - (void) viewDidAppear:(BOOL)animated{
@@ -46,7 +52,7 @@
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     static NSString *identifier = @"SubCategoryCell";
     
-    SubCategoryCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
+    SubCategoryCell *cell = (SubCategoryCell *)[collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
     if (cell == nil)
     {
         NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"SubCategoryCell" owner:self options:nil];
@@ -56,10 +62,11 @@
 //    SubCategoryCell *cell = (SubCategoryCell *)[collectionView dequeueReusableCellWithIdentifier:identifier];
 //    
 //    UIImageView *recipeImageView = (UIImageView *)[cell viewWithTag:100];
-//    recipeImageView.image = [UIImage imageNamed:[recipeImages objectAtIndex:indexPath.row]];
+    cell.imageViewCell.image = [UIImage imageNamed:@"comic.png"];
     cell.comicTitle.text = [array objectAtIndex:indexPath.row];
     return cell;
 }
+
 /*
 #pragma mark - Navigation
 

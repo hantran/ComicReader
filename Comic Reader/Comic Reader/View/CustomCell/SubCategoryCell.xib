@@ -9,18 +9,18 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SubCategoryCell" id="2Dx-FZ-b3j" customClass="SubCategoryCell">
-            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+            <rect key="frame" x="0.0" y="0.0" width="100" height="111"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                <rect key="frame" x="0.0" y="0.0" width="100" height="111"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="comic.png" translatesAutoresizingMaskIntoConstraints="NO" id="dgx-a4-fZ3">
-                        <frame key="frameInset" minX="3" width="97" height="86"/>
+                        <frame key="frameInset" minX="17" width="66" height="71"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Thần điêu đại hiệp" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vdL-KA-4ik">
-                        <frame key="frameInset" minX="3" minY="84" width="95" height="16"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Thần điêu đại hiệp" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vdL-KA-4ik">
+                        <frame key="frameInset" minX="13" minY="76" width="74" height="12"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <nil key="textColor"/>
@@ -28,12 +28,12 @@
                     </label>
                 </subviews>
             </view>
-            <size key="customSize" width="213" height="265"/>
+            <size key="customSize" width="213" height="276"/>
             <connections>
-                <outlet property="comicTitle" destination="vdL-KA-4ik" id="s1r-VC-P9k"/>
-                <outlet property="imageViewCell" destination="dgx-a4-fZ3" id="aRB-am-6QI"/>
+                <outlet property="comicTitle" destination="vdL-KA-4ik" id="Tst-f4-S5k"/>
+                <outlet property="imageViewCell" destination="dgx-a4-fZ3" id="pTS-ss-ksk"/>
             </connections>
-            <point key="canvasLocation" x="265" y="72"/>
+            <point key="canvasLocation" x="120" y="23.5"/>
         </collectionViewCell>
     </objects>
     <resources>

@@ -8,29 +8,30 @@
 
 /* Begin PBXBuildFile section */
 		C366131A1E4AB20B001BF229 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C36613191E4AB20B001BF229 /* main.m */; };
-		C366131D1E4AB20B001BF229 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C366131C1E4AB20B001BF229 /* AppDelegate.m */; };
-		C36613201E4AB20B001BF229 /* MainCategoryController.m in Sources */ = {isa = PBXBuildFile; fileRef = C366131F1E4AB20B001BF229 /* MainCategoryController.m */; };
-		C36613231E4AB20B001BF229 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C36613211E4AB20B001BF229 /* Main.storyboard */; };
 		C36613261E4AB20B001BF229 /* Comic_Reader.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C36613241E4AB20B001BF229 /* Comic_Reader.xcdatamodeld */; };
 		C36613281E4AB20B001BF229 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C36613271E4AB20B001BF229 /* Assets.xcassets */; };
-		C366132B1E4AB20B001BF229 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C36613291E4AB20B001BF229 /* LaunchScreen.storyboard */; };
 		C36613361E4AB20B001BF229 /* Comic_ReaderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C36613351E4AB20B001BF229 /* Comic_ReaderTests.m */; };
 		C36613411E4AB20B001BF229 /* Comic_ReaderUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = C36613401E4AB20B001BF229 /* Comic_ReaderUITests.m */; };
-		C36613571E4AB2A7001BF229 /* Comic.m in Sources */ = {isa = PBXBuildFile; fileRef = C36613561E4AB2A7001BF229 /* Comic.m */; };
-		C366135A1E4AB34C001BF229 /* SubCategoryControllerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C36613591E4AB34C001BF229 /* SubCategoryControllerViewController.m */; };
-		C366135D1E4AB36D001BF229 /* ComicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C366135C1E4AB36D001BF229 /* ComicViewController.m */; };
-		C36613651E4AB8A1001BF229 /* MainCategoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C36613631E4AB8A1001BF229 /* MainCategoryCell.m */; };
-		C36613661E4AB8A1001BF229 /* MainCategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C36613641E4AB8A1001BF229 /* MainCategoryCell.xib */; };
-		C36613691E4ABB69001BF229 /* ic_keyboard_arrow_right.imageset in Resources */ = {isa = PBXBuildFile; fileRef = C36613681E4ABB69001BF229 /* ic_keyboard_arrow_right.imageset */; };
-		C366136D1E4AC5E0001BF229 /* SubCategoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C366136B1E4AC5E0001BF229 /* SubCategoryCell.m */; };
-		C366136E1E4AC5E0001BF229 /* SubCategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C366136C1E4AC5E0001BF229 /* SubCategoryCell.xib */; };
-		C37206441E51442700366DFA /* ic_keyboard_arrow_right_3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C37206431E51442700366DFA /* ic_keyboard_arrow_right_3x.png */; };
-		C37D05DD1E4C162E005046C8 /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = C37D05DC1E4C162E005046C8 /* Student.m */; };
-		C37D05E01E4C16B0005046C8 /* Teacher.m in Sources */ = {isa = PBXBuildFile; fileRef = C37D05DF1E4C16B0005046C8 /* Teacher.m */; };
-		C37D05E41E4C185B005046C8 /* Priciple.m in Sources */ = {isa = PBXBuildFile; fileRef = C37D05E31E4C185B005046C8 /* Priciple.m */; };
-		C393FCA81E4D55DE004E3B1D /* AutoLayoutController.m in Sources */ = {isa = PBXBuildFile; fileRef = C393FCA61E4D55DE004E3B1D /* AutoLayoutController.m */; };
-		C393FCA91E4D55DE004E3B1D /* AutoLayoutController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C393FCA71E4D55DE004E3B1D /* AutoLayoutController.xib */; };
-		C393FCAB1E4DB62A004E3B1D /* comic.png in Resources */ = {isa = PBXBuildFile; fileRef = C393FCAA1E4DB62A004E3B1D /* comic.png */; };
+		C37206981E51742E00366DFA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C37206971E51742E00366DFA /* AppDelegate.m */; };
+		C37206A41E51821300366DFA /* MainCategoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C372069F1E51821300366DFA /* MainCategoryCell.m */; };
+		C37206A61E51821300366DFA /* SubCategoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C37206A21E51821300366DFA /* SubCategoryCell.m */; };
+		C37206A71E51821300366DFA /* SubCategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C37206A31E51821300366DFA /* SubCategoryCell.xib */; };
+		C37206B91E5182DE00366DFA /* AutoLayoutController.m in Sources */ = {isa = PBXBuildFile; fileRef = C37206AA1E5182DE00366DFA /* AutoLayoutController.m */; };
+		C37206BA1E5182DE00366DFA /* AutoLayoutController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C37206AB1E5182DE00366DFA /* AutoLayoutController.xib */; };
+		C37206BB1E5182DE00366DFA /* ComicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C37206AD1E5182DE00366DFA /* ComicViewController.m */; };
+		C37206BC1E5182DE00366DFA /* MainCategoryController.m in Sources */ = {isa = PBXBuildFile; fileRef = C37206AF1E5182DE00366DFA /* MainCategoryController.m */; };
+		C37206C01E5182DE00366DFA /* SubCategoryController.m in Sources */ = {isa = PBXBuildFile; fileRef = C37206B81E5182DE00366DFA /* SubCategoryController.m */; };
+		C37206C41E5183E300366DFA /* Comic.m in Sources */ = {isa = PBXBuildFile; fileRef = C37206C31E5183E300366DFA /* Comic.m */; };
+		C37206CA1E5183EC00366DFA /* comic.png in Resources */ = {isa = PBXBuildFile; fileRef = C37206C61E5183EC00366DFA /* comic.png */; };
+		C37206CB1E5183EC00366DFA /* ic_keyboard_arrow_right.png in Resources */ = {isa = PBXBuildFile; fileRef = C37206C71E5183EC00366DFA /* ic_keyboard_arrow_right.png */; };
+		C37206CC1E5183EC00366DFA /* ic_keyboard_arrow_right_2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C37206C81E5183EC00366DFA /* ic_keyboard_arrow_right_2x.png */; };
+		C37206CD1E5183EC00366DFA /* ic_keyboard_arrow_right_3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C37206C91E5183EC00366DFA /* ic_keyboard_arrow_right_3x.png */; };
+		C37206D31E51846000366DFA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C37206D11E51846000366DFA /* LaunchScreen.storyboard */; };
+		C37206D41E51846000366DFA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C37206D21E51846000366DFA /* Main.storyboard */; };
+		C37206DD1E51856400366DFA /* Priciple.m in Sources */ = {isa = PBXBuildFile; fileRef = C37206D81E51856400366DFA /* Priciple.m */; };
+		C37206DE1E51856400366DFA /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = C37206DA1E51856400366DFA /* Student.m */; };
+		C37206DF1E51856400366DFA /* Teacher.m in Sources */ = {isa = PBXBuildFile; fileRef = C37206DC1E51856400366DFA /* Teacher.m */; };
+		C37206E11E51886900366DFA /* MainCategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C37206E01E51886900366DFA /* MainCategoryCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,14 +54,8 @@
 /* Begin PBXFileReference section */
 		C36613151E4AB20B001BF229 /* Comic Reader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Comic Reader.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C36613191E4AB20B001BF229 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		C366131B1E4AB20B001BF229 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		C366131C1E4AB20B001BF229 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		C366131E1E4AB20B001BF229 /* MainCategoryController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainCategoryController.h; sourceTree = "<group>"; };
-		C366131F1E4AB20B001BF229 /* MainCategoryController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainCategoryController.m; sourceTree = "<group>"; };
-		C36613221E4AB20B001BF229 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C36613251E4AB20B001BF229 /* Comic_Reader.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Comic_Reader.xcdatamodel; sourceTree = "<group>"; };
 		C36613271E4AB20B001BF229 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		C366132A1E4AB20B001BF229 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C366132C1E4AB20B001BF229 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C36613311E4AB20B001BF229 /* Comic ReaderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Comic ReaderTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C36613351E4AB20B001BF229 /* Comic_ReaderTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Comic_ReaderTests.m; sourceTree = "<group>"; };
@@ -68,31 +63,38 @@
 		C366133C1E4AB20B001BF229 /* Comic ReaderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Comic ReaderUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C36613401E4AB20B001BF229 /* Comic_ReaderUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Comic_ReaderUITests.m; sourceTree = "<group>"; };
 		C36613421E4AB20B001BF229 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C36613551E4AB2A7001BF229 /* Comic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Comic.h; sourceTree = "<group>"; };
-		C36613561E4AB2A7001BF229 /* Comic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Comic.m; sourceTree = "<group>"; };
-		C36613581E4AB34C001BF229 /* SubCategoryControllerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubCategoryControllerViewController.h; sourceTree = "<group>"; };
-		C36613591E4AB34C001BF229 /* SubCategoryControllerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubCategoryControllerViewController.m; sourceTree = "<group>"; };
-		C366135B1E4AB36D001BF229 /* ComicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComicViewController.h; sourceTree = "<group>"; };
-		C366135C1E4AB36D001BF229 /* ComicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComicViewController.m; sourceTree = "<group>"; };
-		C36613621E4AB8A1001BF229 /* MainCategoryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainCategoryCell.h; sourceTree = "<group>"; };
-		C36613631E4AB8A1001BF229 /* MainCategoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainCategoryCell.m; sourceTree = "<group>"; };
-		C36613641E4AB8A1001BF229 /* MainCategoryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainCategoryCell.xib; sourceTree = "<group>"; };
-		C36613681E4ABB69001BF229 /* ic_keyboard_arrow_right.imageset */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ic_keyboard_arrow_right.imageset; sourceTree = "<group>"; };
-		C366136A1E4AC5E0001BF229 /* SubCategoryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubCategoryCell.h; sourceTree = "<group>"; };
-		C366136B1E4AC5E0001BF229 /* SubCategoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubCategoryCell.m; sourceTree = "<group>"; };
-		C366136C1E4AC5E0001BF229 /* SubCategoryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SubCategoryCell.xib; sourceTree = "<group>"; };
-		C37206431E51442700366DFA /* ic_keyboard_arrow_right_3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ic_keyboard_arrow_right_3x.png; path = ic_keyboard_arrow_right.imageset/ic_keyboard_arrow_right_3x.png; sourceTree = "<group>"; };
-		C37D05DB1E4C162E005046C8 /* Student.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Student.h; sourceTree = "<group>"; };
-		C37D05DC1E4C162E005046C8 /* Student.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Student.m; sourceTree = "<group>"; };
-		C37D05DE1E4C16B0005046C8 /* Teacher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Teacher.h; sourceTree = "<group>"; };
-		C37D05DF1E4C16B0005046C8 /* Teacher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Teacher.m; sourceTree = "<group>"; };
-		C37D05E11E4C16E1005046C8 /* HomeWork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeWork.h; sourceTree = "<group>"; };
-		C37D05E21E4C185B005046C8 /* Priciple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Priciple.h; sourceTree = "<group>"; };
-		C37D05E31E4C185B005046C8 /* Priciple.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Priciple.m; sourceTree = "<group>"; };
-		C393FCA51E4D55DE004E3B1D /* AutoLayoutController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AutoLayoutController.h; sourceTree = "<group>"; };
-		C393FCA61E4D55DE004E3B1D /* AutoLayoutController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AutoLayoutController.m; sourceTree = "<group>"; };
-		C393FCA71E4D55DE004E3B1D /* AutoLayoutController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AutoLayoutController.xib; sourceTree = "<group>"; };
-		C393FCAA1E4DB62A004E3B1D /* comic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = comic.png; sourceTree = "<group>"; };
+		C37206961E51742E00366DFA /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		C37206971E51742E00366DFA /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		C372069E1E51821300366DFA /* MainCategoryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainCategoryCell.h; sourceTree = "<group>"; };
+		C372069F1E51821300366DFA /* MainCategoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainCategoryCell.m; sourceTree = "<group>"; };
+		C37206A11E51821300366DFA /* SubCategoryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubCategoryCell.h; sourceTree = "<group>"; };
+		C37206A21E51821300366DFA /* SubCategoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubCategoryCell.m; sourceTree = "<group>"; };
+		C37206A31E51821300366DFA /* SubCategoryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SubCategoryCell.xib; sourceTree = "<group>"; };
+		C37206A91E5182DE00366DFA /* AutoLayoutController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AutoLayoutController.h; sourceTree = "<group>"; };
+		C37206AA1E5182DE00366DFA /* AutoLayoutController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AutoLayoutController.m; sourceTree = "<group>"; };
+		C37206AB1E5182DE00366DFA /* AutoLayoutController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AutoLayoutController.xib; sourceTree = "<group>"; };
+		C37206AC1E5182DE00366DFA /* ComicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComicViewController.h; sourceTree = "<group>"; };
+		C37206AD1E5182DE00366DFA /* ComicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComicViewController.m; sourceTree = "<group>"; };
+		C37206AE1E5182DE00366DFA /* MainCategoryController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainCategoryController.h; sourceTree = "<group>"; };
+		C37206AF1E5182DE00366DFA /* MainCategoryController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainCategoryController.m; sourceTree = "<group>"; };
+		C37206B71E5182DE00366DFA /* SubCategoryController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubCategoryController.h; sourceTree = "<group>"; };
+		C37206B81E5182DE00366DFA /* SubCategoryController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubCategoryController.m; sourceTree = "<group>"; };
+		C37206C21E5183E300366DFA /* Comic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Comic.h; sourceTree = "<group>"; };
+		C37206C31E5183E300366DFA /* Comic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Comic.m; sourceTree = "<group>"; };
+		C37206C61E5183EC00366DFA /* comic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = comic.png; sourceTree = "<group>"; };
+		C37206C71E5183EC00366DFA /* ic_keyboard_arrow_right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_keyboard_arrow_right.png; sourceTree = "<group>"; };
+		C37206C81E5183EC00366DFA /* ic_keyboard_arrow_right_2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_keyboard_arrow_right_2x.png; sourceTree = "<group>"; };
+		C37206C91E5183EC00366DFA /* ic_keyboard_arrow_right_3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_keyboard_arrow_right_3x.png; sourceTree = "<group>"; };
+		C37206D11E51846000366DFA /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C37206D21E51846000366DFA /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		C37206D61E51856400366DFA /* HomeWork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeWork.h; sourceTree = "<group>"; };
+		C37206D71E51856400366DFA /* Priciple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Priciple.h; sourceTree = "<group>"; };
+		C37206D81E51856400366DFA /* Priciple.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Priciple.m; sourceTree = "<group>"; };
+		C37206D91E51856400366DFA /* Student.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Student.h; sourceTree = "<group>"; };
+		C37206DA1E51856400366DFA /* Student.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Student.m; sourceTree = "<group>"; };
+		C37206DB1E51856400366DFA /* Teacher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Teacher.h; sourceTree = "<group>"; };
+		C37206DC1E51856400366DFA /* Teacher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Teacher.m; sourceTree = "<group>"; };
+		C37206E01E51886900366DFA /* MainCategoryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainCategoryCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,15 +145,16 @@
 		C36613171E4AB20B001BF229 /* Comic Reader */ = {
 			isa = PBXGroup;
 			children = (
-				C36613701E4AC615001BF229 /* Service */,
-				C366136F1E4AC5F2001BF229 /* Database */,
-				C36613671E4ABB53001BF229 /* Res */,
-				C36613541E4AB280001BF229 /* StoryBoard */,
+				C37206D01E51846000366DFA /* StoryBoard */,
+				C37206CE1E5183FF00366DFA /* Service */,
+				C37206CF1E5183FF00366DFA /* Database */,
+				C37206C51E5183EC00366DFA /* Res */,
+				C37206C11E5183E300366DFA /* Model */,
+				C37206A81E5182DE00366DFA /* Controller */,
+				C372069C1E51821300366DFA /* View */,
+				C37206991E51748100366DFA /* Utility */,
+				C37206951E51742E00366DFA /* AppDelegate */,
 				C36613531E4AB25B001BF229 /* Utility */,
-				C36613521E4AB24E001BF229 /* AppDelegate */,
-				C36613511E4AB237001BF229 /* Controller */,
-				C366134F1E4AB221001BF229 /* View */,
-				C366134E1E4AB212001BF229 /* Model */,
 				C36613271E4AB20B001BF229 /* Assets.xcassets */,
 				C366132C1E4AB20B001BF229 /* Info.plist */,
 				C36613241E4AB20B001BF229 /* Comic_Reader.xcdatamodeld */,
@@ -186,49 +189,6 @@
 			path = "Comic ReaderUITests";
 			sourceTree = "<group>";
 		};
-		C366134E1E4AB212001BF229 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				C36613551E4AB2A7001BF229 /* Comic.h */,
-				C36613561E4AB2A7001BF229 /* Comic.m */,
-			);
-			name = Model;
-			sourceTree = "<group>";
-		};
-		C366134F1E4AB221001BF229 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				C366135E1E4AB825001BF229 /* CustomCell */,
-			);
-			name = View;
-			sourceTree = "<group>";
-		};
-		C36613511E4AB237001BF229 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				C37D05E51E4C1DFD005046C8 /* Protocol */,
-				C366131E1E4AB20B001BF229 /* MainCategoryController.h */,
-				C366131F1E4AB20B001BF229 /* MainCategoryController.m */,
-				C36613581E4AB34C001BF229 /* SubCategoryControllerViewController.h */,
-				C36613591E4AB34C001BF229 /* SubCategoryControllerViewController.m */,
-				C366135B1E4AB36D001BF229 /* ComicViewController.h */,
-				C366135C1E4AB36D001BF229 /* ComicViewController.m */,
-				C393FCA51E4D55DE004E3B1D /* AutoLayoutController.h */,
-				C393FCA61E4D55DE004E3B1D /* AutoLayoutController.m */,
-				C393FCA71E4D55DE004E3B1D /* AutoLayoutController.xib */,
-			);
-			name = Controller;
-			sourceTree = "<group>";
-		};
-		C36613521E4AB24E001BF229 /* AppDelegate */ = {
-			isa = PBXGroup;
-			children = (
-				C366131B1E4AB20B001BF229 /* AppDelegate.h */,
-				C366131C1E4AB20B001BF229 /* AppDelegate.m */,
-			);
-			name = AppDelegate;
-			sourceTree = "<group>";
-		};
 		C36613531E4AB25B001BF229 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
@@ -236,64 +196,115 @@
 			name = Utility;
 			sourceTree = "<group>";
 		};
-		C36613541E4AB280001BF229 /* StoryBoard */ = {
+		C37206951E51742E00366DFA /* AppDelegate */ = {
 			isa = PBXGroup;
 			children = (
-				C36613211E4AB20B001BF229 /* Main.storyboard */,
-				C36613291E4AB20B001BF229 /* LaunchScreen.storyboard */,
+				C37206961E51742E00366DFA /* AppDelegate.h */,
+				C37206971E51742E00366DFA /* AppDelegate.m */,
 			);
-			name = StoryBoard;
+			path = AppDelegate;
 			sourceTree = "<group>";
 		};
-		C366135E1E4AB825001BF229 /* CustomCell */ = {
+		C37206991E51748100366DFA /* Utility */ = {
 			isa = PBXGroup;
 			children = (
-				C36613621E4AB8A1001BF229 /* MainCategoryCell.h */,
-				C36613631E4AB8A1001BF229 /* MainCategoryCell.m */,
-				C36613641E4AB8A1001BF229 /* MainCategoryCell.xib */,
-				C366136A1E4AC5E0001BF229 /* SubCategoryCell.h */,
-				C366136B1E4AC5E0001BF229 /* SubCategoryCell.m */,
-				C366136C1E4AC5E0001BF229 /* SubCategoryCell.xib */,
 			);
-			name = CustomCell;
+			path = Utility;
 			sourceTree = "<group>";
 		};
-		C36613671E4ABB53001BF229 /* Res */ = {
+		C372069C1E51821300366DFA /* View */ = {
 			isa = PBXGroup;
 			children = (
-				C37206431E51442700366DFA /* ic_keyboard_arrow_right_3x.png */,
-				C393FCAA1E4DB62A004E3B1D /* comic.png */,
-				C36613681E4ABB69001BF229 /* ic_keyboard_arrow_right.imageset */,
+				C372069D1E51821300366DFA /* CustomCell */,
 			);
-			name = Res;
+			path = View;
 			sourceTree = "<group>";
 		};
-		C366136F1E4AC5F2001BF229 /* Database */ = {
+		C372069D1E51821300366DFA /* CustomCell */ = {
 			isa = PBXGroup;
 			children = (
+				C37206E01E51886900366DFA /* MainCategoryCell.xib */,
+				C372069E1E51821300366DFA /* MainCategoryCell.h */,
+				C372069F1E51821300366DFA /* MainCategoryCell.m */,
+				C37206A11E51821300366DFA /* SubCategoryCell.h */,
+				C37206A21E51821300366DFA /* SubCategoryCell.m */,
+				C37206A31E51821300366DFA /* SubCategoryCell.xib */,
 			);
-			name = Database;
+			path = CustomCell;
 			sourceTree = "<group>";
 		};
-		C36613701E4AC615001BF229 /* Service */ = {
+		C37206A81E5182DE00366DFA /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				C37206D51E51856400366DFA /* Protocol */,
+				C37206A91E5182DE00366DFA /* AutoLayoutController.h */,
+				C37206AA1E5182DE00366DFA /* AutoLayoutController.m */,
+				C37206AB1E5182DE00366DFA /* AutoLayoutController.xib */,
+				C37206AC1E5182DE00366DFA /* ComicViewController.h */,
+				C37206AD1E5182DE00366DFA /* ComicViewController.m */,
+				C37206AE1E5182DE00366DFA /* MainCategoryController.h */,
+				C37206AF1E5182DE00366DFA /* MainCategoryController.m */,
+				C37206B71E5182DE00366DFA /* SubCategoryController.h */,
+				C37206B81E5182DE00366DFA /* SubCategoryController.m */,
 			);
-			name = Service;
+			path = Controller;
 			sourceTree = "<group>";
 		};
-		C37D05E51E4C1DFD005046C8 /* Protocol */ = {
+		C37206C11E5183E300366DFA /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				C37D05DB1E4C162E005046C8 /* Student.h */,
-				C37D05DC1E4C162E005046C8 /* Student.m */,
-				C37D05DE1E4C16B0005046C8 /* Teacher.h */,
-				C37D05DF1E4C16B0005046C8 /* Teacher.m */,
-				C37D05E11E4C16E1005046C8 /* HomeWork.h */,
-				C37D05E21E4C185B005046C8 /* Priciple.h */,
-				C37D05E31E4C185B005046C8 /* Priciple.m */,
+				C37206C21E5183E300366DFA /* Comic.h */,
+				C37206C31E5183E300366DFA /* Comic.m */,
 			);
-			name = Protocol;
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C37206C51E5183EC00366DFA /* Res */ = {
+			isa = PBXGroup;
+			children = (
+				C37206C61E5183EC00366DFA /* comic.png */,
+				C37206C71E5183EC00366DFA /* ic_keyboard_arrow_right.png */,
+				C37206C81E5183EC00366DFA /* ic_keyboard_arrow_right_2x.png */,
+				C37206C91E5183EC00366DFA /* ic_keyboard_arrow_right_3x.png */,
+			);
+			path = Res;
+			sourceTree = "<group>";
+		};
+		C37206CE1E5183FF00366DFA /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		C37206CF1E5183FF00366DFA /* Database */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
+		C37206D01E51846000366DFA /* StoryBoard */ = {
+			isa = PBXGroup;
+			children = (
+				C37206D11E51846000366DFA /* LaunchScreen.storyboard */,
+				C37206D21E51846000366DFA /* Main.storyboard */,
+			);
+			path = StoryBoard;
+			sourceTree = "<group>";
+		};
+		C37206D51E51856400366DFA /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				C37206D61E51856400366DFA /* HomeWork.h */,
+				C37206D71E51856400366DFA /* Priciple.h */,
+				C37206D81E51856400366DFA /* Priciple.m */,
+				C37206D91E51856400366DFA /* Student.h */,
+				C37206DA1E51856400366DFA /* Student.m */,
+				C37206DB1E51856400366DFA /* Teacher.h */,
+				C37206DC1E51856400366DFA /* Teacher.m */,
+			);
+			path = Protocol;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -402,15 +413,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C366136E1E4AC5E0001BF229 /* SubCategoryCell.xib in Resources */,
-				C37206441E51442700366DFA /* ic_keyboard_arrow_right_3x.png in Resources */,
-				C36613691E4ABB69001BF229 /* ic_keyboard_arrow_right.imageset in Resources */,
-				C36613661E4AB8A1001BF229 /* MainCategoryCell.xib in Resources */,
-				C393FCA91E4D55DE004E3B1D /* AutoLayoutController.xib in Resources */,
-				C366132B1E4AB20B001BF229 /* LaunchScreen.storyboard in Resources */,
+				C37206D31E51846000366DFA /* LaunchScreen.storyboard in Resources */,
+				C37206D41E51846000366DFA /* Main.storyboard in Resources */,
+				C37206E11E51886900366DFA /* MainCategoryCell.xib in Resources */,
+				C37206A71E51821300366DFA /* SubCategoryCell.xib in Resources */,
+				C37206CC1E5183EC00366DFA /* ic_keyboard_arrow_right_2x.png in Resources */,
+				C37206CA1E5183EC00366DFA /* comic.png in Resources */,
 				C36613281E4AB20B001BF229 /* Assets.xcassets in Resources */,
-				C36613231E4AB20B001BF229 /* Main.storyboard in Resources */,
-				C393FCAB1E4DB62A004E3B1D /* comic.png in Resources */,
+				C37206BA1E5182DE00366DFA /* AutoLayoutController.xib in Resources */,
+				C37206CD1E5183EC00366DFA /* ic_keyboard_arrow_right_3x.png in Resources */,
+				C37206CB1E5183EC00366DFA /* ic_keyboard_arrow_right.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -435,19 +447,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C36613651E4AB8A1001BF229 /* MainCategoryCell.m in Sources */,
-				C36613201E4AB20B001BF229 /* MainCategoryController.m in Sources */,
-				C366131D1E4AB20B001BF229 /* AppDelegate.m in Sources */,
-				C366135D1E4AB36D001BF229 /* ComicViewController.m in Sources */,
+				C37206C41E5183E300366DFA /* Comic.m in Sources */,
+				C37206A61E51821300366DFA /* SubCategoryCell.m in Sources */,
 				C36613261E4AB20B001BF229 /* Comic_Reader.xcdatamodeld in Sources */,
-				C37D05E41E4C185B005046C8 /* Priciple.m in Sources */,
-				C366135A1E4AB34C001BF229 /* SubCategoryControllerViewController.m in Sources */,
-				C393FCA81E4D55DE004E3B1D /* AutoLayoutController.m in Sources */,
+				C37206BB1E5182DE00366DFA /* ComicViewController.m in Sources */,
+				C37206A41E51821300366DFA /* MainCategoryCell.m in Sources */,
+				C37206981E51742E00366DFA /* AppDelegate.m in Sources */,
 				C366131A1E4AB20B001BF229 /* main.m in Sources */,
-				C37D05E01E4C16B0005046C8 /* Teacher.m in Sources */,
-				C366136D1E4AC5E0001BF229 /* SubCategoryCell.m in Sources */,
-				C36613571E4AB2A7001BF229 /* Comic.m in Sources */,
-				C37D05DD1E4C162E005046C8 /* Student.m in Sources */,
+				C37206C01E5182DE00366DFA /* SubCategoryController.m in Sources */,
+				C37206DF1E51856400366DFA /* Teacher.m in Sources */,
+				C37206BC1E5182DE00366DFA /* MainCategoryController.m in Sources */,
+				C37206B91E5182DE00366DFA /* AutoLayoutController.m in Sources */,
+				C37206DD1E51856400366DFA /* Priciple.m in Sources */,
+				C37206DE1E51856400366DFA /* Student.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -481,25 +493,6 @@
 			targetProxy = C366133D1E4AB20B001BF229 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		C36613211E4AB20B001BF229 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C36613221E4AB20B001BF229 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		C36613291E4AB20B001BF229 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C366132A1E4AB20B001BF229 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		C36613431E4AB20B001BF229 /* Debug */ = {
