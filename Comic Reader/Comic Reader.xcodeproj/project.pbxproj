@@ -28,10 +28,8 @@
 		C37206CD1E5183EC00366DFA /* ic_keyboard_arrow_right_3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C37206C91E5183EC00366DFA /* ic_keyboard_arrow_right_3x.png */; };
 		C37206D31E51846000366DFA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C37206D11E51846000366DFA /* LaunchScreen.storyboard */; };
 		C37206D41E51846000366DFA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C37206D21E51846000366DFA /* Main.storyboard */; };
-		C37206DD1E51856400366DFA /* Priciple.m in Sources */ = {isa = PBXBuildFile; fileRef = C37206D81E51856400366DFA /* Priciple.m */; };
-		C37206DE1E51856400366DFA /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = C37206DA1E51856400366DFA /* Student.m */; };
-		C37206DF1E51856400366DFA /* Teacher.m in Sources */ = {isa = PBXBuildFile; fileRef = C37206DC1E51856400366DFA /* Teacher.m */; };
 		C37206E11E51886900366DFA /* MainCategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C37206E01E51886900366DFA /* MainCategoryCell.xib */; };
+		C3743A2B1E52BF1C00AA984B /* b.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C3743A2A1E52BF1C00AA984B /* b.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,14 +85,8 @@
 		C37206C91E5183EC00366DFA /* ic_keyboard_arrow_right_3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_keyboard_arrow_right_3x.png; sourceTree = "<group>"; };
 		C37206D11E51846000366DFA /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C37206D21E51846000366DFA /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		C37206D61E51856400366DFA /* HomeWork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeWork.h; sourceTree = "<group>"; };
-		C37206D71E51856400366DFA /* Priciple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Priciple.h; sourceTree = "<group>"; };
-		C37206D81E51856400366DFA /* Priciple.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Priciple.m; sourceTree = "<group>"; };
-		C37206D91E51856400366DFA /* Student.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Student.h; sourceTree = "<group>"; };
-		C37206DA1E51856400366DFA /* Student.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Student.m; sourceTree = "<group>"; };
-		C37206DB1E51856400366DFA /* Teacher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Teacher.h; sourceTree = "<group>"; };
-		C37206DC1E51856400366DFA /* Teacher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Teacher.m; sourceTree = "<group>"; };
 		C37206E01E51886900366DFA /* MainCategoryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainCategoryCell.xib; sourceTree = "<group>"; };
+		C3743A2A1E52BF1C00AA984B /* b.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = b.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -262,6 +254,7 @@
 		C37206C51E5183EC00366DFA /* Res */ = {
 			isa = PBXGroup;
 			children = (
+				C3743A2A1E52BF1C00AA984B /* b.jpg */,
 				C37206C61E5183EC00366DFA /* comic.png */,
 				C37206C71E5183EC00366DFA /* ic_keyboard_arrow_right.png */,
 				C37206C81E5183EC00366DFA /* ic_keyboard_arrow_right_2x.png */,
@@ -296,13 +289,6 @@
 		C37206D51E51856400366DFA /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
-				C37206D61E51856400366DFA /* HomeWork.h */,
-				C37206D71E51856400366DFA /* Priciple.h */,
-				C37206D81E51856400366DFA /* Priciple.m */,
-				C37206D91E51856400366DFA /* Student.h */,
-				C37206DA1E51856400366DFA /* Student.m */,
-				C37206DB1E51856400366DFA /* Teacher.h */,
-				C37206DC1E51856400366DFA /* Teacher.m */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -419,6 +405,7 @@
 				C37206A71E51821300366DFA /* SubCategoryCell.xib in Resources */,
 				C37206CC1E5183EC00366DFA /* ic_keyboard_arrow_right_2x.png in Resources */,
 				C37206CA1E5183EC00366DFA /* comic.png in Resources */,
+				C3743A2B1E52BF1C00AA984B /* b.jpg in Resources */,
 				C36613281E4AB20B001BF229 /* Assets.xcassets in Resources */,
 				C37206BA1E5182DE00366DFA /* AutoLayoutController.xib in Resources */,
 				C37206CD1E5183EC00366DFA /* ic_keyboard_arrow_right_3x.png in Resources */,
@@ -455,11 +442,8 @@
 				C37206981E51742E00366DFA /* AppDelegate.m in Sources */,
 				C366131A1E4AB20B001BF229 /* main.m in Sources */,
 				C37206C01E5182DE00366DFA /* SubCategoryController.m in Sources */,
-				C37206DF1E51856400366DFA /* Teacher.m in Sources */,
 				C37206BC1E5182DE00366DFA /* MainCategoryController.m in Sources */,
 				C37206B91E5182DE00366DFA /* AutoLayoutController.m in Sources */,
-				C37206DD1E51856400366DFA /* Priciple.m in Sources */,
-				C37206DE1E51856400366DFA /* Student.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,5 +10,4 @@
 
 @interface SubCategoryController : UIViewController <UICollectionViewDelegate, UICollectionViewDataSource>
 @property (weak, nonatomic) IBOutlet UICollectionView *mCollectionView;
-
 @end

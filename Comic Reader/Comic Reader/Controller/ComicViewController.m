@@ -13,15 +13,23 @@
 @end
 
 @implementation ComicViewController
-
+@synthesize scrollView;
+@synthesize imageComic;
+@synthesize labelPage;
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    imageComic.image = [UIImage imageNamed:@"b.jpg"];
+    [scrollView setMaximumZoomScale:2.0f];
+    [scrollView setClipsToBounds:YES];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+- (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView{
+    return imageComic;
 }
 
 /*

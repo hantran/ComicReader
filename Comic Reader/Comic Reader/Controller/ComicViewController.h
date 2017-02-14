@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ComicViewController : UIViewController
+@interface ComicViewController : UIViewController <UIScrollViewDelegate>
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (weak, nonatomic) IBOutlet UIImageView *imageComic;
+@property (weak, nonatomic) UILabel *labelPage;
 
 @end
