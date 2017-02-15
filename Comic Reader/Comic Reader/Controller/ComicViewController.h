@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BaseViewController.h"
 
-@interface ComicViewController : UIViewController <UIScrollViewDelegate>
+@interface ComicViewController : BaseViewController <UIScrollViewDelegate>
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UIImageView *imageComic;
 @property (weak, nonatomic) UILabel *labelPage;

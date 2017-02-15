@@ -1,42 +1,42 @@
 //
-//  ComicViewController.m
+//  BaseViewController.m
 //  Comic Reader
 //
-//  Created by administrator on 2/8/17.
+//  Created by Tran Han on 2/15/17.
 //  Copyright © 2017 administrator. All rights reserved.
 //
 
-#import "ComicViewController.h"
+#import "BaseViewController.h"
 
-@interface ComicViewController ()
+@interface BaseViewController ()
 
 @end
 
-@implementation ComicViewController
-@synthesize scrollView;
-@synthesize imageComic;
-@synthesize labelPage;
+@implementation BaseViewController
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    imageComic.image = [UIImage imageNamed:@"b.jpg"];
-    [scrollView setMaximumZoomScale:2.0f];
-    [scrollView setClipsToBounds:YES];
-    
-   }
-
+    // Do any additional setup after loading the view.
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-- (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView{
-    return imageComic;
+-(void)layoutView
+{
+    // init backgroung color
+    // hoddenview for subclass
+    // detect view that will show
 }
 -(void)customNavigationBar
 {
-    [super customNavigationBar];
+    // init backgroung color navigationbar
+    self.navigationController.navigationBar.backgroundColor = [UIColor redColor];
+    // add row back button
+//    [self.navigationController.navigationBar addSubview:]
 }
+
 /*
 #pragma mark - Navigation
 

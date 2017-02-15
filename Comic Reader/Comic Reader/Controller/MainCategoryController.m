@@ -28,7 +28,10 @@
     array = @[@"Truyện chưởng", @"Truyện cười", @"Truyện ngắn", @"Truyện tình yêu", @"Truyện của tôi"];
     
 }
-
+-(void)customNavigationBar
+{
+    [super customNavigationBar];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

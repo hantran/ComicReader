@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface SubCategoryController : UIViewController <UICollectionViewDelegate, UICollectionViewDataSource>
+#import "BaseViewController.h"
+@interface SubCategoryController : BaseViewController <UICollectionViewDelegate, UICollectionViewDataSource>
 @property (weak, nonatomic) IBOutlet UICollectionView *mCollectionView;
 @end

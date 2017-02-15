@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7D87B0B41E545C6500357D04 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D87B0B31E545C6500357D04 /* BaseViewController.m */; };
+		7D87B0C31E54609600357D04 /* MainCategoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D87B0BE1E54609600357D04 /* MainCategoryCell.m */; };
+		7D87B0C41E54609600357D04 /* MainCategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7D87B0BF1E54609600357D04 /* MainCategoryCell.xib */; };
+		7D87B0C51E54609600357D04 /* SubCategoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D87B0C11E54609600357D04 /* SubCategoryCell.m */; };
+		7D87B0C61E54609600357D04 /* SubCategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7D87B0C21E54609600357D04 /* SubCategoryCell.xib */; };
+		7D87B0CB1E54611100357D04 /* ProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D87B0C91E54611100357D04 /* ProgressView.m */; };
+		7D87B0CC1E54611100357D04 /* ProgressView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7D87B0CA1E54611100357D04 /* ProgressView.xib */; };
 		C366131A1E4AB20B001BF229 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C36613191E4AB20B001BF229 /* main.m */; };
 		C36613261E4AB20B001BF229 /* Comic_Reader.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C36613241E4AB20B001BF229 /* Comic_Reader.xcdatamodeld */; };
 		C36613281E4AB20B001BF229 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C36613271E4AB20B001BF229 /* Assets.xcassets */; };
@@ -18,11 +25,6 @@
 		C36A61F81E543A89001B1B7C /* new.png in Resources */ = {isa = PBXBuildFile; fileRef = C36A61F31E543A89001B1B7C /* new.png */; };
 		C36A61F91E543A89001B1B7C /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = C36A61F41E543A89001B1B7C /* star.png */; };
 		C37206981E51742E00366DFA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C37206971E51742E00366DFA /* AppDelegate.m */; };
-		C37206A41E51821300366DFA /* MainCategoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C372069F1E51821300366DFA /* MainCategoryCell.m */; };
-		C37206A61E51821300366DFA /* SubCategoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C37206A21E51821300366DFA /* SubCategoryCell.m */; };
-		C37206A71E51821300366DFA /* SubCategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C37206A31E51821300366DFA /* SubCategoryCell.xib */; };
-		C37206B91E5182DE00366DFA /* AutoLayoutController.m in Sources */ = {isa = PBXBuildFile; fileRef = C37206AA1E5182DE00366DFA /* AutoLayoutController.m */; };
-		C37206BA1E5182DE00366DFA /* AutoLayoutController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C37206AB1E5182DE00366DFA /* AutoLayoutController.xib */; };
 		C37206BB1E5182DE00366DFA /* ComicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C37206AD1E5182DE00366DFA /* ComicViewController.m */; };
 		C37206BC1E5182DE00366DFA /* MainCategoryController.m in Sources */ = {isa = PBXBuildFile; fileRef = C37206AF1E5182DE00366DFA /* MainCategoryController.m */; };
 		C37206C01E5182DE00366DFA /* SubCategoryController.m in Sources */ = {isa = PBXBuildFile; fileRef = C37206B81E5182DE00366DFA /* SubCategoryController.m */; };
@@ -30,7 +32,6 @@
 		C37206CA1E5183EC00366DFA /* comic.png in Resources */ = {isa = PBXBuildFile; fileRef = C37206C61E5183EC00366DFA /* comic.png */; };
 		C37206D31E51846000366DFA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C37206D11E51846000366DFA /* LaunchScreen.storyboard */; };
 		C37206D41E51846000366DFA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C37206D21E51846000366DFA /* Main.storyboard */; };
-		C37206E11E51886900366DFA /* MainCategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C37206E01E51886900366DFA /* MainCategoryCell.xib */; };
 		C3743A2B1E52BF1C00AA984B /* b.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C3743A2A1E52BF1C00AA984B /* b.jpg */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +53,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7D87B0B21E545C6500357D04 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		7D87B0B31E545C6500357D04 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		7D87B0B51E545E1800357D04 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		7D87B0BD1E54609600357D04 /* MainCategoryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainCategoryCell.h; sourceTree = "<group>"; };
+		7D87B0BE1E54609600357D04 /* MainCategoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainCategoryCell.m; sourceTree = "<group>"; };
+		7D87B0BF1E54609600357D04 /* MainCategoryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainCategoryCell.xib; sourceTree = "<group>"; };
+		7D87B0C01E54609600357D04 /* SubCategoryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubCategoryCell.h; sourceTree = "<group>"; };
+		7D87B0C11E54609600357D04 /* SubCategoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubCategoryCell.m; sourceTree = "<group>"; };
+		7D87B0C21E54609600357D04 /* SubCategoryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SubCategoryCell.xib; sourceTree = "<group>"; };
+		7D87B0C81E54611100357D04 /* ProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressView.h; sourceTree = "<group>"; };
+		7D87B0C91E54611100357D04 /* ProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressView.m; sourceTree = "<group>"; };
+		7D87B0CA1E54611100357D04 /* ProgressView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProgressView.xib; sourceTree = "<group>"; };
+		7D87B0CD1E54623600357D04 /* Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Header.h; path = "Comic Reader/Header.h"; sourceTree = SOURCE_ROOT; };
 		C36613151E4AB20B001BF229 /* Comic Reader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Comic Reader.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C36613191E4AB20B001BF229 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C36613251E4AB20B001BF229 /* Comic_Reader.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Comic_Reader.xcdatamodel; sourceTree = "<group>"; };
@@ -70,14 +84,6 @@
 		C36A61F41E543A89001B1B7C /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star.png; sourceTree = "<group>"; };
 		C37206961E51742E00366DFA /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C37206971E51742E00366DFA /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		C372069E1E51821300366DFA /* MainCategoryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainCategoryCell.h; sourceTree = "<group>"; };
-		C372069F1E51821300366DFA /* MainCategoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainCategoryCell.m; sourceTree = "<group>"; };
-		C37206A11E51821300366DFA /* SubCategoryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubCategoryCell.h; sourceTree = "<group>"; };
-		C37206A21E51821300366DFA /* SubCategoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubCategoryCell.m; sourceTree = "<group>"; };
-		C37206A31E51821300366DFA /* SubCategoryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SubCategoryCell.xib; sourceTree = "<group>"; };
-		C37206A91E5182DE00366DFA /* AutoLayoutController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AutoLayoutController.h; sourceTree = "<group>"; };
-		C37206AA1E5182DE00366DFA /* AutoLayoutController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AutoLayoutController.m; sourceTree = "<group>"; };
-		C37206AB1E5182DE00366DFA /* AutoLayoutController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AutoLayoutController.xib; sourceTree = "<group>"; };
 		C37206AC1E5182DE00366DFA /* ComicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComicViewController.h; sourceTree = "<group>"; };
 		C37206AD1E5182DE00366DFA /* ComicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComicViewController.m; sourceTree = "<group>"; };
 		C37206AE1E5182DE00366DFA /* MainCategoryController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainCategoryController.h; sourceTree = "<group>"; };
@@ -89,7 +95,6 @@
 		C37206C61E5183EC00366DFA /* comic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = comic.png; sourceTree = "<group>"; };
 		C37206D11E51846000366DFA /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C37206D21E51846000366DFA /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		C37206E01E51886900366DFA /* MainCategoryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainCategoryCell.xib; sourceTree = "<group>"; };
 		C3743A2A1E52BF1C00AA984B /* b.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = b.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -118,6 +123,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7D87B0BC1E54609600357D04 /* CustomCellCategory */ = {
+			isa = PBXGroup;
+			children = (
+				7D87B0BD1E54609600357D04 /* MainCategoryCell.h */,
+				7D87B0BE1E54609600357D04 /* MainCategoryCell.m */,
+				7D87B0BF1E54609600357D04 /* MainCategoryCell.xib */,
+				7D87B0C01E54609600357D04 /* SubCategoryCell.h */,
+				7D87B0C11E54609600357D04 /* SubCategoryCell.m */,
+				7D87B0C21E54609600357D04 /* SubCategoryCell.xib */,
+			);
+			path = CustomCellCategory;
+			sourceTree = "<group>";
+		};
+		7D87B0C71E54611100357D04 /* DialogViewSubCategory */ = {
+			isa = PBXGroup;
+			children = (
+				7D87B0C81E54611100357D04 /* ProgressView.h */,
+				7D87B0C91E54611100357D04 /* ProgressView.m */,
+				7D87B0CA1E54611100357D04 /* ProgressView.xib */,
+			);
+			path = DialogViewSubCategory;
+			sourceTree = "<group>";
+		};
 		C366130C1E4AB20B001BF229 = {
 			isa = PBXGroup;
 			children = (
@@ -141,6 +169,7 @@
 		C36613171E4AB20B001BF229 /* Comic Reader */ = {
 			isa = PBXGroup;
 			children = (
+				7D87B0B51E545E1800357D04 /* PrefixHeader.pch */,
 				C37206D01E51846000366DFA /* StoryBoard */,
 				C37206CE1E5183FF00366DFA /* Service */,
 				C37206CF1E5183FF00366DFA /* Database */,
@@ -204,6 +233,7 @@
 		C37206991E51748100366DFA /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				7D87B0CD1E54623600357D04 /* Header.h */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -211,31 +241,17 @@
 		C372069C1E51821300366DFA /* View */ = {
 			isa = PBXGroup;
 			children = (
-				C372069D1E51821300366DFA /* CustomCell */,
+				7D87B0C71E54611100357D04 /* DialogViewSubCategory */,
+				7D87B0BC1E54609600357D04 /* CustomCellCategory */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		C372069D1E51821300366DFA /* CustomCell */ = {
-			isa = PBXGroup;
-			children = (
-				C37206E01E51886900366DFA /* MainCategoryCell.xib */,
-				C372069E1E51821300366DFA /* MainCategoryCell.h */,
-				C372069F1E51821300366DFA /* MainCategoryCell.m */,
-				C37206A11E51821300366DFA /* SubCategoryCell.h */,
-				C37206A21E51821300366DFA /* SubCategoryCell.m */,
-				C37206A31E51821300366DFA /* SubCategoryCell.xib */,
-			);
-			path = CustomCell;
 			sourceTree = "<group>";
 		};
 		C37206A81E5182DE00366DFA /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				C37206D51E51856400366DFA /* Protocol */,
-				C37206A91E5182DE00366DFA /* AutoLayoutController.h */,
-				C37206AA1E5182DE00366DFA /* AutoLayoutController.m */,
-				C37206AB1E5182DE00366DFA /* AutoLayoutController.xib */,
+				7D87B0B21E545C6500357D04 /* BaseViewController.h */,
+				7D87B0B31E545C6500357D04 /* BaseViewController.m */,
 				C37206AC1E5182DE00366DFA /* ComicViewController.h */,
 				C37206AD1E5182DE00366DFA /* ComicViewController.m */,
 				C37206AE1E5182DE00366DFA /* MainCategoryController.h */,
@@ -290,13 +306,6 @@
 				C37206D21E51846000366DFA /* Main.storyboard */,
 			);
 			path = StoryBoard;
-			sourceTree = "<group>";
-		};
-		C37206D51E51856400366DFA /* Protocol */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Protocol;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -407,17 +416,17 @@
 			files = (
 				C36A61F81E543A89001B1B7C /* new.png in Resources */,
 				C37206D31E51846000366DFA /* LaunchScreen.storyboard in Resources */,
+				7D87B0C61E54609600357D04 /* SubCategoryCell.xib in Resources */,
 				C37206D41E51846000366DFA /* Main.storyboard in Resources */,
-				C37206E11E51886900366DFA /* MainCategoryCell.xib in Resources */,
-				C37206A71E51821300366DFA /* SubCategoryCell.xib in Resources */,
 				C36A61F91E543A89001B1B7C /* star.png in Resources */,
+				7D87B0CC1E54611100357D04 /* ProgressView.xib in Resources */,
 				C37206CA1E5183EC00366DFA /* comic.png in Resources */,
 				C36A61F71E543A89001B1B7C /* arrowhighlight.png in Resources */,
 				C3743A2B1E52BF1C00AA984B /* b.jpg in Resources */,
+				7D87B0C41E54609600357D04 /* MainCategoryCell.xib in Resources */,
 				C36A61F51E543A89001B1B7C /* arrow.png in Resources */,
 				C36613281E4AB20B001BF229 /* Assets.xcassets in Resources */,
 				C36A61F61E543A89001B1B7C /* arrowBack.png in Resources */,
-				C37206BA1E5182DE00366DFA /* AutoLayoutController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -443,15 +452,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				C37206C41E5183E300366DFA /* Comic.m in Sources */,
-				C37206A61E51821300366DFA /* SubCategoryCell.m in Sources */,
+				7D87B0B41E545C6500357D04 /* BaseViewController.m in Sources */,
 				C36613261E4AB20B001BF229 /* Comic_Reader.xcdatamodeld in Sources */,
 				C37206BB1E5182DE00366DFA /* ComicViewController.m in Sources */,
-				C37206A41E51821300366DFA /* MainCategoryCell.m in Sources */,
 				C37206981E51742E00366DFA /* AppDelegate.m in Sources */,
 				C366131A1E4AB20B001BF229 /* main.m in Sources */,
 				C37206C01E5182DE00366DFA /* SubCategoryController.m in Sources */,
+				7D87B0C31E54609600357D04 /* MainCategoryCell.m in Sources */,
 				C37206BC1E5182DE00366DFA /* MainCategoryController.m in Sources */,
-				C37206B91E5182DE00366DFA /* AutoLayoutController.m in Sources */,
+				7D87B0CB1E54611100357D04 /* ProgressView.m in Sources */,
+				7D87B0C51E54609600357D04 /* SubCategoryCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

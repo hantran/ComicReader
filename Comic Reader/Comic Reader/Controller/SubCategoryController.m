@@ -24,7 +24,10 @@
     [self.mCollectionView registerNib:[UINib nibWithNibName:@"SubCategoryCell" bundle:[NSBundle mainBundle]]
         forCellWithReuseIdentifier:@"SubCategoryCell"];
 }
-
+-(void)customNavigationBar
+{
+    [super customNavigationBar];
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     array = @[@"Thần điêu đại hiệp", @"Anh hùng xạ điêu", @"Phong Vân", @"Thần điêu đại hiệp", @"Anh hùng xạ điêu", @"Phong Vân",@"Thần điêu đại hiệp", @"Anh hùng xạ điêu", @"Phong Vân"];

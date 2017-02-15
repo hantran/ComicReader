@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BaseViewController.h"
 
-@interface MainCategoryController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+@interface MainCategoryController : BaseViewController <UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *mTableView;
 
 
