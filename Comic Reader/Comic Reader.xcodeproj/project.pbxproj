@@ -12,6 +12,7 @@
 		C36613281E4AB20B001BF229 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C36613271E4AB20B001BF229 /* Assets.xcassets */; };
 		C36613361E4AB20B001BF229 /* Comic_ReaderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C36613351E4AB20B001BF229 /* Comic_ReaderTests.m */; };
 		C36613411E4AB20B001BF229 /* Comic_ReaderUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = C36613401E4AB20B001BF229 /* Comic_ReaderUITests.m */; };
+		C36A61EF1E53EC50001B1B7C /* AddComicController.m in Sources */ = {isa = PBXBuildFile; fileRef = C36A61EE1E53EC50001B1B7C /* AddComicController.m */; };
 		C37206981E51742E00366DFA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C37206971E51742E00366DFA /* AppDelegate.m */; };
 		C37206A41E51821300366DFA /* MainCategoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C372069F1E51821300366DFA /* MainCategoryCell.m */; };
 		C37206A61E51821300366DFA /* SubCategoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C37206A21E51821300366DFA /* SubCategoryCell.m */; };
@@ -30,6 +31,9 @@
 		C37206D41E51846000366DFA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C37206D21E51846000366DFA /* Main.storyboard */; };
 		C37206E11E51886900366DFA /* MainCategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C37206E01E51886900366DFA /* MainCategoryCell.xib */; };
 		C3743A2B1E52BF1C00AA984B /* b.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C3743A2A1E52BF1C00AA984B /* b.jpg */; };
+		C3743A321E52E04100AA984B /* ComicPreviewDialogController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3743A301E52E04100AA984B /* ComicPreviewDialogController.m */; };
+		C3743A331E52E04100AA984B /* ComicPreviewDialogController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3743A311E52E04100AA984B /* ComicPreviewDialogController.xib */; };
+		C3743A361E52F44300AA984B /* ComicCoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C3743A341E52F44300AA984B /* ComicCoreData.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +65,8 @@
 		C366133C1E4AB20B001BF229 /* Comic ReaderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Comic ReaderUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C36613401E4AB20B001BF229 /* Comic_ReaderUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Comic_ReaderUITests.m; sourceTree = "<group>"; };
 		C36613421E4AB20B001BF229 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C36A61ED1E53EC50001B1B7C /* AddComicController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddComicController.h; sourceTree = "<group>"; };
+		C36A61EE1E53EC50001B1B7C /* AddComicController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddComicController.m; sourceTree = "<group>"; };
 		C37206961E51742E00366DFA /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C37206971E51742E00366DFA /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		C372069E1E51821300366DFA /* MainCategoryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainCategoryCell.h; sourceTree = "<group>"; };
@@ -87,6 +93,10 @@
 		C37206D21E51846000366DFA /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		C37206E01E51886900366DFA /* MainCategoryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainCategoryCell.xib; sourceTree = "<group>"; };
 		C3743A2A1E52BF1C00AA984B /* b.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = b.jpg; sourceTree = "<group>"; };
+		C3743A2F1E52E04100AA984B /* ComicPreviewDialogController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComicPreviewDialogController.h; sourceTree = "<group>"; };
+		C3743A301E52E04100AA984B /* ComicPreviewDialogController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComicPreviewDialogController.m; sourceTree = "<group>"; };
+		C3743A311E52E04100AA984B /* ComicPreviewDialogController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ComicPreviewDialogController.xib; sourceTree = "<group>"; };
+		C3743A351E52F44300AA984B /* ComicCoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ComicCoreData.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -207,6 +217,7 @@
 		C372069C1E51821300366DFA /* View */ = {
 			isa = PBXGroup;
 			children = (
+				C3743A2E1E52DFD600AA984B /* CustomDialog */,
 				C372069D1E51821300366DFA /* CustomCell */,
 			);
 			path = View;
@@ -238,6 +249,8 @@
 				C37206AF1E5182DE00366DFA /* MainCategoryController.m */,
 				C37206B71E5182DE00366DFA /* SubCategoryController.h */,
 				C37206B81E5182DE00366DFA /* SubCategoryController.m */,
+				C36A61ED1E53EC50001B1B7C /* AddComicController.h */,
+				C36A61EE1E53EC50001B1B7C /* AddComicController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -273,6 +286,7 @@
 		C37206CF1E5183FF00366DFA /* Database */ = {
 			isa = PBXGroup;
 			children = (
+				C3743A341E52F44300AA984B /* ComicCoreData.xcdatamodeld */,
 			);
 			path = Database;
 			sourceTree = "<group>";
@@ -291,6 +305,16 @@
 			children = (
 			);
 			path = Protocol;
+			sourceTree = "<group>";
+		};
+		C3743A2E1E52DFD600AA984B /* CustomDialog */ = {
+			isa = PBXGroup;
+			children = (
+				C3743A2F1E52E04100AA984B /* ComicPreviewDialogController.h */,
+				C3743A301E52E04100AA984B /* ComicPreviewDialogController.m */,
+				C3743A311E52E04100AA984B /* ComicPreviewDialogController.xib */,
+			);
+			path = CustomDialog;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -399,6 +423,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C3743A331E52E04100AA984B /* ComicPreviewDialogController.xib in Resources */,
 				C37206D31E51846000366DFA /* LaunchScreen.storyboard in Resources */,
 				C37206D41E51846000366DFA /* Main.storyboard in Resources */,
 				C37206E11E51886900366DFA /* MainCategoryCell.xib in Resources */,
@@ -434,12 +459,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C3743A361E52F44300AA984B /* ComicCoreData.xcdatamodeld in Sources */,
 				C37206C41E5183E300366DFA /* Comic.m in Sources */,
 				C37206A61E51821300366DFA /* SubCategoryCell.m in Sources */,
 				C36613261E4AB20B001BF229 /* Comic_Reader.xcdatamodeld in Sources */,
 				C37206BB1E5182DE00366DFA /* ComicViewController.m in Sources */,
 				C37206A41E51821300366DFA /* MainCategoryCell.m in Sources */,
 				C37206981E51742E00366DFA /* AppDelegate.m in Sources */,
+				C3743A321E52E04100AA984B /* ComicPreviewDialogController.m in Sources */,
+				C36A61EF1E53EC50001B1B7C /* AddComicController.m in Sources */,
 				C366131A1E4AB20B001BF229 /* main.m in Sources */,
 				C37206C01E5182DE00366DFA /* SubCategoryController.m in Sources */,
 				C37206BC1E5182DE00366DFA /* MainCategoryController.m in Sources */,
@@ -686,6 +714,16 @@
 			);
 			currentVersion = C36613251E4AB20B001BF229 /* Comic_Reader.xcdatamodel */;
 			path = Comic_Reader.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+		C3743A341E52F44300AA984B /* ComicCoreData.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				C3743A351E52F44300AA984B /* ComicCoreData.xcdatamodel */,
+			);
+			currentVersion = C3743A351E52F44300AA984B /* ComicCoreData.xcdatamodel */;
+			path = ComicCoreData.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

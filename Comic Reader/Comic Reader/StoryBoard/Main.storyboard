@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="U40-Yx-ROm">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="8KX-e9-4PG">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -31,16 +31,67 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="Comic Reader" id="anq-BR-U7p">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="ubx-KU-S5B"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="ubx-KU-S5B">
+                            <connections>
+                                <segue destination="Xsg-u6-yID" kind="show" id="x4a-Ux-Ae9"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="mTableView" destination="42G-2P-hrQ" id="qVj-i2-SAj"/>
                         <segue destination="HqJ-AV-CON" kind="show" identifier="onClickTableCell" id="UfC-9g-8H3"/>
+                        <segue destination="Xsg-u6-yID" kind="show" identifier="onClickUpdate" id="gYV-XJ-2uZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="488.80000000000001" y="77.811094452773617"/>
+        </scene>
+        <!--Add Comic Controller-->
+        <scene sceneID="fv9-Pd-jHn">
+            <objects>
+                <viewController id="Xsg-u6-yID" customClass="AddComicController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="MJJ-7D-4Qn"/>
+                        <viewControllerLayoutGuide type="bottom" id="9yv-Zk-9MZ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="4e3-96-rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tên thể loại" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ssz-ay-h2j">
+                                <frame key="frameInset" minX="16" minY="92" width="88" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qKJ-gP-3Fl">
+                                <frame key="frameInset" minX="118" minY="87" width="227" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="R2w-zG-Ddl">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="gCs-R8-7rA">
+                            <connections>
+                                <action selector="save:" destination="Xsg-u6-yID" id="FfT-z4-B7u"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="comicName" destination="qKJ-gP-3Fl" id="VWU-2Y-4us"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4q0-TU-NJ3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2725.5999999999999" y="77.811094452773617"/>
         </scene>
         <!--Sub Category Controller-->
         <scene sceneID="VL7-Za-iyP">
@@ -76,7 +127,7 @@
                     <navigationItem key="navigationItem" id="EiB-AH-LtH"/>
                     <connections>
                         <outlet property="mCollectionView" destination="wy5-8S-xeK" id="S37-O5-DGe"/>
-                        <segue destination="Omq-ok-7Dp" kind="show" id="NAg-ox-sbC"/>
+                        <segue destination="Omq-ok-7Dp" kind="show" identifier="onClickComic" id="NAg-ox-sbC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ixy-yN-gGV" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -134,7 +185,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8KX-e9-4PG" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="8fd-VL-f0K">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="8fd-VL-f0K">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -152,7 +203,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="tOE-E9-Nic" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="TE1-7W-Rdq">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="TE1-7W-Rdq">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -185,7 +236,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Cff-bz-wOR"/>
+        <segue reference="UfC-9g-8H3"/>
+        <segue reference="x4a-Ux-Ae9"/>
         <segue reference="NAg-ox-sbC"/>
     </inferredMetricsTieBreakers>
 </document>

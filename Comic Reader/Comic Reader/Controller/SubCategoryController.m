@@ -8,6 +8,7 @@
 
 #import "SubCategoryController.h"
 #import "SubCategoryCell.h"
+#import "ComicViewController.h"
 
 @interface SubCategoryController ()
 @property(nonatomic,strong) NSArray *array;
@@ -63,7 +64,16 @@
     cell.comicTitle.text = [array objectAtIndex:indexPath.row];
     return cell;
 }
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    [self performSegueWithIdentifier:@"onClickComic" sender:self];
+}
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if ([segue.identifier isEqualToString:@"onClickComic"]) {
+        ComicViewController *subViewController =segue.destinationViewController;
+        //        subViewController.sTitle = [[NSString alloc] initWithFormat:@"Hello"];
+    }
 
+}
 /*
 #pragma mark - Navigation
 
