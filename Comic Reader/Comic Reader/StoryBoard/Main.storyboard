@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="U40-Yx-ROm">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="8KX-e9-4PG">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -30,9 +30,7 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Comic Reader" id="anq-BR-U7p">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="ubx-KU-S5B"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Comic Reader" id="anq-BR-U7p"/>
                     <connections>
                         <outlet property="mTableView" destination="42G-2P-hrQ" id="qVj-i2-SAj"/>
                         <segue destination="HqJ-AV-CON" kind="show" identifier="onClickTableCell" id="UfC-9g-8H3"/>
@@ -76,7 +74,7 @@
                     <navigationItem key="navigationItem" id="EiB-AH-LtH"/>
                     <connections>
                         <outlet property="mCollectionView" destination="wy5-8S-xeK" id="S37-O5-DGe"/>
-                        <segue destination="Omq-ok-7Dp" kind="show" id="NAg-ox-sbC"/>
+                        <segue destination="Omq-ok-7Dp" kind="show" identifier="onClickComic" id="NAg-ox-sbC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ixy-yN-gGV" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -137,6 +135,11 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="8fd-VL-f0K">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.21492692828178406" green="0.44482111930847168" blue="0.72295719385147095" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="0.21492692829999999" green="0.44482111930000001" blue="0.72295719390000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -152,7 +155,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="tOE-E9-Nic" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="TE1-7W-Rdq">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="TE1-7W-Rdq">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -185,7 +188,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Cff-bz-wOR"/>
+        <segue reference="UfC-9g-8H3"/>
         <segue reference="NAg-ox-sbC"/>
     </inferredMetricsTieBreakers>
 </document>

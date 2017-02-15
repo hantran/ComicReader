@@ -22,7 +22,9 @@
     imageComic.image = [UIImage imageNamed:@"b.jpg"];
     [scrollView setMaximumZoomScale:2.0f];
     [scrollView setClipsToBounds:YES];
-}
+    
+   }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

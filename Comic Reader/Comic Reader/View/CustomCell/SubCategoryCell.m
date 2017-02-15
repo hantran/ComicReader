@@ -11,6 +11,7 @@
 @implementation SubCategoryCell
 @synthesize comicTitle;
 @synthesize imageViewCell;
+@synthesize imageTitle;
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code

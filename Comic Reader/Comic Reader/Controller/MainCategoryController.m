@@ -26,6 +26,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     array = @[@"Truyện chưởng", @"Truyện cười", @"Truyện ngắn", @"Truyện tình yêu", @"Truyện của tôi"];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -46,7 +47,9 @@
         cell = [nib objectAtIndex:0];
     }
     cell.categoryName.text = [array objectAtIndex:indexPath.row];
-    cell.imageArrow.image = [UIImage imageNamed:@"ic_keyboard_arrow_right_3x.png"];
+    cell.categoryName.highlightedTextColor = [UIColor orangeColor];
+    cell.imageArrow.image = [UIImage imageNamed:@"arrow.png"];
+    cell.imageArrow.highlightedImage = [UIImage imageNamed:@"arrowhighlight.png"];
     return cell;
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{

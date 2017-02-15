@@ -11,5 +11,6 @@
 @interface SubCategoryCell : UICollectionViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *imageViewCell;
 @property (weak, nonatomic) IBOutlet UILabel *comicTitle;
+@property (weak, nonatomic) IBOutlet UIImageView *imageTitle;
 
 @end

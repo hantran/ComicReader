@@ -8,6 +8,7 @@
 
 #import "SubCategoryController.h"
 #import "SubCategoryCell.h"
+#import "ComicViewController.h"
 
 @interface SubCategoryController ()
 @property(nonatomic,strong) NSArray *array;
@@ -26,9 +27,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    array = @[@"Truyện\n chưởng", @"Truyện cười", @"Truyện ngắn", @"Truyện tình yêu", @"Truyện của tôi"];
+    array = @[@"Thần điêu đại hiệp", @"Anh hùng xạ điêu", @"Phong Vân", @"Thần điêu đại hiệp", @"Anh hùng xạ điêu", @"Phong Vân",@"Thần điêu đại hiệp", @"Anh hùng xạ điêu", @"Phong Vân"];
     // Do any additional setup after loading the view.
-}
+    }
 - (void) viewDidAppear:(BOOL)animated{
   
 
@@ -56,12 +57,24 @@
         cell = [nib objectAtIndex:0];
     }
 
-//    SubCategoryCell *cell = (SubCategoryCell *)[collectionView dequeueReusableCellWithIdentifier:identifier];
-//    
-//    UIImageView *recipeImageView = (UIImageView *)[cell viewWithTag:100];
     cell.imageViewCell.image = [UIImage imageNamed:@"comic.png"];
     cell.comicTitle.text = [array objectAtIndex:indexPath.row];
+    if(indexPath.row == 0 || indexPath.row == 4)
+        cell.imageTitle.image = [UIImage imageNamed:@"star.png"];
+    if(indexPath.row == 1)
+        cell.imageTitle.image = [UIImage imageNamed:@"new.png"];
     return cell;
+}
+
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    [self performSegueWithIdentifier:@"onClickComic" sender:self];
+}
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if ([segue.identifier isEqualToString:@"onClickComic"]) {
+        ComicViewController *comicViewController =segue.destinationViewController;
+        
+    }
+    
 }
 
 /*
