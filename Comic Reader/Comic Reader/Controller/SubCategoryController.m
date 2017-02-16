@@ -21,18 +21,22 @@
 @synthesize mCollectionView;
 
 -(void)viewWillAppear:(BOOL)animated{
-    [self.mCollectionView registerNib:[UINib nibWithNibName:@"SubCategoryCell" bundle:[NSBundle mainBundle]]
-        forCellWithReuseIdentifier:@"SubCategoryCell"];
+    [self layoutView];
 }
 -(void)customNavigationBar
 {
     [super customNavigationBar];
 }
 - (void)viewDidLoad {
+    self.hasBack  =  YES;
     [super viewDidLoad];
     array = @[@"Thần điêu đại hiệp", @"Anh hùng xạ điêu", @"Phong Vân", @"Thần điêu đại hiệp", @"Anh hùng xạ điêu", @"Phong Vân",@"Thần điêu đại hiệp", @"Anh hùng xạ điêu", @"Phong Vân"];
     // Do any additional setup after loading the view.
-    }
+    [self.mCollectionView registerNib:[UINib nibWithNibName:@"SubCategoryCell" bundle:[NSBundle mainBundle]]
+           forCellWithReuseIdentifier:@"SubCategoryCell"];
+
+}
+
 - (void) viewDidAppear:(BOOL)animated{
   
 

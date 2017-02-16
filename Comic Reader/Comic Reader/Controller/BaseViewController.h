@@ -9,6 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface BaseViewController : UIViewController
+@property (nonatomic,assign) BOOL hasBack;
+@property (nonatomic,strong) NSString *strTitle;
+
 -(void)layoutView;
 -(void)customNavigationBar;
 @end

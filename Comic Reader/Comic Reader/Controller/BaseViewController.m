@@ -7,7 +7,7 @@
 //
 
 #import "BaseViewController.h"
-
+#import "Header.h"
 @interface BaseViewController ()
 
 @end
@@ -28,13 +28,23 @@
     // init backgroung color
     // hoddenview for subclass
     // detect view that will show
+    [self customNavigationBar];
 }
 -(void)customNavigationBar
 {
     // init backgroung color navigationbar
-    self.navigationController.navigationBar.backgroundColor = [UIColor redColor];
+    [[UINavigationBar appearance] setBarTintColor:UIColorFromRGB(0x067AB5)];
+    self.navigationController.navigationBar.tintColor = [UIColor redColor];
     // add row back button
 //    [self.navigationController.navigationBar addSubview:]
+    if (self.hasBack) {
+        
+        [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"arrowBack.png"] forBarMetrics:UIBarMetricsDefault];
+
+    }else
+    {
+        self.navigationController.navigationBar.backItem.hidesBackButton = YES;
+    }
 }
 
 /*

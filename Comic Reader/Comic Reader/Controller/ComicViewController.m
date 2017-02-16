@@ -18,13 +18,19 @@
 @synthesize labelPage;
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.hasBack = YES;
     imageComic.image = [UIImage imageNamed:@"b.jpg"];
     [scrollView setMaximumZoomScale:2.0f];
     [scrollView setClipsToBounds:YES];
-    
-   }
+    self.navigationController.navigationBar.tintColor = [UIColor redColor];
+   
+}
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self layoutView];
 
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

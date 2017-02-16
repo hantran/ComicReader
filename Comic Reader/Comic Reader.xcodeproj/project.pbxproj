@@ -1,2113 +1,893 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-<dict>
-	<key>archiveVersion</key>
-	<string>1</string>
-	<key>classes</key>
-	<dict/>
-	<key>objectVersion</key>
-	<string>46</string>
-	<key>objects</key>
-	<dict>
-		<key>0CED73DC06742686A345F170</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>archive.ar</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>libPods-Comic ReaderTests.a</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>1FD90BB2CBD6A2DCDBFC0A18</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>[CP] Embed Pods Frameworks</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>"${SRCROOT}/Pods/Target Support Files/Pods-Comic Reader/Pods-Comic Reader-frameworks.sh"
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-		<key>22AB865CCFF2F20ED00CAA50</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>name</key>
-			<string>Pods-Comic Reader.release.xcconfig</string>
-			<key>path</key>
-			<string>Pods/Target Support Files/Pods-Comic Reader/Pods-Comic Reader.release.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>3DB8F9CDAF37F136D95A4182</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>[CP] Check Pods Manifest.lock</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>diff "${PODS_ROOT}/../Podfile.lock" "${PODS_ROOT}/Manifest.lock" &gt; /dev/null
-if [[ $? != 0 ]] ; then
-    cat &lt;&lt; EOM
-error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.
-EOM
-    exit 1
-fi
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-		<key>3F36C6C9A632D4C851D5D208</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>name</key>
-			<string>Pods-Comic ReaderTests.debug.xcconfig</string>
-			<key>path</key>
-			<string>Pods/Target Support Files/Pods-Comic ReaderTests/Pods-Comic ReaderTests.debug.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>3FE3850F278DB4023B80A564</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>E5F9D4CAA298733960900EEA</string>
-				<string>22AB865CCFF2F20ED00CAA50</string>
-				<string>3F36C6C9A632D4C851D5D208</string>
-				<string>B928F5DF1AFA0DE00653BECA</string>
-				<string>FDC437582966E23D88EC5B53</string>
-				<string>520EAFB76637E213C8A5CD6D</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Pods</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>4C6653D20642F5CA2CD8D2A6</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>[CP] Check Pods Manifest.lock</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>diff "${PODS_ROOT}/../Podfile.lock" "${PODS_ROOT}/Manifest.lock" &gt; /dev/null
-if [[ $? != 0 ]] ; then
-    cat &lt;&lt; EOM
-error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.
-EOM
-    exit 1
-fi
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-		<key>520EAFB76637E213C8A5CD6D</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>name</key>
-			<string>Pods-Comic ReaderUITests.release.xcconfig</string>
-			<key>path</key>
-			<string>Pods/Target Support Files/Pods-Comic ReaderUITests/Pods-Comic ReaderUITests.release.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>5A636C4EEEAA012A8CF66850</key>
-		<dict>
-			<key>fileRef</key>
-			<string>B6DE9AF9A8D550C17F55DE02</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>693F7523BD1C6FB161074454</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>B879915E2E9040D2839F3B0B</string>
-				<string>0CED73DC06742686A345F170</string>
-				<string>B6DE9AF9A8D550C17F55DE02</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Frameworks</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>7D87B0B21E545C6500357D04</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>BaseViewController.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>7D87B0B31E545C6500357D04</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>BaseViewController.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>7D87B0B41E545C6500357D04</key>
-		<dict>
-			<key>fileRef</key>
-			<string>7D87B0B31E545C6500357D04</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>7D87B0B51E545E1800357D04</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>PrefixHeader.pch</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>7D87B0BC1E54609600357D04</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>7D87B0BD1E54609600357D04</string>
-				<string>7D87B0BE1E54609600357D04</string>
-				<string>7D87B0BF1E54609600357D04</string>
-				<string>7D87B0C01E54609600357D04</string>
-				<string>7D87B0C11E54609600357D04</string>
-				<string>7D87B0C21E54609600357D04</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>CustomCellCategory</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>7D87B0BD1E54609600357D04</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>MainCategoryCell.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>7D87B0BE1E54609600357D04</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>MainCategoryCell.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>7D87B0BF1E54609600357D04</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>file.xib</string>
-			<key>path</key>
-			<string>MainCategoryCell.xib</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>7D87B0C01E54609600357D04</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>SubCategoryCell.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>7D87B0C11E54609600357D04</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>SubCategoryCell.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>7D87B0C21E54609600357D04</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>file.xib</string>
-			<key>path</key>
-			<string>SubCategoryCell.xib</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>7D87B0C31E54609600357D04</key>
-		<dict>
-			<key>fileRef</key>
-			<string>7D87B0BE1E54609600357D04</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>7D87B0C41E54609600357D04</key>
-		<dict>
-			<key>fileRef</key>
-			<string>7D87B0BF1E54609600357D04</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>7D87B0C51E54609600357D04</key>
-		<dict>
-			<key>fileRef</key>
-			<string>7D87B0C11E54609600357D04</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>7D87B0C61E54609600357D04</key>
-		<dict>
-			<key>fileRef</key>
-			<string>7D87B0C21E54609600357D04</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>7D87B0C71E54611100357D04</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>7D87B0C81E54611100357D04</string>
-				<string>7D87B0C91E54611100357D04</string>
-				<string>7D87B0CA1E54611100357D04</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>DialogViewSubCategory</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>7D87B0C81E54611100357D04</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>ProgressView.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>7D87B0C91E54611100357D04</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>ProgressView.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>7D87B0CA1E54611100357D04</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>file.xib</string>
-			<key>path</key>
-			<string>ProgressView.xib</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>7D87B0CB1E54611100357D04</key>
-		<dict>
-			<key>fileRef</key>
-			<string>7D87B0C91E54611100357D04</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>7D87B0CC1E54611100357D04</key>
-		<dict>
-			<key>fileRef</key>
-			<string>7D87B0CA1E54611100357D04</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>7D87B0CD1E54623600357D04</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>Header.h</string>
-			<key>path</key>
-			<string>Comic Reader/Header.h</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>7FD9DF504893194169AC1AB5</key>
-		<dict>
-			<key>fileRef</key>
-			<string>B879915E2E9040D2839F3B0B</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>8570EC8890E72C58C3CDFEB3</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>[CP] Copy Pods Resources</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>"${SRCROOT}/Pods/Target Support Files/Pods-Comic Reader/Pods-Comic Reader-resources.sh"
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-		<key>95C93B2EB7B49BE1ECE67EF6</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>[CP] Check Pods Manifest.lock</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>diff "${PODS_ROOT}/../Podfile.lock" "${PODS_ROOT}/Manifest.lock" &gt; /dev/null
-if [[ $? != 0 ]] ; then
-    cat &lt;&lt; EOM
-error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.
-EOM
-    exit 1
-fi
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-		<key>9A62FE29A4F2F0C80510AF7E</key>
-		<dict>
-			<key>fileRef</key>
-			<string>0CED73DC06742686A345F170</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A68EC05391DE1483DA2BB37F</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>[CP] Embed Pods Frameworks</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>"${SRCROOT}/Pods/Target Support Files/Pods-Comic ReaderTests/Pods-Comic ReaderTests-frameworks.sh"
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-		<key>B6DE9AF9A8D550C17F55DE02</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>archive.ar</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>libPods-Comic ReaderUITests.a</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>B7145228F7F856EF0141DB91</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>[CP] Copy Pods Resources</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>"${SRCROOT}/Pods/Target Support Files/Pods-Comic ReaderTests/Pods-Comic ReaderTests-resources.sh"
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-		<key>B879915E2E9040D2839F3B0B</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>archive.ar</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>libPods-Comic Reader.a</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>B928F5DF1AFA0DE00653BECA</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>name</key>
-			<string>Pods-Comic ReaderTests.release.xcconfig</string>
-			<key>path</key>
-			<string>Pods/Target Support Files/Pods-Comic ReaderTests/Pods-Comic ReaderTests.release.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>C366130C1E4AB20B001BF229</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>C36613171E4AB20B001BF229</string>
-				<string>C36613341E4AB20B001BF229</string>
-				<string>C366133F1E4AB20B001BF229</string>
-				<string>C36613161E4AB20B001BF229</string>
-				<string>3FE3850F278DB4023B80A564</string>
-				<string>693F7523BD1C6FB161074454</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>C366130D1E4AB20B001BF229</key>
-		<dict>
-			<key>attributes</key>
-			<dict>
-				<key>LastUpgradeCheck</key>
-				<string>0800</string>
-				<key>ORGANIZATIONNAME</key>
-				<string>administrator</string>
-				<key>TargetAttributes</key>
-				<dict>
-					<key>C36613141E4AB20B001BF229</key>
-					<dict>
-						<key>CreatedOnToolsVersion</key>
-						<string>8.0</string>
-						<key>ProvisioningStyle</key>
-						<string>Automatic</string>
-					</dict>
-					<key>C36613301E4AB20B001BF229</key>
-					<dict>
-						<key>CreatedOnToolsVersion</key>
-						<string>8.0</string>
-						<key>ProvisioningStyle</key>
-						<string>Automatic</string>
-						<key>TestTargetID</key>
-						<string>C36613141E4AB20B001BF229</string>
-					</dict>
-					<key>C366133B1E4AB20B001BF229</key>
-					<dict>
-						<key>CreatedOnToolsVersion</key>
-						<string>8.0</string>
-						<key>ProvisioningStyle</key>
-						<string>Automatic</string>
-						<key>TestTargetID</key>
-						<string>C36613141E4AB20B001BF229</string>
-					</dict>
-				</dict>
-			</dict>
-			<key>buildConfigurationList</key>
-			<string>C36613101E4AB20B001BF229</string>
-			<key>compatibilityVersion</key>
-			<string>Xcode 3.2</string>
-			<key>developmentRegion</key>
-			<string>English</string>
-			<key>hasScannedForEncodings</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXProject</string>
-			<key>knownRegions</key>
-			<array>
-				<string>en</string>
-				<string>Base</string>
-			</array>
-			<key>mainGroup</key>
-			<string>C366130C1E4AB20B001BF229</string>
-			<key>productRefGroup</key>
-			<string>C36613161E4AB20B001BF229</string>
-			<key>projectDirPath</key>
-			<string></string>
-			<key>projectReferences</key>
-			<array/>
-			<key>projectRoot</key>
-			<string></string>
-			<key>targets</key>
-			<array>
-				<string>C36613141E4AB20B001BF229</string>
-				<string>C36613301E4AB20B001BF229</string>
-				<string>C366133B1E4AB20B001BF229</string>
-			</array>
-		</dict>
-		<key>C36613101E4AB20B001BF229</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>C36613431E4AB20B001BF229</string>
-				<string>C36613441E4AB20B001BF229</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>C36613111E4AB20B001BF229</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>C37206C41E5183E300366DFA</string>
-				<string>7D87B0B41E545C6500357D04</string>
-				<string>C36613261E4AB20B001BF229</string>
-				<string>C37206BB1E5182DE00366DFA</string>
-				<string>C37206981E51742E00366DFA</string>
-				<string>C366131A1E4AB20B001BF229</string>
-				<string>C37206C01E5182DE00366DFA</string>
-				<string>7D87B0C31E54609600357D04</string>
-				<string>C37206BC1E5182DE00366DFA</string>
-				<string>7D87B0CB1E54611100357D04</string>
-				<string>7D87B0C51E54609600357D04</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>C36613121E4AB20B001BF229</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>7FD9DF504893194169AC1AB5</string>
-			</array>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>C36613131E4AB20B001BF229</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>C36A61F81E543A89001B1B7C</string>
-				<string>C37206D31E51846000366DFA</string>
-				<string>7D87B0C61E54609600357D04</string>
-				<string>C37206D41E51846000366DFA</string>
-				<string>C36A61F91E543A89001B1B7C</string>
-				<string>7D87B0CC1E54611100357D04</string>
-				<string>C37206CA1E5183EC00366DFA</string>
-				<string>C36A61F71E543A89001B1B7C</string>
-				<string>C3743A2B1E52BF1C00AA984B</string>
-				<string>7D87B0C41E54609600357D04</string>
-				<string>C36A61F51E543A89001B1B7C</string>
-				<string>C36613281E4AB20B001BF229</string>
-				<string>C36A61F61E543A89001B1B7C</string>
-			</array>
-			<key>isa</key>
-			<string>PBXResourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>C36613141E4AB20B001BF229</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>C36613451E4AB20B001BF229</string>
-			<key>buildPhases</key>
-			<array>
-				<string>95C93B2EB7B49BE1ECE67EF6</string>
-				<string>C36613111E4AB20B001BF229</string>
-				<string>C36613121E4AB20B001BF229</string>
-				<string>C36613131E4AB20B001BF229</string>
-				<string>1FD90BB2CBD6A2DCDBFC0A18</string>
-				<string>8570EC8890E72C58C3CDFEB3</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>Comic Reader</string>
-			<key>productName</key>
-			<string>Comic Reader</string>
-			<key>productReference</key>
-			<string>C36613151E4AB20B001BF229</string>
-			<key>productType</key>
-			<string>com.apple.product-type.application</string>
-		</dict>
-		<key>C36613151E4AB20B001BF229</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.application</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>Comic Reader.app</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>C36613161E4AB20B001BF229</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>C36613151E4AB20B001BF229</string>
-				<string>C36613311E4AB20B001BF229</string>
-				<string>C366133C1E4AB20B001BF229</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Products</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>C36613171E4AB20B001BF229</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>7D87B0B51E545E1800357D04</string>
-				<string>C37206D01E51846000366DFA</string>
-				<string>C37206CE1E5183FF00366DFA</string>
-				<string>C37206CF1E5183FF00366DFA</string>
-				<string>C37206C51E5183EC00366DFA</string>
-				<string>C37206C11E5183E300366DFA</string>
-				<string>C37206A81E5182DE00366DFA</string>
-				<string>C372069C1E51821300366DFA</string>
-				<string>C37206991E51748100366DFA</string>
-				<string>C37206951E51742E00366DFA</string>
-				<string>C36613531E4AB25B001BF229</string>
-				<string>C36613271E4AB20B001BF229</string>
-				<string>C366132C1E4AB20B001BF229</string>
-				<string>C36613241E4AB20B001BF229</string>
-				<string>C36613181E4AB20B001BF229</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>Comic Reader</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>C36613181E4AB20B001BF229</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>C36613191E4AB20B001BF229</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Supporting Files</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>C36613191E4AB20B001BF229</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>main.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>C366131A1E4AB20B001BF229</key>
-		<dict>
-			<key>fileRef</key>
-			<string>C36613191E4AB20B001BF229</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>C36613241E4AB20B001BF229</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>C36613251E4AB20B001BF229</string>
-			</array>
-			<key>currentVersion</key>
-			<string>C36613251E4AB20B001BF229</string>
-			<key>isa</key>
-			<string>XCVersionGroup</string>
-			<key>path</key>
-			<string>Comic_Reader.xcdatamodeld</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-			<key>versionGroupType</key>
-			<string>wrapper.xcdatamodel</string>
-		</dict>
-		<key>C36613251E4AB20B001BF229</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.xcdatamodel</string>
-			<key>path</key>
-			<string>Comic_Reader.xcdatamodel</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>C36613261E4AB20B001BF229</key>
-		<dict>
-			<key>fileRef</key>
-			<string>C36613241E4AB20B001BF229</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>C36613271E4AB20B001BF229</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>folder.assetcatalog</string>
-			<key>path</key>
-			<string>Assets.xcassets</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>C36613281E4AB20B001BF229</key>
-		<dict>
-			<key>fileRef</key>
-			<string>C36613271E4AB20B001BF229</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>C366132C1E4AB20B001BF229</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.xml</string>
-			<key>path</key>
-			<string>Info.plist</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>C366132D1E4AB20B001BF229</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>C36613361E4AB20B001BF229</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>C366132E1E4AB20B001BF229</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>9A62FE29A4F2F0C80510AF7E</string>
-			</array>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>C366132F1E4AB20B001BF229</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXResourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>C36613301E4AB20B001BF229</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>C36613481E4AB20B001BF229</string>
-			<key>buildPhases</key>
-			<array>
-				<string>4C6653D20642F5CA2CD8D2A6</string>
-				<string>C366132D1E4AB20B001BF229</string>
-				<string>C366132E1E4AB20B001BF229</string>
-				<string>C366132F1E4AB20B001BF229</string>
-				<string>A68EC05391DE1483DA2BB37F</string>
-				<string>B7145228F7F856EF0141DB91</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array>
-				<string>C36613331E4AB20B001BF229</string>
-			</array>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>Comic ReaderTests</string>
-			<key>productName</key>
-			<string>Comic ReaderTests</string>
-			<key>productReference</key>
-			<string>C36613311E4AB20B001BF229</string>
-			<key>productType</key>
-			<string>com.apple.product-type.bundle.unit-test</string>
-		</dict>
-		<key>C36613311E4AB20B001BF229</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.cfbundle</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>Comic ReaderTests.xctest</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>C36613321E4AB20B001BF229</key>
-		<dict>
-			<key>containerPortal</key>
-			<string>C366130D1E4AB20B001BF229</string>
-			<key>isa</key>
-			<string>PBXContainerItemProxy</string>
-			<key>proxyType</key>
-			<string>1</string>
-			<key>remoteGlobalIDString</key>
-			<string>C36613141E4AB20B001BF229</string>
-			<key>remoteInfo</key>
-			<string>Comic Reader</string>
-		</dict>
-		<key>C36613331E4AB20B001BF229</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXTargetDependency</string>
-			<key>target</key>
-			<string>C36613141E4AB20B001BF229</string>
-			<key>targetProxy</key>
-			<string>C36613321E4AB20B001BF229</string>
-		</dict>
-		<key>C36613341E4AB20B001BF229</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>C36613351E4AB20B001BF229</string>
-				<string>C36613371E4AB20B001BF229</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>Comic ReaderTests</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>C36613351E4AB20B001BF229</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>Comic_ReaderTests.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>C36613361E4AB20B001BF229</key>
-		<dict>
-			<key>fileRef</key>
-			<string>C36613351E4AB20B001BF229</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>C36613371E4AB20B001BF229</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.xml</string>
-			<key>path</key>
-			<string>Info.plist</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>C36613381E4AB20B001BF229</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>C36613411E4AB20B001BF229</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>C36613391E4AB20B001BF229</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>5A636C4EEEAA012A8CF66850</string>
-			</array>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>C366133A1E4AB20B001BF229</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXResourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>C366133B1E4AB20B001BF229</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>C366134B1E4AB20B001BF229</string>
-			<key>buildPhases</key>
-			<array>
-				<string>3DB8F9CDAF37F136D95A4182</string>
-				<string>C36613381E4AB20B001BF229</string>
-				<string>C36613391E4AB20B001BF229</string>
-				<string>C366133A1E4AB20B001BF229</string>
-				<string>F1A8B3F802832F87E44EE481</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array>
-				<string>C366133E1E4AB20B001BF229</string>
-			</array>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>Comic ReaderUITests</string>
-			<key>productName</key>
-			<string>Comic ReaderUITests</string>
-			<key>productReference</key>
-			<string>C366133C1E4AB20B001BF229</string>
-			<key>productType</key>
-			<string>com.apple.product-type.bundle.ui-testing</string>
-		</dict>
-		<key>C366133C1E4AB20B001BF229</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.cfbundle</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>Comic ReaderUITests.xctest</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>C366133D1E4AB20B001BF229</key>
-		<dict>
-			<key>containerPortal</key>
-			<string>C366130D1E4AB20B001BF229</string>
-			<key>isa</key>
-			<string>PBXContainerItemProxy</string>
-			<key>proxyType</key>
-			<string>1</string>
-			<key>remoteGlobalIDString</key>
-			<string>C36613141E4AB20B001BF229</string>
-			<key>remoteInfo</key>
-			<string>Comic Reader</string>
-		</dict>
-		<key>C366133E1E4AB20B001BF229</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXTargetDependency</string>
-			<key>target</key>
-			<string>C36613141E4AB20B001BF229</string>
-			<key>targetProxy</key>
-			<string>C366133D1E4AB20B001BF229</string>
-		</dict>
-		<key>C366133F1E4AB20B001BF229</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>C36613401E4AB20B001BF229</string>
-				<string>C36613421E4AB20B001BF229</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>Comic ReaderUITests</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>C36613401E4AB20B001BF229</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>Comic_ReaderUITests.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>C36613411E4AB20B001BF229</key>
-		<dict>
-			<key>fileRef</key>
-			<string>C36613401E4AB20B001BF229</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>C36613421E4AB20B001BF229</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.xml</string>
-			<key>path</key>
-			<string>Info.plist</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>C36613431E4AB20B001BF229</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>NO</string>
-				<key>CLANG_ANALYZER_NONNULL</key>
-				<string>YES</string>
-				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
-				<string>gnu++0x</string>
-				<key>CLANG_CXX_LIBRARY</key>
-				<string>libc++</string>
-				<key>CLANG_ENABLE_MODULES</key>
-				<string>YES</string>
-				<key>CLANG_ENABLE_OBJC_ARC</key>
-				<string>YES</string>
-				<key>CLANG_WARN_BOOL_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
-				<string>YES_ERROR</string>
-				<key>CLANG_WARN_DOCUMENTATION_COMMENTS</key>
-				<string>YES</string>
-				<key>CLANG_WARN_EMPTY_BODY</key>
-				<string>YES</string>
-				<key>CLANG_WARN_ENUM_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_INFINITE_RECURSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_INT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
-				<string>YES_ERROR</string>
-				<key>CLANG_WARN_SUSPICIOUS_MOVES</key>
-				<string>YES</string>
-				<key>CLANG_WARN_UNREACHABLE_CODE</key>
-				<string>YES</string>
-				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
-				<string>YES</string>
-				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
-				<string>iPhone Developer</string>
-				<key>COPY_PHASE_STRIP</key>
-				<string>NO</string>
-				<key>DEBUG_INFORMATION_FORMAT</key>
-				<string>dwarf</string>
-				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
-				<string>YES</string>
-				<key>ENABLE_TESTABILITY</key>
-				<string>YES</string>
-				<key>GCC_C_LANGUAGE_STANDARD</key>
-				<string>gnu99</string>
-				<key>GCC_DYNAMIC_NO_PIC</key>
-				<string>NO</string>
-				<key>GCC_NO_COMMON_BLOCKS</key>
-				<string>YES</string>
-				<key>GCC_OPTIMIZATION_LEVEL</key>
-				<string>0</string>
-				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
-				<array>
-					<string>DEBUG=1</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
-				<string>YES</string>
-				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
-				<string>YES_ERROR</string>
-				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
-				<string>YES_AGGRESSIVE</string>
-				<key>GCC_WARN_UNUSED_FUNCTION</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_VARIABLE</key>
-				<string>YES</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>10.0</string>
-				<key>MTL_ENABLE_DEBUG_INFO</key>
-				<string>YES</string>
-				<key>ONLY_ACTIVE_ARCH</key>
-				<string>YES</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>TARGETED_DEVICE_FAMILY</key>
-				<string>1,2</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>C36613441E4AB20B001BF229</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>NO</string>
-				<key>CLANG_ANALYZER_NONNULL</key>
-				<string>YES</string>
-				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
-				<string>gnu++0x</string>
-				<key>CLANG_CXX_LIBRARY</key>
-				<string>libc++</string>
-				<key>CLANG_ENABLE_MODULES</key>
-				<string>YES</string>
-				<key>CLANG_ENABLE_OBJC_ARC</key>
-				<string>YES</string>
-				<key>CLANG_WARN_BOOL_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
-				<string>YES_ERROR</string>
-				<key>CLANG_WARN_DOCUMENTATION_COMMENTS</key>
-				<string>YES</string>
-				<key>CLANG_WARN_EMPTY_BODY</key>
-				<string>YES</string>
-				<key>CLANG_WARN_ENUM_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_INFINITE_RECURSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_INT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
-				<string>YES_ERROR</string>
-				<key>CLANG_WARN_SUSPICIOUS_MOVES</key>
-				<string>YES</string>
-				<key>CLANG_WARN_UNREACHABLE_CODE</key>
-				<string>YES</string>
-				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
-				<string>YES</string>
-				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
-				<string>iPhone Developer</string>
-				<key>COPY_PHASE_STRIP</key>
-				<string>NO</string>
-				<key>DEBUG_INFORMATION_FORMAT</key>
-				<string>dwarf-with-dsym</string>
-				<key>ENABLE_NS_ASSERTIONS</key>
-				<string>NO</string>
-				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
-				<string>YES</string>
-				<key>GCC_C_LANGUAGE_STANDARD</key>
-				<string>gnu99</string>
-				<key>GCC_NO_COMMON_BLOCKS</key>
-				<string>YES</string>
-				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
-				<string>YES</string>
-				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
-				<string>YES_ERROR</string>
-				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
-				<string>YES_AGGRESSIVE</string>
-				<key>GCC_WARN_UNUSED_FUNCTION</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_VARIABLE</key>
-				<string>YES</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>10.0</string>
-				<key>MTL_ENABLE_DEBUG_INFO</key>
-				<string>NO</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>TARGETED_DEVICE_FAMILY</key>
-				<string>1,2</string>
-				<key>VALIDATE_PRODUCT</key>
-				<string>YES</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>C36613451E4AB20B001BF229</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>C36613461E4AB20B001BF229</string>
-				<string>C36613471E4AB20B001BF229</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>C36613461E4AB20B001BF229</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>E5F9D4CAA298733960900EEA</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
-				<string>AppIcon</string>
-				<key>INFOPLIST_FILE</key>
-				<string>Comic Reader/Info.plist</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<string>$(inherited) @executable_path/Frameworks</string>
-				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
-				<string>softfront.Comic-Reader</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>C36613471E4AB20B001BF229</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>22AB865CCFF2F20ED00CAA50</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
-				<string>AppIcon</string>
-				<key>INFOPLIST_FILE</key>
-				<string>Comic Reader/Info.plist</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<string>$(inherited) @executable_path/Frameworks</string>
-				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
-				<string>softfront.Comic-Reader</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>C36613481E4AB20B001BF229</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>C36613491E4AB20B001BF229</string>
-				<string>C366134A1E4AB20B001BF229</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>C36613491E4AB20B001BF229</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>3F36C6C9A632D4C851D5D208</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>BUNDLE_LOADER</key>
-				<string>$(TEST_HOST)</string>
-				<key>INFOPLIST_FILE</key>
-				<string>Comic ReaderTests/Info.plist</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<string>$(inherited) @executable_path/Frameworks @loader_path/Frameworks</string>
-				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
-				<string>softfront.Comic-ReaderTests</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>TEST_HOST</key>
-				<string>$(BUILT_PRODUCTS_DIR)/Comic Reader.app/Comic Reader</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>C366134A1E4AB20B001BF229</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>B928F5DF1AFA0DE00653BECA</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>BUNDLE_LOADER</key>
-				<string>$(TEST_HOST)</string>
-				<key>INFOPLIST_FILE</key>
-				<string>Comic ReaderTests/Info.plist</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<string>$(inherited) @executable_path/Frameworks @loader_path/Frameworks</string>
-				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
-				<string>softfront.Comic-ReaderTests</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>TEST_HOST</key>
-				<string>$(BUILT_PRODUCTS_DIR)/Comic Reader.app/Comic Reader</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>C366134B1E4AB20B001BF229</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>C366134C1E4AB20B001BF229</string>
-				<string>C366134D1E4AB20B001BF229</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>C366134C1E4AB20B001BF229</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>FDC437582966E23D88EC5B53</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>INFOPLIST_FILE</key>
-				<string>Comic ReaderUITests/Info.plist</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<string>$(inherited) @executable_path/Frameworks @loader_path/Frameworks</string>
-				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
-				<string>softfront.Comic-ReaderUITests</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>TEST_TARGET_NAME</key>
-				<string>Comic Reader</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>C366134D1E4AB20B001BF229</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>520EAFB76637E213C8A5CD6D</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>INFOPLIST_FILE</key>
-				<string>Comic ReaderUITests/Info.plist</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<string>$(inherited) @executable_path/Frameworks @loader_path/Frameworks</string>
-				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
-				<string>softfront.Comic-ReaderUITests</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>TEST_TARGET_NAME</key>
-				<string>Comic Reader</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>C36613531E4AB25B001BF229</key>
-		<dict>
-			<key>children</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Utility</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>C36A61F01E543A89001B1B7C</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>image.png</string>
-			<key>path</key>
-			<string>arrow.png</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>C36A61F11E543A89001B1B7C</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>image.png</string>
-			<key>path</key>
-			<string>arrowBack.png</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>C36A61F21E543A89001B1B7C</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>image.png</string>
-			<key>path</key>
-			<string>arrowhighlight.png</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>C36A61F31E543A89001B1B7C</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>image.png</string>
-			<key>path</key>
-			<string>new.png</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>C36A61F41E543A89001B1B7C</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>image.png</string>
-			<key>path</key>
-			<string>star.png</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>C36A61F51E543A89001B1B7C</key>
-		<dict>
-			<key>fileRef</key>
-			<string>C36A61F01E543A89001B1B7C</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>C36A61F61E543A89001B1B7C</key>
-		<dict>
-			<key>fileRef</key>
-			<string>C36A61F11E543A89001B1B7C</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>C36A61F71E543A89001B1B7C</key>
-		<dict>
-			<key>fileRef</key>
-			<string>C36A61F21E543A89001B1B7C</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>C36A61F81E543A89001B1B7C</key>
-		<dict>
-			<key>fileRef</key>
-			<string>C36A61F31E543A89001B1B7C</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>C36A61F91E543A89001B1B7C</key>
-		<dict>
-			<key>fileRef</key>
-			<string>C36A61F41E543A89001B1B7C</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>C37206951E51742E00366DFA</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>C37206961E51742E00366DFA</string>
-				<string>C37206971E51742E00366DFA</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>AppDelegate</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>C37206961E51742E00366DFA</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>AppDelegate.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>C37206971E51742E00366DFA</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>AppDelegate.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>C37206981E51742E00366DFA</key>
-		<dict>
-			<key>fileRef</key>
-			<string>C37206971E51742E00366DFA</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>C37206991E51748100366DFA</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>7D87B0CD1E54623600357D04</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>Utility</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>C372069C1E51821300366DFA</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>7D87B0C71E54611100357D04</string>
-				<string>7D87B0BC1E54609600357D04</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>View</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>C37206A81E5182DE00366DFA</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>7D87B0B21E545C6500357D04</string>
-				<string>7D87B0B31E545C6500357D04</string>
-				<string>C37206AC1E5182DE00366DFA</string>
-				<string>C37206AD1E5182DE00366DFA</string>
-				<string>C37206AE1E5182DE00366DFA</string>
-				<string>C37206AF1E5182DE00366DFA</string>
-				<string>C37206B71E5182DE00366DFA</string>
-				<string>C37206B81E5182DE00366DFA</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>Controller</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>C37206AC1E5182DE00366DFA</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>ComicViewController.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>C37206AD1E5182DE00366DFA</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>ComicViewController.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>C37206AE1E5182DE00366DFA</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>MainCategoryController.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>C37206AF1E5182DE00366DFA</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>MainCategoryController.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>C37206B71E5182DE00366DFA</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>SubCategoryController.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>C37206B81E5182DE00366DFA</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>SubCategoryController.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>C37206BB1E5182DE00366DFA</key>
-		<dict>
-			<key>fileRef</key>
-			<string>C37206AD1E5182DE00366DFA</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>C37206BC1E5182DE00366DFA</key>
-		<dict>
-			<key>fileRef</key>
-			<string>C37206AF1E5182DE00366DFA</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>C37206C01E5182DE00366DFA</key>
-		<dict>
-			<key>fileRef</key>
-			<string>C37206B81E5182DE00366DFA</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>C37206C11E5183E300366DFA</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>C37206C21E5183E300366DFA</string>
-				<string>C37206C31E5183E300366DFA</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>Model</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>C37206C21E5183E300366DFA</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>Comic.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>C37206C31E5183E300366DFA</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>Comic.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>C37206C41E5183E300366DFA</key>
-		<dict>
-			<key>fileRef</key>
-			<string>C37206C31E5183E300366DFA</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>C37206C51E5183EC00366DFA</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>C36A61F01E543A89001B1B7C</string>
-				<string>C36A61F11E543A89001B1B7C</string>
-				<string>C36A61F21E543A89001B1B7C</string>
-				<string>C36A61F31E543A89001B1B7C</string>
-				<string>C36A61F41E543A89001B1B7C</string>
-				<string>C3743A2A1E52BF1C00AA984B</string>
-				<string>C37206C61E5183EC00366DFA</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>Res</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>C37206C61E5183EC00366DFA</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>image.png</string>
-			<key>path</key>
-			<string>comic.png</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>C37206CA1E5183EC00366DFA</key>
-		<dict>
-			<key>fileRef</key>
-			<string>C37206C61E5183EC00366DFA</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>C37206CE1E5183FF00366DFA</key>
-		<dict>
-			<key>children</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>Service</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>C37206CF1E5183FF00366DFA</key>
-		<dict>
-			<key>children</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>Database</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>C37206D01E51846000366DFA</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>C37206D11E51846000366DFA</string>
-				<string>C37206D21E51846000366DFA</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>StoryBoard</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>C37206D11E51846000366DFA</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>file.storyboard</string>
-			<key>path</key>
-			<string>LaunchScreen.storyboard</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>C37206D21E51846000366DFA</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>file.storyboard</string>
-			<key>path</key>
-			<string>Main.storyboard</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>C37206D31E51846000366DFA</key>
-		<dict>
-			<key>fileRef</key>
-			<string>C37206D11E51846000366DFA</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>C37206D41E51846000366DFA</key>
-		<dict>
-			<key>fileRef</key>
-			<string>C37206D21E51846000366DFA</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>C3743A2A1E52BF1C00AA984B</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>image.jpeg</string>
-			<key>path</key>
-			<string>b.jpg</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>C3743A2B1E52BF1C00AA984B</key>
-		<dict>
-			<key>fileRef</key>
-			<string>C3743A2A1E52BF1C00AA984B</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>E5F9D4CAA298733960900EEA</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>name</key>
-			<string>Pods-Comic Reader.debug.xcconfig</string>
-			<key>path</key>
-			<string>Pods/Target Support Files/Pods-Comic Reader/Pods-Comic Reader.debug.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F1A8B3F802832F87E44EE481</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>[CP] Copy Pods Resources</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>"${SRCROOT}/Pods/Target Support Files/Pods-Comic ReaderUITests/Pods-Comic ReaderUITests-resources.sh"
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-		<key>FDC437582966E23D88EC5B53</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>name</key>
-			<string>Pods-Comic ReaderUITests.debug.xcconfig</string>
-			<key>path</key>
-			<string>Pods/Target Support Files/Pods-Comic ReaderUITests/Pods-Comic ReaderUITests.debug.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-	</dict>
-	<key>rootObject</key>
-	<string>C366130D1E4AB20B001BF229</string>
-</dict>
-</plist>
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5A636C4EEEAA012A8CF66850 /* libPods-Comic ReaderUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B6DE9AF9A8D550C17F55DE02 /* libPods-Comic ReaderUITests.a */; };
+		7D87B0B41E545C6500357D04 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D87B0B31E545C6500357D04 /* BaseViewController.m */; };
+		7D87B0C31E54609600357D04 /* MainCategoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D87B0BE1E54609600357D04 /* MainCategoryCell.m */; };
+		7D87B0C41E54609600357D04 /* MainCategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7D87B0BF1E54609600357D04 /* MainCategoryCell.xib */; };
+		7D87B0C51E54609600357D04 /* SubCategoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D87B0C11E54609600357D04 /* SubCategoryCell.m */; };
+		7D87B0C61E54609600357D04 /* SubCategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7D87B0C21E54609600357D04 /* SubCategoryCell.xib */; };
+		7D87B0CB1E54611100357D04 /* ProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D87B0C91E54611100357D04 /* ProgressView.m */; };
+		7D87B0CC1E54611100357D04 /* ProgressView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7D87B0CA1E54611100357D04 /* ProgressView.xib */; };
+		7FD9DF504893194169AC1AB5 /* libPods-Comic Reader.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B879915E2E9040D2839F3B0B /* libPods-Comic Reader.a */; };
+		9A62FE29A4F2F0C80510AF7E /* libPods-Comic ReaderTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CED73DC06742686A345F170 /* libPods-Comic ReaderTests.a */; };
+		C366131A1E4AB20B001BF229 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C36613191E4AB20B001BF229 /* main.m */; };
+		C36613261E4AB20B001BF229 /* Comic_Reader.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C36613241E4AB20B001BF229 /* Comic_Reader.xcdatamodeld */; };
+		C36613281E4AB20B001BF229 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C36613271E4AB20B001BF229 /* Assets.xcassets */; };
+		C36613361E4AB20B001BF229 /* Comic_ReaderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C36613351E4AB20B001BF229 /* Comic_ReaderTests.m */; };
+		C36613411E4AB20B001BF229 /* Comic_ReaderUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = C36613401E4AB20B001BF229 /* Comic_ReaderUITests.m */; };
+		C36A61F51E543A89001B1B7C /* arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = C36A61F01E543A89001B1B7C /* arrow.png */; };
+		C36A61F61E543A89001B1B7C /* arrowBack.png in Resources */ = {isa = PBXBuildFile; fileRef = C36A61F11E543A89001B1B7C /* arrowBack.png */; };
+		C36A61F71E543A89001B1B7C /* arrowhighlight.png in Resources */ = {isa = PBXBuildFile; fileRef = C36A61F21E543A89001B1B7C /* arrowhighlight.png */; };
+		C36A61F81E543A89001B1B7C /* new.png in Resources */ = {isa = PBXBuildFile; fileRef = C36A61F31E543A89001B1B7C /* new.png */; };
+		C36A61F91E543A89001B1B7C /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = C36A61F41E543A89001B1B7C /* star.png */; };
+		C37206981E51742E00366DFA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C37206971E51742E00366DFA /* AppDelegate.m */; };
+		C37206BB1E5182DE00366DFA /* ComicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C37206AD1E5182DE00366DFA /* ComicViewController.m */; };
+		C37206BC1E5182DE00366DFA /* MainCategoryController.m in Sources */ = {isa = PBXBuildFile; fileRef = C37206AF1E5182DE00366DFA /* MainCategoryController.m */; };
+		C37206C01E5182DE00366DFA /* SubCategoryController.m in Sources */ = {isa = PBXBuildFile; fileRef = C37206B81E5182DE00366DFA /* SubCategoryController.m */; };
+		C37206C41E5183E300366DFA /* Comic.m in Sources */ = {isa = PBXBuildFile; fileRef = C37206C31E5183E300366DFA /* Comic.m */; };
+		C37206CA1E5183EC00366DFA /* comic.png in Resources */ = {isa = PBXBuildFile; fileRef = C37206C61E5183EC00366DFA /* comic.png */; };
+		C37206D31E51846000366DFA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C37206D11E51846000366DFA /* LaunchScreen.storyboard */; };
+		C37206D41E51846000366DFA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C37206D21E51846000366DFA /* Main.storyboard */; };
+		C3743A2B1E52BF1C00AA984B /* b.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C3743A2A1E52BF1C00AA984B /* b.jpg */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C36613321E4AB20B001BF229 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C366130D1E4AB20B001BF229 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C36613141E4AB20B001BF229;
+			remoteInfo = "Comic Reader";
+		};
+		C366133D1E4AB20B001BF229 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C366130D1E4AB20B001BF229 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C36613141E4AB20B001BF229;
+			remoteInfo = "Comic Reader";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0CED73DC06742686A345F170 /* libPods-Comic ReaderTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Comic ReaderTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		22AB865CCFF2F20ED00CAA50 /* Pods-Comic Reader.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Comic Reader.release.xcconfig"; path = "Pods/Target Support Files/Pods-Comic Reader/Pods-Comic Reader.release.xcconfig"; sourceTree = "<group>"; };
+		3F36C6C9A632D4C851D5D208 /* Pods-Comic ReaderTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Comic ReaderTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Comic ReaderTests/Pods-Comic ReaderTests.debug.xcconfig"; sourceTree = "<group>"; };
+		520EAFB76637E213C8A5CD6D /* Pods-Comic ReaderUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Comic ReaderUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Comic ReaderUITests/Pods-Comic ReaderUITests.release.xcconfig"; sourceTree = "<group>"; };
+		7D87B0B21E545C6500357D04 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		7D87B0B31E545C6500357D04 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		7D87B0B51E545E1800357D04 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		7D87B0BD1E54609600357D04 /* MainCategoryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainCategoryCell.h; sourceTree = "<group>"; };
+		7D87B0BE1E54609600357D04 /* MainCategoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainCategoryCell.m; sourceTree = "<group>"; };
+		7D87B0BF1E54609600357D04 /* MainCategoryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainCategoryCell.xib; sourceTree = "<group>"; };
+		7D87B0C01E54609600357D04 /* SubCategoryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubCategoryCell.h; sourceTree = "<group>"; };
+		7D87B0C11E54609600357D04 /* SubCategoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubCategoryCell.m; sourceTree = "<group>"; };
+		7D87B0C21E54609600357D04 /* SubCategoryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SubCategoryCell.xib; sourceTree = "<group>"; };
+		7D87B0C81E54611100357D04 /* ProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressView.h; sourceTree = "<group>"; };
+		7D87B0C91E54611100357D04 /* ProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressView.m; sourceTree = "<group>"; };
+		7D87B0CA1E54611100357D04 /* ProgressView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProgressView.xib; sourceTree = "<group>"; };
+		7D87B0CD1E54623600357D04 /* Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Header.h; path = "Comic Reader/Header.h"; sourceTree = SOURCE_ROOT; };
+		B6DE9AF9A8D550C17F55DE02 /* libPods-Comic ReaderUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Comic ReaderUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B879915E2E9040D2839F3B0B /* libPods-Comic Reader.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Comic Reader.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B928F5DF1AFA0DE00653BECA /* Pods-Comic ReaderTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Comic ReaderTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Comic ReaderTests/Pods-Comic ReaderTests.release.xcconfig"; sourceTree = "<group>"; };
+		C36613151E4AB20B001BF229 /* Comic Reader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Comic Reader.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C36613191E4AB20B001BF229 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		C36613251E4AB20B001BF229 /* Comic_Reader.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Comic_Reader.xcdatamodel; sourceTree = "<group>"; };
+		C36613271E4AB20B001BF229 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C366132C1E4AB20B001BF229 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C36613311E4AB20B001BF229 /* Comic ReaderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Comic ReaderTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C36613351E4AB20B001BF229 /* Comic_ReaderTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Comic_ReaderTests.m; sourceTree = "<group>"; };
+		C36613371E4AB20B001BF229 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C366133C1E4AB20B001BF229 /* Comic ReaderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Comic ReaderUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C36613401E4AB20B001BF229 /* Comic_ReaderUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Comic_ReaderUITests.m; sourceTree = "<group>"; };
+		C36613421E4AB20B001BF229 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C36A61F01E543A89001B1B7C /* arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow.png; sourceTree = "<group>"; };
+		C36A61F11E543A89001B1B7C /* arrowBack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrowBack.png; sourceTree = "<group>"; };
+		C36A61F21E543A89001B1B7C /* arrowhighlight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrowhighlight.png; sourceTree = "<group>"; };
+		C36A61F31E543A89001B1B7C /* new.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = new.png; sourceTree = "<group>"; };
+		C36A61F41E543A89001B1B7C /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star.png; sourceTree = "<group>"; };
+		C37206961E51742E00366DFA /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		C37206971E51742E00366DFA /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		C37206AC1E5182DE00366DFA /* ComicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComicViewController.h; sourceTree = "<group>"; };
+		C37206AD1E5182DE00366DFA /* ComicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComicViewController.m; sourceTree = "<group>"; };
+		C37206AE1E5182DE00366DFA /* MainCategoryController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainCategoryController.h; sourceTree = "<group>"; };
+		C37206AF1E5182DE00366DFA /* MainCategoryController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainCategoryController.m; sourceTree = "<group>"; };
+		C37206B71E5182DE00366DFA /* SubCategoryController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubCategoryController.h; sourceTree = "<group>"; };
+		C37206B81E5182DE00366DFA /* SubCategoryController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubCategoryController.m; sourceTree = "<group>"; };
+		C37206C21E5183E300366DFA /* Comic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Comic.h; sourceTree = "<group>"; };
+		C37206C31E5183E300366DFA /* Comic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Comic.m; sourceTree = "<group>"; };
+		C37206C61E5183EC00366DFA /* comic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = comic.png; sourceTree = "<group>"; };
+		C37206D11E51846000366DFA /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C37206D21E51846000366DFA /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		C3743A2A1E52BF1C00AA984B /* b.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = b.jpg; sourceTree = "<group>"; };
+		E5F9D4CAA298733960900EEA /* Pods-Comic Reader.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Comic Reader.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Comic Reader/Pods-Comic Reader.debug.xcconfig"; sourceTree = "<group>"; };
+		FDC437582966E23D88EC5B53 /* Pods-Comic ReaderUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Comic ReaderUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Comic ReaderUITests/Pods-Comic ReaderUITests.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C36613121E4AB20B001BF229 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7FD9DF504893194169AC1AB5 /* libPods-Comic Reader.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C366132E1E4AB20B001BF229 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9A62FE29A4F2F0C80510AF7E /* libPods-Comic ReaderTests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C36613391E4AB20B001BF229 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5A636C4EEEAA012A8CF66850 /* libPods-Comic ReaderUITests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3FE3850F278DB4023B80A564 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E5F9D4CAA298733960900EEA /* Pods-Comic Reader.debug.xcconfig */,
+				22AB865CCFF2F20ED00CAA50 /* Pods-Comic Reader.release.xcconfig */,
+				3F36C6C9A632D4C851D5D208 /* Pods-Comic ReaderTests.debug.xcconfig */,
+				B928F5DF1AFA0DE00653BECA /* Pods-Comic ReaderTests.release.xcconfig */,
+				FDC437582966E23D88EC5B53 /* Pods-Comic ReaderUITests.debug.xcconfig */,
+				520EAFB76637E213C8A5CD6D /* Pods-Comic ReaderUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		693F7523BD1C6FB161074454 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B879915E2E9040D2839F3B0B /* libPods-Comic Reader.a */,
+				0CED73DC06742686A345F170 /* libPods-Comic ReaderTests.a */,
+				B6DE9AF9A8D550C17F55DE02 /* libPods-Comic ReaderUITests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7D87B0BC1E54609600357D04 /* CustomCellCategory */ = {
+			isa = PBXGroup;
+			children = (
+				7D87B0BD1E54609600357D04 /* MainCategoryCell.h */,
+				7D87B0BE1E54609600357D04 /* MainCategoryCell.m */,
+				7D87B0BF1E54609600357D04 /* MainCategoryCell.xib */,
+				7D87B0C01E54609600357D04 /* SubCategoryCell.h */,
+				7D87B0C11E54609600357D04 /* SubCategoryCell.m */,
+				7D87B0C21E54609600357D04 /* SubCategoryCell.xib */,
+			);
+			path = CustomCellCategory;
+			sourceTree = "<group>";
+		};
+		7D87B0C71E54611100357D04 /* DialogViewSubCategory */ = {
+			isa = PBXGroup;
+			children = (
+				7D87B0C81E54611100357D04 /* ProgressView.h */,
+				7D87B0C91E54611100357D04 /* ProgressView.m */,
+				7D87B0CA1E54611100357D04 /* ProgressView.xib */,
+			);
+			path = DialogViewSubCategory;
+			sourceTree = "<group>";
+		};
+		C366130C1E4AB20B001BF229 = {
+			isa = PBXGroup;
+			children = (
+				C36613171E4AB20B001BF229 /* Comic Reader */,
+				C36613341E4AB20B001BF229 /* Comic ReaderTests */,
+				C366133F1E4AB20B001BF229 /* Comic ReaderUITests */,
+				C36613161E4AB20B001BF229 /* Products */,
+				3FE3850F278DB4023B80A564 /* Pods */,
+				693F7523BD1C6FB161074454 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		C36613161E4AB20B001BF229 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C36613151E4AB20B001BF229 /* Comic Reader.app */,
+				C36613311E4AB20B001BF229 /* Comic ReaderTests.xctest */,
+				C366133C1E4AB20B001BF229 /* Comic ReaderUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C36613171E4AB20B001BF229 /* Comic Reader */ = {
+			isa = PBXGroup;
+			children = (
+				7D87B0B51E545E1800357D04 /* PrefixHeader.pch */,
+				C37206D01E51846000366DFA /* StoryBoard */,
+				C37206CE1E5183FF00366DFA /* Service */,
+				C37206CF1E5183FF00366DFA /* Database */,
+				C37206C51E5183EC00366DFA /* Res */,
+				C37206C11E5183E300366DFA /* Model */,
+				C37206A81E5182DE00366DFA /* Controller */,
+				C372069C1E51821300366DFA /* View */,
+				C37206991E51748100366DFA /* Utility */,
+				C37206951E51742E00366DFA /* AppDelegate */,
+				C36613531E4AB25B001BF229 /* Utility */,
+				C36613271E4AB20B001BF229 /* Assets.xcassets */,
+				C366132C1E4AB20B001BF229 /* Info.plist */,
+				C36613241E4AB20B001BF229 /* Comic_Reader.xcdatamodeld */,
+				C36613181E4AB20B001BF229 /* Supporting Files */,
+			);
+			path = "Comic Reader";
+			sourceTree = "<group>";
+		};
+		C36613181E4AB20B001BF229 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C36613191E4AB20B001BF229 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C36613341E4AB20B001BF229 /* Comic ReaderTests */ = {
+			isa = PBXGroup;
+			children = (
+				C36613351E4AB20B001BF229 /* Comic_ReaderTests.m */,
+				C36613371E4AB20B001BF229 /* Info.plist */,
+			);
+			path = "Comic ReaderTests";
+			sourceTree = "<group>";
+		};
+		C366133F1E4AB20B001BF229 /* Comic ReaderUITests */ = {
+			isa = PBXGroup;
+			children = (
+				C36613401E4AB20B001BF229 /* Comic_ReaderUITests.m */,
+				C36613421E4AB20B001BF229 /* Info.plist */,
+			);
+			path = "Comic ReaderUITests";
+			sourceTree = "<group>";
+		};
+		C36613531E4AB25B001BF229 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Utility;
+			sourceTree = "<group>";
+		};
+		C37206951E51742E00366DFA /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				C37206961E51742E00366DFA /* AppDelegate.h */,
+				C37206971E51742E00366DFA /* AppDelegate.m */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		C37206991E51748100366DFA /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				7D87B0CD1E54623600357D04 /* Header.h */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		C372069C1E51821300366DFA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7D87B0C71E54611100357D04 /* DialogViewSubCategory */,
+				7D87B0BC1E54609600357D04 /* CustomCellCategory */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C37206A81E5182DE00366DFA /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				7D87B0B21E545C6500357D04 /* BaseViewController.h */,
+				7D87B0B31E545C6500357D04 /* BaseViewController.m */,
+				C37206AC1E5182DE00366DFA /* ComicViewController.h */,
+				C37206AD1E5182DE00366DFA /* ComicViewController.m */,
+				C37206AE1E5182DE00366DFA /* MainCategoryController.h */,
+				C37206AF1E5182DE00366DFA /* MainCategoryController.m */,
+				C37206B71E5182DE00366DFA /* SubCategoryController.h */,
+				C37206B81E5182DE00366DFA /* SubCategoryController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		C37206C11E5183E300366DFA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C37206C21E5183E300366DFA /* Comic.h */,
+				C37206C31E5183E300366DFA /* Comic.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C37206C51E5183EC00366DFA /* Res */ = {
+			isa = PBXGroup;
+			children = (
+				C36A61F01E543A89001B1B7C /* arrow.png */,
+				C36A61F11E543A89001B1B7C /* arrowBack.png */,
+				C36A61F21E543A89001B1B7C /* arrowhighlight.png */,
+				C36A61F31E543A89001B1B7C /* new.png */,
+				C36A61F41E543A89001B1B7C /* star.png */,
+				C3743A2A1E52BF1C00AA984B /* b.jpg */,
+				C37206C61E5183EC00366DFA /* comic.png */,
+			);
+			path = Res;
+			sourceTree = "<group>";
+		};
+		C37206CE1E5183FF00366DFA /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		C37206CF1E5183FF00366DFA /* Database */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
+		C37206D01E51846000366DFA /* StoryBoard */ = {
+			isa = PBXGroup;
+			children = (
+				C37206D11E51846000366DFA /* LaunchScreen.storyboard */,
+				C37206D21E51846000366DFA /* Main.storyboard */,
+			);
+			path = StoryBoard;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C36613141E4AB20B001BF229 /* Comic Reader */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C36613451E4AB20B001BF229 /* Build configuration list for PBXNativeTarget "Comic Reader" */;
+			buildPhases = (
+				95C93B2EB7B49BE1ECE67EF6 /* [CP] Check Pods Manifest.lock */,
+				C36613111E4AB20B001BF229 /* Sources */,
+				C36613121E4AB20B001BF229 /* Frameworks */,
+				C36613131E4AB20B001BF229 /* Resources */,
+				1FD90BB2CBD6A2DCDBFC0A18 /* [CP] Embed Pods Frameworks */,
+				8570EC8890E72C58C3CDFEB3 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Comic Reader";
+			productName = "Comic Reader";
+			productReference = C36613151E4AB20B001BF229 /* Comic Reader.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C36613301E4AB20B001BF229 /* Comic ReaderTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C36613481E4AB20B001BF229 /* Build configuration list for PBXNativeTarget "Comic ReaderTests" */;
+			buildPhases = (
+				4C6653D20642F5CA2CD8D2A6 /* [CP] Check Pods Manifest.lock */,
+				C366132D1E4AB20B001BF229 /* Sources */,
+				C366132E1E4AB20B001BF229 /* Frameworks */,
+				C366132F1E4AB20B001BF229 /* Resources */,
+				A68EC05391DE1483DA2BB37F /* [CP] Embed Pods Frameworks */,
+				B7145228F7F856EF0141DB91 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C36613331E4AB20B001BF229 /* PBXTargetDependency */,
+			);
+			name = "Comic ReaderTests";
+			productName = "Comic ReaderTests";
+			productReference = C36613311E4AB20B001BF229 /* Comic ReaderTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		C366133B1E4AB20B001BF229 /* Comic ReaderUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C366134B1E4AB20B001BF229 /* Build configuration list for PBXNativeTarget "Comic ReaderUITests" */;
+			buildPhases = (
+				3DB8F9CDAF37F136D95A4182 /* [CP] Check Pods Manifest.lock */,
+				C36613381E4AB20B001BF229 /* Sources */,
+				C36613391E4AB20B001BF229 /* Frameworks */,
+				C366133A1E4AB20B001BF229 /* Resources */,
+				F1A8B3F802832F87E44EE481 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C366133E1E4AB20B001BF229 /* PBXTargetDependency */,
+			);
+			name = "Comic ReaderUITests";
+			productName = "Comic ReaderUITests";
+			productReference = C366133C1E4AB20B001BF229 /* Comic ReaderUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C366130D1E4AB20B001BF229 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = administrator;
+				TargetAttributes = {
+					C36613141E4AB20B001BF229 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 37CSCT379W;
+						ProvisioningStyle = Automatic;
+					};
+					C36613301E4AB20B001BF229 = {
+						CreatedOnToolsVersion = 8.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = C36613141E4AB20B001BF229;
+					};
+					C366133B1E4AB20B001BF229 = {
+						CreatedOnToolsVersion = 8.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = C36613141E4AB20B001BF229;
+					};
+				};
+			};
+			buildConfigurationList = C36613101E4AB20B001BF229 /* Build configuration list for PBXProject "Comic Reader" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C366130C1E4AB20B001BF229;
+			productRefGroup = C36613161E4AB20B001BF229 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C36613141E4AB20B001BF229 /* Comic Reader */,
+				C36613301E4AB20B001BF229 /* Comic ReaderTests */,
+				C366133B1E4AB20B001BF229 /* Comic ReaderUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C36613131E4AB20B001BF229 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C36A61F81E543A89001B1B7C /* new.png in Resources */,
+				C37206D31E51846000366DFA /* LaunchScreen.storyboard in Resources */,
+				7D87B0C61E54609600357D04 /* SubCategoryCell.xib in Resources */,
+				C37206D41E51846000366DFA /* Main.storyboard in Resources */,
+				C36A61F91E543A89001B1B7C /* star.png in Resources */,
+				7D87B0CC1E54611100357D04 /* ProgressView.xib in Resources */,
+				C37206CA1E5183EC00366DFA /* comic.png in Resources */,
+				C36A61F71E543A89001B1B7C /* arrowhighlight.png in Resources */,
+				C3743A2B1E52BF1C00AA984B /* b.jpg in Resources */,
+				7D87B0C41E54609600357D04 /* MainCategoryCell.xib in Resources */,
+				C36A61F51E543A89001B1B7C /* arrow.png in Resources */,
+				C36613281E4AB20B001BF229 /* Assets.xcassets in Resources */,
+				C36A61F61E543A89001B1B7C /* arrowBack.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C366132F1E4AB20B001BF229 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C366133A1E4AB20B001BF229 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1FD90BB2CBD6A2DCDBFC0A18 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Comic Reader/Pods-Comic Reader-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3DB8F9CDAF37F136D95A4182 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		4C6653D20642F5CA2CD8D2A6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		8570EC8890E72C58C3CDFEB3 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Comic Reader/Pods-Comic Reader-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		95C93B2EB7B49BE1ECE67EF6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		A68EC05391DE1483DA2BB37F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Comic ReaderTests/Pods-Comic ReaderTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B7145228F7F856EF0141DB91 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Comic ReaderTests/Pods-Comic ReaderTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F1A8B3F802832F87E44EE481 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Comic ReaderUITests/Pods-Comic ReaderUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C36613111E4AB20B001BF229 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C37206C41E5183E300366DFA /* Comic.m in Sources */,
+				7D87B0B41E545C6500357D04 /* BaseViewController.m in Sources */,
+				C36613261E4AB20B001BF229 /* Comic_Reader.xcdatamodeld in Sources */,
+				C37206BB1E5182DE00366DFA /* ComicViewController.m in Sources */,
+				C37206981E51742E00366DFA /* AppDelegate.m in Sources */,
+				C366131A1E4AB20B001BF229 /* main.m in Sources */,
+				C37206C01E5182DE00366DFA /* SubCategoryController.m in Sources */,
+				7D87B0C31E54609600357D04 /* MainCategoryCell.m in Sources */,
+				C37206BC1E5182DE00366DFA /* MainCategoryController.m in Sources */,
+				7D87B0CB1E54611100357D04 /* ProgressView.m in Sources */,
+				7D87B0C51E54609600357D04 /* SubCategoryCell.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C366132D1E4AB20B001BF229 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C36613361E4AB20B001BF229 /* Comic_ReaderTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C36613381E4AB20B001BF229 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C36613411E4AB20B001BF229 /* Comic_ReaderUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C36613331E4AB20B001BF229 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C36613141E4AB20B001BF229 /* Comic Reader */;
+			targetProxy = C36613321E4AB20B001BF229 /* PBXContainerItemProxy */;
+		};
+		C366133E1E4AB20B001BF229 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C36613141E4AB20B001BF229 /* Comic Reader */;
+			targetProxy = C366133D1E4AB20B001BF229 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		C36613431E4AB20B001BF229 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C36613441E4AB20B001BF229 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C36613461E4AB20B001BF229 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E5F9D4CAA298733960900EEA /* Pods-Comic Reader.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 37CSCT379W;
+				INFOPLIST_FILE = "Comic Reader/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "softfront.Comic-Reader";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		C36613471E4AB20B001BF229 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 22AB865CCFF2F20ED00CAA50 /* Pods-Comic Reader.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 37CSCT379W;
+				INFOPLIST_FILE = "Comic Reader/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "softfront.Comic-Reader";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		C36613491E4AB20B001BF229 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3F36C6C9A632D4C851D5D208 /* Pods-Comic ReaderTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "Comic ReaderTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "softfront.Comic-ReaderTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Comic Reader.app/Comic Reader";
+			};
+			name = Debug;
+		};
+		C366134A1E4AB20B001BF229 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B928F5DF1AFA0DE00653BECA /* Pods-Comic ReaderTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "Comic ReaderTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "softfront.Comic-ReaderTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Comic Reader.app/Comic Reader";
+			};
+			name = Release;
+		};
+		C366134C1E4AB20B001BF229 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FDC437582966E23D88EC5B53 /* Pods-Comic ReaderUITests.debug.xcconfig */;
+			buildSettings = {
+				INFOPLIST_FILE = "Comic ReaderUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "softfront.Comic-ReaderUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "Comic Reader";
+			};
+			name = Debug;
+		};
+		C366134D1E4AB20B001BF229 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 520EAFB76637E213C8A5CD6D /* Pods-Comic ReaderUITests.release.xcconfig */;
+			buildSettings = {
+				INFOPLIST_FILE = "Comic ReaderUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "softfront.Comic-ReaderUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "Comic Reader";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C36613101E4AB20B001BF229 /* Build configuration list for PBXProject "Comic Reader" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C36613431E4AB20B001BF229 /* Debug */,
+				C36613441E4AB20B001BF229 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C36613451E4AB20B001BF229 /* Build configuration list for PBXNativeTarget "Comic Reader" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C36613461E4AB20B001BF229 /* Debug */,
+				C36613471E4AB20B001BF229 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C36613481E4AB20B001BF229 /* Build configuration list for PBXNativeTarget "Comic ReaderTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C36613491E4AB20B001BF229 /* Debug */,
+				C366134A1E4AB20B001BF229 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C366134B1E4AB20B001BF229 /* Build configuration list for PBXNativeTarget "Comic ReaderUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C366134C1E4AB20B001BF229 /* Debug */,
+				C366134D1E4AB20B001BF229 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		C36613241E4AB20B001BF229 /* Comic_Reader.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				C36613251E4AB20B001BF229 /* Comic_Reader.xcdatamodel */,
+			);
+			currentVersion = C36613251E4AB20B001BF229 /* Comic_Reader.xcdatamodel */;
+			path = Comic_Reader.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = C366130D1E4AB20B001BF229 /* Project object */;
+}

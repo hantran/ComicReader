@@ -24,9 +24,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.hasBack = NO;
     // Do any additional setup after loading the view, typically from a nib.
     array = @[@"Truyện chưởng", @"Truyện cười", @"Truyện ngắn", @"Truyện tình yêu", @"Truyện của tôi"];
-    
+
+}
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self layoutView];
 }
 -(void)customNavigationBar
 {
