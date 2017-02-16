@@ -1,0 +1,21 @@
+# Uncomment this line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'Comic Reader' do
+  # Uncomment this line if you're using Swift or would like to use dynamic frameworks
+  # use_frameworks!
+
+  # Pods for Comic Reader
+  pod 'AFNetworking', '~> 2.6'
+
+  target 'Comic ReaderTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'Comic ReaderUITests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+end
