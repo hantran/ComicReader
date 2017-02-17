@@ -18,6 +18,8 @@
 		7FD9DF504893194169AC1AB5 /* libPods-Comic Reader.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B879915E2E9040D2839F3B0B /* libPods-Comic Reader.a */; };
 		9A62FE29A4F2F0C80510AF7E /* libPods-Comic ReaderTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CED73DC06742686A345F170 /* libPods-Comic ReaderTests.a */; };
 		C328369E1E568D37007464D6 /* ComicReaderService.m in Sources */ = {isa = PBXBuildFile; fileRef = C328369D1E568D37007464D6 /* ComicReaderService.m */; };
+		C32836A21E568E80007464D6 /* AlertViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C32836A01E568E80007464D6 /* AlertViewController.m */; };
+		C32836A31E568E80007464D6 /* AlertViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C32836A11E568E80007464D6 /* AlertViewController.xib */; };
 		C366131A1E4AB20B001BF229 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C36613191E4AB20B001BF229 /* main.m */; };
 		C36613261E4AB20B001BF229 /* Comic_Reader.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C36613241E4AB20B001BF229 /* Comic_Reader.xcdatamodeld */; };
 		C36613281E4AB20B001BF229 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C36613271E4AB20B001BF229 /* Assets.xcassets */; };
@@ -79,6 +81,9 @@
 		B928F5DF1AFA0DE00653BECA /* Pods-Comic ReaderTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Comic ReaderTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Comic ReaderTests/Pods-Comic ReaderTests.release.xcconfig"; sourceTree = "<group>"; };
 		C328369C1E568D37007464D6 /* ComicReaderService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComicReaderService.h; sourceTree = "<group>"; };
 		C328369D1E568D37007464D6 /* ComicReaderService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComicReaderService.m; sourceTree = "<group>"; };
+		C328369F1E568E80007464D6 /* AlertViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertViewController.h; sourceTree = "<group>"; };
+		C32836A01E568E80007464D6 /* AlertViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertViewController.m; sourceTree = "<group>"; };
+		C32836A11E568E80007464D6 /* AlertViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AlertViewController.xib; sourceTree = "<group>"; };
 		C36613151E4AB20B001BF229 /* Comic Reader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Comic Reader.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C36613191E4AB20B001BF229 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C36613251E4AB20B001BF229 /* Comic_Reader.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Comic_Reader.xcdatamodel; sourceTree = "<group>"; };
@@ -180,6 +185,9 @@
 		7D87B0C71E54611100357D04 /* DialogViewSubCategory */ = {
 			isa = PBXGroup;
 			children = (
+				C328369F1E568E80007464D6 /* AlertViewController.h */,
+				C32836A01E568E80007464D6 /* AlertViewController.m */,
+				C32836A11E568E80007464D6 /* AlertViewController.xib */,
 				7D87B0C81E54611100357D04 /* ProgressView.h */,
 				7D87B0C91E54611100357D04 /* ProgressView.m */,
 				7D87B0CA1E54611100357D04 /* ProgressView.xib */,
@@ -481,6 +489,7 @@
 				C36A61F51E543A89001B1B7C /* arrow.png in Resources */,
 				C36613281E4AB20B001BF229 /* Assets.xcassets in Resources */,
 				C36A61F61E543A89001B1B7C /* arrowBack.png in Resources */,
+				C32836A31E568E80007464D6 /* AlertViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -640,6 +649,7 @@
 				7D87B0CB1E54611100357D04 /* ProgressView.m in Sources */,
 				C328369E1E568D37007464D6 /* ComicReaderService.m in Sources */,
 				7D87B0C51E54609600357D04 /* SubCategoryCell.m in Sources */,
+				C32836A21E568E80007464D6 /* AlertViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
