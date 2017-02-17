@@ -15,6 +15,8 @@
 
 @property (readonly, strong) NSPersistentContainer *persistentContainer;
 
+@property(strong,nonatomic) NSDictionary *category;
+
 - (void)saveContext;
 
 

@@ -9,5 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface ProgressView : UIView
+@property (weak, nonatomic) IBOutlet UILabel *titleComic;
+@property (weak, nonatomic) IBOutlet UILabel *percent;
+@property (weak, nonatomic) IBOutlet UIProgressView *progressBar;
+@property (weak, nonatomic) IBOutlet UILabel *percentPage;
 
 @end

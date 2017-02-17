@@ -11,7 +11,8 @@
 
 @interface MainCategoryController : BaseViewController <UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *mTableView;
+@property (strong, nonatomic) NSManagedObjectContext *context;
 
-
+-(void)loadData;
 @end
 

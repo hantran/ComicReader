@@ -9,6 +9,8 @@
 #import "SubCategoryController.h"
 #import "SubCategoryCell.h"
 #import "ComicViewController.h"
+#import "ProgressView.h"
+#import "SubCategoryController.h"
 
 @interface SubCategoryController ()
 @property(nonatomic,strong) NSArray *array;
@@ -74,6 +76,10 @@
 }
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    if(indexPath.row == 1){
+//        ProgressView *progress = [[ProgressView alloc] init];
+//        [self showViewController:progress sender:nil];
+    }else
     [self performSegueWithIdentifier:@"onClickComic" sender:self];
 }
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{

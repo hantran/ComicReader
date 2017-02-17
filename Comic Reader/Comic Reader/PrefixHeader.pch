@@ -2,7 +2,7 @@
 //  PrefixHeader.pch
 //  Comic Reader
 //
-//  Created by Tran Han on 2/15/17.
+//  Created by administrator on 2/16/17.
 //  Copyright © 2017 administrator. All rights reserved.
 //
 
@@ -11,7 +11,6 @@
 
 // Include any system framework and library headers here that should be included in all compilation units.
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
-
 #import "BaseViewController.h"
-#import "Header.h"
+
 #endif /* PrefixHeader_pch */

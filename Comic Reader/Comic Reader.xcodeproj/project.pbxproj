@@ -17,6 +17,7 @@
 		7D87B0CC1E54611100357D04 /* ProgressView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7D87B0CA1E54611100357D04 /* ProgressView.xib */; };
 		7FD9DF504893194169AC1AB5 /* libPods-Comic Reader.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B879915E2E9040D2839F3B0B /* libPods-Comic Reader.a */; };
 		9A62FE29A4F2F0C80510AF7E /* libPods-Comic ReaderTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CED73DC06742686A345F170 /* libPods-Comic ReaderTests.a */; };
+		C328369E1E568D37007464D6 /* ComicReaderService.m in Sources */ = {isa = PBXBuildFile; fileRef = C328369D1E568D37007464D6 /* ComicReaderService.m */; };
 		C366131A1E4AB20B001BF229 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C36613191E4AB20B001BF229 /* main.m */; };
 		C36613261E4AB20B001BF229 /* Comic_Reader.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C36613241E4AB20B001BF229 /* Comic_Reader.xcdatamodeld */; };
 		C36613281E4AB20B001BF229 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C36613271E4AB20B001BF229 /* Assets.xcassets */; };
@@ -76,6 +77,8 @@
 		B6DE9AF9A8D550C17F55DE02 /* libPods-Comic ReaderUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Comic ReaderUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B879915E2E9040D2839F3B0B /* libPods-Comic Reader.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Comic Reader.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B928F5DF1AFA0DE00653BECA /* Pods-Comic ReaderTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Comic ReaderTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Comic ReaderTests/Pods-Comic ReaderTests.release.xcconfig"; sourceTree = "<group>"; };
+		C328369C1E568D37007464D6 /* ComicReaderService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComicReaderService.h; sourceTree = "<group>"; };
+		C328369D1E568D37007464D6 /* ComicReaderService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComicReaderService.m; sourceTree = "<group>"; };
 		C36613151E4AB20B001BF229 /* Comic Reader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Comic Reader.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C36613191E4AB20B001BF229 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C36613251E4AB20B001BF229 /* Comic_Reader.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Comic_Reader.xcdatamodel; sourceTree = "<group>"; };
@@ -184,6 +187,15 @@
 			path = DialogViewSubCategory;
 			sourceTree = "<group>";
 		};
+		C328369B1E568D37007464D6 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				C328369C1E568D37007464D6 /* ComicReaderService.h */,
+				C328369D1E568D37007464D6 /* ComicReaderService.m */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 		C366130C1E4AB20B001BF229 = {
 			isa = PBXGroup;
 			children = (
@@ -209,9 +221,9 @@
 		C36613171E4AB20B001BF229 /* Comic Reader */ = {
 			isa = PBXGroup;
 			children = (
+				C328369B1E568D37007464D6 /* Service */,
 				7D87B0B51E545E1800357D04 /* PrefixHeader.pch */,
 				C37206D01E51846000366DFA /* StoryBoard */,
-				C37206CE1E5183FF00366DFA /* Service */,
 				C37206CF1E5183FF00366DFA /* Database */,
 				C37206C51E5183EC00366DFA /* Res */,
 				C37206C11E5183E300366DFA /* Model */,
@@ -323,13 +335,6 @@
 				C37206C61E5183EC00366DFA /* comic.png */,
 			);
 			path = Res;
-			sourceTree = "<group>";
-		};
-		C37206CE1E5183FF00366DFA /* Service */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Service;
 			sourceTree = "<group>";
 		};
 		C37206CF1E5183FF00366DFA /* Database */ = {
@@ -633,6 +638,7 @@
 				7D87B0C31E54609600357D04 /* MainCategoryCell.m in Sources */,
 				C37206BC1E5182DE00366DFA /* MainCategoryController.m in Sources */,
 				7D87B0CB1E54611100357D04 /* ProgressView.m in Sources */,
+				C328369E1E568D37007464D6 /* ComicReaderService.m in Sources */,
 				7D87B0C51E54609600357D04 /* SubCategoryCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

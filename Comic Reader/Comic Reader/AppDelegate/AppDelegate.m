@@ -7,20 +7,24 @@
 //
 
 #import "AppDelegate.h"
+#import "ComicReaderService.h"
 
 @interface AppDelegate ()
 
 @end
 
 @implementation AppDelegate
-
+@synthesize category;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    [NSThread sleepForTimeInterval:1.0];
     
-    UIImage *backButton = [[UIImage imageNamed:@"arrowBack.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 13, 0, 6)];
-    [[UIBarButtonItem appearance] setBackButtonBackgroundImage:backButton forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+    ComicReaderService *parseService = [[ComicReaderService alloc] init];
+    [parseService fetchCategoryData:@"http://172.20.23.10/ComicReader/category/list/"];
+    [NSThread sleepForTimeInterval:5.0];
+    
+//    UIImage *backButton = [[UIImage imageNamed:@"arrowBack.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 13, 0, 6)];
+//    [[UIBarButtonItem appearance] setBackButtonBackgroundImage:backButton forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
     return YES;
 }
 

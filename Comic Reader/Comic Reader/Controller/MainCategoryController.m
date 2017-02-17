@@ -9,16 +9,20 @@
 #import "MainCategoryController.h"
 #import "MainCategoryCell.h"
 #import "SubCategoryController.h"
+#import "AppDelegate.h"
 
 
 @interface MainCategoryController ()
 @property(nonatomic,strong) NSArray *array;
+@property(strong, nonatomic) NSMutableArray *category;
 
 @end
 
 @implementation MainCategoryController
 @synthesize mTableView;
 @synthesize array;
+@synthesize context;
+@synthesize category;
 
 #pragma mark - Lifecycle
 
@@ -34,6 +38,19 @@
     [super viewWillAppear:animated];
     [self layoutView];
 }
+-(void)viewDidAppear:(BOOL)animated{
+    [self loadData];
+    }
+
+- (void)loadData{
+    AppDelegate *delegate =(AppDelegate*) [[UIApplication sharedApplication] delegate];
+    context = delegate.persistentContainer.viewContext;
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"Category"];
+    self.category = [[context executeFetchRequest:fetchRequest error:nil] mutableCopy];
+    
+    [self.mTableView reloadData];
+}
+
 -(void)customNavigationBar
 {
     [super customNavigationBar];
@@ -43,7 +60,7 @@
     // Dispose of any resources that can be recreated.
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 5;
+    return category.count;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -55,7 +72,8 @@
         NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"MainCategoryCell" owner:self options:nil];
         cell = [nib objectAtIndex:0];
     }
-    cell.categoryName.text = [array objectAtIndex:indexPath.row];
+    NSManagedObject *cate = [category objectAtIndex:indexPath.row];
+    cell.categoryName.text = [cate valueForKey:@"title"];
     cell.categoryName.highlightedTextColor = [UIColor orangeColor];
     cell.imageArrow.image = [UIImage imageNamed:@"arrow.png"];
     cell.imageArrow.highlightedImage = [UIImage imageNamed:@"arrowhighlight.png"];
