@@ -39,6 +39,9 @@
 		C37206D31E51846000366DFA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C37206D11E51846000366DFA /* LaunchScreen.storyboard */; };
 		C37206D41E51846000366DFA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C37206D21E51846000366DFA /* Main.storyboard */; };
 		C3743A2B1E52BF1C00AA984B /* b.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C3743A2A1E52BF1C00AA984B /* b.jpg */; };
+		C37568CA1E5BCFC100896253 /* ah3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C37568C71E5BCFC100896253 /* ah3.jpg */; };
+		C37568CB1E5BCFC100896253 /* ah2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C37568C81E5BCFC100896253 /* ah2.jpg */; };
+		C37568CC1E5BCFC100896253 /* ah1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C37568C91E5BCFC100896253 /* ah1.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,6 +117,9 @@
 		C37206D11E51846000366DFA /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C37206D21E51846000366DFA /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		C3743A2A1E52BF1C00AA984B /* b.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = b.jpg; sourceTree = "<group>"; };
+		C37568C71E5BCFC100896253 /* ah3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ah3.jpg; sourceTree = "<group>"; };
+		C37568C81E5BCFC100896253 /* ah2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ah2.jpg; sourceTree = "<group>"; };
+		C37568C91E5BCFC100896253 /* ah1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ah1.jpg; sourceTree = "<group>"; };
 		E5F9D4CAA298733960900EEA /* Pods-Comic Reader.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Comic Reader.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Comic Reader/Pods-Comic Reader.debug.xcconfig"; sourceTree = "<group>"; };
 		FDC437582966E23D88EC5B53 /* Pods-Comic ReaderUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Comic ReaderUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Comic ReaderUITests/Pods-Comic ReaderUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -334,6 +340,9 @@
 		C37206C51E5183EC00366DFA /* Res */ = {
 			isa = PBXGroup;
 			children = (
+				C37568C71E5BCFC100896253 /* ah3.jpg */,
+				C37568C81E5BCFC100896253 /* ah2.jpg */,
+				C37568C91E5BCFC100896253 /* ah1.jpg */,
 				C36A61F01E543A89001B1B7C /* arrow.png */,
 				C36A61F11E543A89001B1B7C /* arrowBack.png */,
 				C36A61F21E543A89001B1B7C /* arrowhighlight.png */,
@@ -477,6 +486,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C36A61F81E543A89001B1B7C /* new.png in Resources */,
+				C37568CB1E5BCFC100896253 /* ah2.jpg in Resources */,
 				C37206D31E51846000366DFA /* LaunchScreen.storyboard in Resources */,
 				7D87B0C61E54609600357D04 /* SubCategoryCell.xib in Resources */,
 				C37206D41E51846000366DFA /* Main.storyboard in Resources */,
@@ -485,11 +495,13 @@
 				C37206CA1E5183EC00366DFA /* comic.png in Resources */,
 				C36A61F71E543A89001B1B7C /* arrowhighlight.png in Resources */,
 				C3743A2B1E52BF1C00AA984B /* b.jpg in Resources */,
+				C37568CA1E5BCFC100896253 /* ah3.jpg in Resources */,
 				7D87B0C41E54609600357D04 /* MainCategoryCell.xib in Resources */,
 				C36A61F51E543A89001B1B7C /* arrow.png in Resources */,
 				C36613281E4AB20B001BF229 /* Assets.xcassets in Resources */,
 				C36A61F61E543A89001B1B7C /* arrowBack.png in Resources */,
 				C32836A31E568E80007464D6 /* AlertViewController.xib in Resources */,
+				C37568CC1E5BCFC100896253 /* ah1.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

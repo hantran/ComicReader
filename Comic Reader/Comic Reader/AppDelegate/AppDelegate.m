@@ -19,15 +19,10 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
-    ComicReaderService *parseService = [[ComicReaderService alloc] init];
-    [parseService fetchCategoryData:@"http://172.20.23.10/ComicReader/category/list/"];
-    [NSThread sleepForTimeInterval:5.0];
+    [NSThread sleepForTimeInterval:2.0];
     
-//    UIImage *backButton = [[UIImage imageNamed:@"arrowBack.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 13, 0, 6)];
-//    [[UIBarButtonItem appearance] setBackButtonBackgroundImage:backButton forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
     return YES;
 }
-
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

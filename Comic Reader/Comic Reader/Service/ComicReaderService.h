@@ -8,13 +8,16 @@
 
 #import <Foundation/Foundation.h>
 #import <AFNetworking/AFNetworking.h>
+#import "MainCategoryController.h"
+#import "SubCategoryController.h"
 
 
 @interface ComicReaderService : NSObject
 @property(strong, nonatomic) NSDictionary *category;
--(AFHTTPRequestOperationManager *)getRequestOperation;
--(void) fetchCategoryData: (NSString *)stringURL;
--(void) fetchComicData: (NSString *)stringURL;
+@property(strong, nonatomic) NSDictionary *comic;
 
+-(AFHTTPRequestOperationManager *)getRequestOperation;
+-(void) fetchCategoryData: (NSString *)stringURL main: (MainCategoryController *) mainCate;
+-(void) fetchComicData: (NSString *)stringURL categoryId:(int) cateId;
 
 @end

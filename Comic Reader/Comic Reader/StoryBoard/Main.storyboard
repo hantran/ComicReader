@@ -105,47 +105,36 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" maximumZoomScale="4" translatesAutoresizingMaskIntoConstraints="NO" id="wYp-pK-de2">
-                                <frame key="frameInset" minX="46" minY="64" width="320" height="504"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1/50" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Fa-mV-MIE">
-                                        <rect key="frame" x="278" y="-56" width="34" height="20.5"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ujo-gp-zqK">
-                                        <rect key="frame" x="8" y="-56" width="304" height="488"/>
-                                    </imageView>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="ujo-gp-zqK" firstAttribute="height" secondItem="wYp-pK-de2" secondAttribute="height" id="NUi-zo-Yk2"/>
-                                    <constraint firstItem="ujo-gp-zqK" firstAttribute="width" secondItem="wYp-pK-de2" secondAttribute="width" id="kcv-gl-531"/>
-                                </constraints>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" maximumZoomScale="4" translatesAutoresizingMaskIntoConstraints="NO" id="wYp-pK-de2">
                                 <connections>
                                     <outlet property="delegate" destination="Omq-ok-7Dp" id="iIL-U5-ngk"/>
                                 </connections>
                             </scrollView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1/50" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Fa-mV-MIE">
+                                <frame key="frameInset" minX="330" minY="70" width="34" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="wYp-pK-de2" secondAttribute="trailing" id="DWd-Yd-qPm"/>
-                            <constraint firstItem="wYp-pK-de2" firstAttribute="leading" secondItem="l8f-JE-K4J" secondAttribute="leading" id="T1y-kc-SOU"/>
-                            <constraint firstItem="wYp-pK-de2" firstAttribute="top" secondItem="dH3-iZ-Lg7" secondAttribute="bottom" id="fuj-He-0GM"/>
-                            <constraint firstItem="ACR-QI-qez" firstAttribute="top" secondItem="wYp-pK-de2" secondAttribute="bottom" id="lYd-Di-gXA"/>
+                            <constraint firstAttribute="trailing" secondItem="wYp-pK-de2" secondAttribute="trailing" id="3Eu-Ab-1cB"/>
+                            <constraint firstItem="wYp-pK-de2" firstAttribute="top" secondItem="dH3-iZ-Lg7" secondAttribute="bottom" id="FH7-ag-czb"/>
+                            <constraint firstItem="wYp-pK-de2" firstAttribute="leading" secondItem="l8f-JE-K4J" secondAttribute="leading" id="hWr-PM-6q1"/>
+                            <constraint firstItem="ACR-QI-qez" firstAttribute="top" secondItem="wYp-pK-de2" secondAttribute="bottom" id="yiX-nB-J34"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="RUp-Xq-Sik"/>
                     <connections>
-                        <outlet property="imageComic" destination="ujo-gp-zqK" id="Qsp-v1-vry"/>
                         <outlet property="scrollView" destination="wYp-pK-de2" id="96p-9C-VCm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="foQ-1T-dca" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="487.5" y="1580.2816901408451"/>
+            <point key="canvasLocation" x="487.19999999999999" y="1580.0599700149926"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="uqk-uV-z2e">

@@ -19,11 +19,36 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.hasBack = YES;
-    imageComic.image = [UIImage imageNamed:@"b.jpg"];
+   
+    CGRect screenRect = [[UIScreen mainScreen] bounds];
+    CGFloat screenWidth = screenRect.size.width;
+    CGFloat screenHeight = screenRect.size.height;
+    
+    UIImage *image0 = [UIImage imageNamed:@"b.jpg"];
+    UIImage *image1 = [UIImage imageNamed:@"ah1.jpg"];
+    UIImage *image2 = [UIImage imageNamed:@"ah2.jpg"];
+    UIImage *image3 = [UIImage imageNamed:@"ah3.jpg"];
+    
+    NSArray *images = [[NSArray alloc] initWithObjects:image0,image1,image2,image3,nil];
+    // Now create a UIScrollView to hold the UIImageViews
+    scrollView.pagingEnabled = YES;
+    
+        [scrollView setIndicatorStyle:UIScrollViewIndicatorStyleWhite];
+    
+    for (int i = 0; i < [images count]; i++) {
+        CGFloat xOrigin = i * screenWidth;
+        UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(xOrigin,0,screenWidth,screenHeight)];
+        [imageView setImage:[images objectAtIndex:i]];
+        [scrollView addSubview:imageView];
+    }
+    
+    // Set the contentSize equal to the size of the UIImageView
+//     scrollView.contentSize = imageView.scrollview.size;
+    scrollView.contentSize = CGSizeMake(4 * screenWidth, screenHeight);
     [scrollView setMaximumZoomScale:2.0f];
     [scrollView setClipsToBounds:YES];
-    self.navigationController.navigationBar.tintColor = [UIColor redColor];
-   
+    
+    
 }
 -(void)viewWillAppear:(BOOL)animated
 {
