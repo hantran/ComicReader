@@ -33,13 +33,15 @@
 -(void)customNavigationBar
 {
     // init backgroung color navigationbar
-    [[UINavigationBar appearance] setBarTintColor:UIColorFromRGB(0x067AB5)];
-    self.navigationController.navigationBar.tintColor = [UIColor redColor];
+    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:55.0/255.0f green:113.0/255.0f blue:183.0/255.0f alpha:1.0]];
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    
     // add row back button
 //    [self.navigationController.navigationBar addSubview:]
     if (self.hasBack) {
         
-        [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"arrowBack.png"] forBarMetrics:UIBarMetricsDefault];
+//        [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"arrowBack.png"] forBarMetrics:UIBarMetricsDefault];
+//        [self.navigationController.navigationBar setBackIndicatorImage:[UIImage imageNamed:@"arrowBack.png"]];
 
     }else
     {

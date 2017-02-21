@@ -36,7 +36,12 @@
     self.hasBack = NO;
     AppDelegate *delegate =(AppDelegate*) [[UIApplication sharedApplication] delegate];
     context = delegate.persistentContainer.viewContext;
-}
+    mTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+//    UIBarButtonItem *backButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"arrowBack.png"] style:UIBarButtonItemStyleDone target:nil action:nil];
+//    [backButtonItem setBackgroundImage:[UIImage imageNamed:@"arrowBack.png"] forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+//    self.navigationItem.backBarButtonItem = backButtonItem;
+    
+    }
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
@@ -92,6 +97,8 @@
     cell.categoryName.highlightedTextColor = [UIColor orangeColor];
     cell.imageArrow.image = [UIImage imageNamed:@"arrow.png"];
     cell.imageArrow.highlightedImage = [UIImage imageNamed:@"arrowhighlight.png"];
+    
+    
     return cell;
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -105,6 +112,10 @@
         SubCategoryController *subViewController =segue.destinationViewController;
         subViewController.cateId = cateId;
     }
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 68;
 }
 
 @end

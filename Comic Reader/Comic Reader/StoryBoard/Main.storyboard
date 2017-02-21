@@ -29,12 +29,12 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="42G-2P-hrQ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="3gp-Uh-O5o"/>
                             <constraint firstItem="42G-2P-hrQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="AQu-1N-CgL"/>
                             <constraint firstItem="42G-2P-hrQ" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="U5L-E3-TMA"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="42G-2P-hrQ" secondAttribute="bottom" id="afp-dU-Fom"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="42G-2P-hrQ" secondAttribute="trailing" id="e0P-9t-3qy"/>
                             <constraint firstItem="42G-2P-hrQ" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="eWQ-fI-tkx"/>
-                            <constraint firstItem="42G-2P-hrQ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="g8i-gb-evh"/>
+                            <constraint firstAttribute="trailing" secondItem="42G-2P-hrQ" secondAttribute="trailing" id="tmD-aP-XAn"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Comic Reader" id="anq-BR-U7p"/>
@@ -110,9 +110,7 @@
                                     <outlet property="delegate" destination="Omq-ok-7Dp" id="iIL-U5-ngk"/>
                                 </connections>
                             </scrollView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1/50" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Fa-mV-MIE">
-                                <frame key="frameInset" minX="330" minY="70" width="34" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1/50" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Fa-mV-MIE">
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -123,6 +121,8 @@
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="wYp-pK-de2" secondAttribute="trailing" id="3Eu-Ab-1cB"/>
                             <constraint firstItem="wYp-pK-de2" firstAttribute="top" secondItem="dH3-iZ-Lg7" secondAttribute="bottom" id="FH7-ag-czb"/>
+                            <constraint firstItem="2Fa-mV-MIE" firstAttribute="top" secondItem="dH3-iZ-Lg7" secondAttribute="bottom" id="UD8-g0-5AM"/>
+                            <constraint firstAttribute="trailing" secondItem="2Fa-mV-MIE" secondAttribute="trailing" id="dRL-tc-Qlu"/>
                             <constraint firstItem="wYp-pK-de2" firstAttribute="leading" secondItem="l8f-JE-K4J" secondAttribute="leading" id="hWr-PM-6q1"/>
                             <constraint firstItem="ACR-QI-qez" firstAttribute="top" secondItem="wYp-pK-de2" secondAttribute="bottom" id="yiX-nB-J34"/>
                         </constraints>
@@ -141,11 +141,14 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8KX-e9-4PG" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="8fd-VL-f0K">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" backIndicatorImage="arrowBack.png" id="8fd-VL-f0K">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                        <color key="barTintColor" red="0.1176470588" green="0.58039215690000001" blue="0.87058823529999996" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.19225615262985229" green="0.40619301795959473" blue="0.65942621231079102" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -157,4 +160,7 @@
             <point key="canvasLocation" x="-450.39999999999998" y="77.811094452773617"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="arrowBack.png" width="41" height="53"/>
+    </resources>
 </document>

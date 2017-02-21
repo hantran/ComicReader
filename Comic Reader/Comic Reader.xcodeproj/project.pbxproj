@@ -42,6 +42,7 @@
 		C37568CA1E5BCFC100896253 /* ah3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C37568C71E5BCFC100896253 /* ah3.jpg */; };
 		C37568CB1E5BCFC100896253 /* ah2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C37568C81E5BCFC100896253 /* ah2.jpg */; };
 		C37568CC1E5BCFC100896253 /* ah1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C37568C91E5BCFC100896253 /* ah1.jpg */; };
+		C37568D31E5C278300896253 /* ComicReaderDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = C37568D21E5C278300896253 /* ComicReaderDatabase.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -120,6 +121,8 @@
 		C37568C71E5BCFC100896253 /* ah3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ah3.jpg; sourceTree = "<group>"; };
 		C37568C81E5BCFC100896253 /* ah2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ah2.jpg; sourceTree = "<group>"; };
 		C37568C91E5BCFC100896253 /* ah1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ah1.jpg; sourceTree = "<group>"; };
+		C37568D11E5C278300896253 /* ComicReaderDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComicReaderDatabase.h; sourceTree = "<group>"; };
+		C37568D21E5C278300896253 /* ComicReaderDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComicReaderDatabase.m; sourceTree = "<group>"; };
 		E5F9D4CAA298733960900EEA /* Pods-Comic Reader.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Comic Reader.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Comic Reader/Pods-Comic Reader.debug.xcconfig"; sourceTree = "<group>"; };
 		FDC437582966E23D88EC5B53 /* Pods-Comic ReaderUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Comic ReaderUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Comic ReaderUITests/Pods-Comic ReaderUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -235,10 +238,10 @@
 		C36613171E4AB20B001BF229 /* Comic Reader */ = {
 			isa = PBXGroup;
 			children = (
+				C37568D01E5C276C00896253 /* Database */,
 				C328369B1E568D37007464D6 /* Service */,
 				7D87B0B51E545E1800357D04 /* PrefixHeader.pch */,
 				C37206D01E51846000366DFA /* StoryBoard */,
-				C37206CF1E5183FF00366DFA /* Database */,
 				C37206C51E5183EC00366DFA /* Res */,
 				C37206C11E5183E300366DFA /* Model */,
 				C37206A81E5182DE00366DFA /* Controller */,
@@ -354,13 +357,6 @@
 			path = Res;
 			sourceTree = "<group>";
 		};
-		C37206CF1E5183FF00366DFA /* Database */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Database;
-			sourceTree = "<group>";
-		};
 		C37206D01E51846000366DFA /* StoryBoard */ = {
 			isa = PBXGroup;
 			children = (
@@ -368,6 +364,15 @@
 				C37206D21E51846000366DFA /* Main.storyboard */,
 			);
 			path = StoryBoard;
+			sourceTree = "<group>";
+		};
+		C37568D01E5C276C00896253 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				C37568D11E5C278300896253 /* ComicReaderDatabase.h */,
+				C37568D21E5C278300896253 /* ComicReaderDatabase.m */,
+			);
+			path = Database;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -658,6 +663,7 @@
 				C37206C01E5182DE00366DFA /* SubCategoryController.m in Sources */,
 				7D87B0C31E54609600357D04 /* MainCategoryCell.m in Sources */,
 				C37206BC1E5182DE00366DFA /* MainCategoryController.m in Sources */,
+				C37568D31E5C278300896253 /* ComicReaderDatabase.m in Sources */,
 				7D87B0CB1E54611100357D04 /* ProgressView.m in Sources */,
 				C328369E1E568D37007464D6 /* ComicReaderService.m in Sources */,
 				7D87B0C51E54609600357D04 /* SubCategoryCell.m in Sources */,

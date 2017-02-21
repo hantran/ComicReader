@@ -24,6 +24,8 @@
     CGFloat screenWidth = screenRect.size.width;
     CGFloat screenHeight = screenRect.size.height;
     
+    
+    
     UIImage *image0 = [UIImage imageNamed:@"b.jpg"];
     UIImage *image1 = [UIImage imageNamed:@"ah1.jpg"];
     UIImage *image2 = [UIImage imageNamed:@"ah2.jpg"];
@@ -33,7 +35,7 @@
     // Now create a UIScrollView to hold the UIImageViews
     scrollView.pagingEnabled = YES;
     
-        [scrollView setIndicatorStyle:UIScrollViewIndicatorStyleWhite];
+    [scrollView setIndicatorStyle:UIScrollViewIndicatorStyleWhite];
     
     for (int i = 0; i < [images count]; i++) {
         CGFloat xOrigin = i * screenWidth;
@@ -44,7 +46,7 @@
     
     // Set the contentSize equal to the size of the UIImageView
 //     scrollView.contentSize = imageView.scrollview.size;
-    scrollView.contentSize = CGSizeMake(4 * screenWidth, screenHeight);
+    scrollView.contentSize = CGSizeMake(4 * screenWidth, scrollView.frame.size.height);
     [scrollView setMaximumZoomScale:2.0f];
     [scrollView setClipsToBounds:YES];
     

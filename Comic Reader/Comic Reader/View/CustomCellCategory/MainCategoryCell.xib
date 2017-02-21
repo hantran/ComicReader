@@ -17,24 +17,29 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Truyện chưởng" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ajt-W2-Mj3">
-                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                        <color key="tintColor" red="0.20784313725490194" green="0.43137254901960786" blue="0.70196078431372544" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                         <color key="textColor" red="0.091762207448482513" green="0.10881399363279343" blue="0.55864459276199341" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="l6c-Gg-1CL">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="l6c-Gg-1CL">
+                        <frame key="frameInset" minX="275" minY="10" width="40" height="40"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="40" id="2oI-ay-tzi"/>
+                            <constraint firstAttribute="width" constant="40" id="2oI-ay-tzi" userLabel="width = 38"/>
+                            <constraint firstAttribute="height" constant="48" id="U2i-S3-Ax5"/>
                         </constraints>
                     </imageView>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="bottom" secondItem="l6c-Gg-1CL" secondAttribute="bottom" constant="5" id="Ncq-1E-fbN" userLabel="bottom = Image Arrow.bottom + 8"/>
+                    <constraint firstItem="l6c-Gg-1CL" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="AWX-z4-9fK"/>
+                    <constraint firstAttribute="bottom" secondItem="l6c-Gg-1CL" secondAttribute="bottom" constant="10" id="Ncq-1E-fbN" userLabel="bottom = Image Arrow.bottom + 20"/>
                     <constraint firstItem="ajt-W2-Mj3" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="15" id="OTj-pj-dHT"/>
                     <constraint firstAttribute="trailing" secondItem="l6c-Gg-1CL" secondAttribute="trailing" constant="5" id="YuB-4Z-rI7"/>
                     <constraint firstItem="ajt-W2-Mj3" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="t4D-Hg-vZ3"/>
-                    <constraint firstItem="l6c-Gg-1CL" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="wUr-qI-Q6N" userLabel="Image Arrow.top = top + 8"/>
+                    <constraint firstItem="l6c-Gg-1CL" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="wUr-qI-Q6N" userLabel="Image Arrow.top = top + 20"/>
                 </constraints>
             </tableViewCellContentView>
+            <inset key="separatorInset" minX="2" minY="0.0" maxX="0.0" maxY="0.0"/>
             <connections>
                 <outlet property="categoryName" destination="ajt-W2-Mj3" id="sLJ-lf-XCg"/>
                 <outlet property="imageArrow" destination="l6c-Gg-1CL" id="xHy-MP-cmX"/>
