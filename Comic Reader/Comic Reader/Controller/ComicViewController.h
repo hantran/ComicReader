@@ -13,5 +13,6 @@
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UIImageView *imageComic;
 @property (weak, nonatomic) UILabel *labelPage;
+@property (strong,nonatomic) NSString *titleLabel;
 
 @end

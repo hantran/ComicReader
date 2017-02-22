@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="8KX-e9-4PG">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -29,12 +29,11 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="42G-2P-hrQ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="3gp-Uh-O5o"/>
-                            <constraint firstItem="42G-2P-hrQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="AQu-1N-CgL"/>
-                            <constraint firstItem="42G-2P-hrQ" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="U5L-E3-TMA"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="42G-2P-hrQ" secondAttribute="bottom" id="afp-dU-Fom"/>
-                            <constraint firstItem="42G-2P-hrQ" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="eWQ-fI-tkx"/>
-                            <constraint firstAttribute="trailing" secondItem="42G-2P-hrQ" secondAttribute="trailing" id="tmD-aP-XAn"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="42G-2P-hrQ" secondAttribute="bottom" id="3GK-L2-h9F"/>
+                            <constraint firstItem="42G-2P-hrQ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Gkx-q8-cBo"/>
+                            <constraint firstAttribute="trailing" secondItem="42G-2P-hrQ" secondAttribute="trailing" id="WIJ-G8-Mkt"/>
+                            <constraint firstItem="42G-2P-hrQ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="60" id="sMA-Vm-Ck4"/>
+                            <constraint firstItem="42G-2P-hrQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="sR7-Mn-Ymk"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Comic Reader" id="anq-BR-U7p"/>
@@ -76,10 +75,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="wy5-8S-xeK" firstAttribute="top" secondItem="RAJ-dQ-8KR" secondAttribute="topMargin" id="C2v-pZ-NDI"/>
                             <constraint firstItem="6xJ-cB-Xap" firstAttribute="top" secondItem="wy5-8S-xeK" secondAttribute="bottom" id="Myg-Y3-pSt"/>
-                            <constraint firstItem="wy5-8S-xeK" firstAttribute="centerY" secondItem="RAJ-dQ-8KR" secondAttribute="centerY" id="Psb-Rz-voJ"/>
                             <constraint firstItem="wy5-8S-xeK" firstAttribute="centerX" secondItem="RAJ-dQ-8KR" secondAttribute="centerX" id="ixj-sT-Y3p"/>
+                            <constraint firstItem="wy5-8S-xeK" firstAttribute="top" secondItem="R9u-Cl-cQz" secondAttribute="bottom" constant="60" id="ppx-dG-ZCX"/>
                             <constraint firstItem="wy5-8S-xeK" firstAttribute="leading" secondItem="RAJ-dQ-8KR" secondAttribute="leadingMargin" id="r8s-GX-0VK"/>
                         </constraints>
                     </view>
@@ -91,7 +89,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ixy-yN-gGV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="489" y="840"/>
+            <point key="canvasLocation" x="488.80000000000001" y="839.73013493253382"/>
         </scene>
         <!--Comic View Controller-->
         <scene sceneID="p3d-mv-6lC">
@@ -120,9 +118,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="wYp-pK-de2" secondAttribute="trailing" id="3Eu-Ab-1cB"/>
-                            <constraint firstItem="wYp-pK-de2" firstAttribute="top" secondItem="dH3-iZ-Lg7" secondAttribute="bottom" id="FH7-ag-czb"/>
-                            <constraint firstItem="2Fa-mV-MIE" firstAttribute="top" secondItem="dH3-iZ-Lg7" secondAttribute="bottom" id="UD8-g0-5AM"/>
+                            <constraint firstItem="2Fa-mV-MIE" firstAttribute="top" secondItem="dH3-iZ-Lg7" secondAttribute="bottom" constant="60" id="UZv-kM-hGh"/>
                             <constraint firstAttribute="trailing" secondItem="2Fa-mV-MIE" secondAttribute="trailing" id="dRL-tc-Qlu"/>
+                            <constraint firstItem="wYp-pK-de2" firstAttribute="top" secondItem="dH3-iZ-Lg7" secondAttribute="bottom" constant="60" id="fJ5-BJ-xwk"/>
                             <constraint firstItem="wYp-pK-de2" firstAttribute="leading" secondItem="l8f-JE-K4J" secondAttribute="leading" id="hWr-PM-6q1"/>
                             <constraint firstItem="ACR-QI-qez" firstAttribute="top" secondItem="wYp-pK-de2" secondAttribute="bottom" id="yiX-nB-J34"/>
                         </constraints>
@@ -136,31 +134,5 @@
             </objects>
             <point key="canvasLocation" x="487.19999999999999" y="1580.0599700149926"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="uqk-uV-z2e">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8KX-e9-4PG" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" backIndicatorImage="arrowBack.png" id="8fd-VL-f0K">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                        <color key="barTintColor" red="0.19225615262985229" green="0.40619301795959473" blue="0.65942621231079102" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <textAttributes key="titleTextAttributes">
-                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        </textAttributes>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="rP5-7Q-TYp"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="q93-A1-BTp" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-450.39999999999998" y="77.811094452773617"/>
-        </scene>
     </scenes>
-    <resources>
-        <image name="arrowBack.png" width="41" height="53"/>
-    </resources>
 </document>

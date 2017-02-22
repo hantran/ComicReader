@@ -16,10 +16,11 @@
 @synthesize scrollView;
 @synthesize imageComic;
 @synthesize labelPage;
+@synthesize titleLabel;
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.hasBack = YES;
-   
+    self.titleNav.text = titleLabel;
     CGRect screenRect = [[UIScreen mainScreen] bounds];
     CGFloat screenWidth = screenRect.size.width;
     CGFloat screenHeight = screenRect.size.height;

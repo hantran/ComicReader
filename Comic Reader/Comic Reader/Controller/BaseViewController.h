@@ -7,10 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CustomNavigationBar.h"
 
 @interface BaseViewController : UIViewController
+@property (strong, nonatomic)  CustomNavigationBar *customNav;
 @property (nonatomic,assign) BOOL hasBack;
 @property (nonatomic,strong) NSString *strTitle;
+@property (weak, nonatomic) IBOutlet UIButton *buttonBack;
+- (IBAction)actionBack:(id)sender;
+@property (weak, nonatomic) IBOutlet UILabel *titleNav;
 
 -(void)layoutView;
 -(void)customNavigationBar;

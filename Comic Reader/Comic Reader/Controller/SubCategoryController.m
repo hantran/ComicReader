@@ -24,6 +24,7 @@
 @synthesize mCollectionView;
 @synthesize comic;
 @synthesize cateId;
+@synthesize titleLabel;
 
 -(void)viewWillAppear:(BOOL)animated{
     [self layoutView];
@@ -38,11 +39,13 @@
     [self.mCollectionView registerNib:[UINib nibWithNibName:@"SubCategoryCell" bundle:[NSBundle mainBundle]]
            forCellWithReuseIdentifier:@"SubCategoryCell"];
     [self loadDataComic];
+    self.titleNav.text = titleLabel;
+
     
 }
 
 -(BOOL)loadDataComic{
-    AppDelegate *delegate =(AppDelegate*) [[UIApplication sharedApplication] delegate];
+    AppDelegate *delegate =(AppDelegate *) [[UIApplication sharedApplication] delegate];
     NSManagedObjectContext *context = delegate.persistentContainer.viewContext;
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"Comic"];
     [fetchRequest setPredicate:[NSPredicate predicateWithFormat:@"idCategory == %d", cateId + 1]];
@@ -91,16 +94,13 @@
 }
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
-    if(indexPath.row == 1){
-        //        ProgressView *progress = [[ProgressView alloc] init];
-        //        [self showViewController:progress sender:nil];
-    }else
-        [self performSegueWithIdentifier:@"onClickComic" sender:self];
+    titleLabel = [[comic objectAtIndex:indexPath.row] valueForKey:@"title"];
+    [self performSegueWithIdentifier:@"onClickComic" sender:self];
 }
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if ([segue.identifier isEqualToString:@"onClickComic"]) {
         ComicViewController *comicViewController =segue.destinationViewController;
-        
+        comicViewController.titleLabel = titleLabel;
     }
     
 }

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BaseViewController">
+            <connections>
+                <outlet property="buttonBack" destination="OFV-cP-oJv" id="ffC-Hv-5sr"/>
+                <outlet property="titleNav" destination="qop-Sl-Wgf" id="l8H-ll-JBm"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view autoresizesSubviews="NO" contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
+            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DDk-dm-Agi">
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Comic Reader" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qop-Sl-Wgf">
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OFV-cP-oJv">
+                            <state key="normal" image="arrowBack.png"/>
+                            <connections>
+                                <action selector="actionBack:" destination="-1" eventType="touchUpInside" id="P35-rU-qO7"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" red="0.19990521669387817" green="0.41775357723236084" blue="0.67928618192672729" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="qop-Sl-Wgf" firstAttribute="centerX" secondItem="DDk-dm-Agi" secondAttribute="centerX" id="0eC-oV-87g"/>
+                        <constraint firstItem="OFV-cP-oJv" firstAttribute="centerY" secondItem="DDk-dm-Agi" secondAttribute="centerY" id="2GY-m8-pNX"/>
+                        <constraint firstItem="OFV-cP-oJv" firstAttribute="leading" secondItem="DDk-dm-Agi" secondAttribute="leading" constant="8" id="Fo8-g2-L2h"/>
+                        <constraint firstItem="qop-Sl-Wgf" firstAttribute="centerY" secondItem="DDk-dm-Agi" secondAttribute="centerY" id="eYx-RX-udh"/>
+                        <constraint firstAttribute="height" constant="60" id="wJ6-Y0-JQs"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="DDk-dm-Agi" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="6g2-fA-jjX"/>
+                <constraint firstAttribute="trailing" secondItem="DDk-dm-Agi" secondAttribute="trailing" id="EFP-RD-S5w"/>
+                <constraint firstItem="DDk-dm-Agi" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="XP5-Dw-LKc"/>
+                <constraint firstItem="DDk-dm-Agi" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="h0p-V8-y4y"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="32.5" y="-1267"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="arrowBack.png" width="41" height="53"/>
+    </resources>
+</document>

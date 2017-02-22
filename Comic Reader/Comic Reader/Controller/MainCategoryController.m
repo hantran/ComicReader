@@ -11,6 +11,7 @@
 #import "SubCategoryController.h"
 #import "AppDelegate.h"
 #import "ComicReaderService.h"
+#import "CustomNavigationBar.h"
 
 
 @interface MainCategoryController ()
@@ -18,6 +19,7 @@
 @property(strong, nonatomic) NSMutableArray *category;
 @property(strong, nonatomic) NSMutableArray *comic;
 @property(nonatomic,assign) int cateId;
+@property(strong, nonatomic) NSString *titleLabel;
 
 @end
 
@@ -28,25 +30,25 @@
 @synthesize category;
 @synthesize comic;
 @synthesize cateId;
+@synthesize titleLabel;
 
 #pragma mark - Lifecycle
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.hasBack = NO;
+    [self.buttonBack setHidden:YES];
     AppDelegate *delegate =(AppDelegate*) [[UIApplication sharedApplication] delegate];
     context = delegate.persistentContainer.viewContext;
     mTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-//    UIBarButtonItem *backButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"arrowBack.png"] style:UIBarButtonItemStyleDone target:nil action:nil];
-//    [backButtonItem setBackgroundImage:[UIImage imageNamed:@"arrowBack.png"] forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
-//    self.navigationItem.backBarButtonItem = backButtonItem;
-    
-    }
+
+     
+}
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
     [self layoutView];
-}
+    }
 -(void)viewDidAppear:(BOOL)animated{
     if([self loadDataCategory]){
         ComicReaderService *parseService = [[ComicReaderService alloc] init];
@@ -103,6 +105,7 @@
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     cateId = indexPath.row;
+    titleLabel = [[category objectAtIndex:indexPath.row] valueForKey:@"title"];
     [self performSegueWithIdentifier:@"onClickTableCell" sender:self];
     
 }
@@ -111,6 +114,7 @@
     if ([segue.identifier isEqualToString:@"onClickTableCell"]) {
         SubCategoryController *subViewController =segue.destinationViewController;
         subViewController.cateId = cateId;
+        subViewController.titleLabel = titleLabel;
     }
 }
 
