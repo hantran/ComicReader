@@ -12,11 +12,11 @@
 #import "AppDelegate.h"
 #import "ComicReaderService.h"
 #import "CustomNavigationBar.h"
+#import "ComicReaderDatabase.h"
 
 
 @interface MainCategoryController ()
 @property(nonatomic,strong) NSArray *array;
-@property(strong, nonatomic) NSMutableArray *category;
 @property(strong, nonatomic) NSMutableArray *comic;
 @property(nonatomic,assign) int cateId;
 @property(strong, nonatomic) NSString *titleLabel;
@@ -42,40 +42,22 @@
     context = delegate.persistentContainer.viewContext;
     mTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 
-     
+    category = [ComicReaderDatabase loadDataCategory:self];
+    if([category count]<=0){
+        ComicReaderService *parseService = [[ComicReaderService alloc] init];
+        [parseService fetchCategoryData:@"http://172.20.23.10/ComicReader/category/list/" main:self];
+    }
+    
+
 }
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
     [self layoutView];
-    }
+    
+        }
 -(void)viewDidAppear:(BOOL)animated{
-    if([self loadDataCategory]){
-        ComicReaderService *parseService = [[ComicReaderService alloc] init];
-        [parseService fetchCategoryData:@"http://172.20.23.10/ComicReader/category/list/" main:self];
     }
-}
-
--(BOOL)loadDataCategory{
-    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"Category"];
-    self.category = [[context executeFetchRequest:fetchRequest error:nil] mutableCopy];
-    if([category count]>0){
-        [self.mTableView reloadData];
-        return NO;
-    }
-    else
-        return YES;
-}
-
--(BOOL)loadDataComic{
-    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"Comic"];
-    self.comic = [[context executeFetchRequest:fetchRequest error:nil] mutableCopy];
-    if([comic count]>0){
-        return NO;
-    }
-    else
-        return YES;
-}
 
 -(void)customNavigationBar
 {

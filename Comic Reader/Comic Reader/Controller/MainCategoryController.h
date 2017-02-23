@@ -11,6 +11,7 @@
 #import "CustomNavigationBar.h"
 
 @interface MainCategoryController : BaseViewController <UITableViewDelegate, UITableViewDataSource>
+@property(strong, nonatomic) NSMutableArray *category;
 @property (strong, nonatomic)  CustomNavigationBar *customNavMy;
 @property (weak, nonatomic) IBOutlet UITableView *mTableView;
 @property (strong, nonatomic) NSManagedObjectContext *context;

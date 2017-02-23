@@ -12,6 +12,7 @@
 #import "ProgressView.h"
 #import "SubCategoryController.h"
 #import "AppDelegate.h"
+#import "ComicReaderDatabase.h"
 
 @interface SubCategoryController ()
 @property(nonatomic,strong) NSArray *array;
@@ -34,13 +35,14 @@
     [super customNavigationBar];
 }
 - (void)viewDidLoad {
-    self.hasBack  =  YES;
     [super viewDidLoad];
+    self.hasBack  =  YES;
+    ComicReaderDatabase *database = [[ComicReaderDatabase alloc] init];
     [self.mCollectionView registerNib:[UINib nibWithNibName:@"SubCategoryCell" bundle:[NSBundle mainBundle]]
            forCellWithReuseIdentifier:@"SubCategoryCell"];
-    [self loadDataComic];
+//    [self loadDataComic];
     self.titleNav.text = titleLabel;
-
+    comic = [database loadDataComicWithCategory:cateId];
     
 }
 
@@ -51,11 +53,15 @@
     [fetchRequest setPredicate:[NSPredicate predicateWithFormat:@"idCategory == %d", cateId + 1]];
     self.comic = [[context executeFetchRequest:fetchRequest error:nil] mutableCopy];
     if([comic count]>0){
-        return NO;
         [mCollectionView reloadData];
+        return NO;
     }
     else
         return YES;
+}
+
+-(void) saveImageToSD{
+    
 }
 
 - (void) viewDidAppear:(BOOL)animated{
@@ -86,6 +92,7 @@
     NSManagedObject *cmi = [comic objectAtIndex:indexPath.row];
     cell.imageViewCell.image = [UIImage imageNamed:@"comic.png"];
     cell.comicTitle.text = [cmi valueForKey:@"title"];
+    NSLog(@"Comic path: %@",[cmi valueForKey:@"comicPath"]);
     if(indexPath.row == 0 || indexPath.row == 4)
         cell.imageTitle.image = [UIImage imageNamed:@"star.png"];
     if(indexPath.row == 1)

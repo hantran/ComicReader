@@ -16,7 +16,6 @@
 @property(strong, nonatomic) NSDictionary *category;
 @property(strong, nonatomic) NSDictionary *comic;
 
--(AFHTTPRequestOperationManager *)getRequestOperation;
 -(void) fetchCategoryData: (NSString *)stringURL main: (MainCategoryController *) mainCate;
 -(void) fetchComicData: (NSString *)stringURL categoryId:(int) cateId;
 

@@ -47,7 +47,7 @@
     
     // Set the contentSize equal to the size of the UIImageView
 //     scrollView.contentSize = imageView.scrollview.size;
-    scrollView.contentSize = CGSizeMake(4 * screenWidth, scrollView.frame.size.height);
+    scrollView.contentSize = CGSizeMake(4 * screenWidth, screenHeight - 60);
     [scrollView setMaximumZoomScale:2.0f];
     [scrollView setClipsToBounds:YES];
     

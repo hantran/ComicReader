@@ -5,12 +5,18 @@
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="Comic" syncable="YES">
+        <attribute name="comicPath" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="currentDownloaded" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="currentReaded" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="idCategory" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="isDownloaded" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="isMyComic" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="totalPage" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
     </entity>
     <elements>
         <element name="Category" positionX="-63" positionY="-18" width="128" height="73"/>
-        <element name="Comic" positionX="189" positionY="-15" width="128" height="88"/>
+        <element name="Comic" positionX="189" positionY="-15" width="128" height="180"/>
     </elements>
 </model>
