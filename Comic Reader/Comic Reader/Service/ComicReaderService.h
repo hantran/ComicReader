@@ -10,6 +10,8 @@
 #import <AFNetworking/AFNetworking.h>
 #import "MainCategoryController.h"
 #import "SubCategoryController.h"
+#import "DialogDownloadViewController.h"
+#import "AppDelegate.h"
 
 
 @interface ComicReaderService : NSObject
@@ -18,5 +20,6 @@
 
 -(void) fetchCategoryData: (NSString *)stringURL main: (MainCategoryController *) mainCate;
 -(void) fetchComicData: (NSString *)stringURL categoryId:(int) cateId;
++(void)downloadComicImage:(NSString *)url totalPage:(int)n path:(NSString *) folderPath dialogDownload:(DialogDownloadViewController *) dialogView dataObject:(NSManagedObject *)comic collectionView:(UICollectionView *)collectionView;
 
 @end

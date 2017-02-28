@@ -17,39 +17,12 @@
 @synthesize imageComic;
 @synthesize labelPage;
 @synthesize titleLabel;
+@synthesize comic;
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.hasBack = YES;
     self.titleNav.text = titleLabel;
-    CGRect screenRect = [[UIScreen mainScreen] bounds];
-    CGFloat screenWidth = screenRect.size.width;
-    CGFloat screenHeight = screenRect.size.height;
-    
-    
-    
-    UIImage *image0 = [UIImage imageNamed:@"b.jpg"];
-    UIImage *image1 = [UIImage imageNamed:@"ah1.jpg"];
-    UIImage *image2 = [UIImage imageNamed:@"ah2.jpg"];
-    UIImage *image3 = [UIImage imageNamed:@"ah3.jpg"];
-    
-    NSArray *images = [[NSArray alloc] initWithObjects:image0,image1,image2,image3,nil];
-    // Now create a UIScrollView to hold the UIImageViews
-    scrollView.pagingEnabled = YES;
-    
-    [scrollView setIndicatorStyle:UIScrollViewIndicatorStyleWhite];
-    
-    for (int i = 0; i < [images count]; i++) {
-        CGFloat xOrigin = i * screenWidth;
-        UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(xOrigin,0,screenWidth,screenHeight)];
-        [imageView setImage:[images objectAtIndex:i]];
-        [scrollView addSubview:imageView];
-    }
-    
-    // Set the contentSize equal to the size of the UIImageView
-//     scrollView.contentSize = imageView.scrollview.size;
-    scrollView.contentSize = CGSizeMake(4 * screenWidth, screenHeight - 60);
-    [scrollView setMaximumZoomScale:2.0f];
-    [scrollView setClipsToBounds:YES];
+    [self initDataComic];
     
     
 }
@@ -57,6 +30,32 @@
 {
     [super viewWillAppear:animated];
     [self layoutView];
+
+}
+-(void)initDataComic{
+    
+    NSString *comicPath = [comic valueForKey:@"comicPath"];
+    int numOfPage = [comic valueForKey:@"totalPage"];
+    
+    CGRect screenRect = [[UIScreen mainScreen] bounds];
+    CGFloat screenWidth = screenRect.size.width;
+    CGFloat screenHeight = screenRect.size.height;
+    
+    
+    scrollView.pagingEnabled = YES;
+    
+    [scrollView setIndicatorStyle:UIScrollViewIndicatorStyleWhite];
+    
+    for (int i = 0; i < numOfPage; i++) {
+        CGFloat xOrigin = i * screenWidth;
+        UIImage *image = [UIImage imageWithContentsOfFile:[NSString stringWithFormat:@"%@/%d.jpg", comicPath, i +1]];
+        UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(xOrigin,0,screenWidth,screenHeight)];
+        [imageView setImage:image];
+        [scrollView addSubview:imageView];
+    }
+    scrollView.contentSize = CGSizeMake(numOfPage * screenWidth, screenHeight - 60);
+    [scrollView setMaximumZoomScale:2.0f];
+    [scrollView setClipsToBounds:YES];
 
 }
 

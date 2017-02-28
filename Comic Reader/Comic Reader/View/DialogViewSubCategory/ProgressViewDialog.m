@@ -6,9 +6,9 @@
 //  Copyright © 2017 administrator. All rights reserved.
 //
 
-#import "ProgressView.h"
+#import "ProgressViewDialog.h"
 
-@implementation ProgressView
+@implementation ProgressViewDialog
 
 /*
 // Only override drawRect: if you perform custom drawing.

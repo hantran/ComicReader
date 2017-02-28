@@ -26,4 +26,16 @@
     return [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,
                                                NSUserDomainMask, YES) objectAtIndex:0];
 }
+
++(BOOL)checkEmptyFolder:(NSString *)path{
+    NSArray *listOfFiles;
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    
+    if ([fileManager fileExistsAtPath:path]) {
+        listOfFiles = [fileManager contentsOfDirectoryAtPath:path error:nil];
+    }
+    if(listOfFiles.count == 0)
+        return YES;
+    else return NO;
+}
 @end

@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import "MainCategoryController.h"
+#import "AppDelegate.h"
 
 @interface ComicReaderDatabase : NSObject
 
@@ -17,4 +18,5 @@
 + (void)saveDataComic:(NSDictionary *) comicData categoryId:(int) cateId;
 -(NSMutableArray *)loadDataComicWithCategory: (int)cateId;
 +(NSMutableArray *)loadDataCategory:(MainCategoryController *)mMain;
++(void)updateDataComic:(NSManagedObject *)comic;
 @end

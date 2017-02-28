@@ -9,14 +9,21 @@
 #import "SubCategoryController.h"
 #import "SubCategoryCell.h"
 #import "ComicViewController.h"
-#import "ProgressView.h"
+#import "ProgressViewDialog.h"
 #import "SubCategoryController.h"
 #import "AppDelegate.h"
 #import "ComicReaderDatabase.h"
+#import "ComicReaderService.h"
+#import "DialogDownloadViewController.h"
+#import "LocalManager.h"
 
 @interface SubCategoryController ()
 @property(nonatomic,strong) NSArray *array;
 @property(strong, nonatomic) NSMutableArray *comic;
+@property (nonatomic, assign) int position;
+@property (strong, nonatomic) NSManagedObject *currentComic;
+
+
 @end
 
 @implementation SubCategoryController
@@ -26,6 +33,8 @@
 @synthesize comic;
 @synthesize cateId;
 @synthesize titleLabel;
+@synthesize position;
+@synthesize currentComic;
 
 -(void)viewWillAppear:(BOOL)animated{
     [self layoutView];
@@ -43,6 +52,7 @@
 //    [self loadDataComic];
     self.titleNav.text = titleLabel;
     comic = [database loadDataComicWithCategory:cateId];
+    [self setModalPresentationStyle:UIModalPresentationCurrentContext];
     
 }
 
@@ -65,6 +75,7 @@
 }
 
 - (void) viewDidAppear:(BOOL)animated{
+//    [mCollectionView reloadData];
     
 }
 - (void)didReceiveMemoryWarning {
@@ -89,27 +100,60 @@
         NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"SubCategoryCell" owner:self options:nil];
         cell = [nib objectAtIndex:0];
     }
+    
     NSManagedObject *cmi = [comic objectAtIndex:indexPath.row];
+    BOOL isDownloaded = [cmi valueForKey:@"isDownloaded"];
     cell.imageViewCell.image = [UIImage imageNamed:@"comic.png"];
     cell.comicTitle.text = [cmi valueForKey:@"title"];
     NSLog(@"Comic path: %@",[cmi valueForKey:@"comicPath"]);
-    if(indexPath.row == 0 || indexPath.row == 4)
-        cell.imageTitle.image = [UIImage imageNamed:@"star.png"];
-    if(indexPath.row == 1)
+    if(!isDownloaded)
         cell.imageTitle.image = [UIImage imageNamed:@"new.png"];
+
     return cell;
 }
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
-    titleLabel = [[comic objectAtIndex:indexPath.row] valueForKey:@"title"];
-    [self performSegueWithIdentifier:@"onClickComic" sender:self];
+    currentComic = [comic objectAtIndex:indexPath.row];
+    titleLabel = [currentComic valueForKey:@"title"];
+    position = indexPath.row;
+    BOOL isDownloaded = [currentComic valueForKey:@"isDownloaded"];
+    if(isDownloaded)
+        [self performSegueWithIdentifier:@"onClickComic" sender:self];
+    else
+    [self performSegueWithIdentifier:@"onClickDownload" sender:self];
 }
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if ([segue.identifier isEqualToString:@"onClickComic"]) {
         ComicViewController *comicViewController =segue.destinationViewController;
         comicViewController.titleLabel = titleLabel;
+        comicViewController.comic = currentComic;
     }
+    if ([segue.identifier isEqualToString:@"onClickDownload"]) {
+        DialogDownloadViewController *dialogViewController = segue.destinationViewController;
+        [SubCategoryController setPresentationStyleForSelfController:self presentingController:dialogViewController];
+        
+        dialogViewController.comic = comic;
+        dialogViewController.position = position;
+        dialogViewController.collectionView = mCollectionView;
+}
+
     
+}
+
++ (void)setPresentationStyleForSelfController:(UIViewController *)selfController presentingController:(UIViewController *)presentingController
+{
+    if ([NSProcessInfo instancesRespondToSelector:@selector(isOperatingSystemAtLeastVersion:)])
+    {
+        presentingController.providesPresentationContextTransitionStyle = YES;
+        presentingController.definesPresentationContext = YES;
+        
+        [presentingController setModalPresentationStyle:UIModalPresentationOverCurrentContext];
+    }
+    else
+    {
+        [selfController setModalPresentationStyle:UIModalPresentationCurrentContext];
+        [selfController.navigationController setModalPresentationStyle:UIModalPresentationCurrentContext];
+    }
 }
 
 /*

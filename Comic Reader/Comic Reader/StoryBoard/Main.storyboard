@@ -16,7 +16,7 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="42G-2P-hrQ">
@@ -55,7 +55,7 @@
                         <viewControllerLayoutGuide type="bottom" id="6xJ-cB-Xap"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="RAJ-dQ-8KR">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="wy5-8S-xeK">
@@ -85,11 +85,41 @@
                     <connections>
                         <outlet property="mCollectionView" destination="wy5-8S-xeK" id="S37-O5-DGe"/>
                         <segue destination="Omq-ok-7Dp" kind="show" identifier="onClickComic" id="NAg-ox-sbC"/>
+                        <segue destination="UOh-M0-ALX" kind="modal" identifier="onClickDownload" id="3NY-nh-dFR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ixy-yN-gGV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="488.80000000000001" y="839.73013493253382"/>
+        </scene>
+        <!--Dialog Download View Controller-->
+        <scene sceneID="cOz-id-UFj">
+            <objects>
+                <viewController id="UOh-M0-ALX" customClass="DialogDownloadViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ZhH-h6-b5i"/>
+                        <viewControllerLayoutGuide type="bottom" id="rdd-bb-7SI"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="h6X-E0-5IY">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vLr-1V-1dQ">
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="rdd-bb-7SI" firstAttribute="top" secondItem="vLr-1V-1dQ" secondAttribute="bottom" id="Blu-wI-XI0"/>
+                            <constraint firstItem="vLr-1V-1dQ" firstAttribute="top" secondItem="ZhH-h6-b5i" secondAttribute="bottom" id="Hf1-1Z-fao"/>
+                            <constraint firstItem="vLr-1V-1dQ" firstAttribute="leading" secondItem="h6X-E0-5IY" secondAttribute="leading" id="a31-XX-xrI"/>
+                            <constraint firstAttribute="trailing" secondItem="vLr-1V-1dQ" secondAttribute="trailing" id="egl-5j-ufI"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2lo-DZ-LBJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1479.375" y="838.73239436619724"/>
         </scene>
         <!--Comic View Controller-->
         <scene sceneID="p3d-mv-6lC">
@@ -100,7 +130,7 @@
                         <viewControllerLayoutGuide type="bottom" id="ACR-QI-qez"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="l8f-JE-K4J">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" maximumZoomScale="4" translatesAutoresizingMaskIntoConstraints="NO" id="wYp-pK-de2">
