@@ -58,20 +58,18 @@
     
 }
 
-+(void)downloadComicImage:(NSString *)url totalPage:(int)n path:(NSString *) folderPath dialogDownload:(DialogDownloadViewController *) dialogView dataObject:(NSManagedObject *)comic collectionView:(UICollectionView *)collectionView{
++(void)downloadComicImage:(NSString *)url totalPage:(NSNumber *)n path:(NSString *) folderPath dialogDownload:(DialogDownloadViewController *) dialogView dataObject:(NSManagedObject *)comic collectionView:(UICollectionView *)collectionView{
     NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
     AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:configuration];
     
     __block int count = 0;
 //    __block float defaultOnePercent = (float)n/100;
-    __block float onePercent = (float)n/100;
+    __block float onePercent = (float)[n intValue]/100;
     __block float remainPercent = 0.0;
     __block float needPercent = onePercent - remainPercent;
     __block BOOL check = YES;
     
     [manager setDownloadTaskDidWriteDataBlock:^(NSURLSession *session, NSURLSessionDownloadTask *downloadTask, int64_t bytesWritten, int64_t totalBytesWritten, int64_t totalBytesExpectedToWrite) {
-        
-        dispatch_queue_t myQueue = dispatch_queue_create("myQueue", NULL);
         
         if(check)
         if(totalBytesWritten >= needPercent * totalBytesExpectedToWrite){
@@ -81,9 +79,11 @@
             check = NO;
             dispatch_async(dispatch_get_main_queue(), ^{
                 dialogView.per += 1.0;
-                float n = dialogView.per/100;
+                float m = dialogView.per/100;
                 dialogView.percent.text = [NSString stringWithFormat:@"%0.0f%%",dialogView.per];
-                dialogView.progressDowload.progress = n;
+                dialogView.totalPage.text = [NSString stringWithFormat:@"%@/%@",[NSString stringWithFormat:@"%0.0f",dialogView.per], n];
+
+                dialogView.progressDowload.progress = m;
             });
             
         }
@@ -95,7 +95,7 @@
         
     }];
     
-    for(int i = 1; i<= n;i++){
+    for(int i = 1; i <= [n intValue];i++){
     NSURL *URL = [NSURL URLWithString:[NSString stringWithFormat:@"%@%d.jpg", url,i]];
     NSURLRequest *request = [NSURLRequest requestWithURL:URL];
     
@@ -106,7 +106,7 @@
         return [documentsDirectoryURL URLByAppendingPathComponent:[response suggestedFilename]];
     } completionHandler:^(NSURLResponse *response, NSURL *filePath, NSError *error) {
         NSLog(@"File downloaded to: %@", filePath);
-        if(i == n ){
+        if(i == [n intValue] ){
             [ComicReaderDatabase updateDataComic:comic];
             [collectionView reloadData];
             [dialogView dismissViewControllerAnimated:YES completion:^{

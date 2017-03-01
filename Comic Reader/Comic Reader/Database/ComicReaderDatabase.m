@@ -30,23 +30,25 @@
     
 }
 
-+ (void)saveDataComic:(NSDictionary *) comicData categoryId:(int) cateId{
++ (void)saveDataComic:(NSDictionary *) comicData categoryId:(NSInteger) cateId{
     AppDelegate *delegate =(AppDelegate*) [[UIApplication sharedApplication] delegate];
     NSManagedObjectContext *context = delegate.persistentContainer.viewContext;
     
     for(int i = 0; i < [comicData count];i++){
         NSManagedObject *newCategory = [NSEntityDescription insertNewObjectForEntityForName:@"Comic" inManagedObjectContext:context];
-        [newCategory setValue:[NSNumber numberWithInt:cateId] forKey:@"idCategory"];
+        [newCategory setValue:[NSNumber numberWithInteger:cateId] forKey:@"idCategory"];
         [newCategory setValue:[NSNumber numberWithInt:i+1] forKey:@"id"];
         NSDictionary *detailComic = [comicData valueForKey:[NSString stringWithFormat:@"%d",i+1]];
         [newCategory setValue:[detailComic valueForKey:@"1"] forKey:@"title"];
         [newCategory setValue:[detailComic valueForKey:@"2"] forKey:@"totalPage"];
-        [newCategory setValue:NO forKey:@"isDownloaded"];
-        [newCategory setValue:NO forKey:@"isMyComic"];
+        [newCategory setValue:[NSNumber numberWithBool:NO] forKey:@"isDownloaded"];
+        [newCategory setValue:[NSNumber numberWithBool:NO] forKey:@"isMyComic"];
         [newCategory setValue:0 forKey:@"currentDownloaded"];
         [newCategory setValue:0 forKey:@"currentReaded"];
-        NSString *directory = [NSString stringWithFormat:@"/%@/%d",[NSString stringWithFormat:@"%d",cateId], i+1];
-        [newCategory setValue:[LocalManager createDirectoryComic:directory] forKey:@"comicPath"];
+        NSString *directory = [NSString stringWithFormat:@"/%@/%d",[NSString stringWithFormat:@"%@",[NSNumber numberWithInteger:cateId]], i+1];
+//        [newCategory setValue:[LocalManager createDirectoryComic:directory] forKey:@"comicPath"];
+        [newCategory setValue:directory forKey:@"comicPath"];
+
         
         
         NSError *error = nil;
@@ -61,7 +63,7 @@
 +(void)updateDataComic:(NSManagedObject *)comic{
     AppDelegate *delegate =(AppDelegate*) [[UIApplication sharedApplication] delegate];
     NSManagedObjectContext *context = delegate.persistentContainer.viewContext;
-    [comic setValue:@YES forKey:@"isDownloaded"];
+    [comic setValue:[NSNumber numberWithBool:YES] forKey:@"isDownloaded"];
     NSError *error = nil;
     // Save the object to persistent store
     if (![context save:&error]) {
@@ -82,7 +84,7 @@
         return YES;
 }
 
--(NSMutableArray *)loadDataComicWithCategory:(int)cateId{
+-(NSMutableArray *)loadDataComicWithCategory:(NSInteger)cateId{
     AppDelegate *delegate =(AppDelegate *) [[UIApplication sharedApplication] delegate];
     NSManagedObjectContext *context = delegate.persistentContainer.viewContext;
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"Comic"];

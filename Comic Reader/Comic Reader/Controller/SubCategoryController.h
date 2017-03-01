@@ -10,7 +10,7 @@
 #import "BaseViewController.h"
 @interface SubCategoryController : BaseViewController <UICollectionViewDelegate, UICollectionViewDataSource>
 @property (weak, nonatomic) IBOutlet UICollectionView *mCollectionView;
-@property (nonatomic) int cateId;
+@property (nonatomic) NSInteger cateId;
 @property (strong,nonatomic) NSString *titleLabel;
 
 - (void)saveImageToSD;

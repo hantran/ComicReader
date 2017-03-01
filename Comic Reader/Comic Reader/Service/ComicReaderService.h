@@ -20,6 +20,6 @@
 
 -(void) fetchCategoryData: (NSString *)stringURL main: (MainCategoryController *) mainCate;
 -(void) fetchComicData: (NSString *)stringURL categoryId:(int) cateId;
-+(void)downloadComicImage:(NSString *)url totalPage:(int)n path:(NSString *) folderPath dialogDownload:(DialogDownloadViewController *) dialogView dataObject:(NSManagedObject *)comic collectionView:(UICollectionView *)collectionView;
++(void)downloadComicImage:(NSString *)url totalPage:(NSNumber *)n path:(NSString *) folderPath dialogDownload:(DialogDownloadViewController *) dialogView dataObject:(NSManagedObject *)comic collectionView:(UICollectionView *)collectionView;
 
 @end

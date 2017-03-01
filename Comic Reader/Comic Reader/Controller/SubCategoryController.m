@@ -20,7 +20,7 @@
 @interface SubCategoryController ()
 @property(nonatomic,strong) NSArray *array;
 @property(strong, nonatomic) NSMutableArray *comic;
-@property (nonatomic, assign) int position;
+@property (nonatomic, assign) NSInteger position;
 @property (strong, nonatomic) NSManagedObject *currentComic;
 
 
@@ -102,12 +102,19 @@
     }
     
     NSManagedObject *cmi = [comic objectAtIndex:indexPath.row];
-    BOOL isDownloaded = [cmi valueForKey:@"isDownloaded"];
+    BOOL isDownloaded = [[cmi valueForKey:@"isDownloaded"] boolValue];
+    NSString *path = [LocalManager createDirectoryComic:[[comic objectAtIndex:position] valueForKey:@"comicPath"]];
     cell.imageViewCell.image = [UIImage imageNamed:@"comic.png"];
     cell.comicTitle.text = [cmi valueForKey:@"title"];
     NSLog(@"Comic path: %@",[cmi valueForKey:@"comicPath"]);
     if(!isDownloaded)
         cell.imageTitle.image = [UIImage imageNamed:@"new.png"];
+    else{
+        cell.imageTitle.image = nil;
+        cell.imageViewCell.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@/1.jpg",path]];
+    }
+
+    
 
     return cell;
 }
@@ -116,7 +123,7 @@
     currentComic = [comic objectAtIndex:indexPath.row];
     titleLabel = [currentComic valueForKey:@"title"];
     position = indexPath.row;
-    BOOL isDownloaded = [currentComic valueForKey:@"isDownloaded"];
+    BOOL isDownloaded = [[currentComic valueForKey:@"isDownloaded"] boolValue];
     if(isDownloaded)
         [self performSegueWithIdentifier:@"onClickComic" sender:self];
     else

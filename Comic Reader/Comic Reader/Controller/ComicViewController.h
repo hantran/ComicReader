@@ -12,9 +12,17 @@
 
 @interface ComicViewController : BaseViewController <UIScrollViewDelegate>
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
-@property (weak, nonatomic) IBOutlet UIImageView *imageComic;
+@property (weak, nonatomic) IBOutlet UILabel *pageIndex;
 @property (weak, nonatomic) UILabel *labelPage;
 @property (strong,nonatomic) NSString *titleLabel;
 @property (strong, nonatomic) NSManagedObject *comic;
+@property (strong,nonatomic) NSNumber *numOfPage;
+@property (strong,nonatomic) NSString *comicPath;
+@property (nonatomic) CGFloat screenWidth;
+@property (nonatomic) CGFloat screenHeight;
+@property (nonatomic) CGSize size;
+@property (strong,nonatomic) NSMutableArray *imageArray;
+@property (nonatomic) int position;
+
 
 @end

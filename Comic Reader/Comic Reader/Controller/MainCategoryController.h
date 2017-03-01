@@ -16,6 +16,6 @@
 @property (weak, nonatomic) IBOutlet UITableView *mTableView;
 @property (strong, nonatomic) NSManagedObjectContext *context;
 
--(BOOL)loadDataCategory;
+//-(BOOL)loadDataCategory;
 @end
 

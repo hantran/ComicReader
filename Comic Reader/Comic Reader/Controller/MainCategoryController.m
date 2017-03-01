@@ -18,7 +18,7 @@
 @interface MainCategoryController ()
 @property(nonatomic,strong) NSArray *array;
 @property(strong, nonatomic) NSMutableArray *comic;
-@property(nonatomic,assign) int cateId;
+@property(nonatomic,assign) NSInteger cateId;
 @property(strong, nonatomic) NSString *titleLabel;
 
 @end
@@ -47,8 +47,6 @@
         ComicReaderService *parseService = [[ComicReaderService alloc] init];
         [parseService fetchCategoryData:@"http://172.20.23.10/ComicReader/category/list/" main:self];
     }
-    
-
 }
 -(void)viewWillAppear:(BOOL)animated
 {
@@ -86,7 +84,7 @@
     return cell;
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    cateId = indexPath.row;
+    cateId =  indexPath.row;
     titleLabel = [[category objectAtIndex:indexPath.row] valueForKey:@"title"];
     [self performSegueWithIdentifier:@"onClickTableCell" sender:self];
     

@@ -7,6 +7,7 @@
 //
 
 #import "ComicViewController.h"
+#import "LocalManager.h"
 
 @interface ComicViewController ()
 
@@ -14,10 +15,17 @@
 
 @implementation ComicViewController
 @synthesize scrollView;
-@synthesize imageComic;
+@synthesize pageIndex;
 @synthesize labelPage;
 @synthesize titleLabel;
 @synthesize comic;
+@synthesize numOfPage;
+@synthesize comicPath;
+@synthesize screenWidth;
+@synthesize screenHeight;
+@synthesize size;
+@synthesize imageArray;
+@synthesize position;
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.hasBack = YES;
@@ -34,37 +42,79 @@
 }
 -(void)initDataComic{
     
-    NSString *comicPath = [comic valueForKey:@"comicPath"];
-    int numOfPage = [comic valueForKey:@"totalPage"];
     
+    comicPath = [comic valueForKey:@"comicPath"];
+    numOfPage =   [comic valueForKey:@"totalPage"];
     CGRect screenRect = [[UIScreen mainScreen] bounds];
-    CGFloat screenWidth = screenRect.size.width;
-    CGFloat screenHeight = screenRect.size.height;
-    
-    
+    screenWidth = screenRect.size.width;
+    screenHeight = screenRect.size.height;
+    size = CGSizeMake(screenWidth, screenHeight);
+
+
     scrollView.pagingEnabled = YES;
     
     [scrollView setIndicatorStyle:UIScrollViewIndicatorStyleWhite];
     
-    for (int i = 0; i < numOfPage; i++) {
-        CGFloat xOrigin = i * screenWidth;
-        UIImage *image = [UIImage imageWithContentsOfFile:[NSString stringWithFormat:@"%@/%d.jpg", comicPath, i +1]];
-        UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(xOrigin,0,screenWidth,screenHeight)];
-        [imageView setImage:image];
-        [scrollView addSubview:imageView];
-    }
-    scrollView.contentSize = CGSizeMake(numOfPage * screenWidth, screenHeight - 60);
-    [scrollView setMaximumZoomScale:2.0f];
+    scrollView.contentSize = CGSizeMake([numOfPage intValue] * screenWidth, screenHeight - 60);
+    [scrollView setMaximumZoomScale:4.0f];
+    [scrollView setMaximumZoomScale:1.0f];
     [scrollView setClipsToBounds:YES];
+    [self initImage];
+
 
 }
 
-- (void)didReceiveMemoryWarning {
+-(void)initImage{
+        for (int i = 0; i < 2; i++) {
+        CGFloat xOrigin = i * screenWidth;
+        UIImage *image = [UIImage imageWithContentsOfFile:[NSString stringWithFormat:@"%@/%d.jpg",[LocalManager createDirectoryComic:comicPath], i + 1]];
+        UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(xOrigin,0,screenWidth,screenHeight -60)];
+        imageView.tag = (NSInteger)i;
+        [imageView setImage:[self imageWithImage:image]];
+            pageIndex.text = [NSString stringWithFormat:@"1/%d", [numOfPage intValue]];
+        [imageArray addObject:imageView];
+        [scrollView addSubview:imageView];
+    }
+
+}
+- (UIImage *)imageWithImage:(UIImage *)image {
+    UIGraphicsBeginImageContext(size);
+    [image drawInRect:CGRectMake(0, 0, size.width, size.height)];
+    UIImage *destImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return destImage;
+}
+-(void) loadImage{
+    
+    CGPoint offSet = scrollView.contentOffset;
+    CGFloat x = offSet.x;
+    position = [[NSNumber numberWithFloat:x/screenWidth] intValue];
+    CGFloat xOrigin = (position + 1) * screenWidth;
+    UIImage *image = [UIImage imageWithContentsOfFile:[NSString stringWithFormat:@"%@/%d.jpg", [LocalManager createDirectoryComic:comicPath], position + 1]];
+    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(xOrigin,0,screenWidth,screenHeight - 60)];
+    imageView.tag = (NSInteger)(position +1);
+    [imageView setImage:[self imageWithImage:image]];
+    [imageArray addObject:imageView];
+    [scrollView addSubview:imageView];
+    pageIndex.text = [NSString stringWithFormat:@"%d/%d",position+1, [numOfPage intValue]];
+
+    NSLog(@"position page: %d",position );
+    
+}
+-(void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 - (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView{
-    return imageComic;
+    return [imageArray objectAtIndex:(NSInteger)(position - 1)];
+}
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
+//    NSLog(@"scrolled");
+}
+
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
+    [self loadImage];
+
 }
 -(void)customNavigationBar
 {

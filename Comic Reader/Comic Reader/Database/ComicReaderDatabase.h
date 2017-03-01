@@ -15,8 +15,8 @@
 
 +(BOOL)checkDataComic;
 + (void)saveDataCategory:(NSDictionary *) comicCategory;
-+ (void)saveDataComic:(NSDictionary *) comicData categoryId:(int) cateId;
--(NSMutableArray *)loadDataComicWithCategory: (int)cateId;
++ (void)saveDataComic:(NSDictionary *) comicData categoryId:(NSInteger) cateId;
+-(NSMutableArray *)loadDataComicWithCategory: (NSInteger)cateId;
 +(NSMutableArray *)loadDataCategory:(MainCategoryController *)mMain;
 +(void)updateDataComic:(NSManagedObject *)comic;
 @end

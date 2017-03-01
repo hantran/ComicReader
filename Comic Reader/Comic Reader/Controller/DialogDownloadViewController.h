@@ -12,7 +12,7 @@
 @interface DialogDownloadViewController : UIViewController
 @property(strong, nonatomic) NSMutableArray *comic;
 @property(strong, nonatomic) UICollectionView *collectionView;
-@property (nonatomic, assign) int position;
+@property (nonatomic, assign) NSInteger position;
 @property (nonatomic, assign) float per;
 @property (weak, nonatomic) IBOutlet UILabel *comicTitle;
 @property (weak, nonatomic) IBOutlet UIProgressView *progressDowload;

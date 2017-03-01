@@ -9,6 +9,7 @@
 #import "DialogDownloadViewController.h"
 #import "ComicReaderService.h"
 #import <UIKit/UIKit.h>
+#import "LocalManager.h"
 
 @interface DialogDownloadViewController ()
 
@@ -19,6 +20,7 @@
 @synthesize position;
 @synthesize progressDialog;
 @synthesize comicTitle;
+@synthesize totalPage;
 @synthesize progressDowload;
 @synthesize per;
 @synthesize percent;
@@ -29,18 +31,21 @@ typedef void (^test)(UIProgressView *progressDowload);
     NSArray* nibViews = [[NSBundle mainBundle] loadNibNamed:@"ProgressViewDialog"
                                                       owner:self
                                                     options:nil];
-    
     progressDialog = [nibViews objectAtIndex:0];
-    
     progressDialog.translatesAutoresizingMaskIntoConstraints = NO;
     
     [self.view addSubview:progressDialog];
     self.view.opaque = YES;
     self.view.backgroundColor = [UIColor clearColor];
-    comicTitle.text = @"Hello";
+    progressDialog.layer.borderColor = [UIColor whiteColor].CGColor;
+    progressDialog.layer.borderWidth = 5.0;
+    progressDialog.layer.cornerRadius = 5.0;
+    progressDialog.layer.masksToBounds = YES;
     progressDowload.progress = 0.0;
     per = 0.0;
-    [ComicReaderService downloadComicImage:@"http://172.20.23.10/ComicReader/images/1/1/1/" totalPage:80 path:[[comic objectAtIndex:position] valueForKey:@"comicPath"] dialogDownload:self dataObject:[comic objectAtIndex:position] collectionView:collectionView];
+    comicTitle.text = [[comic objectAtIndex:position] valueForKey:@"title"];
+    NSString *path = [LocalManager createDirectoryComic:[[comic objectAtIndex:position] valueForKey:@"comicPath"]];
+    [ComicReaderService downloadComicImage:@"http://172.20.23.10/ComicReader/images/1/1/1/" totalPage:[[comic objectAtIndex:position] valueForKey:@"totalPage"] path:path dialogDownload:self dataObject:[comic objectAtIndex:position] collectionView:collectionView];
 }
 
 
@@ -69,7 +74,7 @@ typedef void (^test)(UIProgressView *progressDowload);
                               toItem:self.view
                               attribute:NSLayoutAttributeTrailing
                               multiplier:1.0
-                              constant:20.0]];
+                              constant:- 20.0]];
     [self.view addConstraint:[NSLayoutConstraint
                               constraintWithItem:progressDialog
                               attribute:NSLayoutAttributeLeading
@@ -77,7 +82,7 @@ typedef void (^test)(UIProgressView *progressDowload);
                               toItem:self.view
                               attribute:NSLayoutAttributeLeading
                               multiplier:1.0
-                              constant:0]];
+                              constant:20.0]];
     [self.view addConstraint:[NSLayoutConstraint
                               constraintWithItem:progressDialog
                               attribute:NSLayoutAttributeHeight
