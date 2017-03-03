@@ -39,7 +39,7 @@
     self.hasBack = NO;
     [self.buttonBack setHidden:YES];
     AppDelegate *delegate =(AppDelegate*) [[UIApplication sharedApplication] delegate];
-    context = delegate.persistentContainer.viewContext;
+    context = delegate.managedObjectContext;
     mTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 
     category = [ComicReaderDatabase loadDataCategory:self];

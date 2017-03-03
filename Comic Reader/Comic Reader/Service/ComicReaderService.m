@@ -15,7 +15,6 @@
 @implementation ComicReaderService
 @synthesize category;
 @synthesize comic;
-
 -(void)fetchCategoryData: (NSString *)stringURL main:(MainCategoryController *) mainCate{
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Accept"];
@@ -59,65 +58,74 @@
 }
 
 +(void)downloadComicImage:(NSString *)url totalPage:(NSNumber *)n path:(NSString *) folderPath dialogDownload:(DialogDownloadViewController *) dialogView dataObject:(NSManagedObject *)comic collectionView:(UICollectionView *)collectionView{
-    NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
-    AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:configuration];
+   
+    __block BOOL checkLoadComplete = YES;
     
-    __block int count = 0;
-//    __block float defaultOnePercent = (float)n/100;
-    __block float onePercent = (float)[n intValue]/100;
-    __block float remainPercent = 0.0;
-    __block float needPercent = onePercent - remainPercent;
-    __block BOOL check = YES;
     
-    [manager setDownloadTaskDidWriteDataBlock:^(NSURLSession *session, NSURLSessionDownloadTask *downloadTask, int64_t bytesWritten, int64_t totalBytesWritten, int64_t totalBytesExpectedToWrite) {
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
         
-        if(check)
-        if(totalBytesWritten >= needPercent * totalBytesExpectedToWrite){
-            remainPercent = 1 - needPercent;
-            needPercent = onePercent - remainPercent;
-            count ++;
-            check = NO;
-            dispatch_async(dispatch_get_main_queue(), ^{
-                dialogView.per += 1.0;
-                float m = dialogView.per/100;
-                dialogView.percent.text = [NSString stringWithFormat:@"%0.0f%%",dialogView.per];
-                dialogView.totalPage.text = [NSString stringWithFormat:@"%@/%@",[NSString stringWithFormat:@"%0.0f",dialogView.per], n];
+        __block int i = 0;
+        while (i < [n intValue]){
+            if(checkLoadComplete){
+                checkLoadComplete = NO;
+                NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
+                AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:configuration];
+                
+                __block int count = 0;
+                __block float onePercent = (float)[n intValue]/100;
+                __block float remainPercent = 0.0;
+                __block float needPercent = onePercent - remainPercent;
+                __block BOOL check = YES;
+                
+                [manager setDownloadTaskDidWriteDataBlock:^(NSURLSession *session, NSURLSessionDownloadTask *downloadTask, int64_t bytesWritten, int64_t totalBytesWritten, int64_t totalBytesExpectedToWrite) {
+                    
+                    if(check)
+                        if(totalBytesWritten >= needPercent * totalBytesExpectedToWrite){
+                            remainPercent = 1 - needPercent;
+                            needPercent = onePercent - remainPercent;
+                            count ++;
+                            check = NO;
+                            dispatch_async(dispatch_get_main_queue(), ^{
+                                dialogView.per += 1.0;
+                                float m = dialogView.per/100;
+                                dialogView.percent.text = [NSString stringWithFormat:@"%0.0f%%",dialogView.per -1];
+                                dialogView.totalPage.text = [NSString stringWithFormat:@"%@/%@",[NSString stringWithFormat:@"%0.0f",dialogView.per - 1], n];
+                                
+                                dialogView.progressDowload.progress = m;
+                            });
+                            
+                        }
+                    
+                    if(totalBytesWritten == totalBytesExpectedToWrite)
+                        check = YES;
+                    
+                }];
 
-                dialogView.progressDowload.progress = m;
-            });
+                NSURL *URL = [NSURL URLWithString:[NSString stringWithFormat:@"%@%d.jpg", url,i]];
+                NSURLRequest *request = [NSURLRequest requestWithURL:URL];
+
+                NSURLSessionDownloadTask *downloadTask = [manager downloadTaskWithRequest:request progress:nil destination:^NSURL *(NSURL *targetPath, NSURLResponse *response) {
+                    NSURL *documentsDirectoryURL = [[NSURL alloc] initFileURLWithPath:folderPath];
+                    return [documentsDirectoryURL URLByAppendingPathComponent:[response suggestedFilename]];
+                } completionHandler:^(NSURLResponse *response, NSURL *filePath, NSError *error) {
+                    NSLog(@"File downloaded to: %@", filePath);
+                    if(i == [n intValue] ){
+                        [ComicReaderDatabase updateDataComic:comic];
+                        [collectionView reloadData];
+                        [dialogView dismissViewControllerAnimated:YES completion:^{
+                                                    }];
+                        
+                    }
+                    checkLoadComplete = YES;
+                    i++;
+                }];
+                [downloadTask resume];
+                
+            }
             
         }
-        
-        if(totalBytesWritten == totalBytesExpectedToWrite)
-            check = YES;
-//        NSLog(@"byte written: %lld", totalBytesWritten);
-//        NSLog(@"Total byte: %lld", totalBytesExpectedToWrite);
-        
-    }];
-    
-    for(int i = 1; i <= [n intValue];i++){
-    NSURL *URL = [NSURL URLWithString:[NSString stringWithFormat:@"%@%d.jpg", url,i]];
-    NSURLRequest *request = [NSURLRequest requestWithURL:URL];
-    
-    
-        
-    NSURLSessionDownloadTask *downloadTask = [manager downloadTaskWithRequest:request progress:nil destination:^NSURL *(NSURL *targetPath, NSURLResponse *response) {
-        NSURL *documentsDirectoryURL = [[NSURL alloc] initFileURLWithPath:folderPath];
-        return [documentsDirectoryURL URLByAppendingPathComponent:[response suggestedFilename]];
-    } completionHandler:^(NSURLResponse *response, NSURL *filePath, NSError *error) {
-        NSLog(@"File downloaded to: %@", filePath);
-        if(i == [n intValue] ){
-            [ComicReaderDatabase updateDataComic:comic];
-            [collectionView reloadData];
-            [dialogView dismissViewControllerAnimated:YES completion:^{
-                
-            }];
+    });
 
-        }
-        
-    }];
-    [downloadTask resume];
-    }
     
 }
 

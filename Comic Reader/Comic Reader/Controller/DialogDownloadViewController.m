@@ -44,7 +44,7 @@ typedef void (^test)(UIProgressView *progressDowload);
     progressDowload.progress = 0.0;
     per = 0.0;
     comicTitle.text = [[comic objectAtIndex:position] valueForKey:@"title"];
-    NSString *path = [LocalManager createDirectoryComic:[[comic objectAtIndex:position] valueForKey:@"comicPath"]];
+    NSString *path = [LocalManager getDirectoryComic:[[comic objectAtIndex:position] valueForKey:@"comicPath"]];
     [ComicReaderService downloadComicImage:@"http://172.20.23.10/ComicReader/images/1/1/1/" totalPage:[[comic objectAtIndex:position] valueForKey:@"totalPage"] path:path dialogDownload:self dataObject:[comic objectAtIndex:position] collectionView:collectionView];
 }
 
@@ -74,7 +74,7 @@ typedef void (^test)(UIProgressView *progressDowload);
                               toItem:self.view
                               attribute:NSLayoutAttributeTrailing
                               multiplier:1.0
-                              constant:- 20.0]];
+                              constant:- 10.0]];
     [self.view addConstraint:[NSLayoutConstraint
                               constraintWithItem:progressDialog
                               attribute:NSLayoutAttributeLeading
@@ -82,7 +82,7 @@ typedef void (^test)(UIProgressView *progressDowload);
                               toItem:self.view
                               attribute:NSLayoutAttributeLeading
                               multiplier:1.0
-                              constant:20.0]];
+                              constant:10.0]];
     [self.view addConstraint:[NSLayoutConstraint
                               constraintWithItem:progressDialog
                               attribute:NSLayoutAttributeHeight

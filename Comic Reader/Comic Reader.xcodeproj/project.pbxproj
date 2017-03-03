@@ -30,6 +30,7 @@
 		C36A61F71E543A89001B1B7C /* arrowhighlight.png in Resources */ = {isa = PBXBuildFile; fileRef = C36A61F21E543A89001B1B7C /* arrowhighlight.png */; };
 		C36A61F81E543A89001B1B7C /* new.png in Resources */ = {isa = PBXBuildFile; fileRef = C36A61F31E543A89001B1B7C /* new.png */; };
 		C36A61F91E543A89001B1B7C /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = C36A61F41E543A89001B1B7C /* star.png */; };
+		C36A9A861E66B8A300465B18 /* AsyncImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = C36A9A851E66B8A300465B18 /* AsyncImageView.m */; };
 		C37206981E51742E00366DFA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C37206971E51742E00366DFA /* AppDelegate.m */; };
 		C37206BB1E5182DE00366DFA /* ComicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C37206AD1E5182DE00366DFA /* ComicViewController.m */; };
 		C37206BC1E5182DE00366DFA /* MainCategoryController.m in Sources */ = {isa = PBXBuildFile; fileRef = C37206AF1E5182DE00366DFA /* MainCategoryController.m */; };
@@ -38,6 +39,11 @@
 		C37206CA1E5183EC00366DFA /* comic.png in Resources */ = {isa = PBXBuildFile; fileRef = C37206C61E5183EC00366DFA /* comic.png */; };
 		C37206D31E51846000366DFA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C37206D11E51846000366DFA /* LaunchScreen.storyboard */; };
 		C37206D41E51846000366DFA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C37206D21E51846000366DFA /* Main.storyboard */; };
+		C372C0E41E67AF31005F9F94 /* ComicOverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C372C0E31E67AF31005F9F94 /* ComicOverViewController.m */; };
+		C372C0E71E67B09B005F9F94 /* ComicOverViewDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = C372C0E61E67B09B005F9F94 /* ComicOverViewDialog.m */; };
+		C372C0E91E67B0B2005F9F94 /* ComicOverViewDialog.xib in Resources */ = {isa = PBXBuildFile; fileRef = C372C0E81E67B0B2005F9F94 /* ComicOverViewDialog.xib */; };
+		C372C0EB1E67BF78005F9F94 /* ComicOverViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C372C0EA1E67BF78005F9F94 /* ComicOverViewCell.xib */; };
+		C372C0EE1E67BF91005F9F94 /* ComicOverViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C372C0ED1E67BF91005F9F94 /* ComicOverViewCell.m */; };
 		C3743A2B1E52BF1C00AA984B /* b.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C3743A2A1E52BF1C00AA984B /* b.jpg */; };
 		C37568CA1E5BCFC100896253 /* ah3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C37568C71E5BCFC100896253 /* ah3.jpg */; };
 		C37568CB1E5BCFC100896253 /* ah2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C37568C81E5BCFC100896253 /* ah2.jpg */; };
@@ -108,6 +114,8 @@
 		C36A61F21E543A89001B1B7C /* arrowhighlight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrowhighlight.png; sourceTree = "<group>"; };
 		C36A61F31E543A89001B1B7C /* new.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = new.png; sourceTree = "<group>"; };
 		C36A61F41E543A89001B1B7C /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star.png; sourceTree = "<group>"; };
+		C36A9A841E66B8A300465B18 /* AsyncImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsyncImageView.h; sourceTree = "<group>"; };
+		C36A9A851E66B8A300465B18 /* AsyncImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncImageView.m; sourceTree = "<group>"; };
 		C37206961E51742E00366DFA /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C37206971E51742E00366DFA /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		C37206AC1E5182DE00366DFA /* ComicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComicViewController.h; sourceTree = "<group>"; };
@@ -121,6 +129,14 @@
 		C37206C61E5183EC00366DFA /* comic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = comic.png; sourceTree = "<group>"; };
 		C37206D11E51846000366DFA /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C37206D21E51846000366DFA /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		C372C0E21E67AF31005F9F94 /* ComicOverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComicOverViewController.h; sourceTree = "<group>"; };
+		C372C0E31E67AF31005F9F94 /* ComicOverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComicOverViewController.m; sourceTree = "<group>"; };
+		C372C0E51E67B09B005F9F94 /* ComicOverViewDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComicOverViewDialog.h; sourceTree = "<group>"; };
+		C372C0E61E67B09B005F9F94 /* ComicOverViewDialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComicOverViewDialog.m; sourceTree = "<group>"; };
+		C372C0E81E67B0B2005F9F94 /* ComicOverViewDialog.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ComicOverViewDialog.xib; sourceTree = "<group>"; };
+		C372C0EA1E67BF78005F9F94 /* ComicOverViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ComicOverViewCell.xib; sourceTree = "<group>"; };
+		C372C0EC1E67BF91005F9F94 /* ComicOverViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComicOverViewCell.h; sourceTree = "<group>"; };
+		C372C0ED1E67BF91005F9F94 /* ComicOverViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComicOverViewCell.m; sourceTree = "<group>"; };
 		C3743A2A1E52BF1C00AA984B /* b.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = b.jpg; sourceTree = "<group>"; };
 		C37568C71E5BCFC100896253 /* ah3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ah3.jpg; sourceTree = "<group>"; };
 		C37568C81E5BCFC100896253 /* ah2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ah2.jpg; sourceTree = "<group>"; };
@@ -198,6 +214,9 @@
 				7D87B0C01E54609600357D04 /* SubCategoryCell.h */,
 				7D87B0C11E54609600357D04 /* SubCategoryCell.m */,
 				7D87B0C21E54609600357D04 /* SubCategoryCell.xib */,
+				C372C0EA1E67BF78005F9F94 /* ComicOverViewCell.xib */,
+				C372C0EC1E67BF91005F9F94 /* ComicOverViewCell.h */,
+				C372C0ED1E67BF91005F9F94 /* ComicOverViewCell.m */,
 			);
 			path = CustomCellCategory;
 			sourceTree = "<group>";
@@ -211,6 +230,9 @@
 				7D87B0C81E54611100357D04 /* ProgressViewDialog.h */,
 				7D87B0C91E54611100357D04 /* ProgressViewDialog.m */,
 				7D87B0CA1E54611100357D04 /* ProgressViewDialog.xib */,
+				C372C0E51E67B09B005F9F94 /* ComicOverViewDialog.h */,
+				C372C0E61E67B09B005F9F94 /* ComicOverViewDialog.m */,
+				C372C0E81E67B0B2005F9F94 /* ComicOverViewDialog.xib */,
 			);
 			path = DialogViewSubCategory;
 			sourceTree = "<group>";
@@ -301,6 +323,15 @@
 			name = Utility;
 			sourceTree = "<group>";
 		};
+		C36A9A831E66B89600465B18 /* AsyncImage */ = {
+			isa = PBXGroup;
+			children = (
+				C36A9A841E66B8A300465B18 /* AsyncImageView.h */,
+				C36A9A851E66B8A300465B18 /* AsyncImageView.m */,
+			);
+			path = AsyncImage;
+			sourceTree = "<group>";
+		};
 		C37206951E51742E00366DFA /* AppDelegate */ = {
 			isa = PBXGroup;
 			children = (
@@ -313,6 +344,7 @@
 		C37206991E51748100366DFA /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				C36A9A831E66B89600465B18 /* AsyncImage */,
 				7D87B0CD1E54623600357D04 /* Header.h */,
 			);
 			path = Utility;
@@ -341,6 +373,8 @@
 				C37206B81E5182DE00366DFA /* SubCategoryController.m */,
 				C3892E231E5FEC5300B7F04D /* DialogDownloadViewController.h */,
 				C3892E241E5FEC5300B7F04D /* DialogDownloadViewController.m */,
+				C372C0E21E67AF31005F9F94 /* ComicOverViewController.h */,
+				C372C0E31E67AF31005F9F94 /* ComicOverViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -476,7 +510,7 @@
 				TargetAttributes = {
 					C36613141E4AB20B001BF229 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = 6EYLCNXDC2;
+						DevelopmentTeam = MCT552Y5YL;
 						ProvisioningStyle = Automatic;
 					};
 					C36613301E4AB20B001BF229 = {
@@ -528,8 +562,10 @@
 				C3743A2B1E52BF1C00AA984B /* b.jpg in Resources */,
 				C37568CA1E5BCFC100896253 /* ah3.jpg in Resources */,
 				7D87B0C41E54609600357D04 /* MainCategoryCell.xib in Resources */,
+				C372C0EB1E67BF78005F9F94 /* ComicOverViewCell.xib in Resources */,
 				C37568DA1E5C35E800896253 /* CustomNavigationBar.xib in Resources */,
 				C36A61F51E543A89001B1B7C /* arrow.png in Resources */,
+				C372C0E91E67B0B2005F9F94 /* ComicOverViewDialog.xib in Resources */,
 				C36613281E4AB20B001BF229 /* Assets.xcassets in Resources */,
 				C36A61F61E543A89001B1B7C /* arrowBack.png in Resources */,
 				C32836A31E568E80007464D6 /* AlertViewController.xib in Resources */,
@@ -682,13 +718,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				C37206C41E5183E300366DFA /* Comic.m in Sources */,
+				C36A9A861E66B8A300465B18 /* AsyncImageView.m in Sources */,
 				7D87B0B41E545C6500357D04 /* BaseViewController.m in Sources */,
 				C3C101C81E5EB4DC008E4F42 /* LocalManager.m in Sources */,
+				C372C0E41E67AF31005F9F94 /* ComicOverViewController.m in Sources */,
 				C3C101CB1E5EB4F8008E4F42 /* ComicReaderDatabase.m in Sources */,
 				C36613261E4AB20B001BF229 /* Comic_Reader.xcdatamodeld in Sources */,
 				C37206BB1E5182DE00366DFA /* ComicViewController.m in Sources */,
 				C37206981E51742E00366DFA /* AppDelegate.m in Sources */,
+				C372C0EE1E67BF91005F9F94 /* ComicOverViewCell.m in Sources */,
 				C3892E251E5FEC5300B7F04D /* DialogDownloadViewController.m in Sources */,
+				C372C0E71E67B09B005F9F94 /* ComicOverViewDialog.m in Sources */,
 				C366131A1E4AB20B001BF229 /* main.m in Sources */,
 				C37568D81E5C35D000896253 /* CustomNavigationBar.m in Sources */,
 				C37206C01E5182DE00366DFA /* SubCategoryController.m in Sources */,
@@ -830,10 +870,11 @@
 			baseConfigurationReference = E5F9D4CAA298733960900EEA /* Pods-Comic Reader.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 6EYLCNXDC2;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = MCT552Y5YL;
 				INFOPLIST_FILE = "Comic Reader/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "softfront.Comic-Reader";
+				PRODUCT_BUNDLE_IDENTIFIER = comic.com.soffront;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -843,10 +884,11 @@
 			baseConfigurationReference = 22AB865CCFF2F20ED00CAA50 /* Pods-Comic Reader.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 6EYLCNXDC2;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = MCT552Y5YL;
 				INFOPLIST_FILE = "Comic Reader/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "softfront.Comic-Reader";
+				PRODUCT_BUNDLE_IDENTIFIER = comic.com.soffront;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

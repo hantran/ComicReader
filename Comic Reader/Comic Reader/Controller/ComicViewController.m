@@ -8,13 +8,15 @@
 
 #import "ComicViewController.h"
 #import "LocalManager.h"
+#import "AsyncImageView.h"
+#import "ComicOverViewController.h"
 
 @interface ComicViewController ()
 
 @end
 
 @implementation ComicViewController
-@synthesize scrollView;
+@synthesize mScrollView;
 @synthesize pageIndex;
 @synthesize labelPage;
 @synthesize titleLabel;
@@ -31,6 +33,8 @@
     self.hasBack = YES;
     self.titleNav.text = titleLabel;
     [self initDataComic];
+    [self loadImageAtIndex:0];
+    [self loadImageAtIndex:1];
     
     
 }
@@ -50,33 +54,35 @@
     screenHeight = screenRect.size.height;
     size = CGSizeMake(screenWidth, screenHeight);
 
-
-    scrollView.pagingEnabled = YES;
+    self.automaticallyAdjustsScrollViewInsets = NO;
+    mScrollView.pagingEnabled = YES;
+    mScrollView.delegate = self;
+    [mScrollView setIndicatorStyle:UIScrollViewIndicatorStyleWhite];
+    mScrollView.showsHorizontalScrollIndicator = NO;
+    mScrollView.showsVerticalScrollIndicator = NO;
+    mScrollView.contentSize = CGSizeMake([numOfPage intValue] * screenWidth, 0);
+    [mScrollView setMaximumZoomScale:4.0f];
+    [mScrollView setMaximumZoomScale:1.0f];
+    [mScrollView setClipsToBounds:YES];
     
-    [scrollView setIndicatorStyle:UIScrollViewIndicatorStyleWhite];
-    
-    scrollView.contentSize = CGSizeMake([numOfPage intValue] * screenWidth, screenHeight - 60);
-    [scrollView setMaximumZoomScale:4.0f];
-    [scrollView setMaximumZoomScale:1.0f];
-    [scrollView setClipsToBounds:YES];
-    [self initImage];
-
+    UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(actionLongPress:)];
+    [longPress setMinimumPressDuration:1];
+    [mScrollView addGestureRecognizer:longPress];
 
 }
 
--(void)initImage{
-        for (int i = 0; i < 2; i++) {
-        CGFloat xOrigin = i * screenWidth;
-        UIImage *image = [UIImage imageWithContentsOfFile:[NSString stringWithFormat:@"%@/%d.jpg",[LocalManager createDirectoryComic:comicPath], i + 1]];
-        UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(xOrigin,0,screenWidth,screenHeight -60)];
-        imageView.tag = (NSInteger)i;
-        [imageView setImage:[self imageWithImage:image]];
-            pageIndex.text = [NSString stringWithFormat:@"1/%d", [numOfPage intValue]];
-        [imageArray addObject:imageView];
-        [scrollView addSubview:imageView];
+-(void)actionLongPress:(UILongPressGestureRecognizer *)press{
+    if (press.state == UIGestureRecognizerStateEnded) {
+        NSLog(@"UIGestureRecognizerStateEnded");
+        //Do Whatever You want on End of Gesture
+    }
+    else if (press.state == UIGestureRecognizerStateBegan){
+        NSLog(@"UIGestureRecognizerStateBegan.");
+        [self performSegueWithIdentifier:@"showComicOverView" sender:self];
     }
 
 }
+
 - (UIImage *)imageWithImage:(UIImage *)image {
     UIGraphicsBeginImageContext(size);
     [image drawInRect:CGRectMake(0, 0, size.width, size.height)];
@@ -84,42 +90,115 @@
     UIGraphicsEndImageContext();
     return destImage;
 }
--(void) loadImage{
+-(void) loadImageAtCurrentIndex:(NSInteger)index{
+    [self loadImageAtIndex:(int)(index-1)];
+    [self loadImageAtIndex:(int)index];
+    [self loadImageAtIndex:(int)(index+1)];
     
-    CGPoint offSet = scrollView.contentOffset;
-    CGFloat x = offSet.x;
-    position = [[NSNumber numberWithFloat:x/screenWidth] intValue];
-    CGFloat xOrigin = (position + 1) * screenWidth;
-    UIImage *image = [UIImage imageWithContentsOfFile:[NSString stringWithFormat:@"%@/%d.jpg", [LocalManager createDirectoryComic:comicPath], position + 1]];
-    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(xOrigin,0,screenWidth,screenHeight - 60)];
-    imageView.tag = (NSInteger)(position +1);
-    [imageView setImage:[self imageWithImage:image]];
-    [imageArray addObject:imageView];
-    [scrollView addSubview:imageView];
-    pageIndex.text = [NSString stringWithFormat:@"%d/%d",position+1, [numOfPage intValue]];
+    
+    
+    NSLog(@"position page: %d",position);
+    
+}
+-(NSInteger) caculatorPosition{
+        CGPoint offSet = mScrollView.contentOffset;
+        CGFloat x = offSet.x;
+        position = [[NSNumber numberWithFloat:x/screenWidth] intValue];
+    return (NSInteger)position;
+}
 
-    NSLog(@"position page: %d",position );
+-(void)loadImageAtIndex:(int) i{
+    UIImageView *mImage = (UIImageView *)[self.view viewWithTag:(NSInteger)(i+1)];
+    if(mImage == nil){
+   
+    CGFloat xOrigin = i * screenWidth;
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
+            
+        UIImage *image = [UIImage imageWithContentsOfFile:[NSString stringWithFormat:@"%@/%d.jpg", [LocalManager getDirectoryComic:comicPath], i + 1]];
+
+            dispatch_async(dispatch_get_main_queue(), ^{
+                UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0,0,screenWidth,mScrollView.frame.size.height)];
+                UIScrollView *subScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(xOrigin,0,screenWidth,screenHeight - 60)];
+                subScrollView.minimumZoomScale = 1.0f;
+                subScrollView.maximumZoomScale = 2.0f;
+                subScrollView.zoomScale = 1.0f;
+                subScrollView.contentSize = CGSizeMake(screenWidth, screenHeight - 60);
+                subScrollView.delegate = self;
+                subScrollView.showsHorizontalScrollIndicator = NO;
+                subScrollView.showsVerticalScrollIndicator = NO;
+                imageView.tag = (NSInteger)(i +1);
+                [imageView setImage:[self imageWithImage:image]];
+                [imageArray addObject:imageView];
+                [subScrollView addSubview:imageView];
+                [mScrollView addSubview:subScrollView];
+            });
+            
+        });
     
+        }
+    pageIndex.text = [NSString stringWithFormat:@"%d/%d",i, [numOfPage intValue]];
+    
+
+}
+-(void)jumpToPage:(int)i{
+//    CGRect aRect = CGRectMake(i * screenWidth, 0, screenWidth, screenHeight - 60);
+    NSLog(@"AAAAAA");
+//    [mScrollView scrollRectToVisible:aRect animated:YES];
+    [self loadImageAtCurrentIndex:(NSInteger)i];
+    [mScrollView setContentOffset:CGPointMake(i * screenWidth, 0)];
+}
+-(void)removeImageAtIndex: (int) i{
+    UIImageView *mImage = (UIImageView *)[self.view viewWithTag:(NSInteger)(i+1)];
+    [mImage removeFromSuperview];
+     mImage = nil;
 }
 -(void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 - (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView{
-    return [imageArray objectAtIndex:(NSInteger)(position - 1)];
+    return [scrollView viewWithTag:position + 1];
+;
 }
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
 //    NSLog(@"scrolled");
 }
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
-    [self loadImage];
-
+    [self loadImageAtCurrentIndex:[self caculatorPosition]];
 }
 -(void)customNavigationBar
 {
     [super customNavigationBar];
 }
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if ([segue.identifier isEqualToString:@"showComicOverView"]) {
+        ComicOverViewController *overViewController = segue.destinationViewController;
+        overViewController.comic = comic;
+        overViewController.comicViewController = self;
+        [ComicViewController setPresentationStyleForSelfController:self presentingController:overViewController];
+        
+        
+    }
+    
+}
++ (void)setPresentationStyleForSelfController:(UIViewController *)selfController presentingController:(UIViewController *)presentingController
+{
+    if ([NSProcessInfo instancesRespondToSelector:@selector(isOperatingSystemAtLeastVersion:)])
+    {
+        presentingController.providesPresentationContextTransitionStyle = YES;
+        presentingController.definesPresentationContext = YES;
+        
+        [presentingController setModalPresentationStyle:UIModalPresentationOverCurrentContext];
+    }
+    else
+    {
+        [selfController setModalPresentationStyle:UIModalPresentationCurrentContext];
+        [selfController.navigationController setModalPresentationStyle:UIModalPresentationCurrentContext];
+    }
+}
+
 /*
 #pragma mark - Navigation
 

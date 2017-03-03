@@ -58,7 +58,7 @@
 
 -(BOOL)loadDataComic{
     AppDelegate *delegate =(AppDelegate *) [[UIApplication sharedApplication] delegate];
-    NSManagedObjectContext *context = delegate.persistentContainer.viewContext;
+    NSManagedObjectContext *context = delegate.managedObjectContext;
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"Comic"];
     [fetchRequest setPredicate:[NSPredicate predicateWithFormat:@"idCategory == %d", cateId + 1]];
     self.comic = [[context executeFetchRequest:fetchRequest error:nil] mutableCopy];
@@ -103,7 +103,7 @@
     
     NSManagedObject *cmi = [comic objectAtIndex:indexPath.row];
     BOOL isDownloaded = [[cmi valueForKey:@"isDownloaded"] boolValue];
-    NSString *path = [LocalManager createDirectoryComic:[[comic objectAtIndex:position] valueForKey:@"comicPath"]];
+    NSString *path = [LocalManager getDirectoryComic:[[comic objectAtIndex:indexPath.row] valueForKey:@"comicPath"]];
     cell.imageViewCell.image = [UIImage imageNamed:@"comic.png"];
     cell.comicTitle.text = [cmi valueForKey:@"title"];
     NSLog(@"Comic path: %@",[cmi valueForKey:@"comicPath"]);

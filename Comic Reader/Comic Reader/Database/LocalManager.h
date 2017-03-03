@@ -12,5 +12,6 @@
 
 +(NSString *)createDirectoryComic:(NSString *)directory;
 +(NSString *)getDocumentPath;
++(NSString *)getDirectoryComic:(NSString *)directory;
 +(BOOL)checkEmptyFolder:(NSString *)path;
 @end

@@ -27,6 +27,12 @@
                                                NSUserDomainMask, YES) objectAtIndex:0];
 }
 
++(NSString *)getDirectoryComic:(NSString *)directory{
+    NSString *filePathAndDirectory = [[LocalManager getDocumentPath] stringByAppendingPathComponent:directory];
+    return filePathAndDirectory;
+
+}
+
 +(BOOL)checkEmptyFolder:(NSString *)path{
     NSArray *listOfFiles;
     NSFileManager *fileManager = [NSFileManager defaultManager];

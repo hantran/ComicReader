@@ -10,8 +10,9 @@
 #import "BaseViewController.h"
 #import "AppDelegate.h"
 
+
 @interface ComicViewController : BaseViewController <UIScrollViewDelegate>
-@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (weak, nonatomic) IBOutlet UIScrollView *mScrollView;
 @property (weak, nonatomic) IBOutlet UILabel *pageIndex;
 @property (weak, nonatomic) UILabel *labelPage;
 @property (strong,nonatomic) NSString *titleLabel;
@@ -23,6 +24,7 @@
 @property (nonatomic) CGSize size;
 @property (strong,nonatomic) NSMutableArray *imageArray;
 @property (nonatomic) int position;
+-(void)jumpToPage:(int)i;
 
 
 @end
