@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -20,24 +23,31 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zds-Z8-6an">
+                    <rect key="frame" x="0.0" y="0.0" width="353" height="161"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Anh hùng xạ điêu" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4C1-dr-OZ1">
+                            <rect key="frame" x="16" y="46.5" width="132.5" height="22"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="j7K-oj-5Ee"/>
+                        <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="j7K-oj-5Ee">
+                            <rect key="frame" x="16" y="91.5" width="313" height="2"/>
+                        </progressView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uz2-ki-L1Z">
+                            <rect key="frame" x="16" y="110.5" width="23.5" height="20.5"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12/150" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G0u-Xi-rhW">
+                            <rect key="frame" x="278" y="110.5" width="51" height="20.5"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Đang tải truyện:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5At-gg-1z7">
+                            <rect key="frame" x="16" y="18" width="121.5" height="20.5"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
@@ -51,7 +61,7 @@
                         <constraint firstItem="5At-gg-1z7" firstAttribute="leading" secondItem="Zds-Z8-6an" secondAttribute="leading" constant="16" id="79R-SK-0WJ"/>
                         <constraint firstItem="G0u-Xi-rhW" firstAttribute="top" secondItem="j7K-oj-5Ee" secondAttribute="bottom" constant="17" id="9y4-Hd-fu8"/>
                         <constraint firstItem="4C1-dr-OZ1" firstAttribute="top" secondItem="5At-gg-1z7" secondAttribute="bottom" constant="8" id="Ijc-QC-wYN"/>
-                        <constraint firstItem="j7K-oj-5Ee" firstAttribute="top" secondItem="4C1-dr-OZ1" secondAttribute="bottom" constant="23" id="J4u-Kz-FoP"/>
+                        <constraint firstItem="j7K-oj-5Ee" firstAttribute="top" secondItem="4C1-dr-OZ1" secondAttribute="bottom" constant="23" id="J4u-Kz-FoP" userLabel="Progress Dowload.top = Comic Title.bottom + 20"/>
                         <constraint firstItem="4C1-dr-OZ1" firstAttribute="leading" secondItem="Zds-Z8-6an" secondAttribute="leading" constant="16" id="ND9-Eq-Vo0"/>
                         <constraint firstItem="5At-gg-1z7" firstAttribute="top" secondItem="Zds-Z8-6an" secondAttribute="top" constant="18" id="T61-Pz-6ba"/>
                         <constraint firstAttribute="trailing" secondItem="G0u-Xi-rhW" secondAttribute="trailing" constant="24" id="TJ0-A7-OIw"/>

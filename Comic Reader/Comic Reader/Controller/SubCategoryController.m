@@ -16,6 +16,7 @@
 #import "ComicReaderService.h"
 #import "DialogDownloadViewController.h"
 #import "LocalManager.h"
+#import "MenuDialogViewController.h"
 
 @interface SubCategoryController ()
 @property(nonatomic,strong) NSArray *array;
@@ -113,12 +114,24 @@
         cell.imageTitle.image = nil;
         cell.imageViewCell.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@/1.jpg",path]];
     }
-
-    
-
+    cell.tag = indexPath.row;
+    UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longPressComic:)];
+    [longPress setMinimumPressDuration:0.5];
+    [cell addGestureRecognizer:longPress];
     return cell;
 }
 
+-(void)longPressComic:(UILongPressGestureRecognizer *)longPress{
+    if (longPress.state == UIGestureRecognizerStateEnded) {
+        NSLog(@"UIGestureRecognizerStateEnded");
+        //Do Whatever You want on End of Gesture
+    }
+    else if (longPress.state == UIGestureRecognizerStateBegan){
+        NSLog(@"UIGestureRecognizerStateBegan.");
+        [self performSegueWithIdentifier:@"onClickMenu" sender:self];
+    }
+
+}
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     currentComic = [comic objectAtIndex:indexPath.row];
     titleLabel = [currentComic valueForKey:@"title"];
@@ -144,7 +157,15 @@
         dialogViewController.collectionView = mCollectionView;
 }
 
+if ([segue.identifier isEqualToString:@"onClickMenu"]) {
+    MenuDialogViewController *menuDialogViewController = segue.destinationViewController;
+    [SubCategoryController setPresentationStyleForSelfController:self presentingController:menuDialogViewController];
     
+    
+}
+
+
+
 }
 
 + (void)setPresentationStyleForSelfController:(UIViewController *)selfController presentingController:(UIViewController *)presentingController

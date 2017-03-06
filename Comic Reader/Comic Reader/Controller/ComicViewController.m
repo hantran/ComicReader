@@ -66,7 +66,7 @@
     [mScrollView setClipsToBounds:YES];
     
     UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(actionLongPress:)];
-    [longPress setMinimumPressDuration:1];
+    [longPress setMinimumPressDuration:0.5];
     [mScrollView addGestureRecognizer:longPress];
 
 }

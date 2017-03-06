@@ -57,76 +57,52 @@
     
 }
 
-+(void)downloadComicImage:(NSString *)url totalPage:(NSNumber *)n path:(NSString *) folderPath dialogDownload:(DialogDownloadViewController *) dialogView dataObject:(NSManagedObject *)comic collectionView:(UICollectionView *)collectionView{
++(void)downloadComicImage:(NSString *)url totalPage:(NSNumber *)n path:(NSString *) folderPath dialogDownload:(DialogDownloadViewController *) dialogView {
    
-    __block BOOL checkLoadComplete = YES;
+    NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
+    AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:configuration];
     
-    
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
+      [manager setDownloadTaskDidWriteDataBlock:^(NSURLSession *session, NSURLSessionDownloadTask *downloadTask, int64_t bytesWritten, int64_t totalBytesWritten, int64_t totalBytesExpectedToWrite) {
         
-        __block int i = 0;
-        while (i < [n intValue]){
-            if(checkLoadComplete){
-                checkLoadComplete = NO;
-                NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
-                AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:configuration];
-                
-                __block int count = 0;
-                __block float onePercent = (float)[n intValue]/100;
-                __block float remainPercent = 0.0;
-                __block float needPercent = onePercent - remainPercent;
-                __block BOOL check = YES;
-                
-                [manager setDownloadTaskDidWriteDataBlock:^(NSURLSession *session, NSURLSessionDownloadTask *downloadTask, int64_t bytesWritten, int64_t totalBytesWritten, int64_t totalBytesExpectedToWrite) {
+    
+            if(totalBytesWritten == totalBytesExpectedToWrite){
+               dispatch_async(dispatch_get_main_queue(), ^{
+                    dialogView.per += 1.0;
+                    float m = dialogView.per/100;
+                    dialogView.percent.text = [NSString stringWithFormat:@"%0.0f%%",dialogView.per];
+                    dialogView.totalPage.text = [NSString stringWithFormat:@"%@/%@",[NSString stringWithFormat:@"%0.0f",dialogView.per], n];
                     
-                    if(check)
-                        if(totalBytesWritten >= needPercent * totalBytesExpectedToWrite){
-                            remainPercent = 1 - needPercent;
-                            needPercent = onePercent - remainPercent;
-                            count ++;
-                            check = NO;
-                            dispatch_async(dispatch_get_main_queue(), ^{
-                                dialogView.per += 1.0;
-                                float m = dialogView.per/100;
-                                dialogView.percent.text = [NSString stringWithFormat:@"%0.0f%%",dialogView.per -1];
-                                dialogView.totalPage.text = [NSString stringWithFormat:@"%@/%@",[NSString stringWithFormat:@"%0.0f",dialogView.per - 1], n];
-                                
-                                dialogView.progressDowload.progress = m;
-                            });
-                            
-                        }
-                    
-                    if(totalBytesWritten == totalBytesExpectedToWrite)
-                        check = YES;
-                    
-                }];
-
-                NSURL *URL = [NSURL URLWithString:[NSString stringWithFormat:@"%@%d.jpg", url,i]];
-                NSURLRequest *request = [NSURLRequest requestWithURL:URL];
-
-                NSURLSessionDownloadTask *downloadTask = [manager downloadTaskWithRequest:request progress:nil destination:^NSURL *(NSURL *targetPath, NSURLResponse *response) {
-                    NSURL *documentsDirectoryURL = [[NSURL alloc] initFileURLWithPath:folderPath];
-                    return [documentsDirectoryURL URLByAppendingPathComponent:[response suggestedFilename]];
-                } completionHandler:^(NSURLResponse *response, NSURL *filePath, NSError *error) {
-                    NSLog(@"File downloaded to: %@", filePath);
-                    if(i == [n intValue] ){
-                        [ComicReaderDatabase updateDataComic:comic];
-                        [collectionView reloadData];
-                        [dialogView dismissViewControllerAnimated:YES completion:^{
-                                                    }];
-                        
-                    }
-                    checkLoadComplete = YES;
-                    i++;
-                }];
-                [downloadTask resume];
+                    dialogView.progressDowload.progress = m;
+                });
                 
             }
-            
-        }
-    });
-
+        
+           }];
     
+    NSOperationQueue *operationQueue = [[NSOperationQueue alloc] init];
+        [operationQueue setMaxConcurrentOperationCount:1];
+
+    for(int i = 1 ; i < [n intValue];i++){
+        
+        NSBlockOperation *operation = [NSBlockOperation blockOperationWithBlock:^{
+            NSURL *URL = [NSURL URLWithString:[NSString stringWithFormat:@"%@%d.jpg", url,i]];
+            NSURLRequest *request = [NSURLRequest requestWithURL:URL];
+            
+            NSURLSessionDownloadTask *downloadTask = [manager downloadTaskWithRequest:request progress:nil destination:^NSURL *(NSURL *targetPath, NSURLResponse *response) {
+                NSURL *documentsDirectoryURL = [[NSURL alloc] initFileURLWithPath:folderPath];
+                return [documentsDirectoryURL URLByAppendingPathComponent:[response suggestedFilename]];
+            } completionHandler:^(NSURLResponse *response, NSURL *filePath, NSError *error) {
+                NSLog(@"File downloaded to: %@", filePath);
+                if(i == [n intValue] ){
+                    [dialogView onDownLoadFinish];
+                }
+            }];
+            [downloadTask resume];
+
+        }];
+        [operationQueue addOperation:operation];
+    }
+    [operationQueue waitUntilAllOperationsAreFinished];
 }
 
 - (void)updateProgressView:(UIProgressView *)progressDownload percent:(float)n{

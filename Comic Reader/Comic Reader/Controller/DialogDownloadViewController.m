@@ -10,6 +10,7 @@
 #import "ComicReaderService.h"
 #import <UIKit/UIKit.h>
 #import "LocalManager.h"
+#import "ComicReaderDatabase.h"
 
 @interface DialogDownloadViewController ()
 
@@ -45,10 +46,16 @@ typedef void (^test)(UIProgressView *progressDowload);
     per = 0.0;
     comicTitle.text = [[comic objectAtIndex:position] valueForKey:@"title"];
     NSString *path = [LocalManager getDirectoryComic:[[comic objectAtIndex:position] valueForKey:@"comicPath"]];
-    [ComicReaderService downloadComicImage:@"http://172.20.23.10/ComicReader/images/1/1/1/" totalPage:[[comic objectAtIndex:position] valueForKey:@"totalPage"] path:path dialogDownload:self dataObject:[comic objectAtIndex:position] collectionView:collectionView];
+    [ComicReaderService downloadComicImage:@"http://172.20.23.10/ComicReader/images/1/1/1/" totalPage:[[comic objectAtIndex:position] valueForKey:@"totalPage"] path:path dialogDownload:self];
 }
 
+-(void)onDownLoadFinish{
+    [ComicReaderDatabase updateDataComic:[comic objectAtIndex:position]];
+    [collectionView reloadData];
+    [self dismissViewControllerAnimated:YES completion:^{
+    }];
 
+}
 -(void)viewWillAppear:(BOOL)animated{
     [self.view addConstraint:[NSLayoutConstraint
                               constraintWithItem:progressDialog
@@ -90,7 +97,7 @@ typedef void (^test)(UIProgressView *progressDowload);
                               toItem:nil
                               attribute:NSLayoutAttributeNotAnAttribute
                               multiplier:1.0
-                              constant:150]];
+                              constant:160]];
     
     
     [self.view updateConstraints];

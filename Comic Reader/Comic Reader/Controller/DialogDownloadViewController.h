@@ -19,4 +19,5 @@
 @property (weak, nonatomic) IBOutlet UILabel *percent;
 @property (weak, nonatomic) IBOutlet UILabel *totalPage;
 @property (strong, nonatomic)  ProgressViewDialog *progressDialog;
+-(void)onDownLoadFinish;
 @end
