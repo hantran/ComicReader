@@ -11,7 +11,10 @@
 @interface SubCategoryController : BaseViewController <UICollectionViewDelegate, UICollectionViewDataSource>
 @property (weak, nonatomic) IBOutlet UICollectionView *mCollectionView;
 @property (nonatomic) NSInteger cateId;
+@property (nonatomic) NSInteger cateCount;
 @property (strong,nonatomic) NSString *titleLabel;
 
 - (void)saveImageToSD;
+-(void)removeFavComic:(NSInteger)index;
+-(void)startDownloadComic;
 @end

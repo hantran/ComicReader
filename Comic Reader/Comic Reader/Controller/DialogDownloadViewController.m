@@ -44,13 +44,13 @@ typedef void (^test)(UIProgressView *progressDowload);
     progressDialog.layer.masksToBounds = YES;
     progressDowload.progress = 0.0;
     per = 0.0;
-    comicTitle.text = [[comic objectAtIndex:position] valueForKey:@"title"];
-    NSString *path = [LocalManager getDirectoryComic:[[comic objectAtIndex:position] valueForKey:@"comicPath"]];
-    [ComicReaderService downloadComicImage:@"http://172.20.23.10/ComicReader/images/1/1/1/" totalPage:[[comic objectAtIndex:position] valueForKey:@"totalPage"] path:path dialogDownload:self];
+    comicTitle.text = [comic valueForKey:@"title"];
+    NSString *path = [LocalManager getDirectoryComic:[comic valueForKey:@"comicPath"]];
+    [ComicReaderService downloadComicImage:@"http://172.20.23.10/ComicReader/images/1/1/1/" totalPage:[comic valueForKey:@"totalPage"] path:path dialogDownload:self];
 }
 
 -(void)onDownLoadFinish{
-    [ComicReaderDatabase updateDataComic:[comic objectAtIndex:position]];
+    [ComicReaderDatabase updateDataComic:comic];
     [collectionView reloadData];
     [self dismissViewControllerAnimated:YES completion:^{
     }];

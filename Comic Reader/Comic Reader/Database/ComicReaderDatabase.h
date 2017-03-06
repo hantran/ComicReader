@@ -18,5 +18,8 @@
 + (void)saveDataComic:(NSDictionary *) comicData categoryId:(NSInteger) cateId;
 -(NSMutableArray *)loadDataComicWithCategory: (NSInteger)cateId;
 +(NSMutableArray *)loadDataCategory:(MainCategoryController *)mMain;
+-(NSMutableArray *)loadFavoriteComic;
 +(void)updateDataComic:(NSManagedObject *)comic;
++(void)addFavComic:(NSManagedObject *)comic;
++(void)removeFavComic:(NSManagedObject *)comic;
 @end

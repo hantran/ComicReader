@@ -8,9 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "ProgressViewDialog.h"
+#import "AppDelegate.h"
 
 @interface DialogDownloadViewController : UIViewController
-@property(strong, nonatomic) NSMutableArray *comic;
+@property(strong, nonatomic) NSManagedObject *comic;
 @property(strong, nonatomic) UICollectionView *collectionView;
 @property (nonatomic, assign) NSInteger position;
 @property (nonatomic, assign) float per;

@@ -78,11 +78,11 @@
             }
         
            }];
-    
+    __block int count = 0;
     NSOperationQueue *operationQueue = [[NSOperationQueue alloc] init];
         [operationQueue setMaxConcurrentOperationCount:1];
 
-    for(int i = 1 ; i < [n intValue];i++){
+    for(int i = 1 ; i <= [n intValue];i++){
         
         NSBlockOperation *operation = [NSBlockOperation blockOperationWithBlock:^{
             NSURL *URL = [NSURL URLWithString:[NSString stringWithFormat:@"%@%d.jpg", url,i]];
@@ -93,7 +93,8 @@
                 return [documentsDirectoryURL URLByAppendingPathComponent:[response suggestedFilename]];
             } completionHandler:^(NSURLResponse *response, NSURL *filePath, NSError *error) {
                 NSLog(@"File downloaded to: %@", filePath);
-                if(i == [n intValue] ){
+                count ++;
+                if(count == [n intValue] ){
                     [dialogView onDownLoadFinish];
                 }
             }];

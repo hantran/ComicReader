@@ -94,6 +94,7 @@
     if ([segue.identifier isEqualToString:@"onClickTableCell"]) {
         SubCategoryController *subViewController =segue.destinationViewController;
         subViewController.cateId = cateId;
+        subViewController.cateCount = category.count;
         subViewController.titleLabel = titleLabel;
     }
 }

@@ -64,22 +64,14 @@
     [mScrollView setMaximumZoomScale:4.0f];
     [mScrollView setMaximumZoomScale:1.0f];
     [mScrollView setClipsToBounds:YES];
-    
-    UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(actionLongPress:)];
-    [longPress setMinimumPressDuration:0.5];
-    [mScrollView addGestureRecognizer:longPress];
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(actionDoubleTap:)];
+    [tap setNumberOfTapsRequired:2];
+    [mScrollView addGestureRecognizer:tap];
 
 }
 
--(void)actionLongPress:(UILongPressGestureRecognizer *)press{
-    if (press.state == UIGestureRecognizerStateEnded) {
-        NSLog(@"UIGestureRecognizerStateEnded");
-        //Do Whatever You want on End of Gesture
-    }
-    else if (press.state == UIGestureRecognizerStateBegan){
-        NSLog(@"UIGestureRecognizerStateBegan.");
-        [self performSegueWithIdentifier:@"showComicOverView" sender:self];
-    }
+-(void)actionDoubleTap:(UILongPressGestureRecognizer *)press{
+    [self performSegueWithIdentifier:@"showComicOverView" sender:self];
 
 }
 
@@ -94,8 +86,6 @@
     [self loadImageAtIndex:(int)(index-1)];
     [self loadImageAtIndex:(int)index];
     [self loadImageAtIndex:(int)(index+1)];
-    
-    
     
     NSLog(@"position page: %d",position);
     
@@ -134,7 +124,6 @@
             });
             
         });
-    
         }
     pageIndex.text = [NSString stringWithFormat:@"%d/%d",i, [numOfPage intValue]];
     

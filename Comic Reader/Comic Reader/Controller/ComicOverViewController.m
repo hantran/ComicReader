@@ -65,19 +65,6 @@
 //    [self initFirstSubComic];
 }
 
-//-(void)initFirstSubComic{
-//    int n = (int) screenWidth/60;
-//    for(int i = 0;i< n;i++)
-//        [self initSubComic:i];
-//    
-//}
-//-(void)updateSubComicWithScroll{
-//    int n = (int) mComicScrollView.contentOffset.x/60;
-//    if(n > 0 && n <= [numOfPage intValue] - (int) screenWidth/60 )
-//        for(int i = n;i< n + (int) screenWidth/60;i++)
-//        [self initSubComic:i -1];
-//
-//}
 -(void)initSubComic:(int)i{
 //    ComicOverViewCell *comicCell = (ComicOverViewCell *)[self.view viewWithTag:(NSInteger)(i+1)];
 //    if(comicCell == nil){
@@ -103,9 +90,7 @@
                 [mComicScrollView addSubview:comicCell];
                 NSLog(@"Finish async %d",i +1);
             });
-            
-//        });
-//    }
+    
 }
 
 -(void)actionTapSubView:(UITapGestureRecognizer *)tap{
@@ -117,15 +102,6 @@
 }
 
 -(void)viewDidAppear:(BOOL)animated{
-    //    mComicScrollView.contentSize = CGSizeMake([numOfPage intValue] * 80.0, 0.0);
-//    NSOperationQueue *operationQueue = [NSOperationQueue new];
-//    [operationQueue setMaxConcurrentOperationCount:5];
-//    for(int i = 0;i< [numOfPage intValue];i++){
-//        NSInvocationOperation *operation = [[NSInvocationOperation alloc] initWithTarget:self selector:@selector(initSubComic:) object:([NSNumber numberWithInt:i])];
-//        [operationQueue addOperation:operation];
-//    }
-//    [operationQueue waitUntilAllOperationsAreFinished];
-    
     
     dispatch_queue_t myQueue = dispatch_queue_create("MyQueue", DISPATCH_QUEUE_SERIAL);
     for(int i = 0;i< [numOfPage intValue];i++){

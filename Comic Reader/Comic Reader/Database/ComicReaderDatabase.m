@@ -73,6 +73,29 @@
 
 }
 
++(void)addFavComic:(NSManagedObject *)comic{
+    AppDelegate *delegate =(AppDelegate*) [[UIApplication sharedApplication] delegate];
+    NSManagedObjectContext *context = delegate.managedObjectContext;
+    [comic setValue:[NSNumber numberWithBool:YES] forKey:@"isMyComic"];
+    NSError *error = nil;
+    // Save the object to persistent store
+    if (![context save:&error]) {
+        NSLog(@"Can't Save! %@ %@", error, [error localizedDescription]);
+    }
+
+}
++(void)removeFavComic:(NSManagedObject *)comic{
+    AppDelegate *delegate =(AppDelegate*) [[UIApplication sharedApplication] delegate];
+    NSManagedObjectContext *context = delegate.managedObjectContext;
+    [comic setValue:[NSNumber numberWithBool:NO] forKey:@"isMyComic"];
+    NSError *error = nil;
+    // Save the object to persistent store
+    if (![context save:&error]) {
+        NSLog(@"Can't Save! %@ %@", error, [error localizedDescription]);
+    }
+    
+}
+
 +(BOOL)checkDataComic{
     AppDelegate *delegate =(AppDelegate*) [[UIApplication sharedApplication] delegate];
     NSManagedObjectContext *context = delegate.managedObjectContext;
@@ -83,6 +106,14 @@
     }
     else
         return YES;
+}
+-(NSMutableArray *)loadFavoriteComic{
+    AppDelegate *delegate =(AppDelegate *) [[UIApplication sharedApplication] delegate];
+    NSManagedObjectContext *context = delegate.managedObjectContext;
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"Comic"];
+    [fetchRequest setPredicate:[NSPredicate predicateWithFormat:@"isMyComic == %@", [NSNumber numberWithBool:YES]]];
+    NSMutableArray *comic = [[context executeFetchRequest:fetchRequest error:nil] mutableCopy];
+    return comic;
 }
 
 -(NSMutableArray *)loadDataComicWithCategory:(NSInteger)cateId{

@@ -9,15 +9,20 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MenuDialogViewController">
+            <connections>
+                <outlet property="addFavLabel" destination="idt-e2-sHy" id="Bm3-Lt-5HB"/>
+                <outlet property="downloadLabel" destination="QsK-DP-RUq" id="kve-6X-qZx"/>
+            </connections>
+        </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="375" height="176"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Download" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QsK-DP-RUq">
-                    <rect key="frame" x="129.5" y="33" width="116.5" height="20.5"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                    <rect key="frame" x="142.5" y="33" width="90.5" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -29,8 +34,8 @@
                     </constraints>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thêm truyện yêu thích" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="idt-e2-sHy">
-                    <rect key="frame" x="58" y="122" width="259" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                    <rect key="frame" x="88" y="122" width="201" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -38,15 +43,15 @@
             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="eb0-t2-kVA" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="1Kp-xi-UxV"/>
-                <constraint firstItem="eb0-t2-kVA" firstAttribute="top" secondItem="QsK-DP-RUq" secondAttribute="bottom" constant="33" id="9qZ-lo-yVG"/>
+                <constraint firstItem="eb0-t2-kVA" firstAttribute="top" secondItem="QsK-DP-RUq" secondAttribute="bottom" constant="33" id="9qZ-lo-yVG" userLabel="View.top = Download.bottom + 20"/>
                 <constraint firstItem="QsK-DP-RUq" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="BCb-nD-c1j"/>
                 <constraint firstItem="eb0-t2-kVA" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="JqR-g9-dKZ"/>
-                <constraint firstAttribute="bottom" secondItem="idt-e2-sHy" secondAttribute="bottom" constant="33" id="KH8-RU-UEO"/>
+                <constraint firstAttribute="bottom" secondItem="idt-e2-sHy" secondAttribute="bottom" constant="33" id="KH8-RU-UEO" userLabel="bottom = Thêm truyện yêu thích.bottom + 20"/>
                 <constraint firstItem="idt-e2-sHy" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Sa6-N3-oAC"/>
                 <constraint firstItem="eb0-t2-kVA" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="h9S-YN-XI2"/>
                 <constraint firstAttribute="trailing" secondItem="eb0-t2-kVA" secondAttribute="trailing" id="hwL-y6-NCd"/>
-                <constraint firstItem="QsK-DP-RUq" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="33" id="iKk-ei-TqA"/>
-                <constraint firstItem="idt-e2-sHy" firstAttribute="top" secondItem="eb0-t2-kVA" secondAttribute="bottom" constant="33" id="nuG-oA-wWF"/>
+                <constraint firstItem="QsK-DP-RUq" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="33" id="iKk-ei-TqA" userLabel="Download.top = top + 20"/>
+                <constraint firstItem="idt-e2-sHy" firstAttribute="top" secondItem="eb0-t2-kVA" secondAttribute="bottom" constant="33" id="nuG-oA-wWF" userLabel="Thêm truyện yêu thích.top = View.bottom + 20"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>

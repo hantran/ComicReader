@@ -23,6 +23,7 @@
 @property(strong, nonatomic) NSMutableArray *comic;
 @property (nonatomic, assign) NSInteger position;
 @property (strong, nonatomic) NSManagedObject *currentComic;
+@property (strong, nonnull) ComicReaderDatabase *database;
 
 
 @end
@@ -33,9 +34,11 @@
 @synthesize mCollectionView;
 @synthesize comic;
 @synthesize cateId;
+@synthesize cateCount;
 @synthesize titleLabel;
 @synthesize position;
 @synthesize currentComic;
+@synthesize database;
 
 -(void)viewWillAppear:(BOOL)animated{
     [self layoutView];
@@ -47,16 +50,29 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.hasBack  =  YES;
-    ComicReaderDatabase *database = [[ComicReaderDatabase alloc] init];
+    database = [[ComicReaderDatabase alloc] init];
     [self.mCollectionView registerNib:[UINib nibWithNibName:@"SubCategoryCell" bundle:[NSBundle mainBundle]]
            forCellWithReuseIdentifier:@"SubCategoryCell"];
-//    [self loadDataComic];
+    //    [self loadDataComic];
     self.titleNav.text = titleLabel;
-    comic = [database loadDataComicWithCategory:cateId];
+    if(cateId == (cateCount -1))
+        [self loadFavComic];
+    else
+        comic = [database loadDataComicWithCategory:cateId];
     [self setModalPresentationStyle:UIModalPresentationCurrentContext];
     
 }
-
+-(void)loadFavComic{
+    comic = [database loadFavoriteComic];
+}
+-(void)removeFavComic:(NSInteger)index{
+    [comic removeObjectAtIndex:index];
+    [mCollectionView reloadData];
+}
+-(void)startDownloadComic{
+    [self performSegueWithIdentifier:@"onClickDownload" sender:self];
+    
+}
 -(BOOL)loadDataComic{
     AppDelegate *delegate =(AppDelegate *) [[UIApplication sharedApplication] delegate];
     NSManagedObjectContext *context = delegate.managedObjectContext;
@@ -76,7 +92,7 @@
 }
 
 - (void) viewDidAppear:(BOOL)animated{
-//    [mCollectionView reloadData];
+    //    [mCollectionView reloadData];
     
 }
 - (void)didReceiveMemoryWarning {
@@ -104,16 +120,23 @@
     
     NSManagedObject *cmi = [comic objectAtIndex:indexPath.row];
     BOOL isDownloaded = [[cmi valueForKey:@"isDownloaded"] boolValue];
+    BOOL isMyComic = [[cmi valueForKey:@"isMyComic"] boolValue];
     NSString *path = [LocalManager getDirectoryComic:[[comic objectAtIndex:indexPath.row] valueForKey:@"comicPath"]];
     cell.imageViewCell.image = [UIImage imageNamed:@"comic.png"];
     cell.comicTitle.text = [cmi valueForKey:@"title"];
     NSLog(@"Comic path: %@",[cmi valueForKey:@"comicPath"]);
     if(!isDownloaded)
-        cell.imageTitle.image = [UIImage imageNamed:@"new.png"];
-    else{
-        cell.imageTitle.image = nil;
-        cell.imageViewCell.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@/1.jpg",path]];
-    }
+        if(isMyComic)
+            cell.imageTitle.image = [UIImage imageNamed:@"star.png"];
+        else
+            cell.imageTitle.image = [UIImage imageNamed:@"new.png"];
+        else{
+            if(isMyComic)
+                cell.imageTitle.image = [UIImage imageNamed:@"star.png"];
+            else
+                cell.imageTitle.image = nil;
+            cell.imageViewCell.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@/1.jpg",path]];
+        }
     cell.tag = indexPath.row;
     UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longPressComic:)];
     [longPress setMinimumPressDuration:0.5];
@@ -128,9 +151,10 @@
     }
     else if (longPress.state == UIGestureRecognizerStateBegan){
         NSLog(@"UIGestureRecognizerStateBegan.");
+        position = longPress.view.tag;
         [self performSegueWithIdentifier:@"onClickMenu" sender:self];
     }
-
+    
 }
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     currentComic = [comic objectAtIndex:indexPath.row];
@@ -140,7 +164,7 @@
     if(isDownloaded)
         [self performSegueWithIdentifier:@"onClickComic" sender:self];
     else
-    [self performSegueWithIdentifier:@"onClickDownload" sender:self];
+        [self performSegueWithIdentifier:@"onClickDownload" sender:self];
 }
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if ([segue.identifier isEqualToString:@"onClickComic"]) {
@@ -151,21 +175,27 @@
     if ([segue.identifier isEqualToString:@"onClickDownload"]) {
         DialogDownloadViewController *dialogViewController = segue.destinationViewController;
         [SubCategoryController setPresentationStyleForSelfController:self presentingController:dialogViewController];
-        
-        dialogViewController.comic = comic;
+        dialogViewController.comic = [comic objectAtIndex:position];
         dialogViewController.position = position;
         dialogViewController.collectionView = mCollectionView;
-}
-
-if ([segue.identifier isEqualToString:@"onClickMenu"]) {
-    MenuDialogViewController *menuDialogViewController = segue.destinationViewController;
-    [SubCategoryController setPresentationStyleForSelfController:self presentingController:menuDialogViewController];
+    }
+    
+    if ([segue.identifier isEqualToString:@"onClickMenu"]) {
+        MenuDialogViewController *menuDialogViewController = segue.destinationViewController;
+        [SubCategoryController setPresentationStyleForSelfController:self presentingController:menuDialogViewController];
+        menuDialogViewController.subCategory = self;
+        menuDialogViewController.position = position;
+        menuDialogViewController.comic = [comic objectAtIndex:position];
+        menuDialogViewController.collectionView = mCollectionView;
+        if(cateId == (cateCount -1))
+            menuDialogViewController.isFavComicView = YES;
+        else
+            menuDialogViewController.isFavComicView = NO;
+        
+    }
     
     
-}
-
-
-
+    
 }
 
 + (void)setPresentationStyleForSelfController:(UIViewController *)selfController presentingController:(UIViewController *)presentingController

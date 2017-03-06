@@ -7,7 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MenuViewDialog.h"
+#import "AppDelegate.h"
+#import "SubCategoryController.h"
 
-@interface MenuDialogViewController : UIViewController
+@interface MenuDialogViewController : UIViewController <UIGestureRecognizerDelegate>
+@property(strong, nonatomic) MenuViewDialog *menuDialogView;
+@property (strong, nonatomic) SubCategoryController *subCategory;
+@property (weak, nonatomic) IBOutlet UILabel *downloadLabel;
+@property (weak, nonatomic) IBOutlet UILabel *addFavLabel;
+@property (strong, nonatomic) NSManagedObject *comic;
+@property(strong, nonatomic) UICollectionView *collectionView;
+@property (nonatomic) NSInteger position;
+@property (nonatomic) BOOL isFavComicView;
+
 
 @end

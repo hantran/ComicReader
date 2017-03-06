@@ -86,7 +86,7 @@
     
     
     [self.view updateConstraints];
-
+//    self.navigationController.navigationBar.hidden = YES;
 }
 -(void)customNavigationBar
 {
