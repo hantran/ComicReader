@@ -85,7 +85,9 @@
                 comicCell.tag = (NSInteger)(i +1);
                 [comicCell addGestureRecognizer:tapSubView];
                 [comicCell setUserInteractionEnabled:YES];
-                comicCell.comicIndex.text = [NSString stringWithFormat:@"%d",i+1];
+                NSString *index = [NSString stringWithFormat:@"%d",i+1];
+                comicCell.comicIndex.text = index ;
+                NSLog(@"Comic index %@",[NSString stringWithFormat:@"%d",i+1]);
                 comicCell.comicImage.image = image;
                 [mComicScrollView addSubview:comicCell];
                 NSLog(@"Finish async %d",i +1);

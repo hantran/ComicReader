@@ -107,7 +107,7 @@
                               toItem:nil
                               attribute:NSLayoutAttributeNotAnAttribute
                               multiplier:1.0
-                              constant:165]];
+                              constant:150]];
     
     
     [self.view updateConstraints];

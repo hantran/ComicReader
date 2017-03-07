@@ -46,7 +46,7 @@ typedef void (^test)(UIProgressView *progressDowload);
     per = 0.0;
     comicTitle.text = [comic valueForKey:@"title"];
     NSString *path = [LocalManager getDirectoryComic:[comic valueForKey:@"comicPath"]];
-    [ComicReaderService downloadComicImage:@"http://172.20.23.10/ComicReader/images/1/1/1/" totalPage:[comic valueForKey:@"totalPage"] path:path dialogDownload:self];
+    [ComicReaderService downloadComicImage:@"http://172.20.23.10/ComicReader/images/1/1/1/" totalPage:[comic valueForKey:@"totalPage"] path:path dialogDownload:self nsObject:comic];
 }
 
 -(void)onDownLoadFinish{

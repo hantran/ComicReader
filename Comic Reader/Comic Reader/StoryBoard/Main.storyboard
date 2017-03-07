@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="KEt-B3-4wH">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -48,7 +48,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3306.4000000000001" y="77.811094452773617"/>
+            <point key="canvasLocation" x="4245.6000000000004" y="77.811094452773617"/>
         </scene>
         <!--Menu Dialog View Controller-->
         <scene sceneID="RMx-hJ-82U">
@@ -119,8 +119,8 @@
                     <connections>
                         <outlet property="mCollectionView" destination="wy5-8S-xeK" id="S37-O5-DGe"/>
                         <segue destination="Omq-ok-7Dp" kind="show" identifier="onClickComic" id="NAg-ox-sbC"/>
-                        <segue destination="UOh-M0-ALX" kind="modal" identifier="onClickDownload" id="3NY-nh-dFR"/>
-                        <segue destination="8zR-40-B4G" kind="modal" identifier="onClickMenu" id="0fW-2M-3iw"/>
+                        <segue destination="UOh-M0-ALX" kind="presentation" identifier="onClickDownload" id="3NY-nh-dFR"/>
+                        <segue destination="8zR-40-B4G" kind="presentation" identifier="onClickMenu" id="0fW-2M-3iw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ixy-yN-gGV" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -197,7 +197,7 @@
                     <connections>
                         <outlet property="mScrollView" destination="wYp-pK-de2" id="5Eb-AQ-Z4X"/>
                         <outlet property="pageIndex" destination="2Fa-mV-MIE" id="5c7-JI-usd"/>
-                        <segue destination="IDw-gs-z7Q" kind="show" identifier="showComicOverView" id="Obx-xM-7ES"/>
+                        <segue destination="IDw-gs-z7Q" kind="presentation" identifier="showComicOverView" id="Obx-xM-7ES"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="foQ-1T-dca" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -233,6 +233,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pqq-Xs-Lxx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1479" y="1580"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="BvI-4R-hbK">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="KEt-B3-4wH" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="kVy-8e-RQP">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Ufh-rF-zPK"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="34l-XI-eXK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3306.4000000000001" y="77.811094452773617"/>
         </scene>
     </scenes>
 </document>

@@ -20,7 +20,8 @@
 
 
 -(void) fetchCategoryData: (NSString *)stringURL main: (MainCategoryController *) mainCate;
--(void) fetchComicData: (NSString *)stringURL categoryId:(int) cateId;
-+(void)downloadComicImage:(NSString *)url totalPage:(NSNumber *)n path:(NSString *) folderPath dialogDownload:(DialogDownloadViewController *) dialogView;
-
+-(void) fetchComicData: (NSString *)stringURL categoryId:(int) cateId main:(MainCategoryController *) mainCate;
++(void)downloadComicImage:(NSString *)url totalPage:(NSNumber *)n path:(NSString *) folderPath dialogDownload:(DialogDownloadViewController *) dialogView nsObject:(NSManagedObject *)comic;
++(void)downloadAtIndex:(int)i total:(NSNumber *)n manage:(AFURLSessionManager *)manager url:(NSString *)url folderPath:(NSString *)folderPath dialogView:(DialogDownloadViewController *) dialogView nsObject:(NSManagedObject *)comic;
+- (void)updateProgressView:(UIProgressView *)progressDownload percent:(float)n;
 @end

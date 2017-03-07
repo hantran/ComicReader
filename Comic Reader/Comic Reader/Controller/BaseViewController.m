@@ -32,9 +32,7 @@
     // Dispose of any resources that can be recreated.
 }
 - (IBAction)actionBack:(id)sender {
-    [self dismissViewControllerAnimated:YES completion:^{
-        
-    }];
+ [self.navigationController popViewControllerAnimated:YES];
 }
 
 -(void)layoutView
@@ -43,6 +41,7 @@
     // hoddenview for subclass
     // detect view that will show
     [self customNavigationBar];
+//    self.navigationController.navigationBar.hidden = YES;
     [self.view addConstraint:[NSLayoutConstraint
                               constraintWithItem:_customNav
                               attribute:NSLayoutAttributeTop
@@ -86,7 +85,7 @@
     
     
     [self.view updateConstraints];
-//    self.navigationController.navigationBar.hidden = YES;
+
 }
 -(void)customNavigationBar
 {

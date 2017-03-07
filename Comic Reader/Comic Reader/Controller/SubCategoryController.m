@@ -135,13 +135,24 @@
                 cell.imageTitle.image = [UIImage imageNamed:@"star.png"];
             else
                 cell.imageTitle.image = nil;
-            cell.imageViewCell.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@/1.jpg",path]];
+            cell.imageViewCell.image = [self resizeBackgroundImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@/1.jpg",path]]];
         }
     cell.tag = indexPath.row;
     UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longPressComic:)];
     [longPress setMinimumPressDuration:0.5];
     [cell addGestureRecognizer:longPress];
     return cell;
+}
+-(UIImage *)resizeBackgroundImage:(UIImage *)image{
+    CGFloat width = image.size.width;
+    CGFloat height = image.size.height;
+    CGFloat scale = width/height;
+    UIGraphicsBeginImageContext(CGSizeMake(80 * scale, 80));
+    [image drawInRect:CGRectMake(0, 0, 80 * scale, 80)];
+    UIImage *destImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return destImage;
+
 }
 
 -(void)longPressComic:(UILongPressGestureRecognizer *)longPress{

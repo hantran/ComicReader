@@ -43,7 +43,7 @@
         [newCategory setValue:[detailComic valueForKey:@"2"] forKey:@"totalPage"];
         [newCategory setValue:[NSNumber numberWithBool:NO] forKey:@"isDownloaded"];
         [newCategory setValue:[NSNumber numberWithBool:NO] forKey:@"isMyComic"];
-        [newCategory setValue:0 forKey:@"currentDownloaded"];
+        [newCategory setValue:[NSNumber numberWithInt:1] forKey:@"currentDownloaded"];
         [newCategory setValue:0 forKey:@"currentReaded"];
         NSString *directory = [NSString stringWithFormat:@"/%@/%d",[NSString stringWithFormat:@"%@",[NSNumber numberWithInteger:cateId]], i+1];
 //        [newCategory setValue:[LocalManager createDirectoryComic:directory] forKey:@"comicPath"];
@@ -95,6 +95,18 @@
     }
     
 }
++(void)updateCurrentDownloaded:(NSManagedObject *)comic current:(int) position{
+    AppDelegate *delegate =(AppDelegate*) [[UIApplication sharedApplication] delegate];
+    NSManagedObjectContext *context = delegate.managedObjectContext;
+    [comic setValue:[NSNumber numberWithInt:position] forKey:@"currentDownloaded"];
+    NSError *error = nil;
+    // Save the object to persistent store
+    if (![context save:&error]) {
+        NSLog(@"Can't Save! %@ %@", error, [error localizedDescription]);
+    }
+    
+}
+
 
 +(BOOL)checkDataComic{
     AppDelegate *delegate =(AppDelegate*) [[UIApplication sharedApplication] delegate];

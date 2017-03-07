@@ -18,8 +18,6 @@
 		7FD9DF504893194169AC1AB5 /* libPods-Comic Reader.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B879915E2E9040D2839F3B0B /* libPods-Comic Reader.a */; };
 		9A62FE29A4F2F0C80510AF7E /* libPods-Comic ReaderTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CED73DC06742686A345F170 /* libPods-Comic ReaderTests.a */; };
 		C328369E1E568D37007464D6 /* ComicReaderService.m in Sources */ = {isa = PBXBuildFile; fileRef = C328369D1E568D37007464D6 /* ComicReaderService.m */; };
-		C32836A21E568E80007464D6 /* AlertViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C32836A01E568E80007464D6 /* AlertViewController.m */; };
-		C32836A31E568E80007464D6 /* AlertViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C32836A11E568E80007464D6 /* AlertViewController.xib */; };
 		C33ECECF1E6CF3D0007A38EC /* MenuViewDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = C33ECECE1E6CF3D0007A38EC /* MenuViewDialog.m */; };
 		C33ECED11E6CF3E2007A38EC /* MenuViewDialog.xib in Resources */ = {isa = PBXBuildFile; fileRef = C33ECED01E6CF3E2007A38EC /* MenuViewDialog.xib */; };
 		C33ECED41E6CF636007A38EC /* MenuDialogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C33ECED31E6CF636007A38EC /* MenuDialogViewController.m */; };
@@ -53,6 +51,7 @@
 		C37568CC1E5BCFC100896253 /* ah1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C37568C91E5BCFC100896253 /* ah1.jpg */; };
 		C37568D81E5C35D000896253 /* CustomNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = C37568D71E5C35D000896253 /* CustomNavigationBar.m */; };
 		C37568DA1E5C35E800896253 /* CustomNavigationBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = C37568D91E5C35E800896253 /* CustomNavigationBar.xib */; };
+		C377D57B1E6E4CE000F6BBF8 /* AlertViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C377D57A1E6E4CE000F6BBF8 /* AlertViewManager.m */; };
 		C3892E251E5FEC5300B7F04D /* DialogDownloadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3892E241E5FEC5300B7F04D /* DialogDownloadViewController.m */; };
 		C3C101C81E5EB4DC008E4F42 /* LocalManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C3C101C71E5EB4DC008E4F42 /* LocalManager.m */; };
 		C3C101CB1E5EB4F8008E4F42 /* ComicReaderDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = C3C101CA1E5EB4F8008E4F42 /* ComicReaderDatabase.m */; };
@@ -98,9 +97,6 @@
 		B928F5DF1AFA0DE00653BECA /* Pods-Comic ReaderTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Comic ReaderTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Comic ReaderTests/Pods-Comic ReaderTests.release.xcconfig"; sourceTree = "<group>"; };
 		C328369C1E568D37007464D6 /* ComicReaderService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComicReaderService.h; sourceTree = "<group>"; };
 		C328369D1E568D37007464D6 /* ComicReaderService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComicReaderService.m; sourceTree = "<group>"; };
-		C328369F1E568E80007464D6 /* AlertViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertViewController.h; sourceTree = "<group>"; };
-		C32836A01E568E80007464D6 /* AlertViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertViewController.m; sourceTree = "<group>"; };
-		C32836A11E568E80007464D6 /* AlertViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AlertViewController.xib; sourceTree = "<group>"; };
 		C33ECECD1E6CF3D0007A38EC /* MenuViewDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewDialog.h; sourceTree = "<group>"; };
 		C33ECECE1E6CF3D0007A38EC /* MenuViewDialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewDialog.m; sourceTree = "<group>"; };
 		C33ECED01E6CF3E2007A38EC /* MenuViewDialog.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuViewDialog.xib; sourceTree = "<group>"; };
@@ -152,6 +148,8 @@
 		C37568D61E5C35D000896253 /* CustomNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomNavigationBar.h; sourceTree = "<group>"; };
 		C37568D71E5C35D000896253 /* CustomNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomNavigationBar.m; sourceTree = "<group>"; };
 		C37568D91E5C35E800896253 /* CustomNavigationBar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomNavigationBar.xib; sourceTree = "<group>"; };
+		C377D5791E6E4CE000F6BBF8 /* AlertViewManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertViewManager.h; sourceTree = "<group>"; };
+		C377D57A1E6E4CE000F6BBF8 /* AlertViewManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertViewManager.m; sourceTree = "<group>"; };
 		C3892E231E5FEC5300B7F04D /* DialogDownloadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DialogDownloadViewController.h; sourceTree = "<group>"; };
 		C3892E241E5FEC5300B7F04D /* DialogDownloadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DialogDownloadViewController.m; sourceTree = "<group>"; };
 		C3C101C61E5EB4DC008E4F42 /* LocalManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocalManager.h; sourceTree = "<group>"; };
@@ -232,9 +230,6 @@
 		7D87B0C71E54611100357D04 /* DialogViewSubCategory */ = {
 			isa = PBXGroup;
 			children = (
-				C328369F1E568E80007464D6 /* AlertViewController.h */,
-				C32836A01E568E80007464D6 /* AlertViewController.m */,
-				C32836A11E568E80007464D6 /* AlertViewController.xib */,
 				7D87B0C81E54611100357D04 /* ProgressViewDialog.h */,
 				7D87B0C91E54611100357D04 /* ProgressViewDialog.m */,
 				7D87B0CA1E54611100357D04 /* ProgressViewDialog.xib */,
@@ -357,6 +352,8 @@
 			children = (
 				C36A9A831E66B89600465B18 /* AsyncImage */,
 				7D87B0CD1E54623600357D04 /* Header.h */,
+				C377D5791E6E4CE000F6BBF8 /* AlertViewManager.h */,
+				C377D57A1E6E4CE000F6BBF8 /* AlertViewManager.m */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -582,7 +579,6 @@
 				C372C0E91E67B0B2005F9F94 /* ComicOverViewDialog.xib in Resources */,
 				C36613281E4AB20B001BF229 /* Assets.xcassets in Resources */,
 				C36A61F61E543A89001B1B7C /* arrowBack.png in Resources */,
-				C32836A31E568E80007464D6 /* AlertViewController.xib in Resources */,
 				C37568CC1E5BCFC100896253 /* ah1.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -750,10 +746,10 @@
 				7D87B0C31E54609600357D04 /* MainCategoryCell.m in Sources */,
 				C37206BC1E5182DE00366DFA /* MainCategoryController.m in Sources */,
 				7D87B0CB1E54611100357D04 /* ProgressViewDialog.m in Sources */,
+				C377D57B1E6E4CE000F6BBF8 /* AlertViewManager.m in Sources */,
 				C328369E1E568D37007464D6 /* ComicReaderService.m in Sources */,
 				C33ECECF1E6CF3D0007A38EC /* MenuViewDialog.m in Sources */,
 				7D87B0C51E54609600357D04 /* SubCategoryCell.m in Sources */,
-				C32836A21E568E80007464D6 /* AlertViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

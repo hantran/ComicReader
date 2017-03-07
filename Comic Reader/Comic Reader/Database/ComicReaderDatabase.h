@@ -22,4 +22,5 @@
 +(void)updateDataComic:(NSManagedObject *)comic;
 +(void)addFavComic:(NSManagedObject *)comic;
 +(void)removeFavComic:(NSManagedObject *)comic;
++(void)updateCurrentDownloaded:(NSManagedObject *)comic current:(int) position;
 @end

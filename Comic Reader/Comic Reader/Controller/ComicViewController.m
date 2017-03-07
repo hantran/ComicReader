@@ -104,7 +104,7 @@
     CGFloat xOrigin = i * screenWidth;
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
             
-        UIImage *image = [UIImage imageWithContentsOfFile:[NSString stringWithFormat:@"%@/%d.jpg", [LocalManager getDirectoryComic:comicPath], i + 1]];
+        UIImage *image = [self imageWithImage:[UIImage imageWithContentsOfFile:[NSString stringWithFormat:@"%@/%d.jpg", [LocalManager getDirectoryComic:comicPath], i + 1]]];
 
             dispatch_async(dispatch_get_main_queue(), ^{
                 UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0,0,screenWidth,mScrollView.frame.size.height)];
@@ -117,7 +117,7 @@
                 subScrollView.showsHorizontalScrollIndicator = NO;
                 subScrollView.showsVerticalScrollIndicator = NO;
                 imageView.tag = (NSInteger)(i +1);
-                [imageView setImage:[self imageWithImage:image]];
+                [imageView setImage:image];
                 [imageArray addObject:imageView];
                 [subScrollView addSubview:imageView];
                 [mScrollView addSubview:subScrollView];
@@ -126,7 +126,6 @@
         });
         }
     pageIndex.text = [NSString stringWithFormat:@"%d/%d",i, [numOfPage intValue]];
-    
 
 }
 -(void)jumpToPage:(int)i{
