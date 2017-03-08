@@ -11,6 +11,7 @@
 #import <UIKit/UIKit.h>
 #import "LocalManager.h"
 #import "ComicReaderDatabase.h"
+#import "Header.h"
 
 @interface DialogDownloadViewController ()
 
@@ -29,7 +30,7 @@
 typedef void (^test)(UIProgressView *progressDowload);
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSArray* nibViews = [[NSBundle mainBundle] loadNibNamed:@"ProgressViewDialog"
+    NSArray* nibViews = [[NSBundle mainBundle] loadNibNamed:NIB_PROGRESS_VIEW_DIALOG
                                                       owner:self
                                                     options:nil];
     progressDialog = [nibViews objectAtIndex:0];
@@ -44,9 +45,9 @@ typedef void (^test)(UIProgressView *progressDowload);
     progressDialog.layer.masksToBounds = YES;
     progressDowload.progress = 0.0;
     per = 0.0;
-    comicTitle.text = [comic valueForKey:@"title"];
-    NSString *path = [LocalManager getDirectoryComic:[comic valueForKey:@"comicPath"]];
-    [ComicReaderService downloadComicImage:@"http://172.20.23.10/ComicReader/images/1/1/1/" totalPage:[comic valueForKey:@"totalPage"] path:path dialogDownload:self nsObject:comic];
+    comicTitle.text = [comic valueForKey:Title];
+    NSString *path = [LocalManager getDirectoryComic:[comic valueForKey:COMIC_PATH_TITLE]];
+    [ComicReaderService downloadComicImage:COMIC_DOWNLOAD_API totalPage:[comic valueForKey:TOTAL_PAGE] path:path dialogDownload:self nsObject:comic];
 }
 
 -(void)onDownLoadFinish{
@@ -54,7 +55,7 @@ typedef void (^test)(UIProgressView *progressDowload);
     [collectionView reloadData];
     [self dismissViewControllerAnimated:YES completion:^{
     }];
-
+    
 }
 -(void)viewWillAppear:(BOOL)animated{
     [self.view addConstraint:[NSLayoutConstraint
@@ -73,7 +74,7 @@ typedef void (^test)(UIProgressView *progressDowload);
                               attribute:NSLayoutAttributeCenterY
                               multiplier:1.0
                               constant:0.0]];
-
+    
     [self.view addConstraint:[NSLayoutConstraint
                               constraintWithItem:progressDialog
                               attribute:NSLayoutAttributeTrailing
@@ -101,16 +102,16 @@ typedef void (^test)(UIProgressView *progressDowload);
     
     
     [self.view updateConstraints];
-
+    
 }
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end

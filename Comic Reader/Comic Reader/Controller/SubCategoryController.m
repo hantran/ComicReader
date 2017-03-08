@@ -17,6 +17,9 @@
 #import "DialogDownloadViewController.h"
 #import "LocalManager.h"
 #import "MenuDialogViewController.h"
+#import "Header.h"
+
+
 
 @interface SubCategoryController ()
 @property(nonatomic,strong) NSArray *array;
@@ -51,15 +54,20 @@
     [super viewDidLoad];
     self.hasBack  =  YES;
     database = [[ComicReaderDatabase alloc] init];
-    [self.mCollectionView registerNib:[UINib nibWithNibName:@"SubCategoryCell" bundle:[NSBundle mainBundle]]
-           forCellWithReuseIdentifier:@"SubCategoryCell"];
-    //    [self loadDataComic];
+    [self.mCollectionView registerNib:[UINib nibWithNibName:NIB_SUB_CATEGORY_CELL bundle:[NSBundle mainBundle]]
+           forCellWithReuseIdentifier:NIB_SUB_CATEGORY_CELL];
     self.titleNav.text = titleLabel;
+    [self setPaddingCollectionView];
     if(cateId == (cateCount -1))
         [self loadFavComic];
     else
         comic = [database loadDataComicWithCategory:cateId];
     [self setModalPresentationStyle:UIModalPresentationCurrentContext];
+    
+}
+
+-(void) setPaddingCollectionView{
+    mCollectionView.contentInset = UIEdgeInsetsMake(0, 16, 0, 16);
     
 }
 -(void)loadFavComic{
@@ -70,36 +78,9 @@
     [mCollectionView reloadData];
 }
 -(void)startDownloadComic{
-    [self performSegueWithIdentifier:@"onClickDownload" sender:self];
+    [self performSegueWithIdentifier:SEGUE_ON_CLICK_DOWNLOAD sender:self];
     
 }
--(BOOL)loadDataComic{
-    AppDelegate *delegate =(AppDelegate *) [[UIApplication sharedApplication] delegate];
-    NSManagedObjectContext *context = delegate.managedObjectContext;
-    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"Comic"];
-    [fetchRequest setPredicate:[NSPredicate predicateWithFormat:@"idCategory == %d", cateId + 1]];
-    self.comic = [[context executeFetchRequest:fetchRequest error:nil] mutableCopy];
-    if([comic count]>0){
-        [mCollectionView reloadData];
-        return NO;
-    }
-    else
-        return YES;
-}
-
--(void) saveImageToSD{
-    
-}
-
-- (void) viewDidAppear:(BOOL)animated{
-    //    [mCollectionView reloadData];
-    
-}
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 - (BOOL) shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation{
     return UIInterfaceOrientationIsPortrait(toInterfaceOrientation);
 }
@@ -109,33 +90,35 @@
     return [comic count];
 }
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
-    static NSString *identifier = @"SubCategoryCell";
+    static NSString *identifier = NIB_SUB_CATEGORY_CELL;
     
     SubCategoryCell *cell = (SubCategoryCell *)[collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
     if (cell == nil)
     {
-        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"SubCategoryCell" owner:self options:nil];
+        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:NIB_SUB_CATEGORY_CELL owner:self options:nil];
         cell = [nib objectAtIndex:0];
+        
     }
-    
+    //    cell.backgroundColor = [UIColor redColor];
     NSManagedObject *cmi = [comic objectAtIndex:indexPath.row];
-    BOOL isDownloaded = [[cmi valueForKey:@"isDownloaded"] boolValue];
-    BOOL isMyComic = [[cmi valueForKey:@"isMyComic"] boolValue];
-    NSString *path = [LocalManager getDirectoryComic:[[comic objectAtIndex:indexPath.row] valueForKey:@"comicPath"]];
-    cell.imageViewCell.image = [UIImage imageNamed:@"comic.png"];
-    cell.comicTitle.text = [cmi valueForKey:@"title"];
+    BOOL isDownloaded = [[cmi valueForKey:IS_DOWNLOADED] boolValue];
+    BOOL isMyComic = [[cmi valueForKey:IS_MYCOMIC] boolValue];
+    NSString *path = [LocalManager getDirectoryComic:[[comic objectAtIndex:indexPath.row] valueForKey:COMIC_PATH_TITLE]];
+    cell.imageViewCell.image = [UIImage imageNamed:ICON_COMIC];
+    cell.comicTitle.text = [cmi valueForKey:Title];
     NSLog(@"Comic path: %@",[cmi valueForKey:@"comicPath"]);
     if(!isDownloaded)
         if(isMyComic)
-            cell.imageTitle.image = [UIImage imageNamed:@"star.png"];
+            cell.imageTitle.image = [UIImage imageNamed:ICON_STAR];
         else
-            cell.imageTitle.image = [UIImage imageNamed:@"new.png"];
+            cell.imageTitle.image = [UIImage imageNamed:ICON_NEW];
         else{
             if(isMyComic)
-                cell.imageTitle.image = [UIImage imageNamed:@"star.png"];
+                cell.imageTitle.image = [UIImage imageNamed:ICON_STAR];
             else
                 cell.imageTitle.image = nil;
-            cell.imageViewCell.image = [self resizeBackgroundImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@/1.jpg",path]]];
+            cell.imageViewCell.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@/1.jpg",path]];
+            
         }
     cell.tag = indexPath.row;
     UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longPressComic:)];
@@ -143,47 +126,33 @@
     [cell addGestureRecognizer:longPress];
     return cell;
 }
--(UIImage *)resizeBackgroundImage:(UIImage *)image{
-    CGFloat width = image.size.width;
-    CGFloat height = image.size.height;
-    CGFloat scale = width/height;
-    UIGraphicsBeginImageContext(CGSizeMake(80 * scale, 80));
-    [image drawInRect:CGRectMake(0, 0, 80 * scale, 80)];
-    UIImage *destImage = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    return destImage;
-
-}
 
 -(void)longPressComic:(UILongPressGestureRecognizer *)longPress{
     if (longPress.state == UIGestureRecognizerStateEnded) {
-        NSLog(@"UIGestureRecognizerStateEnded");
-        //Do Whatever You want on End of Gesture
     }
     else if (longPress.state == UIGestureRecognizerStateBegan){
-        NSLog(@"UIGestureRecognizerStateBegan.");
         position = longPress.view.tag;
-        [self performSegueWithIdentifier:@"onClickMenu" sender:self];
+        [self performSegueWithIdentifier:SEGUE_ON_CLICK_MENU sender:self];
     }
     
 }
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     currentComic = [comic objectAtIndex:indexPath.row];
-    titleLabel = [currentComic valueForKey:@"title"];
+    titleLabel = [currentComic valueForKey:Title];
     position = indexPath.row;
-    BOOL isDownloaded = [[currentComic valueForKey:@"isDownloaded"] boolValue];
+    BOOL isDownloaded = [[currentComic valueForKey:IS_DOWNLOADED] boolValue];
     if(isDownloaded)
-        [self performSegueWithIdentifier:@"onClickComic" sender:self];
+        [self performSegueWithIdentifier:SEGUE_ON_CLICK_COMIC sender:self];
     else
-        [self performSegueWithIdentifier:@"onClickDownload" sender:self];
+        [self performSegueWithIdentifier:SEGUE_ON_CLICK_DOWNLOAD sender:self];
 }
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    if ([segue.identifier isEqualToString:@"onClickComic"]) {
+    if ([segue.identifier isEqualToString:SEGUE_ON_CLICK_COMIC]) {
         ComicViewController *comicViewController =segue.destinationViewController;
         comicViewController.titleLabel = titleLabel;
         comicViewController.comic = currentComic;
     }
-    if ([segue.identifier isEqualToString:@"onClickDownload"]) {
+    if ([segue.identifier isEqualToString:SEGUE_ON_CLICK_DOWNLOAD]) {
         DialogDownloadViewController *dialogViewController = segue.destinationViewController;
         [SubCategoryController setPresentationStyleForSelfController:self presentingController:dialogViewController];
         dialogViewController.comic = [comic objectAtIndex:position];
@@ -191,7 +160,7 @@
         dialogViewController.collectionView = mCollectionView;
     }
     
-    if ([segue.identifier isEqualToString:@"onClickMenu"]) {
+    if ([segue.identifier isEqualToString:SEGUE_ON_CLICK_MENU]) {
         MenuDialogViewController *menuDialogViewController = segue.destinationViewController;
         [SubCategoryController setPresentationStyleForSelfController:self presentingController:menuDialogViewController];
         menuDialogViewController.subCategory = self;

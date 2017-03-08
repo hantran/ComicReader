@@ -13,12 +13,13 @@
 #import "ComicReaderDatabase.h"
 #import "DialogDownloadViewController.h"
 #import "AlertViewManager.h"
+#import "Header.h"
 @implementation ComicReaderService
 @synthesize category;
 @synthesize comic;
 -(void)fetchCategoryData: (NSString *)stringURL main:(MainCategoryController *) mainCate{
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-    [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Accept"];
+    [manager.requestSerializer setValue:TYPE_PARSE_JSON forHTTPHeaderField:HTTP_HEADER];
     [manager GET:stringURL parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
         category = (NSDictionary *)responseObject;
         [ComicReaderDatabase saveDataCategory:category];
@@ -26,20 +27,20 @@
         [mainCate.mTableView reloadData];
         if([ComicReaderDatabase checkDataComic]){
             for(int i = 1;i <= [category count];i++)
-                [self fetchComicData:[NSString stringWithFormat:@"http://172.20.23.10/ComicReader/category/list/%d/",i] categoryId:i main:mainCate];
+                [self fetchComicData:[NSString stringWithFormat:COMIC_API,i] categoryId:i main:mainCate];
         }
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
-        [mainCate presentViewController:[AlertViewManager showAlertError:@"Error Retrieving Category" error:error view:nil]animated:YES completion:nil];
+        [mainCate presentViewController:[AlertViewManager showAlertError:ERROR_RETRIEVING_CATEGORY error:error view:nil]animated:YES completion:nil];
     }];
 }
 -(void)fetchComicData: (NSString *)stringURL categoryId:(int) cateId main:(MainCategoryController *) mainCate{
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-    [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Accept"];
+    [manager.requestSerializer setValue:TYPE_PARSE_JSON forHTTPHeaderField:HTTP_HEADER];
     [manager GET:stringURL parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
         comic = (NSDictionary *)responseObject;
         [ComicReaderDatabase saveDataComic:comic categoryId:cateId];
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
-        [mainCate presentViewController:[AlertViewManager showAlertError:@"Error Retrieving Comic" error:error view:nil]animated:YES completion:nil];
+        [mainCate presentViewController:[AlertViewManager showAlertError:ERROR_RETRIEVING_COMIC error:error view:nil]animated:YES completion:nil];
         
     }];
     
@@ -50,7 +51,7 @@
     
     NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
     AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:configuration];
-    dialogView.per = [[comic valueForKey:@"currentDownloaded"] floatValue] - 1.0;
+    dialogView.per = [[comic valueForKey:CURRENT_DOWNLOADED] floatValue] - 1.0;
     [manager setDownloadTaskDidWriteDataBlock:^(NSURLSession *session, NSURLSessionDownloadTask *downloadTask, int64_t bytesWritten, int64_t totalBytesWritten, int64_t totalBytesExpectedToWrite) {
         
         
@@ -67,7 +68,7 @@
         }
         
     }];
-    [self downloadAtIndex:[[comic valueForKey:@"currentDownloaded"] intValue] total:n manage:manager url:url folderPath:folderPath dialogView:dialogView nsObject:comic];
+    [self downloadAtIndex:[[comic valueForKey:CURRENT_DOWNLOADED] intValue] total:n manage:manager url:url folderPath:folderPath dialogView:dialogView nsObject:comic];
 }
 
 +(void)downloadAtIndex:(int)i total:(NSNumber *)n manage:(AFURLSessionManager *)manager url:(NSString *)url folderPath:(NSString *)folderPath dialogView:(DialogDownloadViewController *) dialogView nsObject:(NSManagedObject *)comic{
@@ -82,17 +83,17 @@
         NSLog(@"File downloaded to: %@", filePath);
         NSLog(@"Error: %@", error);
         if(error == nil)
-        if(count == [n intValue] ){
-            [dialogView onDownLoadFinish];
-        }
-        else{
-            count ++;
-            [self downloadAtIndex:count total:n manage:manager url:url folderPath:folderPath dialogView:dialogView nsObject:comic];
-        }
-        else{
-            [dialogView presentViewController:[AlertViewManager showAlertError:@"Error Download comic" error:error view:dialogView]animated:YES completion:nil];
-            [ComicReaderDatabase updateCurrentDownloaded:comic current:count];
-        }
+            if(count == [n intValue] ){
+                [dialogView onDownLoadFinish];
+            }
+            else{
+                count ++;
+                [self downloadAtIndex:count total:n manage:manager url:url folderPath:folderPath dialogView:dialogView nsObject:comic];
+            }
+            else{
+                [dialogView presentViewController:[AlertViewManager showAlertError:ERROR_DOWNLOAD_COMIC error:error view:dialogView]animated:YES completion:nil];
+                [ComicReaderDatabase updateCurrentDownloaded:comic current:count];
+            }
     }];
     [downloadTask resume];
 }

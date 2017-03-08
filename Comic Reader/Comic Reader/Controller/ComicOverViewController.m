@@ -10,6 +10,7 @@
 #import "ComicOverViewDialog.h"
 #import "ComicOverViewCell.h"
 #import "LocalManager.h"
+#import "Header.h"
 @interface ComicOverViewController ()
 
 @end
@@ -36,7 +37,7 @@
 }
 
 -(void)initComicOverViewDialog{
-    NSArray* nibViews = [[NSBundle mainBundle] loadNibNamed:@"ComicOverViewDialog"
+    NSArray* nibViews = [[NSBundle mainBundle] loadNibNamed:NIB_COMIC_OVER_VIEW_DIALOG
                                                       owner:self
                                                     options:nil];
     comicOverViewDialog = [nibViews objectAtIndex:0];
@@ -45,8 +46,8 @@
     comicOverViewDialog.layer.borderWidth = 5.0;
     comicOverViewDialog.layer.cornerRadius = 5.0;
     comicOverViewDialog.layer.masksToBounds = YES;
-    comicPath = [comic valueForKey:@"comicPath"];
-    numOfPage =   [comic valueForKey:@"totalPage"];
+    comicPath = [comic valueForKey:COMIC_PATH_TITLE];
+    numOfPage =   [comic valueForKey:TOTAL_PAGE];
     size = CGSizeMake(80, 80);
     checkLoadComplete = YES;
     mComicScrollView.delegate = self;
@@ -62,36 +63,33 @@
     CGRect screenRect = [[UIScreen mainScreen] bounds];
     screenWidth = screenRect.size.width;
     mComicScrollView.contentSize = CGSizeMake([numOfPage intValue] * 80.0, 0.0);
-//    [self initFirstSubComic];
+    //    [self initFirstSubComic];
 }
 
 -(void)initSubComic:(int)i{
-//    ComicOverViewCell *comicCell = (ComicOverViewCell *)[self.view viewWithTag:(NSInteger)(i+1)];
-//    if(comicCell == nil){
-//        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        NSArray* nibViews = [[NSBundle mainBundle] loadNibNamed:@"ComicOverViewCell"
-                                                          owner:self
-                                                        options:nil];
-        ComicOverViewCell *comicCell = [nibViews objectAtIndex:0];
-        UITapGestureRecognizer *tapSubView = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(actionTapSubView:)];
-        [tapSubView setNumberOfTapsRequired:1];
-        tapSubView.delegate = self;
-        CGFloat xOrigin = i * 80.0 + 10;
-            UIImage *image = [self imageWithImage:[UIImage imageWithContentsOfFile:[NSString stringWithFormat:@"%@/%d.jpg", [LocalManager getDirectoryComic:comicPath], i + 1]]];
-            NSLog(@"Start async %d",i +1);
-            dispatch_async(dispatch_get_main_queue(), ^{
-                comicCell.comicImage.frame = CGRectMake(xOrigin,0, 60.0,mComicScrollView.frame.size.height - 10);
-                comicCell.frame = comicCell.comicImage.frame;
-                comicCell.tag = (NSInteger)(i +1);
-                [comicCell addGestureRecognizer:tapSubView];
-                [comicCell setUserInteractionEnabled:YES];
-                NSString *index = [NSString stringWithFormat:@"%d",i+1];
-                comicCell.comicIndex.text = index ;
-                NSLog(@"Comic index %@",[NSString stringWithFormat:@"%d",i+1]);
-                comicCell.comicImage.image = image;
-                [mComicScrollView addSubview:comicCell];
-                NSLog(@"Finish async %d",i +1);
-            });
+    NSArray* nibViews = [[NSBundle mainBundle] loadNibNamed:NIB_COMIC_OVER_VIEW_CELL
+                                                      owner:self
+                                                    options:nil];
+    ComicOverViewCell *comicCell = [nibViews objectAtIndex:0];
+    UITapGestureRecognizer *tapSubView = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(actionTapSubView:)];
+    [tapSubView setNumberOfTapsRequired:1];
+    tapSubView.delegate = self;
+    CGFloat xOrigin = i * 80.0 + 10;
+    UIImage *image = [self imageWithImage:[UIImage imageWithContentsOfFile:[NSString stringWithFormat:@"%@/%d.jpg", [LocalManager getDirectoryComic:comicPath], i + 1]]];
+    NSLog(@"Start async %d",i +1);
+    dispatch_async(dispatch_get_main_queue(), ^{
+        comicCell.comicImage.frame = CGRectMake(xOrigin,0, 60.0,mComicScrollView.frame.size.height - 10);
+        comicCell.frame = comicCell.comicImage.frame;
+        comicCell.tag = (NSInteger)(i +1);
+        [comicCell addGestureRecognizer:tapSubView];
+        [comicCell setUserInteractionEnabled:YES];
+        NSString *index = [NSString stringWithFormat:@"%d",i+1];
+        comicCell.comicIndex.text = index ;
+        NSLog(@"Comic index %@",[NSString stringWithFormat:@"%d",i+1]);
+        comicCell.comicImage.image = image;
+        [mComicScrollView addSubview:comicCell];
+        NSLog(@"Finish async %d",i +1);
+    });
     
 }
 
@@ -104,7 +102,7 @@
 }
 
 -(void)viewDidAppear:(BOOL)animated{
-    
+#warning execute logic too bad
     dispatch_queue_t myQueue = dispatch_queue_create("MyQueue", DISPATCH_QUEUE_SERIAL);
     for(int i = 0;i< [numOfPage intValue];i++){
         dispatch_async(myQueue, ^{
@@ -130,7 +128,7 @@
 }
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
     NSLog(@"X offset: %f", mComicScrollView.contentOffset.x);
-//    [self updateSubComicWithScroll];
+    //    [self updateSubComicWithScroll];
 }
 -(BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch{
     //    if([touch.view isDescendantOfView:comicOverViewDialog])

@@ -10,6 +10,7 @@
 #import "LocalManager.h"
 #import "AsyncImageView.h"
 #import "ComicOverViewController.h"
+#import "Header.h"
 
 @interface ComicViewController ()
 
@@ -42,18 +43,19 @@
 {
     [super viewWillAppear:animated];
     [self layoutView];
-
+    
 }
 -(void)initDataComic{
     
+#warning don`t execute value DB at controller
+    comicPath = [comic valueForKey:COMIC_PATH_TITLE];
+    numOfPage =   [comic valueForKey:TOTAL_PAGE];
     
-    comicPath = [comic valueForKey:@"comicPath"];
-    numOfPage =   [comic valueForKey:@"totalPage"];
     CGRect screenRect = [[UIScreen mainScreen] bounds];
     screenWidth = screenRect.size.width;
     screenHeight = screenRect.size.height;
     size = CGSizeMake(screenWidth, screenHeight);
-
+    
     self.automaticallyAdjustsScrollViewInsets = NO;
     mScrollView.pagingEnabled = YES;
     mScrollView.delegate = self;
@@ -67,12 +69,12 @@
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(actionDoubleTap:)];
     [tap setNumberOfTapsRequired:2];
     [mScrollView addGestureRecognizer:tap];
-
+    
 }
 
 -(void)actionDoubleTap:(UILongPressGestureRecognizer *)press{
-    [self performSegueWithIdentifier:@"showComicOverView" sender:self];
-
+    [self performSegueWithIdentifier:SEGUE_SHOW_COMIC_OVER_VIEW sender:self];
+    
 }
 
 - (UIImage *)imageWithImage:(UIImage *)image {
@@ -91,21 +93,21 @@
     
 }
 -(NSInteger) caculatorPosition{
-        CGPoint offSet = mScrollView.contentOffset;
-        CGFloat x = offSet.x;
-        position = [[NSNumber numberWithFloat:x/screenWidth] intValue];
+    CGPoint offSet = mScrollView.contentOffset;
+    CGFloat x = offSet.x;
+    position = [[NSNumber numberWithFloat:x/screenWidth] intValue];
     return (NSInteger)position;
 }
 
 -(void)loadImageAtIndex:(int) i{
     UIImageView *mImage = (UIImageView *)[self.view viewWithTag:(NSInteger)(i+1)];
     if(mImage == nil){
-   
-    CGFloat xOrigin = i * screenWidth;
+        
+        CGFloat xOrigin = i * screenWidth;
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
+#warning execute common task
+            UIImage *image = [self imageWithImage:[UIImage imageWithContentsOfFile:[NSString stringWithFormat:@"%@/%d.jpg", [LocalManager getDirectoryComic:comicPath], i + 1]]];
             
-        UIImage *image = [self imageWithImage:[UIImage imageWithContentsOfFile:[NSString stringWithFormat:@"%@/%d.jpg", [LocalManager getDirectoryComic:comicPath], i + 1]]];
-
             dispatch_async(dispatch_get_main_queue(), ^{
                 UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0,0,screenWidth,mScrollView.frame.size.height)];
                 UIScrollView *subScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(xOrigin,0,screenWidth,screenHeight - 60)];
@@ -124,32 +126,25 @@
             });
             
         });
-        }
+    }
     pageIndex.text = [NSString stringWithFormat:@"%d/%d",i, [numOfPage intValue]];
-
+    
 }
 -(void)jumpToPage:(int)i{
-//    CGRect aRect = CGRectMake(i * screenWidth, 0, screenWidth, screenHeight - 60);
-    NSLog(@"AAAAAA");
-//    [mScrollView scrollRectToVisible:aRect animated:YES];
     [self loadImageAtCurrentIndex:(NSInteger)i];
     [mScrollView setContentOffset:CGPointMake(i * screenWidth, 0)];
 }
 -(void)removeImageAtIndex: (int) i{
     UIImageView *mImage = (UIImageView *)[self.view viewWithTag:(NSInteger)(i+1)];
     [mImage removeFromSuperview];
-     mImage = nil;
-}
--(void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    mImage = nil;
 }
 - (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView{
     return [scrollView viewWithTag:position + 1];
-;
+    ;
 }
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
-//    NSLog(@"scrolled");
+    //    NSLog(@"scrolled");
 }
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
@@ -161,7 +156,7 @@
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    if ([segue.identifier isEqualToString:@"showComicOverView"]) {
+    if ([segue.identifier isEqualToString:SEGUE_SHOW_COMIC_OVER_VIEW]) {
         ComicOverViewController *overViewController = segue.destinationViewController;
         overViewController.comic = comic;
         overViewController.comicViewController = self;
@@ -188,13 +183,13 @@
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end

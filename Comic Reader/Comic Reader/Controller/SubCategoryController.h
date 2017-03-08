@@ -14,7 +14,6 @@
 @property (nonatomic) NSInteger cateCount;
 @property (strong,nonatomic) NSString *titleLabel;
 
-- (void)saveImageToSD;
 -(void)removeFavComic:(NSInteger)index;
 -(void)startDownloadComic;
 @end

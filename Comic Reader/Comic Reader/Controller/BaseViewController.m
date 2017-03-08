@@ -16,7 +16,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    NSArray* nibViews = [[NSBundle mainBundle] loadNibNamed:@"CustomNavigationBar"
+    NSArray* nibViews = [[NSBundle mainBundle] loadNibNamed:NIB_CUSTOM_NAVIGATION_BAR
                                                       owner:self
                                                     options:nil];
     
@@ -32,7 +32,7 @@
     // Dispose of any resources that can be recreated.
 }
 - (IBAction)actionBack:(id)sender {
- [self.navigationController popViewControllerAnimated:YES];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 -(void)layoutView
@@ -41,7 +41,7 @@
     // hoddenview for subclass
     // detect view that will show
     [self customNavigationBar];
-//    self.navigationController.navigationBar.hidden = YES;
+    //    self.navigationController.navigationBar.hidden = YES;
     [self.view addConstraint:[NSLayoutConstraint
                               constraintWithItem:_customNav
                               attribute:NSLayoutAttributeTop
@@ -85,33 +85,33 @@
     
     
     [self.view updateConstraints];
-
+    
 }
 -(void)customNavigationBar
 {
     // init backgroung color navigationbar
     
     // add row back button
-//    [self.navigationController.navigationBar addSubview:]
+    //    [self.navigationController.navigationBar addSubview:]
     if (self.hasBack) {
         
-//        [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"arrowBack.png"] forBarMetrics:UIBarMetricsDefault];
-//        [self.navigationController.navigationBar setBackIndicatorImage:[UIImage imageNamed:@"arrowBack.png"]];
-
+        //        [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"arrowBack.png"] forBarMetrics:UIBarMetricsDefault];
+        //        [self.navigationController.navigationBar setBackIndicatorImage:[UIImage imageNamed:@"arrowBack.png"]];
+        
     }else
     {
-//        self.navigationController.navigationBar.backItem.hidesBackButton = YES;
+        //        self.navigationController.navigationBar.backItem.hidesBackButton = YES;
     }
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end

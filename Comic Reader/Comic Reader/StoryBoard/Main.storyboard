@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -92,7 +91,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="wy5-8S-xeK">
-                                <rect key="frame" x="16" y="80" width="343" height="587"/>
+                                <rect key="frame" x="0.0" y="80" width="375" height="587"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="epv-u2-KDs">
                                     <size key="itemSize" width="80" height="120"/>
@@ -110,9 +109,10 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="6xJ-cB-Xap" firstAttribute="top" secondItem="wy5-8S-xeK" secondAttribute="bottom" id="Myg-Y3-pSt"/>
+                            <constraint firstAttribute="trailing" secondItem="wy5-8S-xeK" secondAttribute="trailing" id="UQD-QH-N1T"/>
                             <constraint firstItem="wy5-8S-xeK" firstAttribute="centerX" secondItem="RAJ-dQ-8KR" secondAttribute="centerX" id="ixj-sT-Y3p"/>
                             <constraint firstItem="wy5-8S-xeK" firstAttribute="top" secondItem="R9u-Cl-cQz" secondAttribute="bottom" constant="60" id="ppx-dG-ZCX"/>
-                            <constraint firstItem="wy5-8S-xeK" firstAttribute="leading" secondItem="RAJ-dQ-8KR" secondAttribute="leadingMargin" id="r8s-GX-0VK"/>
+                            <constraint firstItem="wy5-8S-xeK" firstAttribute="leading" secondItem="RAJ-dQ-8KR" secondAttribute="leading" id="vQE-QW-FDa"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="EiB-AH-LtH"/>

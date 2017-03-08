@@ -13,6 +13,7 @@
 #import "ComicReaderService.h"
 #import "CustomNavigationBar.h"
 #import "ComicReaderDatabase.h"
+#import "Header.h"
 
 
 @interface MainCategoryController ()
@@ -41,11 +42,11 @@
     AppDelegate *delegate =(AppDelegate*) [[UIApplication sharedApplication] delegate];
     context = delegate.managedObjectContext;
     mTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-
+    
     category = [ComicReaderDatabase loadDataCategory:self];
     if([category count]<=0){
         ComicReaderService *parseService = [[ComicReaderService alloc] init];
-        [parseService fetchCategoryData:@"http://172.20.23.10/ComicReader/category/list/" main:self];
+        [parseService fetchCategoryData:CATEGORY_API main:self];
     }
 }
 -(void)viewWillAppear:(BOOL)animated
@@ -53,9 +54,9 @@
     [super viewWillAppear:animated];
     [self layoutView];
     
-        }
+}
 -(void)viewDidAppear:(BOOL)animated{
-    }
+}
 
 -(void)customNavigationBar
 {
@@ -66,32 +67,31 @@
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    static NSString *simpleTableIdentifier = @"MainCategoryCell";
+    static NSString *simpleTableIdentifier = NIB_MAIN_CATEGORY_CELL;
     
     MainCategoryCell *cell = (MainCategoryCell *)[tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
     if (cell == nil)
     {
-        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"MainCategoryCell" owner:self options:nil];
+        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:NIB_MAIN_CATEGORY_CELL owner:self options:nil];
         cell = [nib objectAtIndex:0];
     }
     NSManagedObject *cate = [category objectAtIndex:indexPath.row];
-    cell.categoryName.text = [cate valueForKey:@"title"];
+    cell.categoryName.text = [cate valueForKey:Title];
     cell.categoryName.highlightedTextColor = [UIColor orangeColor];
-    cell.imageArrow.image = [UIImage imageNamed:@"arrow.png"];
-    cell.imageArrow.highlightedImage = [UIImage imageNamed:@"arrowhighlight.png"];
-    
+    cell.imageArrow.image = [UIImage imageNamed:ICON_ARROW];
+    cell.imageArrow.highlightedImage = [UIImage imageNamed:ICON_ARROW_HIGHLIGHT];
     
     return cell;
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     cateId =  indexPath.row;
-    titleLabel = [[category objectAtIndex:indexPath.row] valueForKey:@"title"];
-    [self performSegueWithIdentifier:@"onClickTableCell" sender:self];
+    titleLabel = [[category objectAtIndex:indexPath.row] valueForKey:Title];
+    [self performSegueWithIdentifier:SEGUE_ON_CLICK_TABLE_CELL sender:self];
     
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    if ([segue.identifier isEqualToString:@"onClickTableCell"]) {
+    if ([segue.identifier isEqualToString:SEGUE_ON_CLICK_TABLE_CELL]) {
         SubCategoryController *subViewController =segue.destinationViewController;
         subViewController.cateId = cateId;
         subViewController.cateCount = category.count;

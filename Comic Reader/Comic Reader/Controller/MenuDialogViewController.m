@@ -8,6 +8,7 @@
 
 #import "MenuDialogViewController.h"
 #import "ComicReaderDatabase.h"
+#import "Header.h"
 
 @interface MenuDialogViewController ()
 
@@ -33,7 +34,7 @@
 }
 
 -(void)initMenuDialogView{
-    NSArray* nibViews = [[NSBundle mainBundle] loadNibNamed:@"MenuViewDialog"
+    NSArray* nibViews = [[NSBundle mainBundle] loadNibNamed:NIB_MENU_VIEW_DIALOG
                                                       owner:self
                                                     options:nil];
     menuDialogView = [nibViews objectAtIndex:0];
@@ -50,21 +51,21 @@
     UITapGestureRecognizer *tapAddFav = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(actionAddFav:)];
     UITapGestureRecognizer *tapDownload = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(actionDownload:)];
     UITapGestureRecognizer *tapDismiss = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(actionDismiss:)];
-
+    
     [tapAddFav setNumberOfTapsRequired:1];
     [tapDownload setNumberOfTapsRequired:1];
     [tapDismiss setNumberOfTapsRequired:1];
-
+    
     [self.view addGestureRecognizer:tapDismiss];
     [downloadLabel addGestureRecognizer:tapDownload];
     [addFavLabel addGestureRecognizer:tapAddFav];
     [addFavLabel setUserInteractionEnabled:YES];
     [downloadLabel setUserInteractionEnabled:YES];
-    BOOL isMyComic = [[comic valueForKey:@"isMyComic"] boolValue];
+    BOOL isMyComic = [[comic valueForKey:IS_MYCOMIC] boolValue];
     if(isMyComic)
-        addFavLabel.text = @"Xoá truyện ưa thích";
+        addFavLabel.text = REMOVE_FAV_COMIC;
     else
-        addFavLabel.text = @"Thêm truyện ưa thích";
+        addFavLabel.text = ADD_FAV_COMIC;
 }
 -(void)initConstraint{
     [self.view addConstraint:[NSLayoutConstraint
@@ -116,25 +117,25 @@
 
 -(void)actionAddFav:(UITapGestureRecognizer *)tap{
     NSLog(@"AddFav");
-        if(![[comic valueForKey:@"isMyComic"] boolValue])
-            [self addFavComic];
-        else
-            [self removeFavComic];
-        [self dismissViewControllerAnimated:YES completion:^{
-            
-        }];
+    if(![[comic valueForKey:IS_MYCOMIC] boolValue])
+        [self addFavComic];
+    else
+        [self removeFavComic];
+    [self dismissViewControllerAnimated:YES completion:^{
+        
+    }];
 }
 -(void)actionDownload:(UITapGestureRecognizer *)tap{
     [self dismissViewControllerAnimated:YES completion:^{
         
     }];
-    if(![[comic valueForKey:@"isDownloaded"] boolValue])
-    [subCategory startDownloadComic];
-
+    if(![[comic valueForKey:IS_DOWNLOADED] boolValue])
+        [subCategory startDownloadComic];
+    
 }
 
 -(void)actionDismiss:(UITapGestureRecognizer *)tap{
-       [self dismissViewControllerAnimated:YES completion:^{
+    [self dismissViewControllerAnimated:YES completion:^{
         
     }];
 }
