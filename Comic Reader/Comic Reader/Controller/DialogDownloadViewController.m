@@ -27,6 +27,7 @@
 @synthesize per;
 @synthesize percent;
 @synthesize collectionView;
+@synthesize cateId;
 typedef void (^test)(UIProgressView *progressDowload);
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -45,9 +46,10 @@ typedef void (^test)(UIProgressView *progressDowload);
     progressDialog.layer.masksToBounds = YES;
     progressDowload.progress = 0.0;
     per = 0.0;
-    comicTitle.text = [comic valueForKey:Title];
-    NSString *path = [LocalManager getDirectoryComic:[comic valueForKey:COMIC_PATH_TITLE]];
-    [ComicReaderService downloadComicImage:COMIC_DOWNLOAD_API totalPage:[comic valueForKey:TOTAL_PAGE] path:path dialogDownload:self nsObject:comic];
+    ComicReaderDatabase *database = [[ComicReaderDatabase alloc] init];
+    comicTitle.text = [database getComicTitle:comic];
+    NSString *path = [LocalManager getDirectoryComic:[database getComicPath:comic]];
+    [ComicReaderService downloadComicImage:[NSString stringWithFormat:COMIC_DOWNLOAD_API,(int)cateId,[[database getComicId:comic] intValue]] totalPage:[database getNumOfPage:comic] path:path dialogDownload:self nsObject:comic];
 }
 
 -(void)onDownLoadFinish{

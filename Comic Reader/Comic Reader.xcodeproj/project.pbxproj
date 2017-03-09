@@ -31,7 +31,7 @@
 		C36A61F71E543A89001B1B7C /* arrowhighlight.png in Resources */ = {isa = PBXBuildFile; fileRef = C36A61F21E543A89001B1B7C /* arrowhighlight.png */; };
 		C36A61F81E543A89001B1B7C /* new.png in Resources */ = {isa = PBXBuildFile; fileRef = C36A61F31E543A89001B1B7C /* new.png */; };
 		C36A61F91E543A89001B1B7C /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = C36A61F41E543A89001B1B7C /* star.png */; };
-		C36A9A861E66B8A300465B18 /* AsyncImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = C36A9A851E66B8A300465B18 /* AsyncImageView.m */; };
+		C36BA7E71E6FA88700635893 /* CommonTask.m in Sources */ = {isa = PBXBuildFile; fileRef = C36BA7E61E6FA88700635893 /* CommonTask.m */; };
 		C37206981E51742E00366DFA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C37206971E51742E00366DFA /* AppDelegate.m */; };
 		C37206BB1E5182DE00366DFA /* ComicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C37206AD1E5182DE00366DFA /* ComicViewController.m */; };
 		C37206BC1E5182DE00366DFA /* MainCategoryController.m in Sources */ = {isa = PBXBuildFile; fileRef = C37206AF1E5182DE00366DFA /* MainCategoryController.m */; };
@@ -118,8 +118,8 @@
 		C36A61F21E543A89001B1B7C /* arrowhighlight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrowhighlight.png; sourceTree = "<group>"; };
 		C36A61F31E543A89001B1B7C /* new.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = new.png; sourceTree = "<group>"; };
 		C36A61F41E543A89001B1B7C /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star.png; sourceTree = "<group>"; };
-		C36A9A841E66B8A300465B18 /* AsyncImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsyncImageView.h; sourceTree = "<group>"; };
-		C36A9A851E66B8A300465B18 /* AsyncImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncImageView.m; sourceTree = "<group>"; };
+		C36BA7E51E6FA88700635893 /* CommonTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonTask.h; sourceTree = "<group>"; };
+		C36BA7E61E6FA88700635893 /* CommonTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonTask.m; sourceTree = "<group>"; };
 		C37206961E51742E00366DFA /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C37206971E51742E00366DFA /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		C37206AC1E5182DE00366DFA /* ComicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComicViewController.h; sourceTree = "<group>"; };
@@ -329,15 +329,6 @@
 			name = Utility;
 			sourceTree = "<group>";
 		};
-		C36A9A831E66B89600465B18 /* AsyncImage */ = {
-			isa = PBXGroup;
-			children = (
-				C36A9A841E66B8A300465B18 /* AsyncImageView.h */,
-				C36A9A851E66B8A300465B18 /* AsyncImageView.m */,
-			);
-			path = AsyncImage;
-			sourceTree = "<group>";
-		};
 		C37206951E51742E00366DFA /* AppDelegate */ = {
 			isa = PBXGroup;
 			children = (
@@ -350,10 +341,11 @@
 		C37206991E51748100366DFA /* Utility */ = {
 			isa = PBXGroup;
 			children = (
-				C36A9A831E66B89600465B18 /* AsyncImage */,
 				7D87B0CD1E54623600357D04 /* Header.h */,
 				C377D5791E6E4CE000F6BBF8 /* AlertViewManager.h */,
 				C377D57A1E6E4CE000F6BBF8 /* AlertViewManager.m */,
+				C36BA7E51E6FA88700635893 /* CommonTask.h */,
+				C36BA7E61E6FA88700635893 /* CommonTask.m */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -728,7 +720,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C37206C41E5183E300366DFA /* Comic.m in Sources */,
-				C36A9A861E66B8A300465B18 /* AsyncImageView.m in Sources */,
+				C36BA7E71E6FA88700635893 /* CommonTask.m in Sources */,
 				7D87B0B41E545C6500357D04 /* BaseViewController.m in Sources */,
 				C3C101C81E5EB4DC008E4F42 /* LocalManager.m in Sources */,
 				C372C0E41E67AF31005F9F94 /* ComicOverViewController.m in Sources */,

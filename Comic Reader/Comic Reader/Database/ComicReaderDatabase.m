@@ -11,6 +11,7 @@
 #import "MainCategoryController.h"
 #import "LocalManager.h"
 #import "Header.h"
+#import "SubCategoryController.h"
 
 @implementation ComicReaderDatabase
 
@@ -31,7 +32,7 @@
     
 }
 
-+ (void)saveDataComic:(NSDictionary *) comicData categoryId:(NSInteger) cateId{
++ (void)saveDataComic:(NSDictionary *) comicData categoryId:(NSInteger) cateId totalCurrentComic:(int)total {
     AppDelegate *delegate =(AppDelegate*) [[UIApplication sharedApplication] delegate];
     NSManagedObjectContext *context = delegate.managedObjectContext;
     
@@ -39,18 +40,16 @@
         NSManagedObject *newCategory = [NSEntityDescription insertNewObjectForEntityForName:ComicDataName inManagedObjectContext:context];
         [newCategory setValue:[NSNumber numberWithInteger:cateId] forKey:ID_CATEGORY];
         [newCategory setValue:[NSNumber numberWithInt:i+1] forKey:ID];
-        NSDictionary *detailComic = [comicData valueForKey:[NSString stringWithFormat:@"%d",i+1]];
+        NSDictionary *detailComic = [comicData valueForKey:[NSString stringWithFormat:@"%d", total+i+1]];
         [newCategory setValue:[detailComic valueForKey:@"1"] forKey:Title];
         [newCategory setValue:[detailComic valueForKey:@"2"] forKey:TOTAL_PAGE];
         [newCategory setValue:[NSNumber numberWithBool:NO] forKey:IS_DOWNLOADED];
         [newCategory setValue:[NSNumber numberWithBool:NO] forKey:IS_MYCOMIC];
         [newCategory setValue:[NSNumber numberWithInt:1] forKey:CURRENT_DOWNLOADED];
         [newCategory setValue:0 forKey:CURRENT_READED];
-        NSString *directory = [NSString stringWithFormat:@"/%@/%d",[NSString stringWithFormat:@"%@",[NSNumber numberWithInteger:cateId]], i+1];
+        NSString *directory = [NSString stringWithFormat:@"/%@/%d",[NSString stringWithFormat:@"%@",[NSNumber numberWithInteger:cateId]], total+i+1];
         [newCategory setValue:directory forKey:COMIC_PATH_TITLE];
         [LocalManager createDirectoryComic:directory];
-        
-        
         
         NSError *error = nil;
         // Save the object to persistent store
@@ -59,6 +58,28 @@
         }
     }
     
+}
+
+-(void)updateDataComic:(NSMutableArray *)oldData newData:(NSDictionary *)newData cate:(NSInteger)cateId viewController:(id)viewController{
+    NSMutableDictionary *update = [[NSMutableDictionary alloc] init];
+    NSDictionary *updateComic = [[NSDictionary alloc] init];
+//    if([oldData isEqualToDictionary:newData]){
+//        NSLog(@"2 Dic is equal");
+//    }
+    if(oldData.count > newData.count){
+        
+    } else if (oldData.count < newData.count){
+        for(int i = (int)oldData.count; i< (int)newData.count; i++){
+            NSDictionary *newComic = [[NSDictionary alloc] init];
+            newComic = [newData valueForKey:[NSString stringWithFormat:@"%d",i+1]];
+            [update setObject:newComic forKey:[NSString stringWithFormat:@"%d",i+1]];
+        }
+        updateComic = [update mutableCopy];
+        [ComicReaderDatabase saveDataComic:updateComic categoryId:cateId totalCurrentComic:(int)oldData.count];
+        SubCategoryController *subcate = (SubCategoryController*)viewController;
+        [subcate checkUpdateComic];
+
+    }
 }
 
 +(void)updateDataComic:(NSManagedObject *)comic{
@@ -147,5 +168,29 @@
     return category;
 }
 
+-(NSString *)getComicPath:(NSManagedObject *)comic{
+    return [comic valueForKey:COMIC_PATH_TITLE];
+}
+-(NSString *)getComicTitle:(NSManagedObject *)comic{
+    return [comic valueForKey:Title];
+}
+-(NSNumber *)getNumOfPage:(NSManagedObject *)comic{
+    return [comic valueForKey:TOTAL_PAGE];
+}
+-(NSNumber *)getComicId:(NSManagedObject *)comic{
+    return [comic valueForKey:ID];
+}
+-(NSNumber *)getComicCategoryId:(NSManagedObject *)comic{
+    return [comic valueForKey:ID_CATEGORY];
+}
+-(NSNumber *)getCurrentDownloaded:(NSManagedObject *)comic{
+    return [comic valueForKey:CURRENT_DOWNLOADED];
+}
+-(BOOL)checkIsDownloaded:(NSManagedObject *)comic{
+    return [[comic valueForKey:IS_DOWNLOADED] boolValue];
+}
+-(BOOL)checkIsMyComic:(NSManagedObject *)comic{
+    return [[comic valueForKey:IS_MYCOMIC] boolValue];
+}
 
 @end

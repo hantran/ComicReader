@@ -33,7 +33,7 @@
 #define HTTP_HEADER @"Accept"
 #define COMIC_API @"http://172.20.23.10/ComicReader/category/list/%d/"
 #define CATEGORY_API @"http://172.20.23.10/ComicReader/category/list/"
-#define COMIC_DOWNLOAD_API @"http://172.20.23.10/ComicReader/images/1/1/1/"
+#define COMIC_DOWNLOAD_API @"http://172.20.23.10/ComicReader/images/%d/%d/1/"
 
 #define CANT_SAVE @"Can't Save! %@ %@"
 #define ERROR_RETRIEVING_CATEGORY @"Error Retrieving Category"

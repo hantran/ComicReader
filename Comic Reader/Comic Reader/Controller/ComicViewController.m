@@ -8,12 +8,12 @@
 
 #import "ComicViewController.h"
 #import "LocalManager.h"
-#import "AsyncImageView.h"
 #import "ComicOverViewController.h"
 #import "Header.h"
+#import "CommonTask.h"
 
 @interface ComicViewController ()
-
+@property (strong, nonatomic) CommonTask *common;
 @end
 
 @implementation ComicViewController
@@ -29,10 +29,11 @@
 @synthesize size;
 @synthesize imageArray;
 @synthesize position;
+@synthesize common;
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.hasBack = YES;
-    self.titleNav.text = titleLabel;
+//    self.hasBack = YES;
+//    self.titleNav.text = titleLabel;
     [self initDataComic];
     [self loadImageAtIndex:0];
     [self loadImageAtIndex:1];
@@ -42,19 +43,19 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    [self layoutView];
+//    [self layoutView];
     
 }
 -(void)initDataComic{
-    
-#warning don`t execute value DB at controller
-    comicPath = [comic valueForKey:COMIC_PATH_TITLE];
-    numOfPage =   [comic valueForKey:TOTAL_PAGE];
     
     CGRect screenRect = [[UIScreen mainScreen] bounds];
     screenWidth = screenRect.size.width;
     screenHeight = screenRect.size.height;
     size = CGSizeMake(screenWidth, screenHeight);
+    
+    
+    common = [[CommonTask alloc] init];
+    
     
     self.automaticallyAdjustsScrollViewInsets = NO;
     mScrollView.pagingEnabled = YES;
@@ -67,14 +68,21 @@
     [mScrollView setMaximumZoomScale:1.0f];
     [mScrollView setClipsToBounds:YES];
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(actionDoubleTap:)];
+    UISwipeGestureRecognizer *swipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(actionSwipe:)];
+    [swipe setDirection:(UISwipeGestureRecognizerDirectionDown)];
     [tap setNumberOfTapsRequired:2];
     [mScrollView addGestureRecognizer:tap];
+    [mScrollView addGestureRecognizer:swipe];
     
 }
 
 -(void)actionDoubleTap:(UILongPressGestureRecognizer *)press{
     [self performSegueWithIdentifier:SEGUE_SHOW_COMIC_OVER_VIEW sender:self];
     
+}
+-(void)actionSwipe:(UISwipeGestureRecognizer *)swipe{
+    [self.navigationController popViewControllerAnimated:YES];
+
 }
 
 - (UIImage *)imageWithImage:(UIImage *)image {
@@ -105,12 +113,11 @@
         
         CGFloat xOrigin = i * screenWidth;
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
-#warning execute common task
-            UIImage *image = [self imageWithImage:[UIImage imageWithContentsOfFile:[NSString stringWithFormat:@"%@/%d.jpg", [LocalManager getDirectoryComic:comicPath], i + 1]]];
-            
+            UIImage *image = [self imageWithImage:
+                              [common loadImageFromLocal:[LocalManager getDirectoryComic:comicPath] index:i]];
             dispatch_async(dispatch_get_main_queue(), ^{
                 UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0,0,screenWidth,mScrollView.frame.size.height)];
-                UIScrollView *subScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(xOrigin,0,screenWidth,screenHeight - 60)];
+                UIScrollView *subScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(xOrigin,0,screenWidth,screenHeight)];
                 subScrollView.minimumZoomScale = 1.0f;
                 subScrollView.maximumZoomScale = 2.0f;
                 subScrollView.zoomScale = 1.0f;
@@ -150,10 +157,10 @@
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
     [self loadImageAtCurrentIndex:[self caculatorPosition]];
 }
--(void)customNavigationBar
-{
-    [super customNavigationBar];
-}
+//-(void)customNavigationBar
+//{
+//    [super customNavigationBar];
+//}
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if ([segue.identifier isEqualToString:SEGUE_SHOW_COMIC_OVER_VIEW]) {

@@ -24,9 +24,10 @@
 @interface SubCategoryController ()
 @property(nonatomic,strong) NSArray *array;
 @property(strong, nonatomic) NSMutableArray *comic;
-@property (nonatomic, assign) NSInteger position;
 @property (strong, nonatomic) NSManagedObject *currentComic;
 @property (strong, nonnull) ComicReaderDatabase *database;
+@property (strong, nonnull) ComicReaderService *fetchService;
+
 
 
 @end
@@ -42,6 +43,7 @@
 @synthesize position;
 @synthesize currentComic;
 @synthesize database;
+@synthesize fetchService;
 
 -(void)viewWillAppear:(BOOL)animated{
     [self layoutView];
@@ -54,18 +56,25 @@
     [super viewDidLoad];
     self.hasBack  =  YES;
     database = [[ComicReaderDatabase alloc] init];
+    fetchService = [[ComicReaderService alloc] init];
     [self.mCollectionView registerNib:[UINib nibWithNibName:NIB_SUB_CATEGORY_CELL bundle:[NSBundle mainBundle]]
            forCellWithReuseIdentifier:NIB_SUB_CATEGORY_CELL];
     self.titleNav.text = titleLabel;
     [self setPaddingCollectionView];
     if(cateId == (cateCount -1))
         [self loadFavComic];
-    else
+    else{
+        [fetchService fetchComicData:[NSString stringWithFormat:COMIC_API,(int)(cateId +1)] categoryId:(int)(cateId +1) viewController:self checkUpdate:YES];
         comic = [database loadDataComicWithCategory:cateId];
+    }
+    
     [self setModalPresentationStyle:UIModalPresentationCurrentContext];
     
 }
-
+-(void) checkUpdateComic{
+    comic = [database loadDataComicWithCategory:cateId];
+    [mCollectionView reloadData];
+}
 -(void) setPaddingCollectionView{
     mCollectionView.contentInset = UIEdgeInsetsMake(0, 16, 0, 16);
     
@@ -76,7 +85,7 @@
 -(void)removeFavComic:(NSInteger)index{
     [comic removeObjectAtIndex:index];
     [mCollectionView reloadData];
-}
+    }
 -(void)startDownloadComic{
     [self performSegueWithIdentifier:SEGUE_ON_CLICK_DOWNLOAD sender:self];
     
@@ -99,43 +108,25 @@
         cell = [nib objectAtIndex:0];
         
     }
-    //    cell.backgroundColor = [UIColor redColor];
     NSManagedObject *cmi = [comic objectAtIndex:indexPath.row];
-    BOOL isDownloaded = [[cmi valueForKey:IS_DOWNLOADED] boolValue];
-    BOOL isMyComic = [[cmi valueForKey:IS_MYCOMIC] boolValue];
-    NSString *path = [LocalManager getDirectoryComic:[[comic objectAtIndex:indexPath.row] valueForKey:COMIC_PATH_TITLE]];
-    cell.imageViewCell.image = [UIImage imageNamed:ICON_COMIC];
-    cell.comicTitle.text = [cmi valueForKey:Title];
-    NSLog(@"Comic path: %@",[cmi valueForKey:@"comicPath"]);
-    if(!isDownloaded)
-        if(isMyComic)
-            cell.imageTitle.image = [UIImage imageNamed:ICON_STAR];
-        else
-            cell.imageTitle.image = [UIImage imageNamed:ICON_NEW];
-        else{
-            if(isMyComic)
-                cell.imageTitle.image = [UIImage imageNamed:ICON_STAR];
-            else
-                cell.imageTitle.image = nil;
-            cell.imageViewCell.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@/1.jpg",path]];
-            
-        }
-    cell.tag = indexPath.row;
-    UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longPressComic:)];
-    [longPress setMinimumPressDuration:0.5];
-    [cell addGestureRecognizer:longPress];
+    cell.position = indexPath.row;
+    cell.viewController = self;
+    [cell initCell:cmi];
     return cell;
 }
 
--(void)longPressComic:(UILongPressGestureRecognizer *)longPress{
-    if (longPress.state == UIGestureRecognizerStateEnded) {
-    }
-    else if (longPress.state == UIGestureRecognizerStateBegan){
-        position = longPress.view.tag;
-        [self performSegueWithIdentifier:SEGUE_ON_CLICK_MENU sender:self];
-    }
+-(UIImage *)resizeBackgroundImage:(UIImage *)image{
+    CGFloat width = image.size.width;
+    CGFloat height = image.size.height;
+    CGFloat scale = width/height;
+    UIGraphicsBeginImageContext(CGSizeMake(80 * scale, 80));
+    [image drawInRect:CGRectMake(0, 0, 80 * scale, 80)];
+    UIImage *destImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return destImage;
     
 }
+
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     currentComic = [comic objectAtIndex:indexPath.row];
     titleLabel = [currentComic valueForKey:Title];
@@ -150,13 +141,16 @@
     if ([segue.identifier isEqualToString:SEGUE_ON_CLICK_COMIC]) {
         ComicViewController *comicViewController =segue.destinationViewController;
         comicViewController.titleLabel = titleLabel;
+        comicViewController.comicPath = [database getComicPath:currentComic];
+        comicViewController.numOfPage = [database getNumOfPage:currentComic];
         comicViewController.comic = currentComic;
     }
     if ([segue.identifier isEqualToString:SEGUE_ON_CLICK_DOWNLOAD]) {
         DialogDownloadViewController *dialogViewController = segue.destinationViewController;
         [SubCategoryController setPresentationStyleForSelfController:self presentingController:dialogViewController];
         dialogViewController.comic = [comic objectAtIndex:position];
-        dialogViewController.position = position;
+        dialogViewController.position = [[database getComicId:[comic objectAtIndex:position]] integerValue];
+        dialogViewController.cateId = [[database getComicCategoryId:[comic objectAtIndex:position]] integerValue];
         dialogViewController.collectionView = mCollectionView;
     }
     

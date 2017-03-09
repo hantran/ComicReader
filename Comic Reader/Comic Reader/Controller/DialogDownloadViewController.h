@@ -15,6 +15,7 @@
 @property(strong, nonatomic) UICollectionView *collectionView;
 @property (nonatomic, assign) NSInteger position;
 @property (nonatomic, assign) float per;
+@property (nonatomic, assign) NSInteger cateId;
 @property (weak, nonatomic) IBOutlet UILabel *comicTitle;
 @property (weak, nonatomic) IBOutlet UIProgressView *progressDowload;
 @property (weak, nonatomic) IBOutlet UILabel *percent;

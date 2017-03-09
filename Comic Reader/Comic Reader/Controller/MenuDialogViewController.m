@@ -11,7 +11,7 @@
 #import "Header.h"
 
 @interface MenuDialogViewController ()
-
+@property(strong, nonatomic) ComicReaderDatabase *database;
 @end
 
 @implementation MenuDialogViewController
@@ -23,6 +23,7 @@
 @synthesize position;
 @synthesize isFavComicView;
 @synthesize subCategory;
+@synthesize database;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -61,7 +62,8 @@
     [addFavLabel addGestureRecognizer:tapAddFav];
     [addFavLabel setUserInteractionEnabled:YES];
     [downloadLabel setUserInteractionEnabled:YES];
-    BOOL isMyComic = [[comic valueForKey:IS_MYCOMIC] boolValue];
+    database = [[ComicReaderDatabase alloc] init];
+    BOOL isMyComic = [database checkIsMyComic:comic];
     if(isMyComic)
         addFavLabel.text = REMOVE_FAV_COMIC;
     else
@@ -117,7 +119,7 @@
 
 -(void)actionAddFav:(UITapGestureRecognizer *)tap{
     NSLog(@"AddFav");
-    if(![[comic valueForKey:IS_MYCOMIC] boolValue])
+    if(![database checkIsMyComic:comic])
         [self addFavComic];
     else
         [self removeFavComic];
@@ -129,7 +131,7 @@
     [self dismissViewControllerAnimated:YES completion:^{
         
     }];
-    if(![[comic valueForKey:IS_DOWNLOADED] boolValue])
+    if(![database checkIsDownloaded:comic])
         [subCategory startDownloadComic];
     
 }
@@ -143,12 +145,16 @@
 
 -(void)addFavComic{
     [ComicReaderDatabase addFavComic:comic];
-    [collectionView reloadData];
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:position inSection:0];
+    [collectionView reloadItemsAtIndexPaths:@[indexPath]];
 }
 -(void)removeFavComic{
     [ComicReaderDatabase removeFavComic:comic];
     if(isFavComicView)
         [subCategory removeFavComic:position];
-    [collectionView reloadData];
+    else{
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:position inSection:0];
+    [collectionView reloadItemsAtIndexPaths:@[indexPath]];
+    }
 }
 @end

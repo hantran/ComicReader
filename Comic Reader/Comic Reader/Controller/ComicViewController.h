@@ -11,7 +11,7 @@
 #import "AppDelegate.h"
 
 
-@interface ComicViewController : BaseViewController <UIScrollViewDelegate>
+@interface ComicViewController : UIViewController <UIScrollViewDelegate>
 @property (weak, nonatomic) IBOutlet UIScrollView *mScrollView;
 @property (weak, nonatomic) IBOutlet UILabel *pageIndex;
 @property (weak, nonatomic) UILabel *labelPage;

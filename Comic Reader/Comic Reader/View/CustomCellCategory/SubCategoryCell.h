@@ -7,10 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ComicReaderDatabase.h"
+#import "SubCategoryController.h"
 
 @interface SubCategoryCell : UICollectionViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *imageViewCell;
 @property (weak, nonatomic) IBOutlet UILabel *comicTitle;
 @property (weak, nonatomic) IBOutlet UIImageView *imageTitle;
+@property (strong, nonatomic) ComicReaderDatabase *database;
+@property (strong, nonatomic) SubCategoryController *viewController;
+@property (nonatomic, assign) NSInteger position;
+
+
+-(UIImage *)resizeBackgroundImage:(UIImage *)image;
+-(void)initCell:(NSManagedObject *)comic;
 
 @end

@@ -170,13 +170,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" maximumZoomScale="4" translatesAutoresizingMaskIntoConstraints="NO" id="wYp-pK-de2" userLabel="mScrollView">
-                                <rect key="frame" x="0.0" y="80" width="375" height="587"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <connections>
                                     <outlet property="delegate" destination="Omq-ok-7Dp" id="iIL-U5-ngk"/>
                                 </connections>
                             </scrollView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1/50" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Fa-mV-MIE">
-                                <rect key="frame" x="341" y="80" width="34" height="20.5"/>
+                                <rect key="frame" x="341" y="20" width="34" height="20.5"/>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -186,9 +186,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="wYp-pK-de2" secondAttribute="trailing" id="3Eu-Ab-1cB"/>
-                            <constraint firstItem="2Fa-mV-MIE" firstAttribute="top" secondItem="dH3-iZ-Lg7" secondAttribute="bottom" constant="60" id="UZv-kM-hGh"/>
+                            <constraint firstItem="2Fa-mV-MIE" firstAttribute="top" secondItem="dH3-iZ-Lg7" secondAttribute="bottom" id="Mz4-yI-f6v"/>
+                            <constraint firstItem="wYp-pK-de2" firstAttribute="top" secondItem="dH3-iZ-Lg7" secondAttribute="bottom" id="Zn8-b0-Rl1"/>
                             <constraint firstAttribute="trailing" secondItem="2Fa-mV-MIE" secondAttribute="trailing" id="dRL-tc-Qlu"/>
-                            <constraint firstItem="wYp-pK-de2" firstAttribute="top" secondItem="dH3-iZ-Lg7" secondAttribute="bottom" constant="60" id="fJ5-BJ-xwk"/>
                             <constraint firstItem="wYp-pK-de2" firstAttribute="leading" secondItem="l8f-JE-K4J" secondAttribute="leading" id="hWr-PM-6q1"/>
                             <constraint firstItem="ACR-QI-qez" firstAttribute="top" secondItem="wYp-pK-de2" secondAttribute="bottom" id="yiX-nB-J34"/>
                         </constraints>
