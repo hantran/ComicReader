@@ -27,6 +27,7 @@
 @property (strong, nonatomic) NSManagedObject *currentComic;
 @property (strong, nonnull) ComicReaderDatabase *database;
 @property (strong, nonnull) ComicReaderService *fetchService;
+@property (strong, nonatomic) UIRefreshControl *refreshControl;
 
 
 
@@ -44,6 +45,7 @@
 @synthesize currentComic;
 @synthesize database;
 @synthesize fetchService;
+@synthesize refreshControl;
 
 -(void)viewWillAppear:(BOOL)animated{
     [self layoutView];
@@ -64,12 +66,19 @@
     if(cateId == (cateCount -1))
         [self loadFavComic];
     else{
-        [fetchService fetchComicData:[NSString stringWithFormat:COMIC_API,(int)(cateId +1)] categoryId:(int)(cateId +1) viewController:self checkUpdate:YES];
         comic = [database loadDataComicWithCategory:cateId];
     }
     
     [self setModalPresentationStyle:UIModalPresentationCurrentContext];
-    
+    refreshControl = [[UIRefreshControl alloc] init];
+    [refreshControl addTarget:self action:@selector(startRefresh) forControlEvents:UIControlEventValueChanged];
+    [mCollectionView addSubview:refreshControl];
+    mCollectionView.alwaysBounceVertical = YES;
+}
+-(void)startRefresh{
+    if(cateId != (cateCount -1))
+    [fetchService fetchComicData:[NSString stringWithFormat:COMIC_API,(int)(cateId +1)] categoryId:(int)(cateId +1) viewController:self checkUpdate:YES];
+    [refreshControl endRefreshing];
 }
 -(void) checkUpdateComic{
     comic = [database loadDataComicWithCategory:cateId];
@@ -106,7 +115,6 @@
     {
         NSArray *nib = [[NSBundle mainBundle] loadNibNamed:NIB_SUB_CATEGORY_CELL owner:self options:nil];
         cell = [nib objectAtIndex:0];
-        
     }
     NSManagedObject *cmi = [comic objectAtIndex:indexPath.row];
     cell.position = indexPath.row;

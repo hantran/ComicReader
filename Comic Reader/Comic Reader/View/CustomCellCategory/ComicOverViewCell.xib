@@ -15,8 +15,9 @@
             <rect key="frame" x="0.0" y="0.0" width="180" height="286"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="ah1.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="ViQ-ql-s6T">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="ViQ-ql-s6T">
                     <rect key="frame" x="0.0" y="30.5" width="180" height="255.5"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fkb-RP-stj">
                     <rect key="frame" x="5" y="5" width="11" height="20.5"/>
@@ -43,7 +44,4 @@
             <point key="canvasLocation" x="66" y="259"/>
         </view>
     </objects>
-    <resources>
-        <image name="ah1.jpg" width="1100" height="1600"/>
-    </resources>
 </document>

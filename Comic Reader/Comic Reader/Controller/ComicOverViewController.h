@@ -25,4 +25,6 @@
 @property (nonatomic) BOOL checkLoadComplete;
 @property (strong, nonatomic) ComicViewController *comicViewController;
 
+-(void)loadImageFromIndex:(int)index;
+
 @end

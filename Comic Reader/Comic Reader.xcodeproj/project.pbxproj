@@ -878,7 +878,7 @@
 				DEVELOPMENT_TEAM = MCT552Y5YL;
 				INFOPLIST_FILE = "Comic Reader/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = comic.com.soffront;
+				PRODUCT_BUNDLE_IDENTIFIER = comic.com.soffrontA;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -892,7 +892,7 @@
 				DEVELOPMENT_TEAM = MCT552Y5YL;
 				INFOPLIST_FILE = "Comic Reader/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = comic.com.soffront;
+				PRODUCT_BUNDLE_IDENTIFIER = comic.com.soffrontA;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
