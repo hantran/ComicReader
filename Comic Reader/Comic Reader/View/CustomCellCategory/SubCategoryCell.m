@@ -22,15 +22,20 @@
     [super awakeFromNib];
     database = [[ComicReaderDatabase alloc] init];
 }
+-(void)prepareForReuse{
+    [super prepareForReuse];
+    self.imageViewCell.image = nil;
+
+}
 -(void)initCell:(NSManagedObject *)comic{
     BOOL isDownloaded = [database checkIsDownloaded:comic];
     BOOL isMyComic = [database checkIsMyComic:comic];
     NSString *path = [LocalManager getDirectoryComic:[database getComicPath:comic]];
-    self.imageViewCell.image = [UIImage imageNamed:ICON_COMIC];
     self.comicTitle.text = [database getComicTitle:comic];
     NSLog(@"Comic path: %@",[database getComicPath:comic]);
     dispatch_queue_t myQueue = dispatch_queue_create("MyQueue", DISPATCH_QUEUE_SERIAL);
     if(!isDownloaded){
+        self.imageViewCell.image = [UIImage imageNamed:ICON_COMIC];
         if(isMyComic)
             self.imageTitle.image = [UIImage imageNamed:ICON_STAR];
         else

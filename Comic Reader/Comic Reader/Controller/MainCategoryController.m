@@ -53,6 +53,16 @@
 {
     [super viewWillAppear:animated];
     [self layoutView];
+    [self.view addConstraint:[NSLayoutConstraint
+                              constraintWithItem:
+                              mTableView
+                              attribute:NSLayoutAttributeTop
+                              relatedBy:NSLayoutRelationEqual
+                              toItem:self.view
+                              attribute:NSLayoutAttributeTop
+                              multiplier:1.0
+                              constant:60.0]];
+
     
 }
 -(void)viewDidAppear:(BOOL)animated{

@@ -147,7 +147,7 @@
     mImage = nil;
 }
 - (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView{
-    return [scrollView viewWithTag:position + 1];
+    return [scrollView viewWithTag:[self caculatorPosition] + 1];
     ;
 }
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{

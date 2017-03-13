@@ -16,6 +16,8 @@
 @interface ComicOverViewController ()
 @property (strong, nonatomic) CommonTask *common;
 @property (strong, nonatomic) NSOperationQueue *operationQueue;
+@property (strong, nonatomic) NSOperationQueue *mainQueue;
+
 @end
 
 @implementation ComicOverViewController
@@ -34,6 +36,7 @@
 @synthesize checkLoadComplete;
 @synthesize common;
 @synthesize operationQueue;
+@synthesize mainQueue;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -107,17 +110,20 @@
     dispatch_async(dispatch_get_main_queue(), ^{
         [comicViewController jumpToPage:(int)(tap.view.tag - 1)];
     });
-    //    [operationQueue cancelAllOperations];
+    [mainQueue cancelAllOperations];
+    [operationQueue cancelAllOperations];
     [self dismissViewControllerAnimated:YES completion:^{
     }];
 }
 
 -(void)viewDidAppear:(BOOL)animated{
     [self initViewIndex];
+    mainQueue = [[NSOperationQueue alloc] init];
+    [mainQueue setMaxConcurrentOperationCount:1];
     operationQueue = [[NSOperationQueue alloc] init];
     [operationQueue setMaxConcurrentOperationCount:1];
     for(int i = 0;i< [numOfPage intValue];i++){
-        [operationQueue addOperationWithBlock:^{
+        [mainQueue addOperationWithBlock:^{
             [self initSubComic:i];
         }];
         
@@ -160,6 +166,7 @@
     return YES;
 }
 -(void)actionTap:(UITapGestureRecognizer *)tap{
+    [mainQueue cancelAllOperations];
     [operationQueue cancelAllOperations];
     [self dismissViewControllerAnimated:YES completion:^{
         
