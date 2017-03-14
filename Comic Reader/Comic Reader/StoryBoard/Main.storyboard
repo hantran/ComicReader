@@ -175,6 +175,15 @@
                                     <outlet property="delegate" destination="Omq-ok-7Dp" id="iIL-U5-ngk"/>
                                 </connections>
                             </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4mu-RE-JWb">
+                                <rect key="frame" x="8" y="28" width="81" height="53"/>
+                                <state key="normal" title="Back" image="arrowBack.png">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="actionBack:" destination="Omq-ok-7Dp" eventType="touchUpInside" id="Hz3-Bn-xGN"/>
+                                </connections>
+                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1/50" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Fa-mV-MIE">
                                 <rect key="frame" x="303" y="20" width="72" height="21"/>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -192,13 +201,16 @@
                             <constraint firstAttribute="trailing" secondItem="wYp-pK-de2" secondAttribute="trailing" id="3Eu-Ab-1cB"/>
                             <constraint firstItem="2Fa-mV-MIE" firstAttribute="top" secondItem="dH3-iZ-Lg7" secondAttribute="bottom" id="Mz4-yI-f6v"/>
                             <constraint firstItem="wYp-pK-de2" firstAttribute="top" secondItem="dH3-iZ-Lg7" secondAttribute="bottom" id="Zn8-b0-Rl1"/>
+                            <constraint firstItem="4mu-RE-JWb" firstAttribute="leading" secondItem="l8f-JE-K4J" secondAttribute="leading" constant="8" id="agq-BL-EVv"/>
                             <constraint firstAttribute="trailing" secondItem="2Fa-mV-MIE" secondAttribute="trailing" id="dRL-tc-Qlu"/>
                             <constraint firstItem="wYp-pK-de2" firstAttribute="leading" secondItem="l8f-JE-K4J" secondAttribute="leading" id="hWr-PM-6q1"/>
+                            <constraint firstItem="4mu-RE-JWb" firstAttribute="top" secondItem="dH3-iZ-Lg7" secondAttribute="bottom" constant="8" id="wMb-kD-zEg"/>
                             <constraint firstItem="ACR-QI-qez" firstAttribute="top" secondItem="wYp-pK-de2" secondAttribute="bottom" id="yiX-nB-J34"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="RUp-Xq-Sik"/>
                     <connections>
+                        <outlet property="backArrow" destination="4mu-RE-JWb" id="K6T-Ia-QyG"/>
                         <outlet property="mScrollView" destination="wYp-pK-de2" id="5Eb-AQ-Z4X"/>
                         <outlet property="pageIndex" destination="2Fa-mV-MIE" id="5c7-JI-usd"/>
                         <segue destination="IDw-gs-z7Q" kind="presentation" identifier="showComicOverView" id="Obx-xM-7ES"/>
@@ -257,4 +269,7 @@
             <point key="canvasLocation" x="3306.4000000000001" y="77.811094452773617"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="arrowBack.png" width="41" height="53"/>
+    </resources>
 </document>

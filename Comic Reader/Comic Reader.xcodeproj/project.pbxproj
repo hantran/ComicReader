@@ -36,7 +36,6 @@
 		C37206BB1E5182DE00366DFA /* ComicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C37206AD1E5182DE00366DFA /* ComicViewController.m */; };
 		C37206BC1E5182DE00366DFA /* MainCategoryController.m in Sources */ = {isa = PBXBuildFile; fileRef = C37206AF1E5182DE00366DFA /* MainCategoryController.m */; };
 		C37206C01E5182DE00366DFA /* SubCategoryController.m in Sources */ = {isa = PBXBuildFile; fileRef = C37206B81E5182DE00366DFA /* SubCategoryController.m */; };
-		C37206C41E5183E300366DFA /* Comic.m in Sources */ = {isa = PBXBuildFile; fileRef = C37206C31E5183E300366DFA /* Comic.m */; };
 		C37206CA1E5183EC00366DFA /* comic.png in Resources */ = {isa = PBXBuildFile; fileRef = C37206C61E5183EC00366DFA /* comic.png */; };
 		C37206D31E51846000366DFA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C37206D11E51846000366DFA /* LaunchScreen.storyboard */; };
 		C37206D41E51846000366DFA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C37206D21E51846000366DFA /* Main.storyboard */; };
@@ -128,8 +127,6 @@
 		C37206AF1E5182DE00366DFA /* MainCategoryController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainCategoryController.m; sourceTree = "<group>"; };
 		C37206B71E5182DE00366DFA /* SubCategoryController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubCategoryController.h; sourceTree = "<group>"; };
 		C37206B81E5182DE00366DFA /* SubCategoryController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubCategoryController.m; sourceTree = "<group>"; };
-		C37206C21E5183E300366DFA /* Comic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Comic.h; sourceTree = "<group>"; };
-		C37206C31E5183E300366DFA /* Comic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Comic.m; sourceTree = "<group>"; };
 		C37206C61E5183EC00366DFA /* comic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = comic.png; sourceTree = "<group>"; };
 		C37206D11E51846000366DFA /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C37206D21E51846000366DFA /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -287,10 +284,8 @@
 				C372069C1E51821300366DFA /* View */,
 				C37206991E51748100366DFA /* Utility */,
 				C37206951E51742E00366DFA /* AppDelegate */,
-				C36613531E4AB25B001BF229 /* Utility */,
 				C36613271E4AB20B001BF229 /* Assets.xcassets */,
 				C366132C1E4AB20B001BF229 /* Info.plist */,
-				C36613241E4AB20B001BF229 /* Comic_Reader.xcdatamodeld */,
 				C36613181E4AB20B001BF229 /* Supporting Files */,
 			);
 			path = "Comic Reader";
@@ -320,13 +315,6 @@
 				C36613421E4AB20B001BF229 /* Info.plist */,
 			);
 			path = "Comic ReaderUITests";
-			sourceTree = "<group>";
-		};
-		C36613531E4AB25B001BF229 /* Utility */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Utility;
 			sourceTree = "<group>";
 		};
 		C37206951E51742E00366DFA /* AppDelegate */ = {
@@ -384,8 +372,7 @@
 		C37206C11E5183E300366DFA /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				C37206C21E5183E300366DFA /* Comic.h */,
-				C37206C31E5183E300366DFA /* Comic.m */,
+				C36613241E4AB20B001BF229 /* Comic_Reader.xcdatamodeld */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -719,7 +706,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C37206C41E5183E300366DFA /* Comic.m in Sources */,
 				C36BA7E71E6FA88700635893 /* CommonTask.m in Sources */,
 				7D87B0B41E545C6500357D04 /* BaseViewController.m in Sources */,
 				C3C101C81E5EB4DC008E4F42 /* LocalManager.m in Sources */,
@@ -995,7 +981,8 @@
 				C36613251E4AB20B001BF229 /* Comic_Reader.xcdatamodel */,
 			);
 			currentVersion = C36613251E4AB20B001BF229 /* Comic_Reader.xcdatamodel */;
-			path = Comic_Reader.xcdatamodeld;
+			name = Comic_Reader.xcdatamodeld;
+			path = ../Comic_Reader.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

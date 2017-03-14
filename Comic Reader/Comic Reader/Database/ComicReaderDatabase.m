@@ -186,6 +186,21 @@
 -(NSNumber *)getCurrentDownloaded:(NSManagedObject *)comic{
     return [comic valueForKey:CURRENT_DOWNLOADED];
 }
+-(NSNumber *)getCurrentReaded:(NSManagedObject *)comic{
+    return [comic valueForKey:CURRENT_READED];
+}
+-(void)saveCurrentReaded:(NSManagedObject *)comic position:(NSNumber *)position {
+    AppDelegate *delegate =(AppDelegate*) [[UIApplication sharedApplication] delegate];
+    NSManagedObjectContext *context = delegate.managedObjectContext;
+    [comic setValue:position forKey:CURRENT_READED];
+    NSError *error = nil;
+    // Save the object to persistent store
+    if (![context save:&error]) {
+        NSLog(CANT_SAVE, error, [error localizedDescription]);
+    }
+
+}
+
 -(BOOL)checkIsDownloaded:(NSManagedObject *)comic{
     return [[comic valueForKey:IS_DOWNLOADED] boolValue];
 }

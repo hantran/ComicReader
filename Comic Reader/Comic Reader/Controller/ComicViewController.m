@@ -11,9 +11,13 @@
 #import "ComicOverViewController.h"
 #import "Header.h"
 #import "CommonTask.h"
+#import "ComicReaderDatabase.h"
 
 @interface ComicViewController ()
 @property (strong, nonatomic) CommonTask *common;
+@property (strong, nonatomic) ComicReaderDatabase *database;
+@property (strong, nonatomic) NSOperationQueue *mainQueue;
+
 @end
 
 @implementation ComicViewController
@@ -30,21 +34,25 @@
 @synthesize imageArray;
 @synthesize position;
 @synthesize common;
+@synthesize currentReaded;
+@synthesize database;
+@synthesize mainQueue;
+@synthesize backArrow;
 - (void)viewDidLoad {
     [super viewDidLoad];
 //    self.hasBack = YES;
 //    self.titleNav.text = titleLabel;
     [self initDataComic];
-    [self loadImageAtIndex:0];
-    [self loadImageAtIndex:1];
-    
-    
+    [self initLoadComicAtIndex];
 }
--(void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-//    [self layoutView];
-    
+-(void)viewDidAppear:(BOOL)animated{
+//    [mainQueue setMaxConcurrentOperationCount:1];
+//    for(int i = 0; i<[numOfPage intValue]; i++){
+//        [mainQueue addOperationWithBlock:^{
+//            [self loadImageAtIndex:i];
+//        }];
+//    }
+//
 }
 -(void)initDataComic{
     
@@ -52,10 +60,12 @@
     screenWidth = screenRect.size.width;
     screenHeight = screenRect.size.height;
     size = CGSizeMake(screenWidth, screenHeight);
-    
+    [backArrow setUserInteractionEnabled:YES];
+    [backArrow setHidden:YES];
     
     common = [[CommonTask alloc] init];
-    
+    database = [[ComicReaderDatabase alloc] init];
+    mainQueue = [[NSOperationQueue alloc] init];
     
     self.automaticallyAdjustsScrollViewInsets = NO;
     mScrollView.pagingEnabled = YES;
@@ -67,20 +77,40 @@
     [mScrollView setMaximumZoomScale:4.0f];
     [mScrollView setMaximumZoomScale:1.0f];
     [mScrollView setClipsToBounds:YES];
-    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(actionDoubleTap:)];
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(actionTap:)];
+    UITapGestureRecognizer *doubleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(actionDoubleTap:)];
     UISwipeGestureRecognizer *swipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(actionSwipe:)];
     [swipe setDirection:(UISwipeGestureRecognizerDirectionDown)];
-    [tap setNumberOfTapsRequired:2];
+    [tap setNumberOfTapsRequired:1];
+    [doubleTap setNumberOfTapsRequired:2];
     [mScrollView addGestureRecognizer:tap];
+    [mScrollView addGestureRecognizer:doubleTap];
     [mScrollView addGestureRecognizer:swipe];
     
 }
 
+-(void)initLoadComicAtIndex{
+    [self jumpToPage:[currentReaded intValue]];
+    [self loadImageAtIndex:[currentReaded intValue]];
+    [self loadImageAtIndex:[currentReaded intValue] +1];
+   }
+-(void)actionTap:(UITapGestureRecognizer *)tap{
+//    if(backArrow.isHidden == YES){
+//    [backArrow setHidden:NO];
+//    backArrow.alpha = 1.0f;
+//    [UIView animateWithDuration:0.5 delay:2 options:UIViewAnimationOptionAllowUserInteraction animations:^{
+//        backArrow.alpha = 0.0f;
+//    } completion:^(BOOL finished) {
+//        backArrow.hidden = YES;
+//    }];
+//    }
+}
 -(void)actionDoubleTap:(UILongPressGestureRecognizer *)press{
     [self performSegueWithIdentifier:SEGUE_SHOW_COMIC_OVER_VIEW sender:self];
     
 }
 -(void)actionSwipe:(UISwipeGestureRecognizer *)swipe{
+    [mainQueue cancelAllOperations];
     [self.navigationController popViewControllerAnimated:YES];
 
 }
@@ -96,7 +126,7 @@
     [self loadImageAtIndex:(int)(index-1)];
     [self loadImageAtIndex:(int)index];
     [self loadImageAtIndex:(int)(index+1)];
-    
+    [database saveCurrentReaded:comic position:[NSNumber numberWithInteger:index]];
     NSLog(@"position page: %d",position);
     
 }
@@ -130,16 +160,24 @@
                 [imageArray addObject:imageView];
                 [subScrollView addSubview:imageView];
                 [mScrollView addSubview:subScrollView];
+                 NSLog(@"Loading %@",[NSString stringWithFormat:@"%d/%d",i, [numOfPage intValue]]);
             });
             
         });
     }
     pageIndex.text = [NSString stringWithFormat:@"%d/%d",i, [numOfPage intValue]];
+   
     
 }
 -(void)jumpToPage:(int)i{
     [self loadImageAtCurrentIndex:(NSInteger)i];
     [mScrollView setContentOffset:CGPointMake(i * screenWidth, 0)];
+}
+
+- (IBAction)actionBack:(id)sender {
+    [mainQueue cancelAllOperations];
+    [self.navigationController popViewControllerAnimated:YES];
+
 }
 -(void)removeImageAtIndex: (int) i{
     UIImageView *mImage = (UIImageView *)[self.view viewWithTag:(NSInteger)(i+1)];
@@ -157,16 +195,12 @@
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
     [self loadImageAtCurrentIndex:[self caculatorPosition]];
 }
-//-(void)customNavigationBar
-//{
-//    [super customNavigationBar];
-//}
-
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if ([segue.identifier isEqualToString:SEGUE_SHOW_COMIC_OVER_VIEW]) {
         ComicOverViewController *overViewController = segue.destinationViewController;
         overViewController.comic = comic;
         overViewController.comicViewController = self;
+        overViewController.position = (int)[self caculatorPosition];
         [ComicViewController setPresentationStyleForSelfController:self presentingController:overViewController];
         
         

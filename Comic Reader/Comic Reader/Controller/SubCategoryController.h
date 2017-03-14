@@ -16,7 +16,6 @@
 @property (strong,nonatomic) NSString *titleLabel;
 @property (nonatomic, assign) NSInteger position;
 
-
 -(void)removeFavComic:(NSInteger)index;
 -(void)startDownloadComic;
 -(void)checkUpdateComic;

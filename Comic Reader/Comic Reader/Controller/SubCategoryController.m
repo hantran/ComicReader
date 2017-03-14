@@ -151,6 +151,7 @@
         comicViewController.titleLabel = titleLabel;
         comicViewController.comicPath = [database getComicPath:currentComic];
         comicViewController.numOfPage = [database getNumOfPage:currentComic];
+        comicViewController.currentReaded = [database getCurrentReaded:currentComic];
         comicViewController.comic = currentComic;
     }
     if ([segue.identifier isEqualToString:SEGUE_ON_CLICK_DOWNLOAD]) {

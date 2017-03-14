@@ -128,6 +128,11 @@
         }];
         
     }
+    [self jumpToPage:position];
+}
+-(void)jumpToPage:(int)i{
+    [self loadImageFromIndex:i];
+    [mComicScrollView setContentOffset:CGPointMake(i * 80, 0)];
 }
 -(void)loadImageFromIndex:(int)index{
     [operationQueue cancelAllOperations];
@@ -151,6 +156,7 @@
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
     NSLog(@"Finish scroll");
     int index = (int)mComicScrollView.contentOffset.x/80.0;
+    if(index >= 0)
     [self loadImageFromIndex:index];
 }
 
@@ -160,6 +166,7 @@
 -(void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
     NSLog(@"End drag");
     int index = (int)mComicScrollView.contentOffset.x/80.0;
+    if(index >= 0)
     [self loadImageFromIndex:index];
 }
 -(BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch{

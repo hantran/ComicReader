@@ -27,6 +27,8 @@
 -(NSString *)getComicTitle:(NSManagedObject *)comic;
 -(NSNumber *)getNumOfPage:(NSManagedObject *)comic;
 -(NSNumber *)getCurrentDownloaded:(NSManagedObject *)comic;
+-(NSNumber *)getCurrentReaded:(NSManagedObject *)comic;
+-(void)saveCurrentReaded:(NSManagedObject *)comic position:(NSNumber *)position;
 -(BOOL)checkIsDownloaded:(NSManagedObject *)comic;
 -(BOOL)checkIsMyComic:(NSManagedObject *)comic;
 -(NSNumber *)getComicId:(NSManagedObject *)comic;
