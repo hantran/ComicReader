@@ -12,6 +12,7 @@
 @end
 
 @implementation BaseViewController
+@synthesize customNav;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -20,11 +21,11 @@
                                                       owner:self
                                                     options:nil];
     
-    _customNav = [ nibViews objectAtIndex:0];
+    customNav = [ nibViews objectAtIndex:0];
     
-    _customNav.translatesAutoresizingMaskIntoConstraints = NO;
+    customNav.translatesAutoresizingMaskIntoConstraints = NO;
     
-    [self.view addSubview:_customNav];
+    [self.view addSubview:customNav];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -43,7 +44,7 @@
     [self customNavigationBar];
     //    self.navigationController.navigationBar.hidden = YES;
     [self.view addConstraint:[NSLayoutConstraint
-                              constraintWithItem:_customNav
+                              constraintWithItem:customNav
                               attribute:NSLayoutAttributeTop
                               relatedBy:NSLayoutRelationEqual
                               toItem:self.view
@@ -51,7 +52,7 @@
                               multiplier:1.0
                               constant:20.0]];
     [self.view addConstraint:[NSLayoutConstraint
-                              constraintWithItem:_customNav
+                              constraintWithItem:customNav
                               attribute:NSLayoutAttributeRight
                               relatedBy:NSLayoutRelationEqual
                               toItem:self.view
@@ -59,7 +60,7 @@
                               multiplier:1.0
                               constant:0.0]];
     [self.view addConstraint:[NSLayoutConstraint
-                              constraintWithItem:_customNav
+                              constraintWithItem:customNav
                               attribute:NSLayoutAttributeLeft
                               relatedBy:NSLayoutRelationEqual
                               toItem:self.view
@@ -67,7 +68,7 @@
                               multiplier:1.0
                               constant:0.0]];
     [self.view addConstraint:[NSLayoutConstraint
-                              constraintWithItem:_customNav
+                              constraintWithItem:customNav
                               attribute:NSLayoutAttributeBottom
                               relatedBy:NSLayoutRelationEqual
                               toItem:self.view
@@ -75,7 +76,7 @@
                               multiplier:1.0
                               constant:0.0]];
     [self.view addConstraint:[NSLayoutConstraint
-                              constraintWithItem:_customNav
+                              constraintWithItem:customNav
                               attribute:NSLayoutAttributeHeight
                               relatedBy:NSLayoutRelationEqual
                               toItem:nil

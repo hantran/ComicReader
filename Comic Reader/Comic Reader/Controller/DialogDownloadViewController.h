@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "ProgressViewDialog.h"
 #import "AppDelegate.h"
+#import "ComicReaderDatabase.h"
 
-@interface DialogDownloadViewController : UIViewController
+@interface DialogDownloadViewController : UIViewController<UIGestureRecognizerDelegate>
 @property(strong, nonatomic) NSManagedObject *comic;
 @property(strong, nonatomic) UICollectionView *collectionView;
 @property (nonatomic, assign) NSInteger position;
@@ -21,5 +22,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *percent;
 @property (weak, nonatomic) IBOutlet UILabel *totalPage;
 @property (strong, nonatomic)  ProgressViewDialog *progressDialog;
+@property (strong, nonatomic) ComicReaderDatabase *database;
+@property (strong, nonatomic) AppDelegate *delegate;
 -(void)onDownLoadFinish;
 @end

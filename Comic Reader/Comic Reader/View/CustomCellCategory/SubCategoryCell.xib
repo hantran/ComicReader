@@ -37,24 +37,34 @@
                             <constraint firstAttribute="height" constant="30" id="v4y-1e-ZcU"/>
                         </constraints>
                     </imageView>
+                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="neu-zA-KlN">
+                        <rect key="frame" x="0.0" y="0.0" width="87" height="68"/>
+                    </activityIndicatorView>
                 </subviews>
             </view>
             <constraints>
+                <constraint firstItem="dgx-a4-fZ3" firstAttribute="top" secondItem="2Dx-FZ-b3j" secondAttribute="top" id="49a-tq-D2v"/>
+                <constraint firstItem="vdL-KA-4ik" firstAttribute="top" secondItem="neu-zA-KlN" secondAttribute="bottom" id="Cgp-NJ-2fc"/>
                 <constraint firstItem="oq2-qh-8gK" firstAttribute="top" secondItem="2Dx-FZ-b3j" secondAttribute="top" constant="2" id="Gbq-D6-OAL"/>
                 <constraint firstItem="dgx-a4-fZ3" firstAttribute="leading" secondItem="2Dx-FZ-b3j" secondAttribute="leading" constant="8" id="Hae-9V-HRm"/>
+                <constraint firstItem="vdL-KA-4ik" firstAttribute="top" secondItem="dgx-a4-fZ3" secondAttribute="bottom" id="LC6-7f-SQ5"/>
                 <constraint firstAttribute="trailing" secondItem="vdL-KA-4ik" secondAttribute="trailing" id="Toe-nu-Gil"/>
                 <constraint firstItem="dgx-a4-fZ3" firstAttribute="top" secondItem="2Dx-FZ-b3j" secondAttribute="top" id="ZQS-D7-r0R"/>
                 <constraint firstAttribute="bottom" secondItem="vdL-KA-4ik" secondAttribute="bottom" id="ZSg-DW-Ifn"/>
+                <constraint firstItem="neu-zA-KlN" firstAttribute="leading" secondItem="2Dx-FZ-b3j" secondAttribute="leading" id="aMN-Ss-jOS"/>
                 <constraint firstAttribute="trailing" secondItem="oq2-qh-8gK" secondAttribute="trailing" constant="10" id="icj-gc-LuA"/>
                 <constraint firstItem="vdL-KA-4ik" firstAttribute="leading" secondItem="2Dx-FZ-b3j" secondAttribute="leading" id="krb-n6-UNd"/>
                 <constraint firstAttribute="trailing" secondItem="dgx-a4-fZ3" secondAttribute="trailing" constant="8" id="rCG-Zy-uEx"/>
                 <constraint firstItem="vdL-KA-4ik" firstAttribute="top" secondItem="dgx-a4-fZ3" secondAttribute="bottom" id="rHu-2L-dl8"/>
+                <constraint firstAttribute="trailing" secondItem="neu-zA-KlN" secondAttribute="trailing" id="tNr-au-SiY"/>
+                <constraint firstItem="neu-zA-KlN" firstAttribute="top" secondItem="2Dx-FZ-b3j" secondAttribute="top" id="wro-wS-rDn"/>
             </constraints>
             <size key="customSize" width="200" height="272"/>
             <connections>
                 <outlet property="comicTitle" destination="vdL-KA-4ik" id="Tst-f4-S5k"/>
                 <outlet property="imageTitle" destination="oq2-qh-8gK" id="fgQ-QZ-1j5"/>
                 <outlet property="imageViewCell" destination="dgx-a4-fZ3" id="pTS-ss-ksk"/>
+                <outlet property="spinDownload" destination="neu-zA-KlN" id="YgV-Rd-dRM"/>
             </connections>
             <point key="canvasLocation" x="91.5" y="17.5"/>
         </collectionViewCell>

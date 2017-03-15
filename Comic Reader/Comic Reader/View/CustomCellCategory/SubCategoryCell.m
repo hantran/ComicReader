@@ -15,6 +15,7 @@
 @synthesize comicTitle;
 @synthesize imageViewCell;
 @synthesize imageTitle;
+@synthesize spinDownload;
 @synthesize database;
 @synthesize position;
 @synthesize viewController;
@@ -30,10 +31,21 @@
 -(void)initCell:(NSManagedObject *)comic{
     BOOL isDownloaded = [database checkIsDownloaded:comic];
     BOOL isMyComic = [database checkIsMyComic:comic];
+    BOOL isDownloading = [database checkIsDownloading:comic];
     NSString *path = [LocalManager getDirectoryComic:[database getComicPath:comic]];
     self.comicTitle.text = [database getComicTitle:comic];
     NSLog(@"Comic path: %@",[database getComicPath:comic]);
     dispatch_queue_t myQueue = dispatch_queue_create("MyQueue", DISPATCH_QUEUE_SERIAL);
+    [self.spinDownload setHidden:YES];
+    if(isDownloading){
+        [self.spinDownload setHidden:NO];
+        [self.spinDownload startAnimating];
+    }
+    else{
+        [self.spinDownload stopAnimating];
+        [self.spinDownload setHidden:YES];
+    }
+
     if(!isDownloaded){
         self.imageViewCell.image = [UIImage imageNamed:ICON_COMIC];
         if(isMyComic)

@@ -44,6 +44,7 @@
         [newCategory setValue:[detailComic valueForKey:@"1"] forKey:Title];
         [newCategory setValue:[detailComic valueForKey:@"2"] forKey:TOTAL_PAGE];
         [newCategory setValue:[NSNumber numberWithBool:NO] forKey:IS_DOWNLOADED];
+        [newCategory setValue:[NSNumber numberWithBool:NO] forKey:IS_DOWNLOADING];
         [newCategory setValue:[NSNumber numberWithBool:NO] forKey:IS_MYCOMIC];
         [newCategory setValue:[NSNumber numberWithInt:1] forKey:CURRENT_DOWNLOADED];
         [newCategory setValue:0 forKey:CURRENT_READED];
@@ -93,6 +94,18 @@
     }
     
 }
+-(void)setIsDownloading:(NSManagedObject *)comic status:(BOOL) status{
+    AppDelegate *delegate =(AppDelegate*) [[UIApplication sharedApplication] delegate];
+    NSManagedObjectContext *context = delegate.managedObjectContext;
+    [comic setValue:[NSNumber numberWithBool:status] forKey:IS_DOWNLOADING];
+    NSError *error = nil;
+    // Save the object to persistent store
+    if (![context save:&error]) {
+        NSLog(CANT_SAVE, error, [error localizedDescription]);
+    }
+    
+}
+
 
 +(void)addFavComic:(NSManagedObject *)comic{
     AppDelegate *delegate =(AppDelegate*) [[UIApplication sharedApplication] delegate];
@@ -203,6 +216,9 @@
 
 -(BOOL)checkIsDownloaded:(NSManagedObject *)comic{
     return [[comic valueForKey:IS_DOWNLOADED] boolValue];
+}
+-(BOOL)checkIsDownloading:(NSManagedObject *)comic{
+    return [[comic valueForKey:IS_DOWNLOADING] boolValue];
 }
 -(BOOL)checkIsMyComic:(NSManagedObject *)comic{
     return [[comic valueForKey:IS_MYCOMIC] boolValue];

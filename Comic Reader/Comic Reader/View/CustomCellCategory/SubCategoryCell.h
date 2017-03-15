@@ -14,6 +14,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *imageViewCell;
 @property (weak, nonatomic) IBOutlet UILabel *comicTitle;
 @property (weak, nonatomic) IBOutlet UIImageView *imageTitle;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *spinDownload;
 @property (strong, nonatomic) ComicReaderDatabase *database;
 @property (strong, nonatomic) SubCategoryController *viewController;
 @property (nonatomic, assign) NSInteger position;

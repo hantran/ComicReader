@@ -12,6 +12,24 @@
 
 @implementation AlertViewManager
 
++(UIAlertController *)showAlertMessage:(NSString *)title msg:(NSString *)msg view:(UIViewController *)viewController{
+    UIAlertController * alert = [UIAlertController
+                                 alertControllerWithTitle:title
+                                 message:msg
+                                 preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction* yesButton = [UIAlertAction
+                                actionWithTitle:@"OK"
+                                style:UIAlertActionStyleDefault
+                                handler:^(UIAlertAction * action) {
+                                    if(viewController != nil)
+                                        [viewController dismissViewControllerAnimated:YES completion:^{
+                                        }];
+                                }];
+    [alert addAction:yesButton];
+    return alert;
+}
+
+
 +(UIAlertController *)showAlertError:(NSString *)title error:(NSError *)error view:(UIViewController *)viewController{
     UIAlertController * alert = [UIAlertController
                                  alertControllerWithTitle:title

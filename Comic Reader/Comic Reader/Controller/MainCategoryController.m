@@ -66,6 +66,7 @@
     
 }
 -(void)viewDidAppear:(BOOL)animated{
+    
 }
 
 -(void)customNavigationBar

@@ -15,6 +15,7 @@
 @property (nonatomic) NSInteger cateCount;
 @property (strong,nonatomic) NSString *titleLabel;
 @property (nonatomic, assign) NSInteger position;
+@property (strong, nonatomic) AppDelegate *delegate;
 
 -(void)removeFavComic:(NSInteger)index;
 -(void)startDownloadComic;

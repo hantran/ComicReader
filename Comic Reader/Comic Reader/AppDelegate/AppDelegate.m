@@ -15,12 +15,31 @@
 
 @implementation AppDelegate
 @synthesize category;
+@synthesize configuration;
+@synthesize urlManager;
+@synthesize checkIsDownloading;
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
     [NSThread sleepForTimeInterval:1.0];
+    [self setConfiguration];
+    checkIsDownloading = NO;
     
     return YES;
+}
+
+-(void)setConfiguration{
+    configuration = [NSURLSessionConfiguration backgroundSessionConfigurationWithIdentifier:@"comic.reader"];
+    configuration.HTTPMaximumConnectionsPerHost = 5;
+     urlManager = [[AFURLSessionManager alloc] initWithSessionConfiguration:configuration];
+}
+-(AFURLSessionManager *)sessionManager{
+    return urlManager;
+}
+-(void)application:(UIApplication *)application handleEventsForBackgroundURLSession:(NSString *)identifier completionHandler:(void (^)())completionHandler{
+    
+    self.backgroundTransferCompletionHandler = completionHandler;
+    
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

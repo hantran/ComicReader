@@ -17,6 +17,14 @@
 @implementation ComicReaderService
 @synthesize category;
 @synthesize comic;
+@synthesize urlManager;
+
+-(id)initService{
+    if(self == [super init]){
+          }
+    return self;
+}
+
 -(void)fetchCategoryData: (NSString *)stringURL main:(MainCategoryController *) mainCate{
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     [manager.requestSerializer setValue:TYPE_PARSE_JSON forHTTPHeaderField:HTTP_HEADER];
@@ -53,30 +61,30 @@
     
 }
 
-+(void)downloadComicImage:(NSString *)url totalPage:(NSNumber *)n path:(NSString *) folderPath dialogDownload:(DialogDownloadViewController *) dialogView nsObject:(NSManagedObject *)comic {
+-(void)downloadComicImage:(NSString *)url totalPage:(NSNumber *)n path:(NSString *) folderPath dialogDownload:(DialogDownloadViewController *) dialogView nsObject:(NSManagedObject *)mComic {
     ComicReaderDatabase *database = [[ComicReaderDatabase alloc] init];
-    NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
-    AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:configuration];
-    dialogView.per = [[database getCurrentDownloaded:comic] floatValue] - 1.0;
-    [manager setDownloadTaskDidWriteDataBlock:^(NSURLSession *session, NSURLSessionDownloadTask *downloadTask, int64_t bytesWritten, int64_t totalBytesWritten, int64_t totalBytesExpectedToWrite) {
-        
-        
-        if(totalBytesWritten == totalBytesExpectedToWrite){
-            dispatch_async(dispatch_get_main_queue(), ^{
-                dialogView.per += 1.0;
-                float m = dialogView.per/100;
-                dialogView.percent.text = [NSString stringWithFormat:@"%0.0f%%",dialogView.per];
-                dialogView.totalPage.text = [NSString stringWithFormat:@"%@/%@",[NSString stringWithFormat:@"%0.0f",dialogView.per], n];
-                dialogView.progressDowload.progress = m;
-            });
+    AppDelegate *delegate =(AppDelegate*) [[UIApplication sharedApplication] delegate];
+    urlManager = [delegate sessionManager];
+    dialogView.per = [[database getCurrentDownloaded:mComic] floatValue] - 1.0;
+    [urlManager setDownloadTaskDidWriteDataBlock:^(NSURLSession *session, NSURLSessionDownloadTask *downloadTask, int64_t bytesWritten, int64_t totalBytesWritten, int64_t totalBytesExpectedToWrite) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            float percent = (float)totalBytesWritten/(float)totalBytesExpectedToWrite;
+            dialogView.progressDowload.progress = percent;
+            dialogView.percent.text = [NSString stringWithFormat:@"%0.0f%%",percent * 100];
             
-        }
+            if(totalBytesWritten == totalBytesExpectedToWrite){
+                dialogView.per += 1.0;
+                dialogView.totalPage.text = [NSString stringWithFormat:@"%@/%@",[NSString stringWithFormat:@"%0.0f",dialogView.per], n];
+            }
+        });
+        
+        
         
     }];
-    [self downloadAtIndex:[[database getCurrentDownloaded:comic] intValue] total:n manage:manager url:url folderPath:folderPath dialogView:dialogView nsObject:comic];
+    [self downloadAtIndex:[[database getCurrentDownloaded:mComic] intValue] total:n manage:urlManager url:url folderPath:folderPath dialogView:dialogView nsObject:mComic];
 }
 
-+(void)downloadAtIndex:(int)i total:(NSNumber *)n manage:(AFURLSessionManager *)manager url:(NSString *)url folderPath:(NSString *)folderPath dialogView:(DialogDownloadViewController *) dialogView nsObject:(NSManagedObject *)comic{
+-(void)downloadAtIndex:(int)i total:(NSNumber *)n manage:(AFURLSessionManager *)manager url:(NSString *)url folderPath:(NSString *)folderPath dialogView:(DialogDownloadViewController *) dialogView nsObject:(NSManagedObject *)mComic{
     __block int count = i;
     NSURL *URL = [NSURL URLWithString:[NSString stringWithFormat:@"%@%d.jpg", url,i]];
     NSURLRequest *request = [NSURLRequest requestWithURL:URL];
@@ -93,11 +101,11 @@
             }
             else{
                 count ++;
-                [self downloadAtIndex:count total:n manage:manager url:url folderPath:folderPath dialogView:dialogView nsObject:comic];
+                [self downloadAtIndex:count total:n manage:manager url:url folderPath:folderPath dialogView:dialogView nsObject:mComic];
             }
             else{
                 [dialogView presentViewController:[AlertViewManager showAlertError:ERROR_DOWNLOAD_COMIC error:error view:dialogView]animated:YES completion:nil];
-                [ComicReaderDatabase updateCurrentDownloaded:comic current:count];
+                [ComicReaderDatabase updateCurrentDownloaded:mComic current:count];
             }
     }];
     [downloadTask resume];

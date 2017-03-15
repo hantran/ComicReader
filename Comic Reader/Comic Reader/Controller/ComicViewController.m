@@ -45,14 +45,55 @@
     [self initDataComic];
     [self initLoadComicAtIndex];
 }
--(void)viewDidAppear:(BOOL)animated{
-//    [mainQueue setMaxConcurrentOperationCount:1];
-//    for(int i = 0; i<[numOfPage intValue]; i++){
-//        [mainQueue addOperationWithBlock:^{
-//            [self loadImageAtIndex:i];
-//        }];
-//    }
-//
+-(void)viewWillAppear:(BOOL)animated{
+    [self setConstraint];
+}
+-(void)setConstraint{
+//    [self.customNav setAlpha:0.6f];
+//    [self.view addConstraint:[NSLayoutConstraint
+//                              constraintWithItem:self.customNav
+//                              attribute:NSLayoutAttributeTop
+//                              relatedBy:NSLayoutRelationEqual
+//                              toItem:self.view
+//                              attribute:NSLayoutAttributeTop
+//                              multiplier:1.0
+//                              constant:20.0]];
+//    [self.view addConstraint:[NSLayoutConstraint
+//                              constraintWithItem:self.customNav
+//                              attribute:NSLayoutAttributeRight
+//                              relatedBy:NSLayoutRelationEqual
+//                              toItem:self.view
+//                              attribute:NSLayoutAttributeRight
+//                              multiplier:1.0
+//                              constant:0.0]];
+//    [self.view addConstraint:[NSLayoutConstraint
+//                              constraintWithItem:self.customNav
+//                              attribute:NSLayoutAttributeLeft
+//                              relatedBy:NSLayoutRelationEqual
+//                              toItem:self.view
+//                              attribute:NSLayoutAttributeLeft
+//                              multiplier:1.0
+//                              constant:0.0]];
+//    [self.view addConstraint:[NSLayoutConstraint
+//                              constraintWithItem:self.customNav
+//                              attribute:NSLayoutAttributeBottom
+//                              relatedBy:NSLayoutRelationEqual
+//                              toItem:self.view
+//                              attribute:NSLayoutAttributeBottom
+//                              multiplier:1.0
+//                              constant:0.0]];
+//    [self.view addConstraint:[NSLayoutConstraint
+//                              constraintWithItem:self.customNav
+//                              attribute:NSLayoutAttributeHeight
+//                              relatedBy:NSLayoutRelationEqual
+//                              toItem:nil
+//                              attribute:NSLayoutAttributeNotAnAttribute
+//                              multiplier:1.0
+//                              constant:60.0]];
+//    
+//    
+//    [self.view updateConstraints];
+
 }
 -(void)initDataComic{
     
@@ -91,19 +132,25 @@
 
 -(void)initLoadComicAtIndex{
     [self jumpToPage:[currentReaded intValue]];
-    [self loadImageAtIndex:[currentReaded intValue]];
-    [self loadImageAtIndex:[currentReaded intValue] +1];
    }
 -(void)actionTap:(UITapGestureRecognizer *)tap{
-//    if(backArrow.isHidden == YES){
-//    [backArrow setHidden:NO];
-//    backArrow.alpha = 1.0f;
-//    [UIView animateWithDuration:0.5 delay:2 options:UIViewAnimationOptionAllowUserInteraction animations:^{
-//        backArrow.alpha = 0.0f;
-//    } completion:^(BOOL finished) {
-//        backArrow.hidden = YES;
-//    }];
-//    }
+    if(backArrow.isHidden == YES){
+    [backArrow setHidden:NO];
+    backArrow.alpha = 0.0f;
+    [UIView animateWithDuration:0.25 delay:0 options:UIViewAnimationOptionAllowUserInteraction animations:^{
+        backArrow.alpha = 1.0f;
+    } completion:^(BOOL finished) {
+
+    }];
+    } else{
+        backArrow.alpha = 1.0f;
+        [UIView animateWithDuration:0.25 delay:0 options:UIViewAnimationOptionAllowUserInteraction animations:^{
+            backArrow.alpha = 0.0f;
+        } completion:^(BOOL finished) {
+            [backArrow setHidden:YES];
+        }];
+
+    }
 }
 -(void)actionDoubleTap:(UILongPressGestureRecognizer *)press{
     [self performSegueWithIdentifier:SEGUE_SHOW_COMIC_OVER_VIEW sender:self];

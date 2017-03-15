@@ -21,6 +21,7 @@
 #define ID @"id"
 #define TOTAL_PAGE @"totalPage"
 #define IS_DOWNLOADED @"isDownloaded"
+#define IS_DOWNLOADING @"isDownloading"
 #define CURRENT_DOWNLOADED @"currentDownloaded"
 #define CURRENT_READED @"currentReaded"
 #define IS_MYCOMIC @"isMyComic"
@@ -66,6 +67,11 @@
 #define REMOVE_FAV_COMIC @"Xoá truyện ưa thích"
 
 #define BUTTON_OK @"OK"
+
+#define ALERT_TITLE @"Warning"
+#define ALERT_MSG @"Please wait until current download finish!"
+
+
 
 
 

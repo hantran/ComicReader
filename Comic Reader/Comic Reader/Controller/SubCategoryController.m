@@ -18,6 +18,7 @@
 #import "LocalManager.h"
 #import "MenuDialogViewController.h"
 #import "Header.h"
+#import "AlertViewManager.h"
 
 
 
@@ -46,6 +47,7 @@
 @synthesize database;
 @synthesize fetchService;
 @synthesize refreshControl;
+@synthesize delegate;
 
 -(void)viewWillAppear:(BOOL)animated{
     [self layoutView];
@@ -74,6 +76,8 @@
     [refreshControl addTarget:self action:@selector(startRefresh) forControlEvents:UIControlEventValueChanged];
     [mCollectionView addSubview:refreshControl];
     mCollectionView.alwaysBounceVertical = YES;
+    delegate =(AppDelegate*) [[UIApplication sharedApplication] delegate];
+    
 }
 -(void)startRefresh{
     if(cateId != (cateCount -1))
@@ -142,9 +146,17 @@
     BOOL isDownloaded = [[currentComic valueForKey:IS_DOWNLOADED] boolValue];
     if(isDownloaded)
         [self performSegueWithIdentifier:SEGUE_ON_CLICK_COMIC sender:self];
-    else
+    else if(!delegate.checkIsDownloading){
+        delegate.checkIsDownloading = YES;
         [self performSegueWithIdentifier:SEGUE_ON_CLICK_DOWNLOAD sender:self];
-}
+
+    }
+    else{
+        [self presentViewController:[AlertViewManager showAlertMessage:ALERT_TITLE msg:ALERT_MSG view:self]animated:YES completion:nil];
+        
+    }
+
+      }
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if ([segue.identifier isEqualToString:SEGUE_ON_CLICK_COMIC]) {
         ComicViewController *comicViewController =segue.destinationViewController;

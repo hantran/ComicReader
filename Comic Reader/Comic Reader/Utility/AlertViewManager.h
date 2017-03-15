@@ -10,5 +10,6 @@
 #import <AFNetworking/AFNetworking.h>
 
 @interface AlertViewManager : NSObject
++(UIAlertController *)showAlertMessage:(NSString *)title msg:(NSString *)msg view:(UIViewController *)viewController;
 +(UIAlertController *)showAlertError:(NSString *)title error:(NSError *)error view:(UIViewController *)viewController;
 @end

@@ -12,6 +12,7 @@
 #import "LocalManager.h"
 #import "ComicReaderDatabase.h"
 #import "Header.h"
+#import "AlertViewManager.h"
 
 @interface DialogDownloadViewController ()
 
@@ -28,6 +29,8 @@
 @synthesize percent;
 @synthesize collectionView;
 @synthesize cateId;
+@synthesize database;
+@synthesize delegate;
 typedef void (^test)(UIProgressView *progressDowload);
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -46,15 +49,44 @@ typedef void (^test)(UIProgressView *progressDowload);
     progressDialog.layer.masksToBounds = YES;
     progressDowload.progress = 0.0;
     per = 0.0;
-    ComicReaderDatabase *database = [[ComicReaderDatabase alloc] init];
+    database = [[ComicReaderDatabase alloc] init];
     comicTitle.text = [database getComicTitle:comic];
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(actionTap:)];
+    [tap setNumberOfTapsRequired:1];
+    tap.cancelsTouchesInView = NO;
+    tap.delegate = self;
+    [self.view addGestureRecognizer:tap];
+    delegate =(AppDelegate*) [[UIApplication sharedApplication] delegate];
+    [database setIsDownloading:comic status:YES];
+    [collectionView reloadData];
+    [self startDownloadService];
+
+}
+-(void)startDownloadService{
     NSString *path = [LocalManager getDirectoryComic:[database getComicPath:comic]];
-    [ComicReaderService downloadComicImage:[NSString stringWithFormat:COMIC_DOWNLOAD_API,(int)cateId,[[database getComicId:comic] intValue]] totalPage:[database getNumOfPage:comic] path:path dialogDownload:self nsObject:comic];
+    ComicReaderService *service = [[ComicReaderService alloc] init];
+    [service downloadComicImage:[NSString stringWithFormat:COMIC_DOWNLOAD_API,(int)cateId,[[database getComicId:comic] intValue]] totalPage:[database getNumOfPage:comic] path:path dialogDownload:self nsObject:comic];
+    
+}
+
+-(BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch{
+        if([touch.view isDescendantOfView:progressDialog])
+            return NO;
+        else
+    return YES;
+}
+
+-(void)actionTap:(UITapGestureRecognizer *)tap{
+      [self dismissViewControllerAnimated:YES completion:^{
+        
+    }];
 }
 
 -(void)onDownLoadFinish{
     [ComicReaderDatabase updateDataComic:comic];
     [collectionView reloadData];
+    delegate.checkIsDownloading = NO;
+    [database setIsDownloading:comic status:NO];
     [self dismissViewControllerAnimated:YES completion:^{
     }];
     

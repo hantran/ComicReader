@@ -20,6 +20,7 @@
 +(NSMutableArray *)loadDataCategory:(MainCategoryController *)mMain;
 -(NSMutableArray *)loadFavoriteComic;
 +(void)updateDataComic:(NSManagedObject *)comic;
+-(void)setIsDownloading:(NSManagedObject *)comic status:(BOOL) status;
 +(void)addFavComic:(NSManagedObject *)comic;
 +(void)removeFavComic:(NSManagedObject *)comic;
 +(void)updateCurrentDownloaded:(NSManagedObject *)comic current:(int) position;
@@ -30,6 +31,7 @@
 -(NSNumber *)getCurrentReaded:(NSManagedObject *)comic;
 -(void)saveCurrentReaded:(NSManagedObject *)comic position:(NSNumber *)position;
 -(BOOL)checkIsDownloaded:(NSManagedObject *)comic;
+-(BOOL)checkIsDownloading:(NSManagedObject *)comic;
 -(BOOL)checkIsMyComic:(NSManagedObject *)comic;
 -(NSNumber *)getComicId:(NSManagedObject *)comic;
 -(NSNumber *)getComicCategoryId:(NSManagedObject *)comic;
